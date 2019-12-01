@@ -17,6 +17,7 @@
 class PlayerShipController: public Controller
 {
     PlayerShipView* view;
+    PlayerShip *object;
 public:
     PlayerShipController();
 

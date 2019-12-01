@@ -18,6 +18,7 @@ class Game
 private:
     std::vector<Controller*> entities;
     bool isInitialized=false;
+    void drawEntities(sf::RenderWindow &window);
 public:
     void initializeGame();
     void startGame();

@@ -26,11 +26,23 @@ public:
     void moveLeft();
     void moveRight();
 
-    // getters
+    // getters & setters
     double getHspeed() const;
+
+    void setHspeed(double hspeed);
+
     double getVspeed() const;
+
+    void setVspeed(double vspeed);
+
     double getX() const;
+
+    void setX(double x);
+
     double getY() const;
+
+    void setY(double y);
+
 
     ~PlayerShip() override = default;
 };

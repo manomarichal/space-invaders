@@ -11,6 +11,14 @@
 #include "entities/playership/PlayerShipController.h"
 #include <assert.h>
 
+void Game::drawEntities(sf::RenderWindow &window)
+{
+    for (auto &entity:entities)
+    {
+        entity->update(window);
+    }
+}
+
 void Game::initializeGame()
 {
     isInitialized = true;
@@ -23,7 +31,7 @@ void Game::startGame()
     assert(isInitialized);
 
     // create the window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Space Invaders");
+    sf::RenderWindow window(sf::VideoMode(600, 1000), "Space Invaders");
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -41,11 +49,9 @@ void Game::startGame()
         window.clear(sf::Color::Black);
 
         // draw everything here...
-        for (auto &entity:entities)
-        {
-            entity->update(window);
-        }
+        drawEntities(window);
 
+        system("sleep 0.016");
         // end the current frame
         window.display();
     }

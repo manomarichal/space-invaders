@@ -11,10 +11,16 @@
 PlayerShipController::PlayerShipController()
 {
     view = new PlayerShipView();
+    object = view->getObject();
+    object->setHspeed(5);
+    object->setVspeed(5);
+    object->setX(300);
+    object->setY(900);
 }
 
 void PlayerShipController::update(sf::RenderWindow &window)
 {
+    object->moveLeft();
     view->draw(window);
 }
 

@@ -12,17 +12,20 @@ PlayerShipView::PlayerShipView()
 {
     object = new PlayerShip;
 
+    std::string FILENAME = "../textures/red.jpg";
     texture = new sf::Texture();
-    if (!texture->loadFromFile("../textures/red.jpg"))
+    if (!texture->loadFromFile(FILENAME))
     {
-        throw std::runtime_error("could not load file ../textures/red.jpg");
+        throw std::runtime_error(FILENAME);
     }
     sprite = new sf::Sprite;
-    sprite->setTextureRect(sf::IntRect(10, 10, 32, 32));
+    sprite->setTexture(*texture);
+    sprite->setScale(0.2, 0.2);
 };
 
 void PlayerShipView::draw(sf::RenderWindow &window)
 {
+    sprite->setPosition(object->getX(), object->getY());
     window.draw(*sprite);
 };
 
@@ -31,4 +34,9 @@ PlayerShipView::~PlayerShipView()
     delete sprite;
     delete texture;
     delete object;
+}
+
+PlayerShip *PlayerShipView::getObject() const
+{
+    return object;
 }

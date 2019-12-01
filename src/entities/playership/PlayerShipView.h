@@ -24,6 +24,8 @@ public:
 
     void draw(sf::RenderWindow &window) override;
 
+    PlayerShip *getObject() const;
+
     ~PlayerShipView() override;
 };
 
