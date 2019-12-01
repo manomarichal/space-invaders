@@ -1,20 +1,20 @@
 // =====================================================================
-// @name: Entity.h
+// @name: View.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 17.11.19
+// @date: 01.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: Base class for game entities
+// @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_ENTITY_H
-#define SPACE_INVADERS_ENTITY_H
+#ifndef SPACE_INVADERS_VIEW_H
+#define SPACE_INVADERS_VIEW_H
 
+#include <SFML/Graphics.hpp>
 
-class Entity
-        {
-
+class View
+{
+public:
+    virtual void draw(sf::RenderWindow &window)=0;
 };
-
-
-#endif //SPACE_INVADERS_ENTITY_H
+#endif //SPACE_INVADERS_VIEW_H

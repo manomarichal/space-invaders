@@ -1,10 +1,19 @@
 // =====================================================================
-// @name: Entity.cpp
+// @name: Controller.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 17.11.19
+// @date: 01.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "Entity.h"
+#ifndef SPACE_INVADERS_CONTROLLER_H
+#define SPACE_INVADERS_CONTROLLER_H
+
+#include <SFML/Graphics.hpp>
+class Controller
+{
+public:
+    virtual void update(sf::RenderWindow &window)=0;
+};
+#endif //SPACE_INVADERS_CONTROLLER_H

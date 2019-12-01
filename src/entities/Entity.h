@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: main.cpp
+// @name: Entity.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 17.11.19
@@ -7,12 +7,14 @@
 // @description: 
 // =====================================================================
 
-#include <iostream>
-#include "./Game.h"
-int main()
+#ifndef SPACE_INVADERS_ENTITY_H
+#define SPACE_INVADERS_ENTITY_H
+
+
+class Entity
 {
-    Game game;
-    game.initializeGame();
-    game.startGame();
-    return 0;
-}
+public:
+};
+
+
+#endif //SPACE_INVADERS_ENTITY_H
