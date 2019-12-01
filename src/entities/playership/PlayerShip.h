@@ -32,7 +32,7 @@ public:
     double getX() const;
     double getY() const;
 
-    ~PlayerShip()= default;
+    ~PlayerShip() override = default;
 };
 
 

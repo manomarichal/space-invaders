@@ -15,5 +15,8 @@ class Controller
 {
 public:
     virtual void update(sf::RenderWindow &window)=0;
+    virtual ~Controller()=0;
 };
+inline Controller::~Controller() { }
+
 #endif //SPACE_INVADERS_CONTROLLER_H

@@ -23,7 +23,7 @@ void Game::startGame()
     assert(isInitialized);
 
     // create the window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Space Invaders");
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -39,6 +39,7 @@ void Game::startGame()
 
         // clear the window with black color
         window.clear(sf::Color::Black);
+
         // draw everything here...
         for (auto &entity:entities)
         {
@@ -48,4 +49,9 @@ void Game::startGame()
         // end the current frame
         window.display();
     }
+}
+
+Game::~Game()
+{
+    for (auto &entity:entities) delete entity;
 }

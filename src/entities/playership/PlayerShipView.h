@@ -17,13 +17,14 @@ class PlayerShipView: public View
 {
 private:
     PlayerShip* object;
+    sf::Sprite* sprite;
+    sf::Texture* texture;
 public:
-    explicit PlayerShipView(PlayerShip* object): object(object) {};
+    PlayerShipView();
 
-    void draw(sf::RenderWindow &window) override
-    {
-        window.clear(sf::Color::Green);
-    };
+    void draw(sf::RenderWindow &window) override;
+
+    ~PlayerShipView() override;
 };
 
 #endif //SPACE_INVADERS_PLAYERSHIPVIEW_H

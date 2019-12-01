@@ -16,11 +16,13 @@
 
 class PlayerShipController: public Controller
 {
-    PlayerShip* object;
     PlayerShipView* view;
 public:
     PlayerShipController();
-    void update(sf::RenderWindow &window);
+
+    void update(sf::RenderWindow &window) override ;
+
+    ~PlayerShipController() override;
 };
 
 #endif //SPACE_INVADERS_PLAYERSHIPCONTROLLER_H

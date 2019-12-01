@@ -10,11 +10,15 @@
 #include "./PlayerShipController.h"
 PlayerShipController::PlayerShipController()
 {
-    object = new PlayerShip();
-    view = new PlayerShipView(object);
+    view = new PlayerShipView();
 }
 
 void PlayerShipController::update(sf::RenderWindow &window)
 {
     view->draw(window);
+}
+
+PlayerShipController::~PlayerShipController()
+{
+    delete view;
 }

@@ -16,5 +16,8 @@ class View
 {
 public:
     virtual void draw(sf::RenderWindow &window)=0;
+    virtual ~View()=0;
 };
+inline View::~View() { }
+
 #endif //SPACE_INVADERS_VIEW_H

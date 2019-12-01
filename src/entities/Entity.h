@@ -14,7 +14,9 @@
 class Entity
 {
 public:
+    virtual ~Entity()=0;
 };
+inline Entity::~Entity() { }
 
 
 #endif //SPACE_INVADERS_ENTITY_H
