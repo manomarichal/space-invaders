@@ -10,14 +10,11 @@
 #include "./PlayerShipView.h"
 PlayerShipView::PlayerShipView()
 {
-    object = new PlayerShip;
-
     texture = new sf::Texture();
     texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
+
     sprite = new sf::Sprite;
     sprite->setTexture(*texture);
-
-    object->setXSize(texture->getSize().x);
 }
 void PlayerShipView::draw(sf::RenderWindow &window)
 {
@@ -28,7 +25,7 @@ void PlayerShipView::draw(sf::RenderWindow &window)
     else
         texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
 
-    sprite->setPosition(object->getX(), object->getY());
+    sprite->setPosition(object->x, object->y);
     window.draw(*sprite);
 };
 
@@ -36,10 +33,5 @@ PlayerShipView::~PlayerShipView()
 {
     delete sprite;
     delete texture;
-    delete object;
 }
 
-PlayerShip *PlayerShipView::getObject() const
-{
-    return object;
-}

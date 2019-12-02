@@ -41,7 +41,6 @@ void Game::initializeGame()
     isInitialized = true;
     Controller* ship = new PlayerShipController();
     entities.emplace_back(ship);
-    entitiesWithEvents.emplace_back(ship);
 }
 
 

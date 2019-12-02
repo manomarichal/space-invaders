@@ -19,7 +19,9 @@ namespace projectiles
         int x;
         int y;
     public:
-        int getX() const
+        Projectile(int x, int y): x(x), y(y) {};
+
+        [[nodiscard]] int getX() const
         {
             return x;
         }
@@ -29,7 +31,7 @@ namespace projectiles
             Projectile::x = x;
         }
 
-        int getY() const
+        [[nodiscard]] int getY() const
         {
             return y;
         }

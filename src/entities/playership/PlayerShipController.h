@@ -13,11 +13,14 @@
 #include "./PlayerShipView.h"
 #include "./PlayerShip.h"
 #include "../Controller.h"
+#include "../projectiles/ProjectileController.h"
 
 class PlayerShipController: public Controller
 {
     PlayerShipView* view;
     PlayerShip *object;
+    projectiles::ProjectileController * projectileController;
+
 public:
     PlayerShipController();
 

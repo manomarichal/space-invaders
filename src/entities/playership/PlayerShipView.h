@@ -16,15 +16,14 @@
 class PlayerShipView: public View
 {
 private:
-    PlayerShip* object;
     sf::Sprite* sprite;
     sf::Texture* texture;
 public:
     PlayerShipView();
 
-    void draw(sf::RenderWindow &window) override;
+    PlayerShip* object;
 
-    PlayerShip *getObject() const;
+    void draw(sf::RenderWindow &window) override;
 
     ~PlayerShipView() override;
 };

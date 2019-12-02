@@ -21,6 +21,7 @@ namespace projectiles
     private:
         const int vspeed = 50;
     public:
+        StandardProjectile(int x, int y): Projectile(x, y) {};
         bool move() override ;
         ~StandardProjectile() override = default;
     };

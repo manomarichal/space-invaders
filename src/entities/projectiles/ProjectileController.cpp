@@ -11,10 +11,29 @@
 
 void projectiles::ProjectileController::update(sf::RenderWindow &window)
 {
-
+    for (auto it=activeProjectiles.begin();it!=activeProjectiles.end();it++)
+    {
+        // if the projectile is out of bounds
+        if (!(*it)->move())
+        {
+            activeProjectiles.erase(it);
+            delete *it;
+        }
+    }
 }
 
+void projectiles::ProjectileController::createProjectile(int x, int y, projectiles::type type)
+{
+    switch (type)
+    {
+        case projectiles::standard:
+            activeProjectiles.emplace_back(new StandardProjectile(x, y));
+            break;
+        default:
+            break;
+    }
+}
 projectiles::ProjectileController::~ProjectileController()
 {
-    delete projectile;
+    for (auto &projectile:activeProjectiles) delete projectile;
 }

@@ -14,15 +14,19 @@
 #include <vector>
 
 #include "../Controller.h"
-#include "standard/StandardProjectile.h"
+#include "./Projectile.h"
+#include "./standard/StandardProjectile.h"
 
 namespace projectiles
 {
+    enum type {standard};
+
     class ProjectileController: public Controller
     {
     private:
-        projectiles::StandardProjectile* projectile;
+        std::vector<projectiles::Projectile*> activeProjectiles;
     public:
+        void createProjectile(int x, int y, projectiles::type type);
 
         void update(sf::RenderWindow &window) override ;
         ~ProjectileController() override;

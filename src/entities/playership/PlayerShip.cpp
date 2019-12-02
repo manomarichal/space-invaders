@@ -34,26 +34,6 @@ void PlayerShip::moveRight()
     if (vx > max_v) vx = max_v;
 }
 
-double PlayerShip::getX() const
-{
-    return x;
-}
-
-void PlayerShip::setX(double x)
-{
-    PlayerShip::x = x;
-}
-
-double PlayerShip::getY() const
-{
-    return y;
-}
-
-void PlayerShip::setY(double y)
-{
-    PlayerShip::y = y;
-}
-
 void PlayerShip::move()
 {
     vx *= friction;
@@ -61,15 +41,4 @@ void PlayerShip::move()
 
     if (x < 0) x = 0;
     if (x + xSize> screensize::x) x = screensize::x-xSize;
-
-}
-
-void PlayerShip::setXSize(unsigned int xSize)
-{
-    PlayerShip::xSize = xSize;
-}
-
-void PlayerShip::setYSize(int ySize)
-{
-    PlayerShip::ySize = ySize;
 }
