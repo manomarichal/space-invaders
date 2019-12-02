@@ -12,9 +12,7 @@ PlayerShipController::PlayerShipController()
 {
     // create the object and it's view
     view = new PlayerShipView();
-    object = new PlayerShip;
-
-    view->object = object;
+    view->object = new PlayerShip;
     projectileController = new projectiles::ProjectileController;
 }
 
@@ -25,13 +23,13 @@ void PlayerShipController::handleEvent(const sf::Event &event)
 void PlayerShipController::update(sf::RenderWindow &window)
 {
     // move the player object
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) object->moveLeft();
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) object->moveRight();
-    object->move();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) view->object ->moveLeft();
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) view->object ->moveRight();
+    view->object ->move();
 
     // check if we are shooting and update all active projectiles
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        projectileController->createProjectile(object->x, object->y, projectiles::standard);
+        projectileController->createProjectile(view->object ->x, view->object ->y, projectiles::standard);
     projectileController->update(window);
 
     // draw the player object
@@ -40,8 +38,6 @@ void PlayerShipController::update(sf::RenderWindow &window)
 
 PlayerShipController::~PlayerShipController()
 {
-    delete object;
-    view->object = nullptr;
     delete view;
     delete projectileController;
 }

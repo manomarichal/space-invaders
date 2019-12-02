@@ -31,6 +31,7 @@ void PlayerShipView::draw(sf::RenderWindow &window)
 
 PlayerShipView::~PlayerShipView()
 {
+    delete object;
     delete sprite;
     delete texture;
 }

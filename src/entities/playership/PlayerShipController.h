@@ -18,7 +18,6 @@
 class PlayerShipController: public Controller
 {
     PlayerShipView* view;
-    PlayerShip *object;
     projectiles::ProjectileController * projectileController;
 
 public:
