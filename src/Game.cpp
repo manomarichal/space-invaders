@@ -11,14 +11,21 @@
 #include <cassert>
 #include "./settings/screensize.h"
 
-void Game::drawEntities()
+void Game::updateControllers()
 {
     for (auto &controller:controllers)
     {
-        controller->update(*window);
+        controller->update();
     }
 }
 
+void Game::drawViews()
+{
+    for (auto &controller:controllers)
+    {
+        controller->draw(*window);
+    }
+}
 void Game::handleEvents()
 {
     sf::Event event;
@@ -38,7 +45,7 @@ void Game::handleEvents()
 void Game::initializeGame()
 {
     isInitialized = true;
-    Controller* ship = new PlayerShipController();
+    Controller* ship = new entities::PlayerShipController();
     controllers.emplace_back(ship);
 }
 
@@ -61,8 +68,9 @@ void Game::startGame()
         // clear the window with black color
         window->clear(sf::Color::Black);
 
+        updateControllers();
+        drawViews();
         // draw everything here...
-        drawEntities();
 
         system("sleep 0.016");
         // end the current frame

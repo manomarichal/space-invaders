@@ -13,58 +13,66 @@
 #include "../Entity.h"
 #include "../Controller.h"
 #include "../View.h"
+#include "../../util/Position.h"
 
 #include "../projectiles/ProjectileController.h"
 
-class PlayerShip: public Entity
+namespace entities
 {
-private:
-    double vx=0;  // horizontal velocity
-    double ax = 6;
-    const double max_v = 30; // max horizontal velocity
-    const double friction = 0.90;
+    class PlayerShip: public Entity
+    {
+    private:
+        double vx=0;  // horizontal velocity
+        double ax = 6;
+        const double max_v = 30; // max horizontal velocity
+        const double friction = 0.90;
 
+    public:
+        double x;
+        double y;
+        unsigned int xSize = 64;
+        int ySize;
 
-public:
-    PlayerShip();
+        void moveLeft();
+        void moveRight();
+        void move();
 
-    double x;
-    double y;
-    unsigned int xSize = 64;
-    int ySize;
+        PlayerShip();
+        ~PlayerShip() override;
+    };
 
-    void moveLeft();
-    void moveRight();
-    void move();
+    class PlayerShipView: public View
+    {
+    public: enum Sprite {left, right, idle};
+    private:
+        PlayerShip * object;
+        sf::Sprite* sprite;
+        sf::Texture* texture;
+    public:
 
-    ~PlayerShip() override = default;
-};
+        Sprite currentSprite = idle;
 
-class PlayerShipView: public View
-{
-private:
-    sf::Sprite* sprite;
-    sf::Texture* texture;
-public:
-    PlayerShipView();
+        PlayerShipView(PlayerShip* ship);
 
-    PlayerShip* object;
+        void draw(sf::RenderWindow &window) override;
 
-    void draw(sf::RenderWindow &window) override;
+        ~PlayerShipView() override;
+    };
 
-    ~PlayerShipView() override;
-};
+    class PlayerShipController: public Controller
+    {
+        PlayerShip * object;
+        PlayerShipView* view;
+        projectiles::ProjectileController * projectileController;
 
-class PlayerShipController: public Controller
-{
-    PlayerShipView* view;
-    projectiles::ProjectileController * projectileController;
+    public:
+        PlayerShipController();
 
-public:
-    PlayerShipController();
+        void update() override ;
+        void draw(sf::RenderWindow &window) override ;
 
-    void update(sf::RenderWindow &window) override ;
+        ~PlayerShipController() override;
+    };
+}
 
-    ~PlayerShipController() override;
-};
 #endif //SPACE_INVADERS_PLAYERSHIP_H

@@ -9,6 +9,7 @@
 
 #include "PlayerShip.h"
 #include "../../settings/screensize.h"
+using namespace entities;
 
 PlayerShip::PlayerShip()
 {
@@ -43,40 +44,13 @@ void PlayerShip::move()
     if (x + xSize> screensize::x) x = screensize::x-xSize;
 }
 
-// CONTROLLER 
-PlayerShipController::PlayerShipController()
+PlayerShip::~PlayerShip()=default;
+
+// VIEW
+PlayerShipView::PlayerShipView(PlayerShip* ship)
 {
-    // create the object and it's view
-    view = new PlayerShipView();
-    view->object = new PlayerShip;
-    projectileController = new projectiles::ProjectileController;
-}
-
-void PlayerShipController::update(sf::RenderWindow &window)
-{
-    // move the player object
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) view->object ->moveLeft();
-
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) view->object ->moveRight();
-    view->object ->move();
-
-    // check if we are shooting and update all active projectiles
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        projectileController->createProjectile(view->object ->x, view->object ->y, projectiles::standard);
-    projectileController->update(window);
-
-    // draw the player object
-    view->draw(window);
-}
-
-PlayerShipController::~PlayerShipController()
-{
-    delete view;
-    delete projectileController;
-}
-
-PlayerShipView::PlayerShipView()
-{
+    object = ship;
+    
     texture = new sf::Texture();
     texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
 
@@ -85,12 +59,18 @@ PlayerShipView::PlayerShipView()
 }
 void PlayerShipView::draw(sf::RenderWindow &window)
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-        texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        texture->loadFromFile("../textures/playershipright.jpg", sf::IntRect(0, 0, 64, 64));
-    else
-        texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
+    switch (currentSprite)
+    {
+        case idle:
+            texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
+            break;
+        case left:
+            texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
+            break;
+        case right:
+            texture->loadFromFile("../textures/playershipright.jpg", sf::IntRect(0, 0, 64, 64));
+            break;
+    }
 
     sprite->setPosition(object->x, object->y);
     window.draw(*sprite);
@@ -103,4 +83,39 @@ PlayerShipView::~PlayerShipView()
     delete texture;
 }
 
+// CONTROLLER 
+PlayerShipController::PlayerShipController()
+{
+    // create the view->object and it's view
+    object = new PlayerShip();
+    view = new PlayerShipView(object);
+}
 
+void PlayerShipController::update()
+{
+    // move the player view->object
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    {
+        object ->moveLeft();
+        view->currentSprite = view->left;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    {
+        object ->moveRight();
+        view->currentSprite = view->right;
+    }
+    else view->currentSprite = view->idle;
+
+    object ->move();
+}
+
+void PlayerShipController::draw(sf::RenderWindow &window)
+{
+    view->draw(window);
+}
+
+PlayerShipController::~PlayerShipController()
+{
+    delete view;
+    delete projectileController;
+}

@@ -28,7 +28,7 @@ namespace projectiles
     public:
         void createProjectile(int x, int y, projectiles::type type);
 
-        void update(sf::RenderWindow &window) override ;
+        void update() override ;
         ~ProjectileController() override;
     };
 }

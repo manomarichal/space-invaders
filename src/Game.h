@@ -21,8 +21,9 @@ private:
     std::vector<Controller*> controllers;
     bool isInitialized=false;
     sf::RenderWindow * window;
-    void drawEntities();
+    void updateControllers();
     void handleEvents();
+    void drawViews();
 public:
     void initializeGame();
     void startGame();

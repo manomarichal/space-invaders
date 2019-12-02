@@ -15,7 +15,8 @@
 class Controller
 {
 public:
-    virtual void update(sf::RenderWindow &window)=0;
+    virtual void update()=0;
+    virtual void draw(sf::RenderWindow &window)=0;
     virtual ~Controller()=0;
 };
 inline Controller::~Controller() { }

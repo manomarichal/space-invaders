@@ -9,7 +9,7 @@
 
 #include "ProjectileController.h"
 
-void projectiles::ProjectileController::update(sf::RenderWindow &window)
+void projectiles::ProjectileController::update()
 {
     for (auto it=activeProjectiles.begin();it!=activeProjectiles.end();it++)
     {

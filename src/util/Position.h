@@ -1,23 +1,17 @@
 // =====================================================================
-// @name: Entity.h
+// @name: Position.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 17.11.19
+// @date: 02.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_ENTITY_H
-#define SPACE_INVADERS_ENTITY_H
+#ifndef SPACE_INVADERS_POSITION_H
+#define SPACE_INVADERS_POSITION_H
 
-#include "View.h"
+#include <utility>
 
-class Entity
-{
-public:
-    virtual ~Entity()=0;
-};
-inline Entity::~Entity()=default;
+using Position = std::pair<int,int>;
 
-
-#endif //SPACE_INVADERS_ENTITY_H
+#endif //SPACE_INVADERS_POSITION_H
