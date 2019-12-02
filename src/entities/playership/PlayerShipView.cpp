@@ -12,20 +12,22 @@ PlayerShipView::PlayerShipView()
 {
     object = new PlayerShip;
 
-    std::string FILENAME = "../textures/red.jpg";
     texture = new sf::Texture();
-    if (!texture->loadFromFile(FILENAME))
-    {
-        throw std::runtime_error(FILENAME);
-    }
+    texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
     sprite = new sf::Sprite;
     sprite->setTexture(*texture);
-    sprite->setScale(0.2, 0.2);
 
-    object->setXSize(texture->getSize().x * 0.2);
+    object->setXSize(texture->getSize().x);
 }
 void PlayerShipView::draw(sf::RenderWindow &window)
 {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        texture->loadFromFile("../textures/playershipright.jpg", sf::IntRect(0, 0, 64, 64));
+    else
+        texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
+
     sprite->setPosition(object->getX(), object->getY());
     window.draw(*sprite);
 };

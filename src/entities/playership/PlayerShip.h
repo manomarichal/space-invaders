@@ -16,9 +16,9 @@ class PlayerShip: public Entity
 {
 private:
     double vx;  // horizontal velocity
-    double ax = 3.5;
-    const double max_v = 20; // max horizontal velocity
-    const double friction = 0.96;
+    double ax = 6;
+    const double max_v = 30; // max horizontal velocity
+    const double friction = 0.90;
     double x;
     double y;
     unsigned int xSize;
