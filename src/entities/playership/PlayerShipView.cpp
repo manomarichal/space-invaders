@@ -21,8 +21,9 @@ PlayerShipView::PlayerShipView()
     sprite = new sf::Sprite;
     sprite->setTexture(*texture);
     sprite->setScale(0.2, 0.2);
-};
 
+    object->setXSize(texture->getSize().x * 0.2);
+}
 void PlayerShipView::draw(sf::RenderWindow &window)
 {
     sprite->setPosition(object->getX(), object->getY());

@@ -12,15 +12,17 @@ PlayerShipController::PlayerShipController()
 {
     view = new PlayerShipView();
     object = view->getObject();
-    object->setHspeed(5);
-    object->setVspeed(5);
-    object->setX(300);
-    object->setY(900);
+}
+
+void PlayerShipController::handleEvent(const sf::Event &event)
+{
 }
 
 void PlayerShipController::update(sf::RenderWindow &window)
 {
-    object->moveLeft();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) object->moveLeft();
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) object->moveRight();
+    object->move();
     view->draw(window);
 }
 

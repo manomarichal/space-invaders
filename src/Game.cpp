@@ -9,51 +9,66 @@
 
 #include "Game.h"
 #include "entities/playership/PlayerShipController.h"
-#include <assert.h>
+#include <cassert>
+#include "./settings/screensize.h"
 
-void Game::drawEntities(sf::RenderWindow &window)
+void Game::drawEntities()
 {
     for (auto &entity:entities)
     {
-        entity->update(window);
+        entity->update(*window);
     }
 }
 
+void Game::handleEvents()
+{
+    sf::Event event;
+    while (window->pollEvent(event))
+    {
+        // check the type of the event...
+        switch (event.type)
+        {
+            case sf::Event::Closed:
+                window->close();
+                break;
+            default:
+                return;
+        }
+    }
+}
 void Game::initializeGame()
 {
     isInitialized = true;
     Controller* ship = new PlayerShipController();
     entities.emplace_back(ship);
+    entitiesWithEvents.emplace_back(ship);
 }
+
 
 void Game::startGame()
 {
     assert(isInitialized);
 
     // create the window
-    sf::RenderWindow window(sf::VideoMode(600, 1000), "Space Invaders");
+    sf::RenderWindow newWindow(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
+
+    window = &newWindow;
 
     // run the program as long as the window is open
-    while (window.isOpen())
+    while (window->isOpen())
     {
         // check all the window's events that were triggered since the last iteration of the loop
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            // "close requested" event: we close the window
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+        handleEvents();
 
         // clear the window with black color
-        window.clear(sf::Color::Black);
+        window->clear(sf::Color::Black);
 
         // draw everything here...
-        drawEntities(window);
+        drawEntities();
 
         system("sleep 0.016");
         // end the current frame
-        window.display();
+        window->display();
     }
 }
 

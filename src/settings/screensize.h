@@ -1,21 +1,22 @@
 // =====================================================================
-// @name: Entity.h
+// @name: screensize.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 17.11.19
+// @date: 02.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_ENTITY_H
-#define SPACE_INVADERS_ENTITY_H
+#ifndef SPACE_INVADERS_SCREENSIZE_H
+#define SPACE_INVADERS_SCREENSIZE_H
 
-class Entity
+
+#include <stdint-gcc.h>
+
+namespace screensize
 {
-public:
-    virtual ~Entity()=0;
-};
-inline Entity::~Entity() { }
+    const int x = 600;
+    const int y = 1000;
+}
 
-
-#endif //SPACE_INVADERS_ENTITY_H
+#endif //SPACE_INVADERS_SCREENSIZE_H

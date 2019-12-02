@@ -22,6 +22,7 @@ public:
     PlayerShipController();
 
     void update(sf::RenderWindow &window) override ;
+    void handleEvent(const sf::Event &event) override ;
 
     ~PlayerShipController() override;
 };

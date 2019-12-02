@@ -15,26 +15,23 @@
 class PlayerShip: public Entity
 {
 private:
-    double hspeed;
-    double vspeed;
+    double vx;  // horizontal velocity
+    double ax = 3.5;
+    const double max_v = 20; // max horizontal velocity
+    const double friction = 0.96;
     double x;
     double y;
-public:
+    unsigned int xSize;
+    int ySize;
 
-    PlayerShip()= default;
+public:
+    PlayerShip();
 
     void moveLeft();
     void moveRight();
+    void move();
 
     // getters & setters
-    double getHspeed() const;
-
-    void setHspeed(double hspeed);
-
-    double getVspeed() const;
-
-    void setVspeed(double vspeed);
-
     double getX() const;
 
     void setX(double x);
@@ -43,6 +40,9 @@ public:
 
     void setY(double y);
 
+    void setXSize(unsigned int xSize);
+
+    void setYSize(int ySize);
 
     ~PlayerShip() override = default;
 };

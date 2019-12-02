@@ -8,35 +8,30 @@
 // =====================================================================
 
 #include "PlayerShip.h"
+#include "../../settings/screensize.h"
 
+PlayerShip::PlayerShip()
+{
+    x = screensize::x/2;
+    y = screensize::y-(screensize::y/10);
+}
 void PlayerShip::moveLeft()
 {
-    x -= hspeed;
+    if (vx > 0) vx = 0;
+    vx -= ax;
+    vx *= friction;
+
+    if (vx < -max_v) vx = -max_v;
 }
 
 void PlayerShip::moveRight()
 {
-    x += hspeed;
-}
+    if (vx < 0) vx = 0;
 
-double PlayerShip::getHspeed() const
-{
-    return hspeed;
-}
+    vx *= friction;
+    vx += ax;
 
-void PlayerShip::setHspeed(double hspeed)
-{
-    PlayerShip::hspeed = hspeed;
-}
-
-double PlayerShip::getVspeed() const
-{
-    return vspeed;
-}
-
-void PlayerShip::setVspeed(double vspeed)
-{
-    PlayerShip::vspeed = vspeed;
+    if (vx > max_v) vx = max_v;
 }
 
 double PlayerShip::getX() const
@@ -59,3 +54,22 @@ void PlayerShip::setY(double y)
     PlayerShip::y = y;
 }
 
+void PlayerShip::move()
+{
+    vx *= friction;
+    x += vx;
+
+    if (x < 0) x = 0;
+    if (x + xSize> screensize::x) x = screensize::x-xSize;
+
+}
+
+void PlayerShip::setXSize(unsigned int xSize)
+{
+    PlayerShip::xSize = xSize;
+}
+
+void PlayerShip::setYSize(int ySize)
+{
+    PlayerShip::ySize = ySize;
+}
