@@ -12,12 +12,13 @@
 
 #include <SFML/Graphics.hpp>
 #include "./entities/Entity.h"
+#include "./entities/playership/PlayerShip.h"
 #include "./entities/Controller.h"
+
 class Game
 {
 private:
-    std::vector<Controller*> entities;
-    std::vector<Controller*> entitiesWithEvents;
+    std::vector<Controller*> controllers;
     bool isInitialized=false;
     sf::RenderWindow * window;
     void drawEntities();

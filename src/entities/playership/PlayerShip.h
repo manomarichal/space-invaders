@@ -11,6 +11,10 @@
 #define SPACE_INVADERS_PLAYERSHIP_H
 
 #include "../Entity.h"
+#include "../Controller.h"
+#include "../View.h"
+
+#include "../projectiles/ProjectileController.h"
 
 class PlayerShip: public Entity
 {
@@ -36,5 +40,31 @@ public:
     ~PlayerShip() override = default;
 };
 
+class PlayerShipView: public View
+{
+private:
+    sf::Sprite* sprite;
+    sf::Texture* texture;
+public:
+    PlayerShipView();
 
+    PlayerShip* object;
+
+    void draw(sf::RenderWindow &window) override;
+
+    ~PlayerShipView() override;
+};
+
+class PlayerShipController: public Controller
+{
+    PlayerShipView* view;
+    projectiles::ProjectileController * projectileController;
+
+public:
+    PlayerShipController();
+
+    void update(sf::RenderWindow &window) override ;
+
+    ~PlayerShipController() override;
+};
 #endif //SPACE_INVADERS_PLAYERSHIP_H

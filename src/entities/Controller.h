@@ -16,7 +16,6 @@ class Controller
 {
 public:
     virtual void update(sf::RenderWindow &window)=0;
-    virtual void handleEvent(const sf::Event &event) {};
     virtual ~Controller()=0;
 };
 inline Controller::~Controller() { }

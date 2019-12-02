@@ -8,15 +8,14 @@
 // =====================================================================
 
 #include "Game.h"
-#include "entities/playership/PlayerShipController.h"
 #include <cassert>
 #include "./settings/screensize.h"
 
 void Game::drawEntities()
 {
-    for (auto &entity:entities)
+    for (auto &controller:controllers)
     {
-        entity->update(*window);
+        controller->update(*window);
     }
 }
 
@@ -40,7 +39,7 @@ void Game::initializeGame()
 {
     isInitialized = true;
     Controller* ship = new PlayerShipController();
-    entities.emplace_back(ship);
+    controllers.emplace_back(ship);
 }
 
 
@@ -73,5 +72,5 @@ void Game::startGame()
 
 Game::~Game()
 {
-    for (auto &entity:entities) delete entity;
+    for (auto &controller:controllers) delete controller;
 }

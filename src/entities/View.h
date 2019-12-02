@@ -12,6 +12,7 @@
 
 #include <SFML/Graphics.hpp>
 
+
 class View
 {
 public:

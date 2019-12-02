@@ -14,7 +14,7 @@
 #include <vector>
 
 #include "../Controller.h"
-#include "./Projectile.h"
+#include "../View.h"
 #include "./standard/StandardProjectile.h"
 
 namespace projectiles
@@ -24,7 +24,7 @@ namespace projectiles
     class ProjectileController: public Controller
     {
     private:
-        std::vector<projectiles::Projectile*> activeProjectiles;
+        std::vector<View*> activeProjectiles;
     public:
         void createProjectile(int x, int y, projectiles::type type);
 
