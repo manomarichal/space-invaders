@@ -11,7 +11,9 @@
 #define SPACE_INVADERS_PROJECTILE_H
 
 #include "../Entity.h"
-namespace projectiles
+#include "../View.h"
+
+namespace entities::projectiles
 {
     class Projectile: public Entity
     {
@@ -19,6 +21,7 @@ namespace projectiles
         int x;
         int y;
     public:
+
         Projectile(int x, int y): x(x), y(y) {};
 
         [[nodiscard]] int getX() const
@@ -42,6 +45,12 @@ namespace projectiles
         }
 
         virtual bool move()=0;
+    };
+
+    class ProjectileView: public View
+    {
+    public:
+        Projectile* projectile;
     };
 }
 

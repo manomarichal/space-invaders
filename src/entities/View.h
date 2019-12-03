@@ -16,7 +16,7 @@
 class View
 {
 public:
-    virtual void draw(sf::RenderWindow &window)=0;
+    virtual void draw(sf::RenderWindow &window) const =0;
     virtual ~View()=0;
 };
 inline View::~View() { }

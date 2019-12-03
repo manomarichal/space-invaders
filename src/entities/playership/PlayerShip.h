@@ -52,9 +52,9 @@ namespace entities
 
         Sprite currentSprite = idle;
 
-        PlayerShipView(PlayerShip* ship);
+        explicit PlayerShipView(PlayerShip* ship);
 
-        void draw(sf::RenderWindow &window) override;
+        void draw(sf::RenderWindow &window) const override;
 
         ~PlayerShipView() override;
     };

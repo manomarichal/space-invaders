@@ -57,7 +57,7 @@ PlayerShipView::PlayerShipView(PlayerShip* ship)
     sprite = new sf::Sprite;
     sprite->setTexture(*texture);
 }
-void PlayerShipView::draw(sf::RenderWindow &window)
+void PlayerShipView::draw(sf::RenderWindow &window) const
 {
     switch (currentSprite)
     {
@@ -89,6 +89,7 @@ PlayerShipController::PlayerShipController()
     // create the view->object and it's view
     object = new PlayerShip();
     view = new PlayerShipView(object);
+    projectileController = new entities::projectiles::ProjectileController;
 }
 
 void PlayerShipController::update()
@@ -106,12 +107,18 @@ void PlayerShipController::update()
     }
     else view->currentSprite = view->idle;
 
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+    {
+        projectileController->createProjectile(object->x,object->y, projectiles::standard);
+    }
     object ->move();
+    projectileController->update();
 }
 
 void PlayerShipController::draw(sf::RenderWindow &window)
 {
     view->draw(window);
+    projectileController->draw(window);
 }
 
 PlayerShipController::~PlayerShipController()
