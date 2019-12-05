@@ -10,14 +10,23 @@
 #ifndef SPACE_INVADERS_ENTITY_H
 #define SPACE_INVADERS_ENTITY_H
 
-#include "View.h"
+#include "../Game.h"
+#include <memory>
 
-class Entity
+class Game;
+
+namespace entities
 {
-public:
-    virtual ~Entity()=0;
-};
-inline Entity::~Entity()=default;
+    class Entity
+    {
+    protected:
+        std::shared_ptr<Game> game;
+    public:
+        virtual bool update()=0;
+        virtual ~Entity()=0;
+    };
+    inline Entity::~Entity()=default;
+}
 
 
 #endif //SPACE_INVADERS_ENTITY_H

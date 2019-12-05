@@ -4,22 +4,18 @@
 // @author: Mano Marichal
 // @date: 01.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
+// @description:
 // =====================================================================
 
 #ifndef SPACE_INVADERS_PLAYERSHIP_H
 #define SPACE_INVADERS_PLAYERSHIP_H
 
+#include "../Subject.h"
 #include "../Entity.h"
-#include "../Controller.h"
-#include "../View.h"
-#include "../../util/Position.h"
 
-#include "../projectiles/ProjectileController.h"
-
-namespace entities
+namespace entities::playership
 {
-    class PlayerShip: public Entity
+    class PlayerShip: public Entity, public Subject
     {
     private:
         double vx=0;  // horizontal velocity
@@ -28,50 +24,18 @@ namespace entities
         const double friction = 0.90;
 
     public:
+        PlayerShip();
+
         double x;
         double y;
         unsigned int xSize = 64;
-        int ySize;
 
         void moveLeft();
         void moveRight();
         void move();
+        bool update() override;
 
-        PlayerShip();
         ~PlayerShip() override;
-    };
-
-    class PlayerShipView: public View
-    {
-    public: enum Sprite {left, right, idle};
-    private:
-        PlayerShip * object;
-        sf::Sprite* sprite;
-        sf::Texture* texture;
-    public:
-
-        Sprite currentSprite = idle;
-
-        explicit PlayerShipView(PlayerShip* ship);
-
-        void draw(sf::RenderWindow &window) const override;
-
-        ~PlayerShipView() override;
-    };
-
-    class PlayerShipController: public Controller
-    {
-        PlayerShip * object;
-        PlayerShipView* view;
-        projectiles::ProjectileController * projectileController;
-
-    public:
-        PlayerShipController();
-
-        void update() override ;
-        void draw(sf::RenderWindow &window) override ;
-
-        ~PlayerShipController() override;
     };
 }
 

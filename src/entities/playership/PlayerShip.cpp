@@ -9,7 +9,8 @@
 
 #include "PlayerShip.h"
 #include "../../settings/screensize.h"
-using namespace entities;
+
+using namespace entities::playership;
 
 PlayerShip::PlayerShip()
 {
@@ -23,6 +24,7 @@ void PlayerShip::moveLeft()
     vx *= friction;
 
     if (vx < -max_v) vx = -max_v;
+    notifyObservers();
 }
 
 void PlayerShip::moveRight()
@@ -33,6 +35,7 @@ void PlayerShip::moveRight()
     vx += ax;
 
     if (vx > max_v) vx = max_v;
+    notifyObservers();
 }
 
 void PlayerShip::move()
@@ -44,85 +47,10 @@ void PlayerShip::move()
     if (x + xSize> screensize::x) x = screensize::x-xSize;
 }
 
+bool PlayerShip::update()
+{
+    move();
+    return false;
+}
+
 PlayerShip::~PlayerShip()=default;
-
-// VIEW
-PlayerShipView::PlayerShipView(PlayerShip* ship)
-{
-    object = ship;
-    
-    texture = new sf::Texture();
-    texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
-
-    sprite = new sf::Sprite;
-    sprite->setTexture(*texture);
-}
-void PlayerShipView::draw(sf::RenderWindow &window) const
-{
-    switch (currentSprite)
-    {
-        case idle:
-            texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
-            break;
-        case left:
-            texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
-            break;
-        case right:
-            texture->loadFromFile("../textures/playershipright.jpg", sf::IntRect(0, 0, 64, 64));
-            break;
-    }
-
-    sprite->setPosition(object->x, object->y);
-    window.draw(*sprite);
-};
-
-PlayerShipView::~PlayerShipView()
-{
-    delete object;
-    delete sprite;
-    delete texture;
-}
-
-// CONTROLLER 
-PlayerShipController::PlayerShipController()
-{
-    // create the view->object and it's view
-    object = new PlayerShip();
-    view = new PlayerShipView(object);
-    projectileController = new entities::projectiles::ProjectileController;
-}
-
-void PlayerShipController::update()
-{
-    // move the player view->object
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-    {
-        object ->moveLeft();
-        view->currentSprite = view->left;
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        object ->moveRight();
-        view->currentSprite = view->right;
-    }
-    else view->currentSprite = view->idle;
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-    {
-        projectileController->createProjectile(object->x,object->y, projectiles::standard);
-    }
-    object ->move();
-    projectileController->update();
-}
-
-void PlayerShipController::draw(sf::RenderWindow &window)
-{
-    view->draw(window);
-    projectileController->draw(window);
-}
-
-PlayerShipController::~PlayerShipController()
-{
-    delete view;
-    delete projectileController;
-}

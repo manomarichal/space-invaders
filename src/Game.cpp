@@ -11,42 +11,42 @@
 #include <cassert>
 #include "./settings/screensize.h"
 
-void Game::updateControllers()
+void Game::handleEvents()
 {
-    for (auto &controller:controllers)
+    for (auto &controller:activeControllers)
     {
-        controller->update();
+        controller->handleEvents();
     }
 }
 
+void Game::updateEntities()
+{
+    for (auto &entity:activeEntities)
+    {
+        entity->update();
+    }
+}
 void Game::drawViews()
 {
-    for (auto &controller:controllers)
+    window->clear(sf::Color::Black);
+    for (auto &view:activeViews)
     {
-        controller->draw(*window);
+        view->draw(*window);
     }
+    window->display();
+
 }
-void Game::handleEvents()
-{
-    sf::Event event;
-    while (window->pollEvent(event))
-    {
-        // check the type of the event...
-        switch (event.type)
-        {
-            case sf::Event::Closed:
-                window->close();
-                break;
-            default:
-                return;
-        }
-    }
-}
+
 void Game::initializeGame()
 {
     isInitialized = true;
-    Controller* ship = new entities::PlayerShipController();
-    controllers.emplace_back(ship);
+    auto ship = std::make_shared<entities::playership::PlayerShip>();
+    auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
+
+    activeEntities.emplace_back(ship);
+    activeViews.emplace_back(view);
+    activeControllers.emplace_back(std::make_shared<entities::playership::PlayerShipController>(ship, view));
+
 }
 
 
@@ -58,27 +58,15 @@ void Game::startGame()
     sf::RenderWindow newWindow(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
 
     window = &newWindow;
-
-    // run the program as long as the window is open
     while (window->isOpen())
     {
-        // check all the window's events that were triggered since the last iteration of the loop
         handleEvents();
-
-        // clear the window with black color
-        window->clear(sf::Color::Black);
-
-        updateControllers();
+        updateEntities();
         drawViews();
-        // draw everything here...
-
         system("sleep 0.016");
-        // end the current frame
-        window->display();
     }
 }
 
 Game::~Game()
 {
-    for (auto &controller:controllers) delete controller;
 }

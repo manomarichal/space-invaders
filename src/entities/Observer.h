@@ -1,26 +1,27 @@
 // =====================================================================
-// @name: View.h
+// @name: Observer.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 01.12.19
+// @date: 05.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_VIEW_H
-#define SPACE_INVADERS_VIEW_H
+#ifndef SPACE_INVADERS_OBSERVER_H
+#define SPACE_INVADERS_OBSERVER_H
 
-#include <SFML/Graphics.hpp>
-#include <memory>
+#include "Entity.h"
 
 namespace entities
 {
-    class View
+    class Observer
     {
     public:
-        virtual void draw(sf::RenderWindow &window) const =0;
-        virtual ~View()=0;
+        virtual void notify()=0;
+        virtual ~Observer()=0;
     };
-    inline View::~View()=default;
+    inline Observer::~Observer()=default;
+
 }
-#endif //SPACE_INVADERS_VIEW_H
+
+#endif //SPACE_INVADERS_OBSERVER_H

@@ -12,13 +12,14 @@
 
 #include <SFML/Graphics.hpp>
 
-class Controller
+namespace entities
 {
-public:
-    virtual void update()=0;
-    virtual void draw(sf::RenderWindow &window)=0;
-    virtual ~Controller()=0;
-};
-inline Controller::~Controller() { }
-
+    class Controller
+    {
+    public:
+        virtual void handleEvents()=0;
+        virtual ~Controller()=0;
+    };
+    inline Controller::~Controller() { }
+}
 #endif //SPACE_INVADERS_CONTROLLER_H
