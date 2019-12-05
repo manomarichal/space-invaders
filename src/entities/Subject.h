@@ -10,6 +10,7 @@
 #ifndef SPACE_INVADERS_SUBJECT_H
 #define SPACE_INVADERS_SUBJECT_H
 
+#include <vector>
 #include "Observer.h"
 
 namespace entities

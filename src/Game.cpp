@@ -40,7 +40,7 @@ void Game::drawViews()
 void Game::initializeGame()
 {
     isInitialized = true;
-    auto ship = std::make_shared<entities::playership::PlayerShip>();
+    auto ship = std::make_shared<entities::playership::PlayerShip>(this);
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
 
     activeEntities.emplace_back(ship);

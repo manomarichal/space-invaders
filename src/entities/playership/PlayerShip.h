@@ -13,6 +13,8 @@
 #include "../Subject.h"
 #include "../Entity.h"
 
+#include "../../settings/screensize.h"
+
 namespace entities::playership
 {
     class PlayerShip: public Entity, public Subject
@@ -24,8 +26,7 @@ namespace entities::playership
         const double friction = 0.90;
 
     public:
-        PlayerShip();
-
+        PlayerShip(Game* game): Entity(game), x(screensize::x/2), y(screensize::y-(screensize::y/10)) {};
         double x;
         double y;
         unsigned int xSize = 64;

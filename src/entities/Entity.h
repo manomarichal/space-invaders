@@ -10,8 +10,8 @@
 #ifndef SPACE_INVADERS_ENTITY_H
 #define SPACE_INVADERS_ENTITY_H
 
-#include "../Game.h"
 #include <memory>
+#include <utility>
 
 class Game;
 
@@ -20,8 +20,9 @@ namespace entities
     class Entity
     {
     protected:
-        std::shared_ptr<Game> game;
+        Game* game;
     public:
+        explicit Entity(Game* game): game(game) {};
         virtual bool update()=0;
         virtual ~Entity()=0;
     };

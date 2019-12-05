@@ -8,15 +8,9 @@
 // =====================================================================
 
 #include "PlayerShip.h"
-#include "../../settings/screensize.h"
 
 using namespace entities::playership;
 
-PlayerShip::PlayerShip()
-{
-    x = screensize::x/2;
-    y = screensize::y-(screensize::y/10);
-}
 void PlayerShip::moveLeft()
 {
     if (vx > 0) vx = 0;

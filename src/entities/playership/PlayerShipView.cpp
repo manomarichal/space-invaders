@@ -20,8 +20,6 @@ PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> &ship)
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
 }
-
-
 void PlayerShipView::draw(sf::RenderWindow &window) const
 {
     /*
