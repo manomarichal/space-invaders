@@ -8,11 +8,12 @@
 // =====================================================================
 
 #include "PlayerShipController.h"
+
 using namespace entities::playership;
 
 void PlayerShipController::createProjectile()
 {
-
+    projectiles::ProjectileFactory::createProjectile(object->x+object->xSize/2, object->y,projectiles::standard, game);
 }
 void PlayerShipController::handleEvents()
 {

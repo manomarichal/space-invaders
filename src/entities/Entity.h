@@ -18,6 +18,7 @@ namespace entities
     class Entity
     {
     public:
+        Entity(int x, int y): x(x), y(y) {};
         double x;
         double y;
         virtual void update()=0;

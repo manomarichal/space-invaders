@@ -20,6 +20,8 @@ namespace entities::projectiles
         std::shared_ptr<StandardProjectileView> view;
     public:
         StandardProjectileController(std::shared_ptr<StandardProjectile> object, std::shared_ptr<StandardProjectileView> view, Game* game): Controller(game), object(std::move(object)), view(std::move(view)) {};
+        void handleEvents() override;
+        ~StandardProjectileController() override = default;
     };
 }
 

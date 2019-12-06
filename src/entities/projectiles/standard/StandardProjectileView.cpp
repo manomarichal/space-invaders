@@ -14,7 +14,7 @@ StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectil
 {
     object = projectile;
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/standardprojectile.jpg", sf::IntRect(0, 0, 8, 24));
+    texture->loadFromFile("../textures/standardprojectile.png", sf::IntRect(0, 0, 8, 24));
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);

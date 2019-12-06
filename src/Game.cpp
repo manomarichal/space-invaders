@@ -10,6 +10,12 @@
 #include "Game.h"
 #include <cassert>
 #include "./settings/screensize.h"
+void Game::addObject(Object object)
+{
+    activeEntities.emplace_back(std::move(std::get<0>(object)));
+    activeViews.emplace_back(std::move(std::get<1>(object)));
+    //activeControllers.emplace_back(std::move(std::get<2>(object)));
+}
 
 void Game::handleEvents()
 {
@@ -25,6 +31,7 @@ void Game::handleEvents()
                 break;
         }
     }
+
     for (auto &controller:activeControllers)
     {
         controller->handleEvents();
@@ -52,13 +59,12 @@ void Game::drawViews()
 void Game::initializeGame()
 {
     isInitialized = true;
-    auto ship = std::make_shared<entities::playership::PlayerShip>();
+    auto ship = std::make_shared<entities::playership::PlayerShip>(300, 900);
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
 
     activeEntities.emplace_back(ship);
     activeViews.emplace_back(view);
     activeControllers.emplace_back(std::make_shared<entities::playership::PlayerShipController>(ship, view, this));
-
 }
 
 

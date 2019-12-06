@@ -21,6 +21,9 @@
 #include "./entities/playership/PlayerShip.h"
 #include "./entities/playership/PlayerShipView.h"
 #include "./entities/playership/PlayerShipController.h"
+
+#include "./util/Object.h"
+
 namespace entities
 {
     class Entity;
@@ -38,6 +41,9 @@ private:
     void handleEvents();
     void drawViews();
 public:
+
+    void addObject(Object object);
+
     void initializeGame();
     void startGame();
     ~Game();

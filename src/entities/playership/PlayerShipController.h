@@ -12,6 +12,7 @@
 
 #include "./PlayerShipView.h"
 #include "../Controller.h"
+#include "../projectiles/ProjectileFactory.h"
 
 #include <utility>
 

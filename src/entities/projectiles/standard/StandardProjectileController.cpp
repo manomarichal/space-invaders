@@ -8,3 +8,10 @@
 // =====================================================================
 
 #include "StandardProjectileController.h"
+
+using namespace entities::projectiles;
+
+void StandardProjectileController::handleEvents()
+{
+    int a = 5;
+}

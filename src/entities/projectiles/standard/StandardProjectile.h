@@ -19,6 +19,7 @@ namespace entities::projectiles
     private:
         double vspeed = 50;
     public:
+        StandardProjectile(int x, int y): Entity(x, y) {};
         void update() override;
         ~StandardProjectile() override = default;
     };

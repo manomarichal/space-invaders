@@ -12,5 +12,5 @@ using namespace entities::projectiles;
 
 void StandardProjectile::update()
 {
-    x -= vspeed;
+    y -= vspeed;
 }

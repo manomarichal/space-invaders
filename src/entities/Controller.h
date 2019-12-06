@@ -25,6 +25,6 @@ namespace entities
         virtual void handleEvents()=0;
         virtual ~Controller()=0;
     };
-    inline Controller::~Controller() { }
+    inline Controller::~Controller()=default;
 }
 #endif //SPACE_INVADERS_CONTROLLER_H

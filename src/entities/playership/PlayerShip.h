@@ -26,9 +26,9 @@ namespace entities::playership
         const double friction = 0.90;
 
     public:
-        PlayerShip() {x = screensize::x/2; y = screensize::y-(screensize::y/10);};
-        unsigned int xSize = 64;
+        PlayerShip(int x, int y): Entity(x, y) {};
 
+        unsigned int xSize = 64;
         void moveLeft();
         void moveRight();
         void move();
