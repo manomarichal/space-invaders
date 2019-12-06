@@ -20,7 +20,7 @@ namespace entities::projectiles
     class ProjectileFactory
     {
     private:
-        ProjectileFactory()= default;
+        ProjectileFactory()= default;   // no instances of this class may be created
         static Object createStandardProjectile(int x, int y, Game* game);
     public:
         static void createProjectile(int x, int y, Type type, Game* game);
