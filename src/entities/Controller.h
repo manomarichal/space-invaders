@@ -12,11 +12,16 @@
 
 #include <SFML/Graphics.hpp>
 
+class Game;
+
 namespace entities
 {
     class Controller
     {
+    protected:
+        Game* game;
     public:
+        explicit Controller(Game * game): game(game) {};
         virtual void handleEvents()=0;
         virtual ~Controller()=0;
     };

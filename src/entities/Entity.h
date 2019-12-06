@@ -13,17 +13,14 @@
 #include <memory>
 #include <utility>
 
-class Game;
-
 namespace entities
 {
     class Entity
     {
-    protected:
-        Game* game;
     public:
-        explicit Entity(Game* game): game(game) {};
-        virtual bool update()=0;
+        double x;
+        double y;
+        virtual void update()=0;
         virtual ~Entity()=0;
     };
     inline Entity::~Entity()=default;

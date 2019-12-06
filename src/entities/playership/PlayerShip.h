@@ -26,15 +26,13 @@ namespace entities::playership
         const double friction = 0.90;
 
     public:
-        PlayerShip(Game* game): Entity(game), x(screensize::x/2), y(screensize::y-(screensize::y/10)) {};
-        double x;
-        double y;
+        PlayerShip() {x = screensize::x/2; y = screensize::y-(screensize::y/10);};
         unsigned int xSize = 64;
 
         void moveLeft();
         void moveRight();
         void move();
-        bool update() override;
+        void update() override;
 
         ~PlayerShip() override;
     };

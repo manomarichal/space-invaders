@@ -13,14 +13,18 @@
 #include "./PlayerShipView.h"
 #include "../Controller.h"
 
+#include <utility>
+
 namespace entities::playership
 {
     class PlayerShipController: public entities::Controller
     {
         std::shared_ptr<PlayerShip> object;
         std::shared_ptr<PlayerShipView> view;
+
+        void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> object, std::shared_ptr<PlayerShipView> view):object(object), view(view) {};
+        PlayerShipController(std::shared_ptr<PlayerShip> object, std::shared_ptr<PlayerShipView> view, Game* game):Controller(game), object(std::move(object)), view(std::move(view)) {};
         void handleEvents() override ;
         ~PlayerShipController() override = default;
     };

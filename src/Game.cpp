@@ -13,6 +13,18 @@
 
 void Game::handleEvents()
 {
+    sf::Event event;
+    while (window->pollEvent(event))
+    {
+        switch (event.type)
+        {
+            case sf::Event::Closed:
+                window->close();
+                break;
+            default:
+                break;
+        }
+    }
     for (auto &controller:activeControllers)
     {
         controller->handleEvents();
@@ -40,12 +52,12 @@ void Game::drawViews()
 void Game::initializeGame()
 {
     isInitialized = true;
-    auto ship = std::make_shared<entities::playership::PlayerShip>(this);
+    auto ship = std::make_shared<entities::playership::PlayerShip>();
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
 
     activeEntities.emplace_back(ship);
     activeViews.emplace_back(view);
-    activeControllers.emplace_back(std::make_shared<entities::playership::PlayerShipController>(ship, view));
+    activeControllers.emplace_back(std::make_shared<entities::playership::PlayerShipController>(ship, view, this));
 
 }
 

@@ -41,10 +41,9 @@ void PlayerShip::move()
     if (x + xSize> screensize::x) x = screensize::x-xSize;
 }
 
-bool PlayerShip::update()
+void PlayerShip::update()
 {
     move();
-    return false;
 }
 
 PlayerShip::~PlayerShip()=default;

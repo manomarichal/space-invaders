@@ -10,6 +10,10 @@
 #include "PlayerShipController.h"
 using namespace entities::playership;
 
+void PlayerShipController::createProjectile()
+{
+
+}
 void PlayerShipController::handleEvents()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
@@ -21,11 +25,8 @@ void PlayerShipController::handleEvents()
         object ->moveRight();
     }
 
-    /*
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
-        projectileController->createProjectile(object->x+object->xSize/2,object->y, projectiles::standard);
+        createProjectile();
     }
-     */
-    //projectileController->update();
 }
