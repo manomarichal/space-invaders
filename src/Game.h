@@ -43,6 +43,7 @@ private:
 public:
 
     void addObject(Object object);
+    void eraseObject(Object object);
 
     void initializeGame();
     void startGame();

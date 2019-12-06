@@ -14,7 +14,7 @@ void Game::addObject(Object object)
 {
     activeEntities.emplace_back(std::move(std::get<0>(object)));
     activeViews.emplace_back(std::move(std::get<1>(object)));
-    //activeControllers.emplace_back(std::move(std::get<2>(object)));
+    activeControllers.emplace_back(std::move(std::get<2>(object)));
 }
 
 void Game::handleEvents()
@@ -32,9 +32,12 @@ void Game::handleEvents()
         }
     }
 
-    for (auto &controller:activeControllers)
+    int index = 0;
+
+    while (index < activeControllers.size())
     {
-        controller->handleEvents();
+        activeControllers[index]->handleEvents();
+        index++;
     }
 }
 
