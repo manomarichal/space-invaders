@@ -7,6 +7,12 @@
 // @description: 
 // =====================================================================
 
+//TODO input levels
+//TODO timer
+//TODO collisoin
+//TODO transformatie
+//TODO achievements
+
 #include <iostream>
 #include "./Game.h"
 int main()
