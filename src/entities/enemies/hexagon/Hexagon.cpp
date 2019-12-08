@@ -8,3 +8,8 @@
 // =====================================================================
 
 #include "Hexagon.h"
+using namespace entities::enemies::hexagon;
+void Hexagon::update()
+{
+    y += vspeed;
+}

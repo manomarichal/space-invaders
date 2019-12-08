@@ -20,10 +20,10 @@ namespace entities::playership
     class PlayerShip: public Entity, public Subject
     {
     private:
-        double vx=0;  // horizontal velocity
-        double ax = 6;
-        const double max_v = 30; // max horizontal velocity
-        const double friction = 0.90;
+        float vx=0;  // horizontal velocity
+        float ax = 6;
+        const float max_v = 30; // max horizontal velocity
+        const float friction = 0.90;
 
     public:
         PlayerShip(int x, int y): Entity(x, y) {};

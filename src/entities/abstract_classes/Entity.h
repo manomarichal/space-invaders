@@ -17,12 +17,23 @@ namespace entities
 {
     class Entity
     {
+    protected:
+        float x;
+        float y;
     public:
         Entity(int x, int y): x(x), y(y) {};
-        double x;
-        double y;
         virtual void update()=0;
         virtual ~Entity()=0;
+
+        [[nodiscard]] float getX() const
+        {
+            return x;
+        }
+
+        [[nodiscard]] float getY() const
+        {
+            return y;
+        }
     };
     inline Entity::~Entity()=default;
 }

@@ -23,7 +23,7 @@ namespace entities::playership
         std::unique_ptr<sf::Texture> texture;
     public:
 
-        explicit PlayerShipView(std::shared_ptr<PlayerShip> &ship);
+        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
 
         void draw(sf::RenderWindow &window) const override;
 

@@ -17,7 +17,7 @@ namespace entities::projectiles
     class StandardProjectile: public Entity, public Subject
     {
     private:
-        double vspeed = 50;
+        float vspeed = 50;
     public:
         StandardProjectile(int x, int y): Entity(x, y) {};
         void update() override;

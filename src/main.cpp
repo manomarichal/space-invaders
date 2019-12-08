@@ -11,8 +11,6 @@
 #include "./Game.h"
 int main()
 {
-    Game game;
-    game.initializeGame();
-    game.startGame();
+    Game().startGame();
     return 0;
 }

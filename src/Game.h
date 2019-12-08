@@ -31,21 +31,21 @@ namespace entities
 class Game
 {
 private:
+    std::unique_ptr<sf::RenderWindow> window;
+
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
     std::vector<std::shared_ptr<entities::View>> activeViews;
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
     std::vector<uint> objectsToDelete;
 
     bool isInitialized=false;
-    sf::RenderWindow* window;
     void updateEntities();
     void handleEvents();
     void drawViews();
     void deleteObject(uint index);
 public:
+    Game();
     void addObject(entities::Object object);
-
-    void initializeGame();
     void startGame();
     ~Game();
 };

@@ -10,11 +10,18 @@
 #ifndef SPACE_INVADERS_HEXAGON_H
 #define SPACE_INVADERS_HEXAGON_H
 
+#include "../../abstract_classes/Entity.h"
+
 namespace entities::enemies::hexagon
 {
-    class Hexagon
+    class Hexagon: public Entity
     {
-
+        uint vspeed = 3;
+    public:
+        int hitpoints = 10;
+        Hexagon (int x, int y): Entity(x, y) {};
+        void update() override;
+        ~Hexagon() override = default;
     };
 }
 

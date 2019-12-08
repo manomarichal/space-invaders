@@ -11,9 +11,10 @@
 
 using namespace entities::playership;
 
-PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> &ship)
+PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 {
-    entity = ship;
+    entity = std::move(ship);
+
     texture = std::make_unique<sf::Texture>();
     texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
 
@@ -37,6 +38,6 @@ void PlayerShipView::draw(sf::RenderWindow &window) const
     }
      */
 
-    sprite->setPosition(entity->x, entity->y);
+    sprite->setPosition(entity->getX(), entity->getY());
     window.draw(*sprite);
 }

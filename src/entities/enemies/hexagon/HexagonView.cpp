@@ -1,26 +1,27 @@
 // =====================================================================
-// @name: StandardProjectileView.cpp
+// @name: HexagonView.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 06.12.19
+// @date: 08.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "StandardProjectileView.h"
-using namespace entities::projectiles;
+#include "HexagonView.h"
+using namespace entities::enemies::hexagon;
 
-StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectile> projectile)
+HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
 {
-    entity = std::move(projectile);
+    entity = std::move(hexagon);
+
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/standardprojectile.png", sf::IntRect(0, 0, 8, 24));
+    texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
 }
 
-void StandardProjectileView::draw(sf::RenderWindow &window) const
+void HexagonView::draw(sf::RenderWindow &window) const
 {
     sprite->setPosition(entity->getX(), entity->getY());
     window.draw(*sprite);

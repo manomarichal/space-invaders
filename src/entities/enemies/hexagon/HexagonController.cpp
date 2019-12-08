@@ -1,21 +1,16 @@
 // =====================================================================
-// @name: EnemyView.h
+// @name: HexagonController.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 04.12.19
+// @date: 08.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_ENEMYVIEW_H
-#define SPACE_INVADERS_ENEMYVIEW_H
+#include "HexagonController.h"
+using namespace entities::enemies::hexagon;
 
-#include "../abstract_classes/View.h"
-namespace entities::enemies
+bool HexagonController::handleEvents()
 {
-    class EnemyView
-    {
-        virtual ~EnemyView()=0;
-    };
+    return entity->hitpoints > 0;
 }
-#endif //SPACE_INVADERS_ENEMYVIEW_H

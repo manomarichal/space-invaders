@@ -12,7 +12,7 @@ using namespace entities::playership;
 
 void PlayerShipController::createProjectile()
 {
-    projectiles::ProjectileFactory::createProjectile(entity->x+entity->xSize/2, entity->y,projectiles::standard, game);
+    projectiles::ProjectileFactory::createProjectile(entity->getX()+ entity->xSize/2, entity->getY(),projectiles::standard, game);
 }
 bool PlayerShipController::handleEvents()
 {

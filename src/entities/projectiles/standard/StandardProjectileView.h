@@ -23,7 +23,7 @@ namespace entities::projectiles
         std::unique_ptr<sf::Texture> texture;
     public:
 
-        explicit StandardProjectileView(std::shared_ptr<StandardProjectile> &projectile);
+        explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile);
 
         void draw(sf::RenderWindow &window) const override;
 

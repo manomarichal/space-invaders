@@ -9,6 +9,19 @@
 
 #include "Game.h"
 
+Game::Game()
+{
+    activeEntities.reserve(100);
+    activeViews.reserve(100);
+    activeControllers.reserve(100);
+
+    auto ship = std::make_shared<entities::playership::PlayerShip>(300, 900);
+    auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
+    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, this);
+
+    addObject(std::make_tuple(std::move(ship), std::move(view), std::move(controller)));
+}
+
 void Game::addObject(entities::Object object)
 {
     activeEntities.emplace_back(std::move(std::get<0>(object)));
@@ -64,25 +77,10 @@ void Game::drawViews()
 
 }
 
-void Game::initializeGame()
-{
-    isInitialized = true;
-    auto ship = std::make_shared<entities::playership::PlayerShip>(300, 900);
-    auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
-    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, this);
-
-    addObject(std::make_tuple(std::move(ship), std::move(view), std::move(controller)));
-}
-
-
 void Game::startGame()
 {
-    assert(isInitialized);
+    window = std::make_unique<sf::RenderWindow>(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
 
-    // create the window
-    sf::RenderWindow newWindow(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
-
-    window = &newWindow;
     while (window->isOpen())
     {
         handleEvents();
