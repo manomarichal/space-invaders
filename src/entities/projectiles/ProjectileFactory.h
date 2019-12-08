@@ -10,9 +10,10 @@
 #ifndef SPACE_INVADERS_PROJECTILEFACTORY_H
 #define SPACE_INVADERS_PROJECTILEFACTORY_H
 
-#include "../../util/Object.h"
 #include "../../Game.h"
 #include "./standard/StandardProjectileController.h"
+#include "../util/Object.h"
+
 
 namespace entities::projectiles
 {
@@ -21,7 +22,7 @@ namespace entities::projectiles
     {
     private:
         ProjectileFactory()= default;   // no instances of this class may be created
-        static Object createStandardProjectile(int x, int y, Game* game);
+        static entities::Object createStandardProjectile(int x, int y, Game* game);
     public:
         static void createProjectile(int x, int y, Type type, Game* game);
     };

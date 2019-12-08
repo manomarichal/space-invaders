@@ -12,7 +12,7 @@
 using namespace entities::projectiles;
 
 //TODO delete projectiles
-void StandardProjectileController::handleEvents()
+bool StandardProjectileController::handleEvents()
 {
-    if (object->y < 0) return;
+    return entity->y < 0;
 }

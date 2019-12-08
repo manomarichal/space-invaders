@@ -13,16 +13,15 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-#include "./entities/View.h"
-#include "./entities/Entity.h"
-#include "./entities/Controller.h"
-
+#include "entities/abstract_classes/View.h"
+#include "entities/abstract_classes/Entity.h"
+#include "entities/abstract_classes/Controller.h"
 
 #include "./entities/playership/PlayerShip.h"
 #include "./entities/playership/PlayerShipView.h"
 #include "./entities/playership/PlayerShipController.h"
 
-#include "./util/Object.h"
+#include "./entities/util/Object.h"
 
 namespace entities
 {
@@ -34,6 +33,7 @@ private:
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
     std::vector<std::shared_ptr<entities::View>> activeViews;
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
+    std::vector<entities::Object> buffer;
 
     bool isInitialized=false;
     sf::RenderWindow* window;
@@ -42,8 +42,8 @@ private:
     void drawViews();
 public:
 
-    void addObject(Object object);
-    void eraseObject(Object object);
+    void addObject(entities::Object object);
+    void eraseObject(entities::Object object);
 
     void initializeGame();
     void startGame();

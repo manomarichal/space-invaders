@@ -8,9 +8,10 @@
 // =====================================================================
 
 #include "ProjectileFactory.h"
+
 using namespace entities::projectiles;
 
-Object ProjectileFactory::createStandardProjectile(int x, int y, Game* game)
+entities::Object ProjectileFactory::createStandardProjectile(int x, int y, Game* game)
 {
     auto projectile = std::make_shared<StandardProjectile>(x, y);
     auto view = std::make_shared<StandardProjectileView>(projectile);

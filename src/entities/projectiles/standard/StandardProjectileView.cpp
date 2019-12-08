@@ -12,7 +12,7 @@ using namespace entities::projectiles;
 
 StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectile> &projectile)
 {
-    object = projectile;
+    entity = projectile;
     texture = std::make_unique<sf::Texture>();
     texture->loadFromFile("../textures/standardprojectile.png", sf::IntRect(0, 0, 8, 24));
 
@@ -22,6 +22,6 @@ StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectil
 
 void StandardProjectileView::draw(sf::RenderWindow &window) const
 {
-    sprite->setPosition(object->x, object->y);
+    sprite->setPosition(entity->x, entity->y);
     window.draw(*sprite);
 }

@@ -10,12 +10,18 @@
 #include "Game.h"
 #include <cassert>
 #include "./settings/screensize.h"
-void Game::addObject(Object object)
+void Game::addObject(entities::Object object)
 {
     activeEntities.emplace_back(std::move(std::get<0>(object)));
     activeViews.emplace_back(std::move(std::get<1>(object)));
     activeControllers.emplace_back(std::move(std::get<2>(object)));
 }
+
+void Game::eraseObject(entities::Object object)
+{
+    buffer.emplace_back(std::move(object));
+}
+
 
 void Game::handleEvents()
 {
@@ -39,6 +45,15 @@ void Game::handleEvents()
         activeControllers[index]->handleEvents();
         index++;
     }
+
+    // delete the objects
+    for (auto object:buffer)
+    {
+        activeEntities.erase(std::find(activeEntities.begin(), activeEntities.end(), std::get<0>(object)));
+        activeViews.erase(std::find(activeViews.begin(), activeViews.end(), std::get<1>(object)));
+        activeControllers.erase(std::find(activeControllers.begin(), activeControllers.end(), std::get<2>(object)));
+    }
+    buffer.clear();
 }
 
 void Game::updateEntities()

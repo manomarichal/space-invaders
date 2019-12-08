@@ -10,8 +10,8 @@
 #ifndef SPACE_INVADERS_PLAYERSHIP_H
 #define SPACE_INVADERS_PLAYERSHIP_H
 
-#include "../Subject.h"
-#include "../Entity.h"
+#include "../abstract_classes/Subject.h"
+#include "../abstract_classes/Entity.h"
 
 #include "../../settings/screensize.h"
 
@@ -28,6 +28,7 @@ namespace entities::playership
     public:
         PlayerShip(int x, int y): Entity(x, y) {};
 
+        unsigned int hitpoints;
         unsigned int xSize = 64;
         void moveLeft();
         void moveRight();

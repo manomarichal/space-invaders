@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_STANDARDPROJECTILEVIEW_H
 #define SPACE_INVADERS_STANDARDPROJECTILEVIEW_H
 
-#include "../../View.h"
+#include "../../abstract_classes/View.h"
 #include "./StandardProjectile.h"
 
 namespace entities::projectiles
@@ -18,7 +18,7 @@ namespace entities::projectiles
     class StandardProjectileView: public View
     {
     private:
-        std::shared_ptr<StandardProjectile> object;
+        std::shared_ptr<StandardProjectile> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;
     public:

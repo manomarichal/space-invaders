@@ -13,21 +13,23 @@ using namespace entities::playership;
 
 void PlayerShipController::createProjectile()
 {
-    projectiles::ProjectileFactory::createProjectile(object->x+object->xSize/2, object->y,projectiles::standard, game);
+    projectiles::ProjectileFactory::createProjectile(entity->x+entity->xSize/2, entity->y,projectiles::standard, game);
 }
-void PlayerShipController::handleEvents()
+bool PlayerShipController::handleEvents()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
-        object ->moveLeft();
+        entity ->moveLeft();
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
-        object ->moveRight();
+        entity ->moveRight();
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         createProjectile();
     }
+
+    return entity->hitpoints < 0;
 }

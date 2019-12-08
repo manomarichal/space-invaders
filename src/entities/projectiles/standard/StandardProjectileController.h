@@ -10,17 +10,18 @@
 #ifndef SPACE_INVADERS_STANDARDPROJECTILECONTROLLER_H
 #define SPACE_INVADERS_STANDARDPROJECTILECONTROLLER_H
 
-#include "../../Controller.h"
+#include "../../abstract_classes/Controller.h"
 #include "./StandardProjectileView.h"
+
 namespace entities::projectiles
 {
     class StandardProjectileController: public Controller
     {
-        std::shared_ptr<StandardProjectile> object;
+        std::shared_ptr<StandardProjectile> entity;
         std::shared_ptr<StandardProjectileView> view;
     public:
-        StandardProjectileController(std::shared_ptr<StandardProjectile> object, std::shared_ptr<StandardProjectileView> view, Game* game): Controller(game), object(std::move(object)), view(std::move(view)) {};
-        void handleEvents() override;
+        StandardProjectileController(std::shared_ptr<StandardProjectile> entity, std::shared_ptr<StandardProjectileView> view, Game* game): Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        bool handleEvents() override;
         ~StandardProjectileController() override = default;
     };
 }

@@ -11,7 +11,7 @@
 #define SPACE_INVADERS_PLAYERSHIPCONTROLLER_H
 
 #include "./PlayerShipView.h"
-#include "../Controller.h"
+#include "../abstract_classes/Controller.h"
 #include "../projectiles/ProjectileFactory.h"
 
 #include <utility>
@@ -20,13 +20,13 @@ namespace entities::playership
 {
     class PlayerShipController: public entities::Controller
     {
-        std::shared_ptr<PlayerShip> object;
+        std::shared_ptr<PlayerShip> entity;
         std::shared_ptr<PlayerShipView> view;
 
         void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> object, std::shared_ptr<PlayerShipView> view, Game* game):Controller(game), object(std::move(object)), view(std::move(view)) {};
-        void handleEvents() override ;
+        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game* game):Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        bool handleEvents() override ;
         ~PlayerShipController() override = default;
     };
 }

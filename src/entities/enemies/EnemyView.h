@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_ENEMYVIEW_H
 #define SPACE_INVADERS_ENEMYVIEW_H
 
-#include "../View.h"
+#include "../abstract_classes/View.h"
 namespace entities::enemies
 {
     class EnemyView

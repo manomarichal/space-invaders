@@ -17,14 +17,21 @@ class Game;
 namespace entities
 {
     class Controller
-    {
-    protected:
-        Game* game;
-    public:
-        explicit Controller(Game * game): game(game) {};
-        virtual void handleEvents()=0;
-        virtual ~Controller()=0;
-    };
-    inline Controller::~Controller()=default;
+        {
+        protected:
+            Game* game;
+        public:
+            explicit Controller(Game * game): game(game) {};
+
+            virtual bool handleEvents()=0;
+
+            virtual ~Controller()=0;
+        };
+        inline Controller::~Controller()=default;
 }
+
+
+
+
+
 #endif //SPACE_INVADERS_CONTROLLER_H

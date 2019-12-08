@@ -11,14 +11,14 @@
 #define SPACE_INVADERS_PLAYERSHIPVIEW_H
 
 #include "./PlayerShip.h"
-#include "../View.h"
+#include "../abstract_classes/View.h"
 
 namespace entities::playership
 {
     class PlayerShipView: public entities::View
     {
     private:
-        std::shared_ptr<PlayerShip> object;
+        std::shared_ptr<PlayerShip> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;
     public:

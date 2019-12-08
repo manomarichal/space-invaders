@@ -10,8 +10,8 @@
 #ifndef SPACE_INVADERS_STANDARDPROJECTILE_H
 #define SPACE_INVADERS_STANDARDPROJECTILE_H
 
-#include "../../Entity.h"
-#include "../../Subject.h"
+#include "../../abstract_classes/Entity.h"
+#include "../../abstract_classes/Subject.h"
 namespace entities::projectiles
 {
     class StandardProjectile: public Entity, public Subject
