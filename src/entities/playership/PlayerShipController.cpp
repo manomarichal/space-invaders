@@ -30,5 +30,5 @@ bool PlayerShipController::handleEvents()
         createProjectile();
     }
 
-    return entity->hitpoints < 0;
+    return entity->hitpoints > 0;
 }

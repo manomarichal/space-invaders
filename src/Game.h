@@ -34,17 +34,16 @@ private:
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
     std::vector<std::shared_ptr<entities::View>> activeViews;
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
-    std::vector<entities::Object> buffer;
+    std::vector<uint> objectsToDelete;
 
     bool isInitialized=false;
     sf::RenderWindow* window;
     void updateEntities();
     void handleEvents();
     void drawViews();
+    void deleteObject(uint index);
 public:
-
     void addObject(entities::Object object);
-    void eraseObject(entities::Object object);
 
     void initializeGame();
     void startGame();

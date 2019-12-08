@@ -14,5 +14,5 @@ using namespace entities::projectiles;
 //TODO delete projectiles
 bool StandardProjectileController::handleEvents()
 {
-    return entity->y < 0;
+    return entity->y > 0;
 }

@@ -16,12 +16,12 @@ void Game::addObject(entities::Object object)
     activeControllers.emplace_back(std::move(std::get<2>(object)));
 }
 
-void Game::eraseObject(entities::Object object)
+void Game::deleteObject(uint index)
 {
-    buffer.emplace_back(std::move(object));
+    activeEntities.erase(activeEntities.begin() + index);
+    activeViews.erase(activeViews.begin() + index);
+    activeControllers.erase(activeControllers.begin() + index);
 }
-
-
 void Game::handleEvents()
 {
     sf::Event event;
@@ -41,18 +41,9 @@ void Game::handleEvents()
 
     while (index < activeControllers.size())
     {
-        activeControllers[index]->handleEvents();
-        index++;
+        if (!activeControllers[index]->handleEvents()) deleteObject(index);
+        else index++;
     }
-
-    // delete the objects
-    for (auto object:buffer)
-    {
-        activeEntities.erase(std::find(activeEntities.begin(), activeEntities.end(), std::get<0>(object)));
-        activeViews.erase(std::find(activeViews.begin(), activeViews.end(), std::get<1>(object)));
-        activeControllers.erase(std::find(activeControllers.begin(), activeControllers.end(), std::get<2>(object)));
-    }
-    buffer.clear();
 }
 
 void Game::updateEntities()
@@ -78,10 +69,9 @@ void Game::initializeGame()
     isInitialized = true;
     auto ship = std::make_shared<entities::playership::PlayerShip>(300, 900);
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
+    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, this);
 
-    activeEntities.emplace_back(ship);
-    activeViews.emplace_back(view);
-    activeControllers.emplace_back(std::make_shared<entities::playership::PlayerShipController>(ship, view, this));
+    addObject(std::make_tuple(std::move(ship), std::move(view), std::move(controller)));
 }
 
 
