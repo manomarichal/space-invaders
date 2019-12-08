@@ -12,6 +12,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <cassert>
 
 #include "entities/abstract_classes/View.h"
 #include "entities/abstract_classes/Entity.h"

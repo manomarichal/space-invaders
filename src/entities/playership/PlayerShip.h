@@ -28,7 +28,7 @@ namespace entities::playership
     public:
         PlayerShip(int x, int y): Entity(x, y) {};
 
-        unsigned int hitpoints;
+        int hitpoints;
         unsigned int xSize = 64;
         void moveLeft();
         void moveRight();

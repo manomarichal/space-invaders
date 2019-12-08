@@ -8,8 +8,7 @@
 // =====================================================================
 
 #include "Game.h"
-#include <cassert>
-#include "./settings/screensize.h"
+
 void Game::addObject(entities::Object object)
 {
     activeEntities.emplace_back(std::move(std::get<0>(object)));
@@ -38,7 +37,7 @@ void Game::handleEvents()
         }
     }
 
-    int index = 0;
+    uint index = 0;
 
     while (index < activeControllers.size())
     {

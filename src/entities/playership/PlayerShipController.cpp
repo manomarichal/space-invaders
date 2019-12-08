@@ -8,7 +8,6 @@
 // =====================================================================
 
 #include "PlayerShipController.h"
-
 using namespace entities::playership;
 
 void PlayerShipController::createProjectile()
