@@ -15,13 +15,13 @@
 #include <cassert>
 #include <fstream>
 
-#include "./json/json.hpp"
+#include "../json/json.hpp"
 
-#include "entities/abstract_classes/Controller.h"
-#include "./entities/playership/PlayerShipController.h"
-#include "./entities/enemies/hexagon/HexagonController.h"
+#include "../entities/abstract_classes/Controller.h"
+#include "../entities/playership/PlayerShipController.h"
+#include "../entities/enemies/hexagon/HexagonController.h"
 
-#include "./entities/util/Object.h"
+#include "../entities/util/Object.h"
 
 namespace entities
 {

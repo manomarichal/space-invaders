@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_PROJECTILEFACTORY_H
 #define SPACE_INVADERS_PROJECTILEFACTORY_H
 
-#include "../../Game.h"
+#include "../../Game/Game.h"
 #include "./standard/StandardProjectileController.h"
 #include "../util/Object.h"
 

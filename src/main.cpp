@@ -14,7 +14,7 @@
 //TODO level loops
 
 #include <iostream>
-#include "./Game.h"
+#include "Game/Game.h"
 int main()
 {
     Game game;
