@@ -1,0 +1,14 @@
+{
+  "Enemies": [
+      {
+        "type": "Hexagon",
+        "x": 0,
+        "y": 100
+      },
+      {
+        "type": "Hexagon",
+        "x": 400,
+        "y": 100
+      }
+    ]
+}

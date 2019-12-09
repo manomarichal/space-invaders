@@ -7,7 +7,6 @@
 // @description: 
 // =====================================================================
 
-//TODO input levels
 //TODO timer
 //TODO collisoin
 //TODO transformatie
@@ -17,6 +16,8 @@
 #include "./Game.h"
 int main()
 {
-    Game().startGame();
+    Game game;
+    game.readLevelFromFile("../levels/level0.json");
+    game.startGame();
     return 0;
 }

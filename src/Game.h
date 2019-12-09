@@ -13,14 +13,13 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <cassert>
+#include <fstream>
 
-#include "entities/abstract_classes/View.h"
-#include "entities/abstract_classes/Entity.h"
+#include "./json/json.hpp"
+
 #include "entities/abstract_classes/Controller.h"
-
-#include "./entities/playership/PlayerShip.h"
-#include "./entities/playership/PlayerShipView.h"
 #include "./entities/playership/PlayerShipController.h"
+#include "./entities/enemies/hexagon/HexagonController.h"
 
 #include "./entities/util/Object.h"
 
@@ -45,6 +44,7 @@ private:
     void deleteObject(uint index);
 public:
     Game();
+    void readLevelFromFile(std::string filename);
     void addObject(entities::Object object);
     void startGame();
     ~Game();
