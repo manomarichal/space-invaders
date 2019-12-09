@@ -19,8 +19,8 @@ namespace entities::projectiles
     private:
         float vspeed = 50;
     public:
-        StandardProjectile(int x, int y): Entity(x, y) {};
-        void update() override;
+        StandardProjectile(int x, int y): Entity(x, y, standardprojectile) {xSize = 8; ySize = 24;};
+        void move();
         ~StandardProjectile() override = default;
     };
 }

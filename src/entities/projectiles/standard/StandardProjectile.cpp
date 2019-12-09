@@ -10,7 +10,7 @@
 #include "StandardProjectile.h"
 using namespace entities::projectiles;
 
-void StandardProjectile::update()
+void StandardProjectile::move()
 {
     y -= vspeed;
 }

@@ -12,6 +12,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "../util/Collision.h"
+
 class Game;
 
 namespace entities
@@ -23,7 +25,7 @@ namespace entities
         public:
             explicit Controller(Game * game): game(game) {};
 
-            virtual bool handleEvents()=0;
+            virtual bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)=0;
 
             virtual ~Controller()=0;
         };

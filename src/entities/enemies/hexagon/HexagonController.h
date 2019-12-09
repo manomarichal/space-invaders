@@ -11,8 +11,11 @@
 #define SPACE_INVADERS_HEXAGONCONTROLLER_H
 
 #include "../../abstract_classes/Controller.h"
+#include "../../projectiles/standard/StandardProjectile.h"
+#include "../../util/Collision.h"
 #include "./HexagonView.h"
-namespace entities::enemies::hexagon
+
+namespace entities::enemies
 {
     class HexagonController: public Controller
     {
@@ -21,7 +24,7 @@ namespace entities::enemies::hexagon
         std::shared_ptr<HexagonView> view;
     public:
         HexagonController(std::shared_ptr<Hexagon> entity, std::shared_ptr<HexagonView> view, Game* game):Controller(game), entity(std::move(entity)), view(std::move(view)) {};
-        bool handleEvents() override ;
+        bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~HexagonController() override = default;
     };
 }

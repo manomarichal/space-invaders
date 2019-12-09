@@ -15,7 +15,7 @@
 
 #include "../../settings/screensize.h"
 
-namespace entities::playership
+namespace entities
 {
     class PlayerShip: public Entity, public Subject
     {
@@ -26,15 +26,12 @@ namespace entities::playership
         const float friction = 0.90;
 
     public:
-        PlayerShip(int x, int y): Entity(x, y) {};
+        PlayerShip(int x, int y): Entity(x, y, playership) {xSize = 64; ySize = 64;};
 
         int hitpoints = 10;
-        unsigned int xSize = 64;
         void moveLeft();
         void moveRight();
         void move();
-        void update() override;
-
         ~PlayerShip() override;
     };
 }

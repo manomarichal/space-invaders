@@ -12,10 +12,11 @@
 
 #include "../../abstract_classes/View.h"
 #include "./Hexagon.h"
-namespace entities::enemies::hexagon
+namespace entities::enemies
 {
     class HexagonView: public View
     {
+        float maxHP;
         std::shared_ptr<Hexagon> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;

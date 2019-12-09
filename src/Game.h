@@ -38,7 +38,6 @@ private:
     std::vector<uint> objectsToDelete;
 
     bool isInitialized=false;
-    void updateEntities();
     void handleEvents();
     void drawViews();
     void deleteObject(uint index);
@@ -47,6 +46,9 @@ public:
     void readLevelFromFile(std::string filename);
     void addObject(entities::Object object);
     void startGame();
+
+    const std::vector<std::shared_ptr<entities::Entity>> &getActiveEntities() const;
+
     ~Game();
 };
 

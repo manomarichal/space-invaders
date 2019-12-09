@@ -13,7 +13,7 @@
 #include "./PlayerShip.h"
 #include "../abstract_classes/View.h"
 
-namespace entities::playership
+namespace entities
 {
     class PlayerShipView: public entities::View
     {

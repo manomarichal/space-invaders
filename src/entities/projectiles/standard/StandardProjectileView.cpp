@@ -18,6 +18,7 @@ StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectil
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
+    sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
 }
 
 void StandardProjectileView::draw(sf::RenderWindow &window) const

@@ -9,7 +9,7 @@
 
 #include "PlayerShip.h"
 
-using namespace entities::playership;
+using namespace entities;
 
 void PlayerShip::moveLeft()
 {
@@ -37,13 +37,9 @@ void PlayerShip::move()
     vx *= friction;
     x += vx;
 
-    if (x < 0) x = 0;
-    if (x + xSize> screensize::x) x = screensize::x-xSize;
+    if (x < xSize/2) x = xSize/2;
+    if (x + xSize/2> screensize::x) x = screensize::x-xSize/2;
 }
 
-void PlayerShip::update()
-{
-    move();
-}
 
 PlayerShip::~PlayerShip()=default;

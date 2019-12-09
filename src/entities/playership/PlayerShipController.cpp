@@ -8,13 +8,13 @@
 // =====================================================================
 
 #include "PlayerShipController.h"
-using namespace entities::playership;
+using namespace entities;
 
 void PlayerShipController::createProjectile()
 {
-    projectiles::ProjectileFactory::createProjectile(entity->getX()+ entity->xSize/2, entity->getY(),projectiles::standard, game);
+    projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(),projectiles::standard, game);
 }
-bool PlayerShipController::handleEvents()
+bool PlayerShipController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
@@ -24,11 +24,11 @@ bool PlayerShipController::handleEvents()
     {
         entity ->moveRight();
     }
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         createProjectile();
     }
 
+    entity->move();
     return entity->hitpoints > 0;
 }

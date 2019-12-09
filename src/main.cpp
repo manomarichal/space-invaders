@@ -11,6 +11,7 @@
 //TODO collisoin
 //TODO transformatie
 //TODO achievements
+//TODO level loops
 
 #include <iostream>
 #include "./Game.h"

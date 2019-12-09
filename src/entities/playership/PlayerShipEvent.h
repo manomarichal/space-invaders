@@ -9,7 +9,7 @@
 
 #ifndef SPACE_INVADERS_PLAYERSHIPEVENT_H
 #define SPACE_INVADERS_PLAYERSHIPEVENT_H
-namespace entities::playership
+namespace entities
 {
     enum Event {Destroyed, Left, Right, Powerup};
 }

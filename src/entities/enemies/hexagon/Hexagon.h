@@ -12,15 +12,15 @@
 
 #include "../../abstract_classes/Entity.h"
 
-namespace entities::enemies::hexagon
+namespace entities::enemies
 {
     class Hexagon: public Entity
     {
-        uint vspeed = 3;
+        uint vspeed = 1;
     public:
-        int hitpoints = 10;
-        Hexagon (int x, int y): Entity(x, y) {};
-        void update() override;
+        Hexagon (int x, int y): Entity(x, y, hexagon) {xSize=64; ySize=64;};
+        int hitpoints = 5;
+        void move();
         ~Hexagon() override = default;
     };
 }

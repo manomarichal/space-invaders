@@ -9,7 +9,7 @@
 
 #include "PlayerShipView.h"
 
-using namespace entities::playership;
+using namespace entities;
 
 PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 {
@@ -20,6 +20,7 @@ PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
+    sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
 }
 void PlayerShipView::draw(sf::RenderWindow &window) const
 {
