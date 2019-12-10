@@ -9,12 +9,18 @@
 
 #include "PlayerShipController.h"
 using namespace entities;
+PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game *game)
+                                            :Controller(game), entity(std::move(entity)), view(std::move(view))
+{
+    stopwatch = std::make_unique<Stopwatch>(200);
+}
 
 void PlayerShipController::createProjectile()
 {
     projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(),projectiles::standard, game);
 }
-bool PlayerShipController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
+
+bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::shared_ptr<Entity>> &entities)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
@@ -24,7 +30,7 @@ bool PlayerShipController::handleEvents(const std::vector<std::shared_ptr<Entity
     {
         entity ->moveRight();
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) and stopwatch->isReady())
     {
         createProjectile();
     }

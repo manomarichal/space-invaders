@@ -11,9 +11,8 @@
 #define SPACE_INVADERS_PROJECTILEFACTORY_H
 
 #include "../../Game/Game.h"
+#include "../../util/Object.h"
 #include "./standard/StandardProjectileController.h"
-#include "../util/Object.h"
-
 
 namespace entities::projectiles
 {

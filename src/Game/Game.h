@@ -14,6 +14,7 @@
 #include <memory>
 #include <cassert>
 #include <fstream>
+#include <unistd.h>
 
 #include "../json/json.hpp"
 
@@ -21,7 +22,9 @@
 #include "../entities/playership/PlayerShipController.h"
 #include "../entities/enemies/hexagon/HexagonController.h"
 
-#include "../entities/util/Object.h"
+#include "../util/Object.h"
+#include "../util/Stopwatch.h"
+
 
 namespace entities
 {
@@ -43,11 +46,11 @@ private:
     void deleteObject(uint index);
 public:
     Game();
-    void readLevelFromFile(std::string filename);
+    void readLevelFromFile(const std::string &filename);
     void addObject(entities::Object object);
     void startGame();
 
-    const std::vector<std::shared_ptr<entities::Entity>> &getActiveEntities() const;
+    [[nodiscard]] const std::vector<std::shared_ptr<entities::Entity>> &getActiveEntities() const;
 
     ~Game();
 };

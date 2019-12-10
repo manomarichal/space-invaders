@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_COLLISION_H
 #define SPACE_INVADERS_COLLISION_H
 
-#include "../abstract_classes/Entity.h"
+#include "../entities/abstract_classes/Entity.h"
 
 namespace entities
 {

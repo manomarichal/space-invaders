@@ -14,7 +14,7 @@
 
 #include "../abstract_classes/Controller.h"
 #include "../projectiles/ProjectileFactory.h"
-
+#include "../../util/Stopwatch.h"
 #include <utility>
 
 namespace entities
@@ -23,10 +23,10 @@ namespace entities
     {
         std::shared_ptr<PlayerShip> entity;
         std::shared_ptr<PlayerShipView> view;
-
+        std::unique_ptr<Stopwatch> stopwatch;
         void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game* game):Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game* game);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PlayerShipController() override = default;
     };

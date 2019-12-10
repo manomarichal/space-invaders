@@ -40,7 +40,7 @@ void Game::deleteObject(uint index)
 
 void Game::handleEvents()
 {
-    sf::Event event;
+    sf::Event event{};
     while (window->pollEvent(event))
     {
         switch (event.type)
@@ -83,15 +83,17 @@ void Game::startGame()
 {
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
 
+    Stopwatch stopwatch(16);
+
     while (window->isOpen())
     {
         handleEvents();
         drawViews();
-        system("sleep 0.016");
+        while (!stopwatch.isReady()) {usleep(10000);};
     }
 }
 
-void Game::readLevelFromFile(std::string filename)
+void Game::readLevelFromFile(const std::string &filename)
 {
     std::ifstream file(filename);
     if (!file.is_open()) throw std::runtime_error("could not open file: " + filename);
@@ -110,9 +112,7 @@ void Game::readLevelFromFile(std::string filename)
         }
     }
 }
-Game::~Game()
-{
-}
+Game::~Game()=default;
 
 const std::vector<std::shared_ptr<entities::Entity>> &Game::getActiveEntities() const
 {

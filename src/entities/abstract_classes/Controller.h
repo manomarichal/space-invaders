@@ -12,7 +12,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../util/Collision.h"
+#include "../../util/Collision.h"
 
 class Game;
 

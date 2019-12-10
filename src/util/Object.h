@@ -11,9 +11,9 @@
 #define SPACE_INVADERS_OBJECT_H
 
 #include <tuple>
-#include "../abstract_classes/Entity.h"
-#include "../abstract_classes/View.h"
-#include "../abstract_classes/Controller.h"
+#include "../entities/abstract_classes/Entity.h"
+#include "../entities/abstract_classes/View.h"
+#include "../entities/abstract_classes/Controller.h"
 
 namespace entities
 {
