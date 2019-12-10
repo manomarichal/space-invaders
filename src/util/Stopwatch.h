@@ -32,5 +32,11 @@ public:
 
         return false;
     }
+
+    void setDuration(long milliseconds)
+    {
+        Stopwatch::duration = milliseconds;
+    }
+
 };
 #endif //SPACE_INVADERS_STOPWATCH_H

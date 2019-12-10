@@ -7,11 +7,17 @@
 // @description: 
 // =====================================================================
 
-//TODO timer
-//TODO collisoin
-//TODO transformatie
-//TODO achievements
+//TODO transformatie (singleton pattern)
+//TODO achievements (observer pattern)
 //TODO level loops
+//TODO make it fancy
+//TODO const correctness
+//TODO optimizen
+//TODO code documenteren
+//TODO prog2 code standards
+//TODO clion code inspection
+//TODO rapport schrijven
+
 
 #include <iostream>
 #include "Game/Game.h"
