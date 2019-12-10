@@ -9,7 +9,26 @@
 
 #include "Hexagon.h"
 using namespace entities::enemies;
+
+Hexagon::Hexagon(int x, int y): Entity(x, y, hexagon)
+{
+    xSize=64;
+    ySize=64;
+    if (rand()%2 == 0) dir = 1;
+    else dir = -1;
+}
+void Hexagon::setDir(int dir)
+{
+    this->dir = dir;
+}
+
 void Hexagon::move()
 {
     y += vspeed;
+    x += hspeed * dir;
+}
+
+int Hexagon::getDir() const
+{
+    return dir;
 }

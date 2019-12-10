@@ -1,34 +1,62 @@
 {
   "Enemies": [
-      {
-        "type": "Hexagon",
-        "x": 50,
-        "y": 100
-      },
+
       {
         "type": "Hexagon",
         "x": 150,
         "y": 100
       },
-    {
-      "type": "Hexagon",
-      "x": 250,
-      "y": 100
-    },
+
     {
       "type": "Hexagon",
       "x": 350,
       "y": 100
     },
-    {
-      "type": "Hexagon",
-      "x": 450,
-      "y": 100
-    },
+
     {
       "type": "Hexagon",
       "x": 550,
       "y": 100
+    },
+    {
+      "type": "Hexagon",
+      "x": 50,
+      "y": 200
+    },
+    {
+      "type": "Hexagon",
+      "x": 150,
+      "y": 200
+    },
+
+
+    {
+      "type": "Hexagon",
+      "x": 450,
+      "y": 200
+    },
+
+    {
+      "type": "Hexagon",
+      "x": 50,
+      "y": 300
+    },
+    {
+      "type": "Hexagon",
+      "x": 150,
+      "y": 300
+    },
+
+    {
+      "type": "Hexagon",
+      "x": 350,
+      "y": 300
+    },
+
+    {
+      "type": "Hexagon",
+      "x": 550,
+      "y": 300
     }
     ]
 }

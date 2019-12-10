@@ -10,9 +10,10 @@
 #include "HexagonController.h"
 using namespace entities::enemies;
 
+
+
 bool HexagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
-    entity->move();
     // check collision
     for (auto e:entities)
     {
@@ -24,6 +25,21 @@ bool HexagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> 
             }
 
         }
+        else if (dynamic_cast<entities::enemies::Hexagon*>(e.get()) != nullptr and e != entity)
+        {
+            if (entities::Collision::checkCollision(*entity, *e))
+            {
+                entity->setDir(entity->getDir()*-1);
+            }
+
+        }
     }
+
+    if (entity->getX() - entity->getXSize()/2 < 0) entity->setDir(1);
+    if (entity->getX() + entity->getXSize()/2 > screensize::x) entity->setDir(-1);
+
+
+    entity->move();
+
     return entity->hitpoints > 0;
 }

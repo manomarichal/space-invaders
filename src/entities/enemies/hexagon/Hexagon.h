@@ -16,11 +16,17 @@ namespace entities::enemies
 {
     class Hexagon: public Entity
     {
-        uint vspeed = 1;
+        int vspeed = 1;
+        int hspeed = 4;
+        int dir;
     public:
-        Hexagon (int x, int y): Entity(x, y, hexagon) {xSize=64; ySize=64;};
+        Hexagon (int x, int y);
         int hitpoints = 5;
         void move();
+        void setDir(int dir);
+
+        [[nodiscard]] int getDir() const;
+
         ~Hexagon() override = default;
     };
 }
