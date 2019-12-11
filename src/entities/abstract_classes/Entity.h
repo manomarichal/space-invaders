@@ -54,6 +54,16 @@ namespace entities
         {
             return type;
         }
+
+        void setXSize(unsigned int xSize)
+        {
+            Entity::xSize = xSize;
+        }
+
+        void setYSize(unsigned int ySize)
+        {
+            Entity::ySize = ySize;
+        }
     };
     inline Entity::~Entity()=default;
 }

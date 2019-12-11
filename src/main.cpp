@@ -24,7 +24,7 @@
 int main()
 {
     Game game;
-    game.readLevelFromFile("../levels/level0.json");
+    game.readLevelFromFile("../levels/single_enemy.json");
     game.startGame();
     return 0;
 }

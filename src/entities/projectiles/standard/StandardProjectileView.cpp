@@ -13,6 +13,7 @@ using namespace entities::projectiles;
 StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectile> projectile)
 {
     entity = std::move(projectile);
+    entity->subscribe(this);
     texture = std::make_unique<sf::Texture>();
     texture->loadFromFile("../textures/standardprojectile.png", sf::IntRect(0, 0, 8, 24));
 
@@ -21,8 +22,12 @@ StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectil
     sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
 }
 
-void StandardProjectileView::draw(sf::RenderWindow &window) const
+void StandardProjectileView::notify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
+}
+
+void StandardProjectileView::draw(sf::RenderWindow &window) const
+{
     window.draw(*sprite);
 }

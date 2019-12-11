@@ -11,11 +11,12 @@
 #define SPACE_INVADERS_STANDARDPROJECTILEVIEW_H
 
 #include "../../abstract_classes/View.h"
+#include "../../abstract_classes/Observer.h"
 #include "./StandardProjectile.h"
 
 namespace entities::projectiles
 {
-    class StandardProjectileView: public View
+    class StandardProjectileView: public View, public Observer
     {
     private:
         std::shared_ptr<StandardProjectile> entity;
@@ -25,6 +26,7 @@ namespace entities::projectiles
 
         explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile);
 
+        void notify() override;
         void draw(sf::RenderWindow &window) const override;
 
         ~StandardProjectileView() override = default;

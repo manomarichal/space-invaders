@@ -17,7 +17,7 @@ Game::Game()
     activeControllers.reserve(50);
     objectsToDelete.reserve(50);
 
-    auto ship = std::make_shared<entities::PlayerShip>(300, 900);
+    auto ship = std::make_shared<entities::PlayerShip>(300, 1000-32);
     auto view = std::make_shared<entities::PlayerShipView>(ship);
     auto controller = std::make_shared<entities::PlayerShipController>(ship, view, this);
 

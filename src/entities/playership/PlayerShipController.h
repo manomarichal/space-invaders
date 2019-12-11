@@ -24,6 +24,7 @@ namespace entities
         std::shared_ptr<PlayerShip> entity;
         std::shared_ptr<PlayerShipView> view;
         std::unique_ptr<Stopwatch> stopwatch;
+
         void createProjectile();
     public:
         PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game* game);

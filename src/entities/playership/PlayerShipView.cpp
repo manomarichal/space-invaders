@@ -14,13 +14,19 @@ using namespace entities;
 PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 {
     entity = std::move(ship);
+    entity->subscribe(this);
 
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/playershipstill.jpg", sf::IntRect(0, 0, 64, 64));
+    texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
     sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
+}
+
+void PlayerShipView::notify()
+{
+    sprite->setPosition(entity->getX(), entity->getY());
 }
 void PlayerShipView::draw(sf::RenderWindow &window) const
 {
@@ -38,7 +44,5 @@ void PlayerShipView::draw(sf::RenderWindow &window) const
             break;
     }
      */
-
-    sprite->setPosition(entity->getX(), entity->getY());
     window.draw(*sprite);
 }

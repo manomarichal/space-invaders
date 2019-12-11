@@ -11,10 +11,11 @@
 #define SPACE_INVADERS_HEXAGON_H
 
 #include "../../abstract_classes/Entity.h"
+#include "../../abstract_classes/Subject.h"
 
 namespace entities::enemies
 {
-    class Hexagon: public Entity
+    class Hexagon: public Entity, public Subject
     {
         int vspeed = 1;
         int hspeed = 4;
@@ -23,6 +24,7 @@ namespace entities::enemies
         Hexagon (int x, int y);
         int hitpoints = 5;
         void move();
+        void takeDamage();
         void setDir(int dir);
 
         [[nodiscard]] int getDir() const;

@@ -39,6 +39,7 @@ void PlayerShip::move()
 
     if (x < xSize/2) x = xSize/2;
     if (x + xSize/2> screensize::x) x = screensize::x-xSize/2;
+    notifyObservers();
 }
 
 

@@ -26,6 +26,13 @@ void Hexagon::move()
 {
     y += vspeed;
     x += hspeed * dir;
+    notifyObservers();
+}
+
+void Hexagon::takeDamage()
+{
+    hitpoints -= 1;
+    notifyObservers();
 }
 
 int Hexagon::getDir() const

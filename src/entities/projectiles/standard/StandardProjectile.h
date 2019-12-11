@@ -12,6 +12,7 @@
 
 #include "../../abstract_classes/Entity.h"
 #include "../../abstract_classes/Subject.h"
+
 namespace entities::projectiles
 {
     class StandardProjectile: public Entity, public Subject

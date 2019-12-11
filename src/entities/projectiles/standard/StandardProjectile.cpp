@@ -13,4 +13,5 @@ using namespace entities::projectiles;
 void StandardProjectile::move()
 {
     y -= vspeed;
+    notifyObservers();
 }
