@@ -10,14 +10,17 @@
 #ifndef SPACE_INVADERS_ENEMY_H
 #define SPACE_INVADERS_ENEMY_H
 
+#include "./Entity.h"
+
 namespace entities::enemies
 {
-    class Enemy
+    class Enemy: public Entity
     {
     public:
-        int hitpoints;
+        Enemy(float x, float y):Entity(x, y) {};
 
-        virtual void takeDamage()=0;
+        int hitpoints;
+        virtual void takeDamage(unsigned int damage)=0;
         virtual ~Enemy()= default;
     };
 }

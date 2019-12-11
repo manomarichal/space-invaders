@@ -10,11 +10,23 @@
 #ifndef SPACE_INVADERS_PENTAGON_H
 #define SPACE_INVADERS_PENTAGON_H
 
+#include "../../abstract_classes/Subject.h"
+#include "../../abstract_classes/Enemy.h"
+
 namespace entities::enemies::pentagon
 {
-    class Pentagon
+    class Pentagon: public Enemy, public Subject
     {
-
+        const float vspeed = 0.1;
+        const float hspeed = 0;
+    public:
+        int dir;
+        int maxHp;
+        Pentagon (float x, float y);
+        void move();
+        void update() override;
+        void takeDamage(unsigned int damage) override;
+        ~Pentagon() override = default;
     };
 }
 

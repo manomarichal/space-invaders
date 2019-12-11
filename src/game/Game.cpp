@@ -8,7 +8,7 @@
 // =====================================================================
 
 #include "Game.h"
-#include <iostream>
+
 
 Game::Game()
 {
@@ -99,26 +99,6 @@ void Game::startGame()
         updateEntities();
         drawViews();
         while (!stopwatch.isReady()) {usleep(5000);};
-    }
-}
-
-void Game::readLevelFromFile(const std::string &filename)
-{
-    std::ifstream file(filename);
-    if (!file.is_open()) throw std::runtime_error("could not open file: " + filename);
-    nlohmann::json root;
-    file >> root;
-
-    for (auto enemy:root["Enemies"])
-    {
-        if (enemy["type"] == "Hexagon")
-        {
-            auto projectile = std::make_shared<entities::enemies::hexagon::Hexagon>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<entities::enemies::hexagon::HexagonView>(projectile);
-            auto controller = std::make_shared<entities::enemies::hexagon::HexagonController>(projectile, view, this);
-
-            addObject(std::make_tuple(std::move(projectile), std::move(view), std::move(controller)));
-        }
     }
 }
 Game::~Game()=default;

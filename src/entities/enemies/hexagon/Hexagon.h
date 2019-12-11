@@ -10,23 +10,23 @@
 #ifndef SPACE_INVADERS_HEXAGON_H
 #define SPACE_INVADERS_HEXAGON_H
 
-#include "../../abstract_classes/Entity.h"
 #include "../../abstract_classes/Subject.h"
 #include "../../abstract_classes/Enemy.h"
 
 namespace entities::enemies::hexagon
 {
-    class Hexagon: public Entity, public Subject, public Enemy
+    class Hexagon: public Subject, public Enemy
     {
         const float vspeed = 0.7;
         const float hspeed = 2;
     public:
-        int dir;
+        int hDir;
+        int vDir;
         int maxHp;
-        Hexagon (int x, int y);
+        Hexagon (float x, float y);
         void move();
         void update() override;
-        void takeDamage() override;
+        void takeDamage(unsigned int damage) override;
         ~Hexagon() override = default;
     };
 }

@@ -19,12 +19,12 @@
 //TODO rapport schrijven
 
 
-#include <iostream>
-#include "game/Game.h"
+
+#include "game/LevelLoader.h"
 int main()
 {
     Game game;
-    game.readLevelFromFile("../levels/level0.json");
+    LevelLoader::loadLevel(&game, "../levels/level0.json");
     game.startGame();
     return 0;
 }

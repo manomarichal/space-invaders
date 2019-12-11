@@ -17,11 +17,10 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::enemies::hexagon::Hexagon*>(e.get()) != nullptr)
+        if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr)
         {
             if (entities::Collision::checkCollision(*entity, *e))
             {
-                std::cout << "hit" << std::endl;
                 return false;
             }
         }

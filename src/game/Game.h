@@ -20,7 +20,6 @@
 
 #include "../entities/abstract_classes/Controller.h"
 #include "../entities/playership/PlayerShipController.h"
-#include "../entities/enemies/hexagon/HexagonController.h"
 
 #include "../util/Object.h"
 #include "../util/Stopwatch.h"
@@ -44,14 +43,15 @@ private:
     void updateEntities();
     void drawViews();
     void deleteObject(uint index);
+
 public:
     Game();
-    void readLevelFromFile(const std::string &filename);
     void addObject(entities::Object object);
     void startGame();
 
     [[nodiscard]] const std::vector<std::shared_ptr<entities::Entity>> &getActiveEntities() const;
 
+    friend class LevelLoader;
     ~Game();
 };
 

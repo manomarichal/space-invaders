@@ -10,11 +10,12 @@
 #ifndef SPACE_INVADERS_HEXAGONCONTROLLER_H
 #define SPACE_INVADERS_HEXAGONCONTROLLER_H
 
+#include "./HexagonView.h"
 #include "../../abstract_classes/Controller.h"
 #include "../../projectiles/standard/StandardProjectile.h"
 #include "../../../util/Collision.h"
 #include "../../../settings/screensize.h"
-#include "./HexagonView.h"
+
 
 namespace entities::enemies::hexagon
 {

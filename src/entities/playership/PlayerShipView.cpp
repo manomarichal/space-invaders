@@ -17,7 +17,7 @@ PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
     entity->subscribe(this);
 
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
+    texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, entity->getXSize(), entity->getYSize()));
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
@@ -40,7 +40,7 @@ void PlayerShipView::draw(sf::RenderWindow &window) const
             texture->loadFromFile("../textures/playershipleft.jpg", sf::IntRect(0, 0, 64, 64));
             break;
         case right:
-            texture->loadFromFile("../textures/playershipright.jpg", sf::IntRect(0, 0, 64, 64));
+            texture->loadFromFile("../textures/bluesquare.jpg", sf::IntRect(0, 0, 64, 64));
             break;
     }
      */

@@ -2,7 +2,7 @@
   "Enemies": [
 
       {
-        "type": "Hexagon",
+        "type": "Pentagon",
         "x": 150,
         "y": 100
       },
@@ -10,18 +10,18 @@
     {
       "type": "Hexagon",
       "x": 350,
-      "y": 100
+      "y": -100
     },
 
     {
-      "type": "Hexagon",
+      "type": "Pentagon",
       "x": 550,
       "y": 100
     },
     {
       "type": "Hexagon",
       "x": 50,
-      "y": 200
+      "y": -600
     },
     {
       "type": "Hexagon",
@@ -31,24 +31,24 @@
     {
       "type": "Hexagon",
       "x": 450,
-      "y": 200
+      "y": -200
     },
 
     {
       "type": "Hexagon",
       "x": 50,
-      "y": 300
+      "y": -500
     },
     {
       "type": "Hexagon",
       "x": 150,
-      "y": 300
+      "y": -400
     },
 
     {
-      "type": "Hexagon",
+      "type": "Hentagon",
       "x": 350,
-      "y": 300
+      "y": -300
     },
 
     {

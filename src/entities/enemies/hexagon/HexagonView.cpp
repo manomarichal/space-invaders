@@ -8,7 +8,7 @@
 // =====================================================================
 
 #include "HexagonView.h"
-#include <iostream>
+
 using namespace entities::enemies::hexagon;
 
 HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
@@ -19,7 +19,7 @@ HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
     maxHP = entity->hitpoints;
 
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/redsquare.jpg", sf::IntRect(0, 0, 64, 64));
+    texture->loadFromFile("../textures/redsquare.jpg", sf::IntRect(0, 0, entity->getXSize(), entity->getYSize()));
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
