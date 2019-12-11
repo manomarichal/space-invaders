@@ -9,7 +9,7 @@
 
 #include "PlayerShip.h"
 
-using namespace entities;
+using namespace entities::playership;
 
 void PlayerShip::moveLeft()
 {
@@ -42,5 +42,9 @@ void PlayerShip::move()
     notifyObservers();
 }
 
+void PlayerShip::update()
+{
+    move();
+}
 
 PlayerShip::~PlayerShip()=default;

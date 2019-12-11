@@ -14,7 +14,7 @@
 #include "../../abstract_classes/Observer.h"
 #include "./StandardProjectile.h"
 
-namespace entities::projectiles
+namespace entities::projectiles::standard
 {
     class StandardProjectileView: public View, public Observer
     {

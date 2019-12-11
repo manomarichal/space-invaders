@@ -9,7 +9,7 @@
 
 #include "PlayerShipView.h"
 
-using namespace entities;
+using namespace entities::playership;
 
 PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 {

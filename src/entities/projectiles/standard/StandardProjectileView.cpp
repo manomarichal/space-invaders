@@ -8,7 +8,7 @@
 // =====================================================================
 
 #include "StandardProjectileView.h"
-using namespace entities::projectiles;
+using namespace entities::projectiles::standard;
 
 StandardProjectileView::StandardProjectileView(std::shared_ptr<StandardProjectile> projectile)
 {

@@ -13,13 +13,11 @@
 #include "../../abstract_classes/View.h"
 #include "../../abstract_classes/Observer.h"
 #include "./Hexagon.h"
-namespace entities::enemies
+namespace entities::enemies::hexagon
 {
 class HexagonView: public View, public Observer
     {
         float maxHP;
-        float maxXsize;
-        float maxYsize;
         std::shared_ptr<Hexagon> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;

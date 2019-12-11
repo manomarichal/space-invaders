@@ -10,13 +10,13 @@
 #ifndef SPACE_INVADERS_PROJECTILEFACTORY_H
 #define SPACE_INVADERS_PROJECTILEFACTORY_H
 
-#include "../../Game/Game.h"
+#include "../../game/Game.h"
 #include "../../util/Object.h"
 #include "./standard/StandardProjectileController.h"
 
 namespace entities::projectiles
 {
-    enum Type {standard, fast};
+    enum Type {Standard, Fast};
     class ProjectileFactory
     {
     private:

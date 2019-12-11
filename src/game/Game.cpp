@@ -17,9 +17,9 @@ Game::Game()
     activeControllers.reserve(50);
     objectsToDelete.reserve(50);
 
-    auto ship = std::make_shared<entities::PlayerShip>(300, 1000-32);
-    auto view = std::make_shared<entities::PlayerShipView>(ship);
-    auto controller = std::make_shared<entities::PlayerShipController>(ship, view, this);
+    auto ship = std::make_shared<entities::playership::PlayerShip>(300, 1000-32);
+    auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
+    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, this);
 
     addObject(std::make_tuple(std::move(ship), std::move(view), std::move(controller)));
 }
@@ -36,6 +36,14 @@ void Game::deleteObject(uint index)
     activeEntities.erase(activeEntities.begin() + index);
     activeViews.erase(activeViews.begin() + index);
     activeControllers.erase(activeControllers.begin() + index);
+}
+
+void Game::updateEntities()
+{
+    for (auto &entity:activeEntities)
+    {
+        entity->update();
+    }
 }
 
 void Game::handleEvents()
@@ -83,13 +91,14 @@ void Game::startGame()
 {
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
 
-    Stopwatch stopwatch(16);
+    Stopwatch stopwatch(8);
 
     while (window->isOpen())
     {
         handleEvents();
+        updateEntities();
         drawViews();
-        while (!stopwatch.isReady()) {usleep(10000);};
+        while (!stopwatch.isReady()) {usleep(5000);};
     }
 }
 
@@ -104,9 +113,9 @@ void Game::readLevelFromFile(const std::string &filename)
     {
         if (enemy["type"] == "Hexagon")
         {
-            auto projectile = std::make_shared<entities::enemies::Hexagon>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<entities::enemies::HexagonView>(projectile);
-            auto controller = std::make_shared<entities::enemies::HexagonController>(projectile, view, this);
+            auto projectile = std::make_shared<entities::enemies::hexagon::Hexagon>(enemy["x"], enemy["y"]);
+            auto view = std::make_shared<entities::enemies::hexagon::HexagonView>(projectile);
+            auto controller = std::make_shared<entities::enemies::hexagon::HexagonController>(projectile, view, this);
 
             addObject(std::make_tuple(std::move(projectile), std::move(view), std::move(controller)));
         }

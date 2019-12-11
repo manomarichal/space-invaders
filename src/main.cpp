@@ -20,11 +20,11 @@
 
 
 #include <iostream>
-#include "Game/Game.h"
+#include "game/Game.h"
 int main()
 {
     Game game;
-    game.readLevelFromFile("../levels/single_enemy.json");
+    game.readLevelFromFile("../levels/level0.json");
     game.startGame();
     return 0;
 }

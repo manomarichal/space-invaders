@@ -13,7 +13,7 @@
 #include "../../abstract_classes/Controller.h"
 #include "./StandardProjectileView.h"
 
-namespace entities::projectiles
+namespace entities::projectiles::standard
 {
     class StandardProjectileController: public Controller
     {

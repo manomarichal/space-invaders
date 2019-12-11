@@ -12,23 +12,21 @@
 
 #include "../../abstract_classes/Entity.h"
 #include "../../abstract_classes/Subject.h"
+#include "../../abstract_classes/Enemy.h"
 
-namespace entities::enemies
+namespace entities::enemies::hexagon
 {
-    class Hexagon: public Entity, public Subject
+    class Hexagon: public Entity, public Subject, public Enemy
     {
-        int vspeed = 1;
-        int hspeed = 4;
-        int dir;
+        const float vspeed = 0.7;
+        const float hspeed = 2;
     public:
+        int dir;
+        int maxHp;
         Hexagon (int x, int y);
-        int hitpoints = 5;
         void move();
-        void takeDamage();
-        void setDir(int dir);
-
-        [[nodiscard]] int getDir() const;
-
+        void update() override;
+        void takeDamage() override;
         ~Hexagon() override = default;
     };
 }

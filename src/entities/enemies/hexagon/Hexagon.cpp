@@ -8,18 +8,17 @@
 // =====================================================================
 
 #include "Hexagon.h"
-using namespace entities::enemies;
+using namespace entities::enemies::hexagon;
 
-Hexagon::Hexagon(int x, int y): Entity(x, y, hexagon)
+Hexagon::Hexagon(int x, int y): Entity(x, y)
 {
     xSize=64;
     ySize=64;
+    hitpoints = 3;
+    maxHp = hitpoints;
+    
     if (rand()%2 == 0) dir = 1;
     else dir = -1;
-}
-void Hexagon::setDir(int dir)
-{
-    this->dir = dir;
 }
 
 void Hexagon::move()
@@ -32,10 +31,14 @@ void Hexagon::move()
 void Hexagon::takeDamage()
 {
     hitpoints -= 1;
+    xSize = 64 * hitpoints/maxHp;
+    ySize = 64*  hitpoints/maxHp;
     notifyObservers();
 }
 
-int Hexagon::getDir() const
+void Hexagon::update()
 {
-    return dir;
+    move();
+    if (getX() - getXSize()/2 < 0) dir = 1;
+    if (getX() + getXSize()/2 > screensize::x) dir = -1;
 }

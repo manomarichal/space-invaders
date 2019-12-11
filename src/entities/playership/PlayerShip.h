@@ -13,9 +13,7 @@
 #include "../abstract_classes/Subject.h"
 #include "../abstract_classes/Entity.h"
 
-#include "../../settings/screensize.h"
-
-namespace entities
+namespace entities::playership
 {
     class PlayerShip: public Entity, public Subject
     {
@@ -26,12 +24,13 @@ namespace entities
         const float friction = 0.90;
 
     public:
-        PlayerShip(int x, int y): Entity(x, y, playership) {xSize = 64; ySize = 64;};
+        PlayerShip(int x, int y): Entity(x, y) {xSize = 64; ySize = 64;};
 
         int hitpoints = 10;
         void moveLeft();
         void moveRight();
         void move();
+        void update() override;
         ~PlayerShip() override;
     };
 }

@@ -13,15 +13,16 @@
 #include "../../abstract_classes/Entity.h"
 #include "../../abstract_classes/Subject.h"
 
-namespace entities::projectiles
+namespace entities::projectiles::standard
 {
     class StandardProjectile: public Entity, public Subject
     {
     private:
-        float vspeed = 50;
+        float vspeed = 10;
     public:
-        StandardProjectile(int x, int y): Entity(x, y, standardprojectile) {xSize = 8; ySize = 24;};
+        StandardProjectile(int x, int y): Entity(x, y) {xSize = 8; ySize = 24;};
         void move();
+        void update() override;
         ~StandardProjectile() override = default;
     };
 }

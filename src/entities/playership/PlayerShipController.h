@@ -17,7 +17,7 @@
 #include "../../util/Stopwatch.h"
 #include <utility>
 
-namespace entities
+namespace entities::playership
 {
     class PlayerShipController: public entities::Controller
     {

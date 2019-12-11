@@ -12,23 +12,23 @@
 
 #include <memory>
 #include <utility>
+#include <iostream>
+
+#include "../../settings/screensize.h"
 
 namespace entities
 {
-    enum Type {standardprojectile, hexagon, mushroom, playership};
-
     class Entity
     {
     protected:
         float x;
         float y;
-        Type type;
         unsigned int xSize;
         unsigned int ySize;
     public:
-        Entity(float x, float y, Type type): x(x), y(y), type(type) {};
-
-        virtual ~Entity()=0;
+        Entity(float x, float y): x(x), y(y) {};
+        virtual void update()=0;
+        virtual ~Entity()= default;
 
         [[nodiscard]] float getX() const
         {
@@ -50,11 +50,6 @@ namespace entities
             return ySize;
         }
 
-        [[nodiscard]] Type getType() const
-        {
-            return type;
-        }
-
         void setXSize(unsigned int xSize)
         {
             Entity::xSize = xSize;
@@ -65,7 +60,6 @@ namespace entities
             Entity::ySize = ySize;
         }
     };
-    inline Entity::~Entity()=default;
 }
 
 

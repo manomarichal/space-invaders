@@ -14,7 +14,7 @@
 #include "../abstract_classes/View.h"
 #include "../abstract_classes/Observer.h"
 
-namespace entities
+namespace entities::playership
 {
     class PlayerShipView: public entities::View, public entities::Observer
     {

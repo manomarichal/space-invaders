@@ -10,21 +10,21 @@
 #include "StandardProjectileController.h"
 #include "../../enemies/hexagon/Hexagon.h"
 
-using namespace entities::projectiles;
+using namespace entities::projectiles::standard;
 
 //TODO delete projectiles
 bool StandardProjectileController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::enemies::Hexagon*>(e.get()) != nullptr)
+        if (dynamic_cast<entities::enemies::hexagon::Hexagon*>(e.get()) != nullptr)
         {
             if (entities::Collision::checkCollision(*entity, *e))
             {
+                std::cout << "hit" << std::endl;
                 return false;
             }
         }
     }
-    entity->move();
     return entity->getY() > 0;
 }

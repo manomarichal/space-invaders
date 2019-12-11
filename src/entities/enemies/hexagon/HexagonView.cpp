@@ -9,12 +9,15 @@
 
 #include "HexagonView.h"
 #include <iostream>
-using namespace entities::enemies;
+using namespace entities::enemies::hexagon;
 
 HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
 {
     entity = std::move(hexagon);
     entity->subscribe(this);
+
+    maxHP = entity->hitpoints;
+
     texture = std::make_unique<sf::Texture>();
     texture->loadFromFile("../textures/redsquare.jpg", sf::IntRect(0, 0, 64, 64));
 
@@ -25,6 +28,7 @@ HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
 
 void HexagonView::notify()
 {
+    sprite->setScale(static_cast<float>(entity->hitpoints)/maxHP, static_cast<float >(entity->hitpoints) /maxHP);
     sprite->setPosition(entity->getX(), entity->getY());
 }
 

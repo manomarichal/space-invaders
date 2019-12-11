@@ -40,8 +40,8 @@ private:
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
     std::vector<uint> objectsToDelete;
 
-    bool isInitialized=false;
     void handleEvents();
+    void updateEntities();
     void drawViews();
     void deleteObject(uint index);
 public:

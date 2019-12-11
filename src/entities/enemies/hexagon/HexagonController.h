@@ -16,7 +16,7 @@
 #include "../../../settings/screensize.h"
 #include "./HexagonView.h"
 
-namespace entities::enemies
+namespace entities::enemies::hexagon
 {
     class HexagonController: public Controller
     {

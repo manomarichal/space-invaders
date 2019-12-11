@@ -1,22 +1,22 @@
 // =====================================================================
-// @name: StandardProjectile.cpp
+// @name: Pentagon.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 06.12.19
+// @date: 11.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "StandardProjectile.h"
-using namespace entities::projectiles::standard;
+#ifndef SPACE_INVADERS_PENTAGON_H
+#define SPACE_INVADERS_PENTAGON_H
 
-void StandardProjectile::move()
+namespace entities::enemies::pentagon
 {
-    y -= vspeed;
-    notifyObservers();
+    class Pentagon
+    {
+
+    };
 }
 
-void StandardProjectile::update()
-{
-    move();
-}
+
+#endif //SPACE_INVADERS_PENTAGON_H
