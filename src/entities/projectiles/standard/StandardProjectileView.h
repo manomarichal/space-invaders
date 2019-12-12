@@ -16,10 +16,12 @@
 
 namespace entities::projectiles::standard
 {
-    class StandardProjectileView: public View, public Observer
+    class StandardProjectileView: public View
     {
     public:
-        explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile);
+        explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile)
+        :View("../textures/whitesquare.png", projectile){};
+
         void notify() override;
         ~StandardProjectileView() override = default;
     };

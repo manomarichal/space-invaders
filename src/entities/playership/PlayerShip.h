@@ -15,7 +15,7 @@
 
 namespace entities::playership
 {
-    class PlayerShip: public Entity, public Subject
+    class PlayerShip: public Entity
     {
     private:
         float vx=0;  // horizontal velocity

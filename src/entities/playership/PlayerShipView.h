@@ -16,11 +16,12 @@
 
 namespace entities::playership
 {
-    class PlayerShipView: public entities::View, public entities::Observer
+    class PlayerShipView: public View
     {
     public:
 
-        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
+        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship)
+                :View("../textures/whitesquare.png", ship) {};
 
         void notify() override;
 

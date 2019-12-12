@@ -6,8 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB_RECURSE HDRS ${SIZE--_SOURCE_DIR}/src/*.h  )
 file(GLOB_RECURSE SRCS ${SIZE--_SOURCE_DIR}/src/*.cpp)
 
-add_executable(space_invaders ${HDRS} ${SRCS} src/game/LevelLoader.cpp src/game/LevelLoader.h src/entities/enemies/pentagon/PentagonView.cpp src/entities/enemies/pentagon/PentagonView.h src/entities/enemies/pentagon/PentagonController.cpp src/entities/enemies/pentagon/PentagonController.h src/entities/projectiles/standard_enemy/StandardEnemyProjectile.cpp src/entities/projectiles/standard_enemy/StandardEnemyProjectile.h src/entities/projectiles/standard_enemy/StandardEnemyProjectileView.cpp src/entities/projectiles/standard_enemy/StandardEnemyProjectileView.h src/entities/projectiles/standard_enemy/StandardEnemyProjectileController.cpp src/entities/projectiles/standard_enemy/StandardEnemyProjectileController.h src/entities/enemies/EnemyView.h)
-
+add_executable(space_invaders ${HDRS} ${SRCS} src/entities/enemies/cube/CubeView.cpp src/entities/enemies/cube/CubeView.h)
 set(CMAKE_CXX_FLAGS " -march=native -Wall -Wextra -Wnon-virtual-dtor -Wold-style-cast -Wunused -Woverloaded-virtual -Wpedantic -Wnull-dereference -Wdouble-promotion -Wformat=2")
 
 target_link_libraries(space_invaders "-lsfml-graphics -lsfml-window -lsfml-system")

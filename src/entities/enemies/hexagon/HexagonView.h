@@ -15,14 +15,12 @@
 #include "./Hexagon.h"
 namespace entities::enemies::hexagon
 {
-class HexagonView: public View, public Observer
+class HexagonView: public View
     {
         float maxHP;
     public:
         explicit HexagonView(std::shared_ptr<Hexagon> hexagon);
-
         void notify() override ;
-
         ~HexagonView() override = default;
     };
 }

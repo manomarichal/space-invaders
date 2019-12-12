@@ -15,10 +15,12 @@
 #include <iostream>
 
 #include "../../settings/screensize.h"
+#include "./Subject.h"
+#include "Subject.h"
 
 namespace entities
 {
-    class Entity
+    class Entity: public Subject
     {
     protected:
         float x;

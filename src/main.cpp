@@ -7,6 +7,7 @@
 // @description: 
 // =====================================================================
 
+//TODO notify() komt in meerdere dingen voor
 //TODO transformatie (singleton pattern)
 //TODO level loops
 //TODO make it fancy

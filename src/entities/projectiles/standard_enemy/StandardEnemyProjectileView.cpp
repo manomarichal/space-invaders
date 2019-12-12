@@ -10,12 +10,6 @@
 #include "StandardEnemyProjectileView.h"
 using namespace entities::projectiles::standard_enemy;
 
-StandardEnemyProjectileView::StandardEnemyProjectileView(std::shared_ptr<StandardEnemyProjectile> projectile)
-: View("../textures/whitesquare.png", projectile)
-{
-    dynamic_cast<Subject*>(entity.get())->subscribe(this);
-}
-
 void StandardEnemyProjectileView::notify()
 {
     sprite->setPosition(entity->getX(), entity->getY());

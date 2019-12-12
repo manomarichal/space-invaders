@@ -12,11 +12,12 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+
 #include "./Entity.h"
 
 namespace entities
 {
-    class View
+    class View: public Observer
     {
     protected:
 
@@ -33,6 +34,9 @@ namespace entities
             sprite = std::make_unique<sf::Sprite>();
             sprite->setTexture(*texture);
             sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
+
+            dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
+
         }
     public:
         virtual void draw(sf::RenderWindow &window) const

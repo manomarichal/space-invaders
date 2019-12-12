@@ -15,7 +15,7 @@
 
 namespace entities::projectiles::standard
 {
-    class StandardProjectile: public Entity, public Subject
+    class StandardProjectile: public Entity
     {
     private:
         float vspeed = 10;

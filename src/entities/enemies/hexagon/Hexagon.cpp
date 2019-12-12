@@ -12,8 +12,8 @@ using namespace entities::enemies::hexagon;
 
 Hexagon::Hexagon(float x, float y): Enemy(x, y)
 {
-    xSize=32;
-    ySize=32;
+    xSize=64;
+    ySize=64;
     hitpoints = 20;
     maxHp = hitpoints;
     
@@ -39,8 +39,5 @@ void Hexagon::update()
 {
     xSize = 64 * hitpoints/maxHp;
     ySize = 64*  hitpoints/maxHp;
-
     move();
-    if (getX() - getXSize()/2 < 0) hDir = 1;
-    if (getX() + getXSize()/2 > screensize::x) hDir = -1;
 }

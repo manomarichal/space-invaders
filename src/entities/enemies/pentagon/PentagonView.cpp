@@ -15,8 +15,6 @@ PentagonView::PentagonView(std::shared_ptr<Pentagon> pentagon)
 :View("../textures/bluesquare.jpg", pentagon)
 {
     maxHP = pentagon->hitpoints;
-    entity = std::move(pentagon);
-    dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer*>(this));
 }
 
 void PentagonView::notify()

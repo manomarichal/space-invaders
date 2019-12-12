@@ -1,16 +1,16 @@
 // =====================================================================
-// @name: StandardProjectileView.cpp
+// @name: CubeView.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 06.12.19
+// @date: 12.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "StandardProjectileView.h"
-using namespace entities::projectiles::standard;
+#include "CubeView.h"
+using namespace entities::enemies::cube;
 
-void StandardProjectileView::notify()
+void CubeView::notify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
 }

@@ -15,8 +15,6 @@ HexagonView::HexagonView(std::shared_ptr<Hexagon> hexagon)
 : View(std::string("../textures/redsquare.jpg"), hexagon)
 {
     maxHP = hexagon->hitpoints;
-    std::shared_ptr<Entity> e;
-    dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
 }
 
 void HexagonView::notify()

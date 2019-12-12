@@ -11,7 +11,7 @@
 #define SPACE_INVADERS_STANDARDENEMYPROJECTILECONTROLLER_H
 
 #include "../../abstract_classes/Controller.h"
-#include "../../abstract_classes/Enemy.h"
+#include "../../enemies/Enemy.h"
 #include "../../playership/PlayerShip.h"
 #include "./StandardEnemyProjectileView.h"
 

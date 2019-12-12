@@ -11,11 +11,11 @@
 #define SPACE_INVADERS_HEXAGON_H
 
 #include "../../abstract_classes/Subject.h"
-#include "../../abstract_classes/Enemy.h"
+#include "../Enemy.h"
 
 namespace entities::enemies::hexagon
 {
-    class Hexagon: public Subject, public Enemy
+    class Hexagon: public Enemy
     {
         const float vspeed = 0.7;
         const float hspeed = 2;

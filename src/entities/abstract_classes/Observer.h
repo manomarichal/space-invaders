@@ -10,8 +10,6 @@
 #ifndef SPACE_INVADERS_OBSERVER_H
 #define SPACE_INVADERS_OBSERVER_H
 
-#include "Entity.h"
-
 namespace entities
 {
     class Observer

@@ -23,14 +23,6 @@ bool HexagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> 
                 entity->takeDamage(10);
             }
         }
-
-        if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr and e != entity)
-        {
-            if (entities::Collision::checkCollision(*entity, *e))
-            {
-                entity->vDir = 0;
-            }
-        }
     }
 
     return entity->hitpoints > 0;

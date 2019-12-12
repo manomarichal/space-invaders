@@ -1,39 +1,36 @@
 // =====================================================================
-// @name: Pentagon.cpp
+// @name: Cube.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 11.12.19
+// @date: 12.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "Pentagon.h"
+#include "Cube.h"
 
-using namespace entities::enemies::pentagon;
+using namespace entities::enemies::cube;
 
-Pentagon::Pentagon(float x, float y): Enemy(x, y)
+Cube::Cube(float x, float y): Enemy(x, y)
 {
-    xSize=128;
-    ySize=128;
-    hitpoints = 200;
-    maxHp = hitpoints;
+    xSize=32;
+    ySize=32;
+    hitpoints = 10;
 }
 
-void Pentagon::move()
+void Cube::move()
 {
     y += vspeed;
     notifyObservers();
 }
 
-void Pentagon::takeDamage(unsigned int damage)
+void Cube::takeDamage(unsigned int damage)
 {
     hitpoints -= damage;
     notifyObservers();
 }
 
-void Pentagon::update()
+void Cube::update()
 {
-    xSize = 128 * hitpoints/maxHp;
-    ySize = 128 *  hitpoints/maxHp;
     move();
 }
