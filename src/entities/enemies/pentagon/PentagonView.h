@@ -19,15 +19,9 @@ namespace entities::enemies::pentagon
     class PentagonView: public View, public Observer
     {
         float maxHP;
-        std::shared_ptr<Pentagon> entity;
-        std::unique_ptr<sf::Sprite> sprite;
-        std::unique_ptr<sf::Texture> texture;
     public:
         explicit PentagonView(std::shared_ptr<Pentagon> pentagon);
-
         void notify() override ;
-        void draw(sf::RenderWindow &window) const override;
-
         ~PentagonView() override = default;
     };
 }

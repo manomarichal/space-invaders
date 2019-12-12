@@ -12,6 +12,8 @@ using namespace entities::enemies::hexagon;
 
 bool HexagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
+    entity->vDir = 1;
+
     for (auto e:entities)
     {
         if (dynamic_cast<entities::projectiles::standard::StandardProjectile*>(e.get()) != nullptr)
@@ -21,17 +23,13 @@ bool HexagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> 
                 entity->takeDamage(10);
             }
         }
-        else if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr and e != entity)
+
+        if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr and e != entity)
         {
-            if (entities::Collision::checkHorizontalCollision(*entity, *e))
-            {
-                entity->hDir = entity->hDir * -1;
-            }
-            if (entities::Collision::checkVerticalCollision(*entity, *e))
+            if (entities::Collision::checkCollision(*entity, *e))
             {
                 entity->vDir = 0;
             }
-            else entity->vDir = 1;
         }
     }
 

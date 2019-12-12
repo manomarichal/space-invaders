@@ -11,6 +11,7 @@
 #define SPACE_INVADERS_STANDARDPROJECTILECONTROLLER_H
 
 #include "../../abstract_classes/Controller.h"
+#include "../../abstract_classes/Enemy.h"
 #include "./StandardProjectileView.h"
 
 namespace entities::projectiles::standard

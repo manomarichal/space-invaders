@@ -18,17 +18,9 @@ namespace entities::projectiles::standard
 {
     class StandardProjectileView: public View, public Observer
     {
-    private:
-        std::shared_ptr<StandardProjectile> entity;
-        std::unique_ptr<sf::Sprite> sprite;
-        std::unique_ptr<sf::Texture> texture;
     public:
-
         explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile);
-
         void notify() override;
-        void draw(sf::RenderWindow &window) const override;
-
         ~StandardProjectileView() override = default;
     };
 }

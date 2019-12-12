@@ -12,27 +12,15 @@
 using namespace entities::enemies::pentagon;
 
 PentagonView::PentagonView(std::shared_ptr<Pentagon> pentagon)
+:View("../textures/bluesquare.jpg", pentagon)
 {
+    maxHP = pentagon->hitpoints;
     entity = std::move(pentagon);
-    entity->subscribe(this);
-
-    maxHP = entity->hitpoints;
-
-    texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile("../textures/bluesquare.jpg", sf::IntRect(0, 0, entity->getXSize(), entity->getYSize()));
-
-    sprite = std::make_unique<sf::Sprite>();
-    sprite->setTexture(*texture);
-    sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
+    dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer*>(this));
 }
 
 void PentagonView::notify()
 {
-    sprite->setScale(static_cast<float>(entity->hitpoints)/maxHP, static_cast<float >(entity->hitpoints) /maxHP);
+    sprite->setScale(static_cast<float>(dynamic_cast<Enemy*>(entity.get())->hitpoints)/maxHP, static_cast<float >(dynamic_cast<Enemy*>(entity.get())->hitpoints) /maxHP);
     sprite->setPosition(entity->getX(), entity->getY());
-}
-
-void PentagonView::draw(sf::RenderWindow &window) const
-{
-    window.draw(*sprite);
 }

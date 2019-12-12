@@ -10,6 +10,11 @@
 #include "PentagonController.h"
 using namespace entities::enemies::pentagon;
 
+PentagonController::PentagonController(std::shared_ptr<Pentagon> entity, std::shared_ptr<PentagonView> view, Game *game)
+        :Controller(game), entity(std::move(entity)), view(std::move(view))
+{
+    stopwatch = std::make_unique<Stopwatch>(1000);
+}
 bool PentagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (auto e:entities)
@@ -28,6 +33,11 @@ bool PentagonController::handleEvents(const std::vector<std::shared_ptr<Entity>>
                 entity->dir = entity->dir * -1;
             }
         }
+    }
+
+    if (stopwatch->isReady())
+    {
+        projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::EnemyStandard, game);
     }
 
     return entity->hitpoints > 0;

@@ -20,6 +20,15 @@ entities::Object ProjectileFactory::createStandardProjectile(int x, int y, Game*
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
 }
 
+entities::Object ProjectileFactory::createStandardEnemyProjectile(int x, int y, Game* game)
+{
+    auto projectile = std::make_shared<standard_enemy::StandardEnemyProjectile>(x, y);
+    auto view = std::make_shared<standard_enemy::StandardEnemyProjectileView>(projectile);
+    auto controller = std::make_shared<standard_enemy::StandardEnemyProjectileController>(projectile, view, game);
+
+    return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
+}
+
 void ProjectileFactory::createProjectile(int x, int y, entities::projectiles::Type type, Game* game)
 {
     Object object;
@@ -30,6 +39,9 @@ void ProjectileFactory::createProjectile(int x, int y, entities::projectiles::Ty
             object = ProjectileFactory::createStandardProjectile(x, y, game);
             break;
         case Fast:
+            break;
+        case EnemyStandard:
+            object = ProjectileFactory::createStandardEnemyProjectile(x, y, game);
             break;
         default:
             break;

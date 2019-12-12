@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: Enemy.h
+// @name: EnemyView.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 11.12.19
@@ -7,20 +7,17 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_ENEMY_H
-#define SPACE_INVADERS_ENEMY_H
+#ifndef SPACE_INVADERS_ENEMYVIEW_H
+#define SPACE_INVADERS_ENEMYVIEW_H
 
-#include "./Entity.h"
+#include "../abstract_classes/View.h"
+#include "../abstract_classes/Observer.h"
 
 namespace entities::enemies
 {
-    class Enemy: public Entity
+    class EnemyView: public View, public Observer
     {
-    public:
-        Enemy(float x, float y):Entity(x, y) {};
-        int hitpoints;
-        virtual void takeDamage(unsigned int damage)=0;
-        virtual ~Enemy()= default;
+    private:
     };
 }
-#endif //SPACE_INVADERS_ENEMY_H
+#endif //SPACE_INVADERS_ENEMYVIEW_H

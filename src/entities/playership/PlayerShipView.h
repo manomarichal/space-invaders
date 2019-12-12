@@ -18,15 +18,10 @@ namespace entities::playership
 {
     class PlayerShipView: public entities::View, public entities::Observer
     {
-    private:
-        std::shared_ptr<PlayerShip> entity;
-        std::unique_ptr<sf::Sprite> sprite;
-        std::unique_ptr<sf::Texture> texture;
     public:
 
         explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
 
-        void draw(sf::RenderWindow &window) const override;
         void notify() override;
 
         ~PlayerShipView() override = default;

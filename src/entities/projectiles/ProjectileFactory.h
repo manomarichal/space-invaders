@@ -13,15 +13,17 @@
 #include "../../game/Game.h"
 #include "../../util/Object.h"
 #include "./standard/StandardProjectileController.h"
+#include "./standard_enemy/StandardEnemyProjectileController.h"
 
 namespace entities::projectiles
 {
-    enum Type {Standard, Fast};
+    enum Type {Standard, Fast, EnemyStandard};
     class ProjectileFactory
     {
     private:
         ProjectileFactory()= default;   // no instances of this class may be created
         static entities::Object createStandardProjectile(int x, int y, Game* game);
+        static entities::Object createStandardEnemyProjectile(int x, int y, Game* game);
     public:
         static void createProjectile(int x, int y, Type type, Game* game);
     };

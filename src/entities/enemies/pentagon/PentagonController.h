@@ -13,19 +13,21 @@
 #include "./PentagonView.h"
 #include "../../abstract_classes/Controller.h"
 #include "../../projectiles/standard/StandardProjectile.h"
+#include "../../projectiles/ProjectileFactory.h"
 #include "../../../util/Collision.h"
+#include "../../../util/Stopwatch.h"
 #include "../../../settings/screensize.h"
-
 
 namespace entities::enemies::pentagon
 {
     class PentagonController: public Controller
     {
     private:
+        std::unique_ptr<Stopwatch> stopwatch;
         std::shared_ptr<Pentagon> entity;
         std::shared_ptr<PentagonView> view;
     public:
-        PentagonController(std::shared_ptr<Pentagon> entity, std::shared_ptr<PentagonView> view, Game* game):Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        PentagonController(std::shared_ptr<Pentagon> entity, std::shared_ptr<PentagonView> view, Game* game);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PentagonController() override = default;
     };

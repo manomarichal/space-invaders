@@ -12,9 +12,9 @@ using namespace entities::enemies::hexagon;
 
 Hexagon::Hexagon(float x, float y): Enemy(x, y)
 {
-    xSize=64;
-    ySize=64;
-    hitpoints = 30;
+    xSize=32;
+    ySize=32;
+    hitpoints = 20;
     maxHp = hitpoints;
     
     if (rand()%2 == 0) hDir = 1;
@@ -26,7 +26,6 @@ Hexagon::Hexagon(float x, float y): Enemy(x, y)
 void Hexagon::move()
 {
     y += vspeed * vDir;
-    x += hspeed * hDir;
     notifyObservers();
 }
 

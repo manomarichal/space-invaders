@@ -1,22 +1,20 @@
 // =====================================================================
-// @name: StandardProjectileController.cpp
+// @name: StandardEnemyProjectileController.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 06.12.19
+// @date: 11.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "StandardProjectileController.h"
+#include "StandardEnemyProjectileController.h"
+using namespace entities::projectiles::standard_enemy;
 
-using namespace entities::projectiles::standard;
-
-//TODO delete projectiles
-bool StandardProjectileController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
+bool StandardEnemyProjectileController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr)
+        if (dynamic_cast<entities::playership::PlayerShip*>(e.get()) != nullptr)
         {
             if (entities::Collision::checkCollision(*entity, *e))
             {
@@ -24,5 +22,5 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
             }
         }
     }
-    return entity->getY() > 0;
+    return true;
 }

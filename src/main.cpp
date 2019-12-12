@@ -8,7 +8,6 @@
 // =====================================================================
 
 //TODO transformatie (singleton pattern)
-//TODO achievements (observer pattern)
 //TODO level loops
 //TODO make it fancy
 //TODO const correctness
@@ -17,8 +16,6 @@
 //TODO prog2 code standards
 //TODO clion code inspection
 //TODO rapport schrijven
-
-
 
 #include "game/LevelLoader.h"
 int main()
