@@ -7,12 +7,10 @@
 // @description: 
 // =====================================================================
 
-//TODO notify() komt in meerdere dingen voor
 //TODO transformatie (singleton pattern)
 //TODO level loops
 //TODO make it fancy
 //TODO const correctness
-//TODO optimizen
 //TODO code documenteren
 //TODO prog2 code standards
 //TODO clion code inspection
