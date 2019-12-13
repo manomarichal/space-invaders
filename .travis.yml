@@ -1,3 +1,4 @@
+os: linux
 dist: trusty
 language: cpp
 compiler:
@@ -12,4 +13,4 @@ addons:
 script:
   - export CC=gcc-8
   - export CXX=g++-8
-  - cmake ./CMakeLists.txt
+  - cmake /home/travis/build/shano19/space-invaders/CMakeLists.txt
