@@ -3,3 +3,4 @@
 ./space_invaders.cbp
 ./Makefile
 ./cmake_install.cmake
+./CMakeFiles
