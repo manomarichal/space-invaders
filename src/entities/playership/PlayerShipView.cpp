@@ -15,7 +15,7 @@ PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 :View("../textures/spaceship.png", std::move(ship))
 {
     notify();
-};
+}
 
 void PlayerShipView::draw(sf::RenderWindow &window) const
 {
