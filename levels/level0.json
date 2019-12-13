@@ -1,110 +1,95 @@
 {
   "Enemies": [
 
-      {
-        "type": "Pentagon",
-        "x": 150,
-        "y": 100
-      },
-
     {
-      "type": "Hexagon",
-      "x": 350,
-      "y": -100
-    },
-
-    {
-      "type": "Pentagon",
-      "x": 550,
-      "y": 100
-    },
-    {
-      "type": "Hexagon",
+      "type": "RedAlien",
       "x": 50,
-      "y": -600
+      "y": 250
     },
     {
-      "type": "Hexagon",
+      "type": "RedAlien",
       "x": 150,
-      "y": 200
+      "y": 250
     },
     {
-      "type": "Hexagon",
+      "type": "RedAlien",
+      "x": 250,
+      "y": 250
+    },
+    {
+      "type": "RedAlien",
+      "x": 350,
+      "y": 250
+    },
+    {
+      "type": "PurpleAlien",
       "x": 450,
-      "y": -200
-    },
-
-    {
-      "type": "Hexagon",
-      "x": 50,
-      "y": -500
+      "y": 250
     },
     {
-      "type": "Hexagon",
-      "x": 150,
-      "y": -400
-    },
-
-    {
-      "type": "Hentagon",
-      "x": 350,
-      "y": -300
-    },
-
-    {
-      "type": "Hexagon",
+      "type": "RedAlien",
       "x": 550,
-      "y": 300
-    },
-
-    {
-      "type": "Hexagon",
-      "x": 350,
-      "y": -600
-    },
-
-    {
-      "type": "Pentagon",
-      "x": 550,
-      "y": -200
+      "y": 250
     },
     {
-      "type": "Hexagon",
+      "type": "RedAlien",
       "x": 50,
-      "y": -700
+      "y": 150
     },
     {
-      "type": "Hexagon",
+      "type": "GreenAlien",
       "x": 150,
-      "y": -500
+      "y": 150
     },
     {
-      "type": "Hexagon",
+      "type": "RedAlien",
+      "x": 250,
+      "y": 150
+    },
+    {
+      "type": "RedAlien",
+      "x": 350,
+      "y": 150
+    },
+    {
+      "type": "GreenAlien",
       "x": 450,
-      "y": -700
-    },
-
-    {
-      "type": "Hexagon",
-      "x": 50,
-      "y": -800
+      "y": 150
     },
     {
-      "type": "Hexagon",
-      "x": 150,
-      "y": -800
-    },
-
-    {
-      "type": "Hentagon",
-      "x": 350,
-      "y": -300
-    },
-
-    {
-      "type": "Hexagon",
+      "type": "RedAlien",
       "x": 550,
-      "y": 300
+      "y": 150
+    },
+    {
+      "type": "PurpleAlien",
+      "x": 50,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 150,
+      "y": 50
+    },
+    {
+      "type": "GreenAlien",
+      "x": 250,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 350,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 450,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 550,
+      "y": 50
     }
-    ]
+  ]
 }

@@ -1,34 +1,30 @@
 // =====================================================================
-// @name: Pentagon.h
+// @name: RedAlien.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 11.12.19
+// @date: 12.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_PENTAGON_H
-#define SPACE_INVADERS_PENTAGON_H
+#ifndef SPACE_INVADERS_REDALIEN_H
+#define SPACE_INVADERS_REDALIEN_H
 
-#include "../../abstract_classes/Subject.h"
+
 #include "../Enemy.h"
 
-namespace entities::enemies::pentagon
+namespace entities::enemies::red_alien
 {
-    class Pentagon: public Enemy
+    class RedAlien: public Enemy
     {
-        const float vspeed = 0.1;
-        const float hspeed = 0;
+        const float vspeed = 0.3;
     public:
-        int dir;
-        int maxHp;
-        Pentagon (float x, float y);
+        RedAlien (float x, float y);
         void move();
         void update() override;
         void takeDamage(unsigned int damage) override;
-        ~Pentagon() override = default;
+        ~RedAlien() override = default;
     };
 }
 
-
-#endif //SPACE_INVADERS_PENTAGON_H
+#endif //SPACE_INVADERS_REDALIEN_H

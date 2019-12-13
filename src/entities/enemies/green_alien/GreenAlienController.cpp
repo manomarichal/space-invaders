@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: PentagonController.cpp
+// @name: GreenAlienController.cpp
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 11.12.19
@@ -7,15 +7,16 @@
 // @description: 
 // =====================================================================
 
-#include "PentagonController.h"
-using namespace entities::enemies::pentagon;
+#include "GreenAlienController.h"
 
-PentagonController::PentagonController(std::shared_ptr<Pentagon> entity, std::shared_ptr<PentagonView> view, Game *game)
+using namespace entities::enemies::green_alien;
+
+GreenAlienController::GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, Game &game)
         :Controller(game), entity(std::move(entity)), view(std::move(view))
 {
-    stopwatch = std::make_unique<Stopwatch>(1000);
+    stopwatch = std::make_unique<Stopwatch>(2000);
 }
-bool PentagonController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
+bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (auto e:entities)
     {
@@ -24,13 +25,6 @@ bool PentagonController::handleEvents(const std::vector<std::shared_ptr<Entity>>
             if (entities::Collision::checkCollision(*entity, *e))
             {
                 entity->takeDamage(10);
-            }
-        }
-        else if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr and e != entity)
-        {
-            if (entities::Collision::checkCollision(*entity, *e))
-            {
-                entity->dir = entity->dir * -1;
             }
         }
     }

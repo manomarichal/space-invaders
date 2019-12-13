@@ -14,6 +14,7 @@
 
 #include "../abstract_classes/Controller.h"
 #include "../projectiles/ProjectileFactory.h"
+#include "../projectiles/standard_enemy/StandardEnemyProjectile.h"
 #include "../../util/Stopwatch.h"
 #include <utility>
 
@@ -27,7 +28,7 @@ namespace entities::playership
 
         void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game* game);
+        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game &game);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PlayerShipController() override = default;
     };

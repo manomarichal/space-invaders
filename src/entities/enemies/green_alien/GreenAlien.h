@@ -1,35 +1,32 @@
 // =====================================================================
-// @name: Hexagon.h
+// @name: GreenAlien.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 04.12.19
+// @date: 11.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_HEXAGON_H
-#define SPACE_INVADERS_HEXAGON_H
+#ifndef SPACE_INVADERS_GREENALIEN_H
+#define SPACE_INVADERS_GREENALIEN_H
 
-#include "../../abstract_classes/Subject.h"
+
 #include "../Enemy.h"
 
-namespace entities::enemies::hexagon
+namespace entities::enemies::green_alien
 {
-    class Hexagon: public Enemy
+    class GreenAlien: public Enemy
     {
-        const float vspeed = 0.7;
-        const float hspeed = 2;
+        const float vspeed = 0.3;
     public:
-        int hDir;
-        int vDir;
         int maxHp;
-        Hexagon (float x, float y);
+        GreenAlien (float x, float y);
         void move();
         void update() override;
         void takeDamage(unsigned int damage) override;
-        ~Hexagon() override = default;
+        ~GreenAlien() override = default;
     };
 }
 
 
-#endif //SPACE_INVADERS_HEXAGON_H
+#endif //SPACE_INVADERS_GREENALIEN_H

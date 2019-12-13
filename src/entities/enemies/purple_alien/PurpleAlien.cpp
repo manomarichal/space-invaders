@@ -1,39 +1,38 @@
 // =====================================================================
-// @name: Pentagon.cpp
+// @name: PurpleAlien.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 11.12.19
+// @date: 04.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "Pentagon.h"
+#include "PurpleAlien.h"
+using namespace entities::enemies::purple_alien;
 
-using namespace entities::enemies::pentagon;
-
-Pentagon::Pentagon(float x, float y): Enemy(x, y)
+PurpleAlien::PurpleAlien(float x, float y): Enemy(x, y)
 {
-    xSize=128;
-    ySize=128;
-    hitpoints = 200;
+    xSize=64;
+    ySize=64;
+    hitpoints = 30;
     maxHp = hitpoints;
 }
 
-void Pentagon::move()
+void PurpleAlien::move()
 {
     y += vspeed;
     notifyObservers();
 }
 
-void Pentagon::takeDamage(unsigned int damage)
+void PurpleAlien::takeDamage(unsigned int damage)
 {
     hitpoints -= damage;
     notifyObservers();
 }
 
-void Pentagon::update()
+void PurpleAlien::update()
 {
-    xSize = 128 * hitpoints/maxHp;
-    ySize = 128 *  hitpoints/maxHp;
+    xSize = 64 * hitpoints/maxHp;
+    ySize = 64*  hitpoints/maxHp;
     move();
 }

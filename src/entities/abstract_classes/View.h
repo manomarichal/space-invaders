@@ -25,26 +25,11 @@ namespace entities
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;
 
-        View(std::string image, std::shared_ptr<Entity> sharedPtr)
-        {
-            this->entity = std::move(sharedPtr);
+        View(std::string image, std::shared_ptr<Entity> sharedPtr);
 
-            texture = std::make_unique<sf::Texture>();
-            texture->loadFromFile(image, sf::IntRect(0, 0, entity->getXSize(), entity->getYSize()));
-            sprite = std::make_unique<sf::Sprite>();
-            sprite->setTexture(*texture);
-            sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
-
-            dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
-
-        }
     public:
-        virtual void draw(sf::RenderWindow &window) const
-        {
-            window.draw(*sprite);
-        };
-        virtual ~View()=0;
+        virtual void draw(sf::RenderWindow &window) const;
+        ~View() override= default ;
     };
-    inline View::~View()=default;
 }
 #endif //SPACE_INVADERS_VIEW_H

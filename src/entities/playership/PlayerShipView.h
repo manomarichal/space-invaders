@@ -18,11 +18,12 @@ namespace entities::playership
 {
     class PlayerShipView: public View
     {
+    private:
+
     public:
 
-        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship)
-                :View("../textures/whitesquare.png", ship) {};
-
+        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
+        void draw(sf::RenderWindow &window) const override;
         void notify() override;
 
         ~PlayerShipView() override = default;

@@ -1,43 +1,37 @@
 // =====================================================================
-// @name: Hexagon.cpp
+// @name: GreenAlien.cpp
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 04.12.19
+// @date: 11.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#include "Hexagon.h"
-using namespace entities::enemies::hexagon;
+#include "GreenAlien.h"
 
-Hexagon::Hexagon(float x, float y): Enemy(x, y)
+using namespace entities::enemies::green_alien;
+
+GreenAlien::GreenAlien(float x, float y): Enemy(x, y)
 {
     xSize=64;
     ySize=64;
-    hitpoints = 20;
+    hitpoints = 10;
     maxHp = hitpoints;
-    
-    if (rand()%2 == 0) hDir = 1;
-    else hDir = -1;
-
-    vDir = 1;
 }
 
-void Hexagon::move()
+void GreenAlien::move()
 {
-    y += vspeed * vDir;
+    y += vspeed;
     notifyObservers();
 }
 
-void Hexagon::takeDamage(unsigned int damage)
+void GreenAlien::takeDamage(unsigned int damage)
 {
     hitpoints -= damage;
     notifyObservers();
 }
 
-void Hexagon::update()
+void GreenAlien::update()
 {
-    xSize = 64 * hitpoints/maxHp;
-    ySize = 64*  hitpoints/maxHp;
     move();
 }

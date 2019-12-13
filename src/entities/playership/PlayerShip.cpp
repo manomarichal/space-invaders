@@ -11,40 +11,28 @@
 
 using namespace entities::playership;
 
+PlayerShip::PlayerShip(float x, float y)
+: Entity(x, y)
+{
+    xSize = 64;
+    ySize = 64;
+}
+
 void PlayerShip::moveLeft()
 {
-    if (vx > 0) vx = 0;
-    vx -= ax;
-    vx *= friction;
-
-    if (vx < -max_v) vx = -max_v;
+    x -= 10;
+    if (x < xSize/2) x = xSize/2;
     notifyObservers();
 }
 
 void PlayerShip::moveRight()
 {
-    if (vx < 0) vx = 0;
-
-    vx *= friction;
-    vx += ax;
-
-    if (vx > max_v) vx = max_v;
-    notifyObservers();
-}
-
-void PlayerShip::move()
-{
-    vx *= friction;
-    x += vx;
-
-    if (x < xSize/2) x = xSize/2;
+    x += 10;
     if (x + xSize/2> screensize::x) x = screensize::x-xSize/2;
     notifyObservers();
 }
 
 void PlayerShip::update()
 {
-    move();
 }
 
-PlayerShip::~PlayerShip()=default;

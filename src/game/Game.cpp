@@ -19,7 +19,7 @@ Game::Game()
 
     auto ship = std::make_shared<entities::playership::PlayerShip>(300, 1000-32);
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
-    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, this);
+    auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, *this);
 
     addObject(std::make_tuple(std::move(ship), std::move(view), std::move(controller)));
 }

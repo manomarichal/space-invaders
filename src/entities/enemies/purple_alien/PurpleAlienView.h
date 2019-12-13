@@ -1,30 +1,28 @@
 // =====================================================================
-// @name: PentagonView.h
+// @name: PurpleAlienView.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 11.12.19
+// @date: 08.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_PENTAGONVIEW_H
-#define SPACE_INVADERS_PENTAGONVIEW_H
+#ifndef SPACE_INVADERS_PURPLEALIENVIEW_H
+#define SPACE_INVADERS_PURPLEALIENVIEW_H
 
 #include "../../abstract_classes/View.h"
 #include "../../abstract_classes/Observer.h"
-#include "./Pentagon.h"
-
-namespace entities::enemies::pentagon
+#include "PurpleAlien.h"
+namespace entities::enemies::purple_alien
 {
-    class PentagonView: public View
+class PurpleAlienView: public View
     {
         float maxHP;
     public:
-        explicit PentagonView(std::shared_ptr<Pentagon> pentagon);
+        explicit PurpleAlienView(const std::shared_ptr<PurpleAlien> &alien);
         void notify() override ;
-        ~PentagonView() override = default;
+        ~PurpleAlienView() override = default;
     };
 }
 
-
-#endif //SPACE_INVADERS_PENTAGONVIEW_H
+#endif //SPACE_INVADERS_PURPLEALIENVIEW_H

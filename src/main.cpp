@@ -20,7 +20,7 @@
 int main()
 {
     Game game;
-    LevelLoader::loadLevel(&game, "../levels/level0.json");
+    LevelLoader::loadLevel(game, "../levels/level0.json");
     game.startGame();
     return 0;
 }

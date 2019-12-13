@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: CubeView.h
+// @name: RedAlienView.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 12.12.19
@@ -7,23 +7,23 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_CUBEVIEW_H
-#define SPACE_INVADERS_CUBEVIEW_H
+#ifndef SPACE_INVADERS_REDALIENVIEW_H
+#define SPACE_INVADERS_REDALIENVIEW_H
 
 #include "../../abstract_classes/View.h"
 #include "../../abstract_classes/Observer.h"
-#include "./Cube.h"
+#include "RedAlien.h"
 
-namespace entities::enemies::cube
+namespace entities::enemies::red_alien
 {
-    class CubeView: public View
+    class RedAlienView: public View
     {
     public:
-        explicit CubeView(std::shared_ptr<Cube> Cube): View(std::string("../textures/greensquare.jpg"), Cube) {};
+        explicit RedAlienView(const std::shared_ptr<RedAlien> &enemy);
         void notify() override ;
-        ~CubeView() override = default;
+        ~RedAlienView() override = default;
     };
 }
 
 
-#endif //SPACE_INVADERS_CUBEVIEW_H
+#endif //SPACE_INVADERS_REDALIENVIEW_H

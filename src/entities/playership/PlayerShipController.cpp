@@ -9,10 +9,10 @@
 
 #include "PlayerShipController.h"
 using namespace entities::playership;
-PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game *game)
+PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game &game)
                                             :Controller(game), entity(std::move(entity)), view(std::move(view))
 {
-    stopwatch = std::make_unique<Stopwatch>(200);
+    stopwatch = std::make_unique<Stopwatch>(1000);
 }
 
 void PlayerShipController::createProjectile()
@@ -35,5 +35,15 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
         createProjectile();
     }
 
+    for (auto e:entities)
+    {
+        if (dynamic_cast<projectiles::standard_enemy::StandardEnemyProjectile*>(e.get()) != nullptr)
+        {
+            if (entities::Collision::checkCollision(*entity, *e))
+            {
+                return false;
+            }
+        }
+    }
     return entity->hitpoints > 0;
 }

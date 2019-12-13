@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: PentagonController.h
+// @name: GreenAlienController.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 11.12.19
@@ -7,31 +7,30 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_PENTAGONCONTROLLER_H
-#define SPACE_INVADERS_PENTAGONCONTROLLER_H
+#ifndef SPACE_INVADERS_GREENALIENCONTROLLER_H
+#define SPACE_INVADERS_GREENALIENCONTROLLER_H
 
-#include "./PentagonView.h"
+#include "GreenAlienView.h"
 #include "../../abstract_classes/Controller.h"
 #include "../../projectiles/standard/StandardProjectile.h"
 #include "../../projectiles/ProjectileFactory.h"
-#include "../../../util/Collision.h"
 #include "../../../util/Stopwatch.h"
-#include "../../../settings/screensize.h"
 
-namespace entities::enemies::pentagon
+
+namespace entities::enemies::green_alien
 {
-    class PentagonController: public Controller
+    class GreenAlienController: public Controller
     {
     private:
         std::unique_ptr<Stopwatch> stopwatch;
-        std::shared_ptr<Pentagon> entity;
-        std::shared_ptr<PentagonView> view;
+        std::shared_ptr<GreenAlien> entity;
+        std::shared_ptr<GreenAlienView> view;
     public:
-        PentagonController(std::shared_ptr<Pentagon> entity, std::shared_ptr<PentagonView> view, Game* game);
+        GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, Game &game);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
-        ~PentagonController() override = default;
+        ~GreenAlienController() override = default;
     };
 }
 
 
-#endif //SPACE_INVADERS_PENTAGONCONTROLLER_H
+#endif //SPACE_INVADERS_GREENALIENCONTROLLER_H

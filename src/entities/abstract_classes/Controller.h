@@ -21,9 +21,9 @@ namespace entities
     class Controller
         {
         protected:
-            Game* game;
+            Game &game;
         public:
-            explicit Controller(Game * game): game(game) {};
+            explicit Controller(Game &game): game(game) {};
 
             virtual bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)=0;
 

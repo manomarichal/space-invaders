@@ -22,10 +22,10 @@ namespace entities::projectiles
     {
     private:
         ProjectileFactory()= default;   // no instances of this class may be created
-        static entities::Object createStandardProjectile(int x, int y, Game* game);
-        static entities::Object createStandardEnemyProjectile(int x, int y, Game* game);
+        static entities::Object createStandardProjectile(int x, int y, Game &game);
+        static entities::Object createStandardEnemyProjectile(int x, int y, Game &game);
     public:
-        static void createProjectile(int x, int y, Type type, Game* game);
+        static void createProjectile(int x, int y, Type type, Game &game);
     };
 }
 

@@ -11,7 +11,7 @@
 #define SPACE_INVADERS_STANDARDENEMYPROJECTILE_H
 
 #include "../../abstract_classes/Entity.h"
-#include "../../abstract_classes/Subject.h"
+
 
 namespace entities::projectiles::standard_enemy
 {

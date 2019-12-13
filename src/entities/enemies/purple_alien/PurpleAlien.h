@@ -1,30 +1,32 @@
 // =====================================================================
-// @name: Cube.h
+// @name: PurpleAlien.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 12.12.19
+// @date: 04.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_CUBE_H
-#define SPACE_INVADERS_CUBE_H
+#ifndef SPACE_INVADERS_PURPLEALIEN_H
+#define SPACE_INVADERS_PURPLEALIEN_H
 
-#include "../../abstract_classes/Subject.h"
+
 #include "../Enemy.h"
 
-namespace entities::enemies::cube
+namespace entities::enemies::purple_alien
 {
-    class Cube: public Enemy
+    class PurpleAlien: public Enemy
     {
-        const float vspeed = 1.5;
+        const float vspeed = 0.3;
     public:
-        Cube (float x, float y);
+        int maxHp;
+        PurpleAlien (float x, float y);
         void move();
         void update() override;
         void takeDamage(unsigned int damage) override;
-        ~Cube() override = default;
+        ~PurpleAlien() override = default;
     };
 }
 
-#endif //SPACE_INVADERS_CUBE_H
+
+#endif //SPACE_INVADERS_PURPLEALIEN_H

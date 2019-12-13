@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: Cube.cpp
+// @name: RedAlien.cpp
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 12.12.19
@@ -7,30 +7,30 @@
 // @description: 
 // =====================================================================
 
-#include "Cube.h"
+#include "RedAlien.h"
 
-using namespace entities::enemies::cube;
+using namespace entities::enemies::red_alien;
 
-Cube::Cube(float x, float y): Enemy(x, y)
+RedAlien::RedAlien(float x, float y): Enemy(x, y)
 {
-    xSize=32;
-    ySize=32;
+    xSize=64;
+    ySize=64;
     hitpoints = 10;
 }
 
-void Cube::move()
+void RedAlien::move()
 {
     y += vspeed;
     notifyObservers();
 }
 
-void Cube::takeDamage(unsigned int damage)
+void RedAlien::takeDamage(unsigned int damage)
 {
     hitpoints -= damage;
     notifyObservers();
 }
 
-void Cube::update()
+void RedAlien::update()
 {
     move();
 }
