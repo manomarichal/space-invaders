@@ -10,7 +10,11 @@ addons:
     packages:
       - gcc-8
       - g++-8
+
 script:
   - export CC=gcc-8
   - export CXX=g++-8
-  - cmake /home/travis/build/shano19/space-invaders/CMakeLists.txt
+  - mkdir build
+  - cd build
+  - cmake ../CMakeLists.txt
+  - make
