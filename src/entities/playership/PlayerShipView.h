@@ -23,9 +23,7 @@ namespace entities::playership
     public:
 
         explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
-        void draw(sf::RenderWindow &window) const override;
         void notify() override;
-
         ~PlayerShipView() override = default;
     };
 }

@@ -32,3 +32,15 @@ void Transformation::setScreenHeight(unsigned int screenHeight)
 {
     Transformation::screenHeight = screenHeight;
 }
+
+float Transformation::getXScale()
+{
+    return static_cast<float>(screenWidth) / static_cast<float>(screensize::x);
+
+}
+
+float Transformation::getYScale()
+{
+    return static_cast<float>(screenHeight) / static_cast<float>(screensize::y);
+
+}

@@ -25,6 +25,8 @@ namespace entities
         static float transformYToPixelValues(float y);
         static void setScreenWidth(unsigned int screenWidth);
         static void setScreenHeight(unsigned int screenHeight);
+        static float getXScale();
+        static float getYScale();
     };
 }
 

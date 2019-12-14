@@ -29,5 +29,7 @@ void View::draw(sf::RenderWindow &window) const
     sf::Sprite temp = *sprite;
     temp.setPosition(Transformation::transformXToPixelValues(temp.getPosition().x),
                      Transformation::transformYToPixelValues(temp.getPosition().y));
+    temp.setScale(Transformation::getXScale() * sprite->getScale().x,
+                  Transformation::getYScale() * sprite->getScale().y);
     window.draw(temp);
 }
