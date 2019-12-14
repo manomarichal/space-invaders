@@ -17,7 +17,7 @@ Game::Game()
     activeControllers.reserve(50);
     objectsToDelete.reserve(50);
 
-    auto ship = std::make_shared<entities::playership::PlayerShip>(300, 1000-32);
+    auto ship = std::make_shared<entities::playership::PlayerShip>(600, 870);
     auto view = std::make_shared<entities::playership::PlayerShipView>(ship);
     auto controller = std::make_shared<entities::playership::PlayerShipController>(ship, view, *this);
 
@@ -89,7 +89,9 @@ void Game::drawViews()
 
 void Game::startGame()
 {
-    window = std::make_unique<sf::RenderWindow>(sf::VideoMode(screensize::x, screensize::y), "Space Invaders");
+    window = std::make_unique<sf::RenderWindow>(sf::VideoMode(1000, 1000), "Space Invaders");
+    entities::Transformation::setScreenWidth(500);
+    entities::Transformation::setScreenHeight(500);
 
     Stopwatch stopwatch(8);
 

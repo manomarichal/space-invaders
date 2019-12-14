@@ -10,13 +10,10 @@
 #ifndef SPACE_INVADERS_SCREENSIZE_H
 #define SPACE_INVADERS_SCREENSIZE_H
 
-
-#include <stdint-gcc.h>
-
 namespace screensize
 {
-    const int x = 600;
-    const int y = 1000;
+    const int x = 1200;
+    const int y = 900;
 }
 
 #endif //SPACE_INVADERS_SCREENSIZE_H

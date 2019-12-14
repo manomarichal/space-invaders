@@ -14,19 +14,17 @@
 #include <memory>
 
 #include "./Entity.h"
+#include "../../util/Transformation.h"
 
 namespace entities
 {
     class View: public Observer
     {
     protected:
-
+        View(std::string image, std::shared_ptr<Entity> sharedPtr);
         std::shared_ptr<Entity> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;
-
-        View(std::string image, std::shared_ptr<Entity> sharedPtr);
-
     public:
         virtual void draw(sf::RenderWindow &window) const;
         ~View() override= default ;
