@@ -44,3 +44,13 @@ float Transformation::getYScale()
     return static_cast<float>(screenHeight) / static_cast<float>(screensize::y);
 
 }
+
+unsigned int Transformation::getScreenWidth()
+{
+    return screenWidth;
+}
+
+unsigned int Transformation::getScreenHeight()
+{
+    return screenHeight;
+}

@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: LevelLoader.h
+// @name: Loader.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 11.12.19
@@ -7,21 +7,26 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_LEVELLOADER_H
-#define SPACE_INVADERS_LEVELLOADER_H
+#ifndef SPACE_INVADERS_LOADER_H
+#define SPACE_INVADERS_LOADER_H
+
+#include <fstream>
 
 #include "./Game.h"
+#include "../json/json.hpp"
+
+#include "../entities/playership/PlayerShipController.h"
 #include "../entities/enemies/red_alien/RedAlienController.h"
 #include "../entities/enemies/green_alien/GreenAlienController.h"
 #include "../entities/enemies/purple_alien/PurpleAlienController.h"
 
-class LevelLoader
+class Loader
 {
 private:
-    LevelLoader()=default;
+    Loader()=default;
 public:
     static void loadLevel(Game &game, std::string filename);
 };
 
 
-#endif //SPACE_INVADERS_LEVELLOADER_H
+#endif //SPACE_INVADERS_LOADER_H

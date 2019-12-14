@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H
 
-#include "../settings/screensize.h"
+#include "screensize.h"
 
 namespace entities
 {
@@ -27,6 +27,8 @@ namespace entities
         static void setScreenHeight(unsigned int screenHeight);
         static float getXScale();
         static float getYScale();
+        static unsigned int getScreenWidth();
+        static unsigned int getScreenHeight();
     };
 }
 

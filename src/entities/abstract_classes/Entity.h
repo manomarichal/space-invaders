@@ -14,7 +14,7 @@
 #include <utility>
 #include <iostream>
 
-#include "../../settings/screensize.h"
+#include "../../util/screensize.h"
 #include "./Subject.h"
 #include "Subject.h"
 

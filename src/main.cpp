@@ -16,11 +16,11 @@
 //TODO clion code inspection
 //TODO rapport schrijven
 
-#include "game/LevelLoader.h"
+#include "game/Loader.h"
 int main()
 {
     Game game;
-    LevelLoader::loadLevel(game, "../levels/level0.json");
+    Loader::loadLevel(game, "../levels/level0.json");
     game.startGame();
     return 0;
 }

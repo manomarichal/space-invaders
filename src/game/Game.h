@@ -11,15 +11,9 @@
 #define SPACE_INVADERS_GAME_H
 
 #include <SFML/Graphics.hpp>
-#include <memory>
-#include <cassert>
-#include <fstream>
 #include <unistd.h>
 
-#include "../json/json.hpp"
-
 #include "../entities/abstract_classes/Controller.h"
-#include "../entities/playership/PlayerShipController.h"
 
 #include "../util/Object.h"
 #include "../util/Stopwatch.h"
@@ -50,9 +44,7 @@ public:
     void addObject(entities::Object object);
     void startGame();
 
-    [[nodiscard]] const std::vector<std::shared_ptr<entities::Entity>> &getActiveEntities() const;
-
-    friend class LevelLoader;
+    friend class Loader;
     ~Game();
 };
 

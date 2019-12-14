@@ -1,4 +1,14 @@
 {
+  "Playership":
+  {
+    "x": 600,
+    "y": 800
+  },
+  "Screen":
+  {
+    "width": 1600,
+    "height":1200
+  },
   "Enemies": [
 
     {
@@ -33,6 +43,36 @@
     },
     {
       "type": "RedAlien",
+      "x": 650,
+      "y": 250
+    },
+    {
+      "type": "GreenAlien",
+      "x": 750,
+      "y": 250
+    },
+    {
+      "type": "RedAlien",
+      "x": 850,
+      "y": 250
+    },
+    {
+      "type": "RedAlien",
+      "x": 950,
+      "y": 250
+    },
+    {
+      "type": "RedAlien",
+      "x": 1050,
+      "y": 250
+    },
+    {
+      "type": "PurpleAlien",
+      "x": 1150,
+      "y": 250
+    },
+    {
+      "type": "RedAlien",
       "x": 50,
       "y": 150
     },
@@ -63,6 +103,36 @@
     },
     {
       "type": "PurpleAlien",
+      "x": 650,
+      "y": 150
+    },
+    {
+      "type": "RedAlien",
+      "x": 750,
+      "y": 150
+    },
+    {
+      "type": "RedAlien",
+      "x": 850,
+      "y": 150
+    },
+    {
+      "type": "GreenAlien",
+      "x": 950,
+      "y": 150
+    },
+    {
+      "type": "RedAlien",
+      "x": 1050,
+      "y": 150
+    },
+    {
+      "type": "RedAlien",
+      "x": 1150,
+      "y": 150
+    },
+    {
+      "type": "PurpleAlien",
       "x": 50,
       "y": 50
     },
@@ -89,6 +159,36 @@
     {
       "type": "RedAlien",
       "x": 550,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 650,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 750,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 850,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 950,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 1050,
+      "y": 50
+    },
+    {
+      "type": "RedAlien",
+      "x": 1150,
       "y": 50
     }
   ]
