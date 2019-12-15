@@ -112,6 +112,8 @@ void World::reset()
     activeViews.clear();
     activeEntities.clear();
     player.reset();
+
+    worldIsRunning = false;
 }
 
 World::~World()=default;

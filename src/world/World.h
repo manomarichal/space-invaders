@@ -19,11 +19,6 @@
 #include "../util/Stopwatch.h"
 #include "../util/Transformation.h"
 
-namespace entities::projectiles
-{
-    class ProjectileFactory;
-}
-
 class World: public entities::Observer
 {
 private:
