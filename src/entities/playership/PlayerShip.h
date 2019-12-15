@@ -22,6 +22,7 @@ namespace entities::playership
         int hitpoints = 10;
         void moveLeft();
         void moveRight();
+        void takeDamage(unsigned int damage);
         void update() override;
         ~PlayerShip() override = default;
     };

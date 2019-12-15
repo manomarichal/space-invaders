@@ -13,7 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include <unistd.h>
 
-#include "../entities/abstract_classes/Controller.h"
+#include "../entities/playership/PlayerShipController.h"
 
 #include "../util/Object.h"
 #include "../util/Stopwatch.h"
@@ -24,11 +24,13 @@ namespace entities
 {
     class Entity;
 }
-class Game
+class Game: public entities::Observer
 {
 private:
-    std::unique_ptr<sf::RenderWindow> window;
+    bool gameIsRunning = true;
 
+    std::unique_ptr<sf::RenderWindow> window;
+    std::shared_ptr<entities::playership::PlayerShip> player;
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
     std::vector<std::shared_ptr<entities::View>> activeViews;
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
@@ -43,7 +45,7 @@ public:
     Game();
     void addObject(entities::Object object);
     void startGame();
-
+    void notify() override;
     friend class Loader;
     ~Game();
 };

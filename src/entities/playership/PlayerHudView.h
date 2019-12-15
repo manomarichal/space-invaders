@@ -1,30 +1,30 @@
 // =====================================================================
-// @name: PlayerShipView.h
+// @name: PlayerHudView.h
 // @project: space_invaders
 // @author: Mano Marichal
-// @date: 05.12.19
+// @date: 15.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_PLAYERSHIPVIEW_H
-#define SPACE_INVADERS_PLAYERSHIPVIEW_H
+#ifndef SPACE_INVADERS_PLAYERHUDVIEW_H
+#define SPACE_INVADERS_PLAYERHUDVIEW_H
 
-#include "./PlayerHudView.h"
+#include "../abstract_classes/View.h"
+#include "PlayerShip.h"
 
 namespace entities::playership
 {
-    class PlayerShipView: public View
+    class PlayerHudView: public View
     {
     private:
-        std::unique_ptr<PlayerHudView> hud;
+        std::unique_ptr<sf::String> string;
     public:
-        explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
+        explicit PlayerHudView(std::shared_ptr<PlayerShip> ship);
         void notify() override;
         void draw(sf::RenderWindow &window) const override;
-        ~PlayerShipView() override = default;
+        ~PlayerHudView() override = default;
     };
 }
 
-
-#endif //SPACE_INVADERS_PLAYERSHIPVIEW_H
+#endif //SPACE_INVADERS_PLAYERHUDVIEW_H

@@ -48,6 +48,7 @@ void Game::handleEvents()
         switch (event.type)
         {
             case sf::Event::Closed:
+                gameIsRunning = false;
                 window->close();
                 break;
             default:
@@ -86,13 +87,20 @@ void Game::startGame()
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(entities::Transformation::getScreenWidth(), entities::Transformation::getScreenHeight()), "Space Invaders");
     Stopwatch stopwatch(8);
 
-    while (window->isOpen())
+    while (gameIsRunning)
     {
         handleEvents();
         updateEntities();
         drawViews();
         while (!stopwatch.isReady()) {usleep(5000);};
     }
+    window->close();
 }
+
+void Game::notify()
+{
+    gameIsRunning = player->hitpoints > 0;
+}
+
 Game::~Game()=default;
 

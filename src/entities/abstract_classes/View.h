@@ -21,6 +21,7 @@ namespace entities
     class View: public Observer
     {
     protected:
+        View()=default;
         View(std::string image, std::shared_ptr<Entity> sharedPtr);
         std::shared_ptr<Entity> entity;
         std::unique_ptr<sf::Sprite> sprite;

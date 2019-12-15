@@ -13,12 +13,12 @@ using namespace entities;
 unsigned int Transformation::screenHeight = 0;
 unsigned int Transformation::screenWidth = 0;
 
-float Transformation::transformXToPixelValues(float x)
+float Transformation::getXPixelValue(float x)
 {
     return (static_cast<float>(Transformation::screenWidth)/(screensize::x / x));
 }
 
-float Transformation::transformYToPixelValues(float y)
+float Transformation::getYPixelValue(float y)
 {
     return (static_cast<float>(Transformation::screenHeight)/(screensize::y / y));
 }

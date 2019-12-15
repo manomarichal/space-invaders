@@ -21,10 +21,11 @@ void Loader::loadLevel(Game &game, std::string filename)
     if (x < 0 or x > 1178) throw std::runtime_error("invalid x value for Playership in file: " + filename + "\nx value for playerShip must be bigger than 0 and smaller than 1178");
     if (y < 0 or y > 878) throw std::runtime_error("invalid y value for Playership in file: " + filename + "\nx value for playerShip must be bigger than 0 and smaller than 878");
     auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
+    game.player = playership;
+    playership->subscribe(dynamic_cast<entities::Observer*>(&game));
     auto playershipView = std::make_shared<entities::playership::PlayerShipView>(playership);
     auto playershipController = std::make_shared<entities::playership::PlayerShipController>(playership, playershipView, game);
     game.addObject(std::make_tuple(std::move(playership), std::move(playershipView), std::move(playershipController)));
-
 
     // SCREEN SETTINGS
     uint width = root["Screen"]["width"];

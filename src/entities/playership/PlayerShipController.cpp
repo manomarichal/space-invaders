@@ -41,9 +41,9 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
         {
             if (entities::Collision::checkCollision(*entity, *e))
             {
-                return false;
+                entity->takeDamage(10);
             }
         }
     }
-    return entity->hitpoints > 0;
+    return entity->hitpoints >= 0;
 }

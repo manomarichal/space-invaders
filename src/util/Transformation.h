@@ -21,12 +21,12 @@ namespace entities
         static unsigned int screenHeight;
         Transformation()= default;
     public:
-        static float transformXToPixelValues(float x);
-        static float transformYToPixelValues(float y);
-        static void setScreenWidth(unsigned int screenWidth);
-        static void setScreenHeight(unsigned int screenHeight);
+        static float getXPixelValue(float x);
+        static float getYPixelValue(float y);
         static float getXScale();
         static float getYScale();
+        static void setScreenWidth(unsigned int screenWidth);
+        static void setScreenHeight(unsigned int screenHeight);
         static unsigned int getScreenWidth();
         static unsigned int getScreenHeight();
     };

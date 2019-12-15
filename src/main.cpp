@@ -7,13 +7,19 @@
 // @description: 
 // =====================================================================
 
-//TODO transformatie (singleton pattern)
+// FASE 1
 //TODO level loops
 //TODO make it fancy
+//TODO coordinaten systeem omzetten
+//TODO zigzag
+
+// FASE 2
 //TODO const correctness
 //TODO code documenteren
 //TODO prog2 code standards
 //TODO clion code inspection
+
+//FASE 3
 //TODO rapport schrijven
 
 #include "game/Loader.h"
