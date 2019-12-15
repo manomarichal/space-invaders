@@ -22,7 +22,7 @@ namespace entities::enemies::purple_alien
         std::shared_ptr<PurpleAlien> entity;
         std::shared_ptr<PurpleAlienView> view;
     public:
-        PurpleAlienController(std::shared_ptr<PurpleAlien> entity, std::shared_ptr<PurpleAlienView> view, Game &game): Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        PurpleAlienController(std::shared_ptr<PurpleAlien> entity, std::shared_ptr<PurpleAlienView> view, World &world): Controller(world), entity(std::move(entity)), view(std::move(view)) {};
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PurpleAlienController() override = default;
     };

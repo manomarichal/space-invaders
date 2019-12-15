@@ -27,7 +27,7 @@
       "y": 250
     },
     {
-      "type": "GreenAlien",
+      "type": "PurpleAlien",
       "x": 450,
       "y": 250
     },
@@ -62,7 +62,7 @@
       "y": 250
     },
     {
-      "type": "GreenAlien",
+      "type": "PurpleAlien",
       "x": 1150,
       "y": 250
     },
@@ -97,7 +97,7 @@
       "y": 150
     },
     {
-      "type": "GreenAlien",
+      "type": "PurpleAlien",
       "x": 650,
       "y": 150
     },
@@ -127,7 +127,7 @@
       "y": 150
     },
     {
-      "type": "GreenAlien",
+      "type": "PurpleAlien",
       "x": 50,
       "y": 50
     },

@@ -8,9 +8,10 @@
 // =====================================================================
 
 // FASE 1
+//TODO world classe reworken
+//TODO coordinaten systeem omzetten
 //TODO level loops
 //TODO make it fancy
-//TODO coordinaten systeem omzetten
 //TODO zigzag
 
 // FASE 2
@@ -22,11 +23,9 @@
 //FASE 3
 //TODO rapport schrijven
 
-#include "game/Loader.h"
+#include "game/Game.h"
 int main()
 {
-    Game game;
-    Loader::loadLevel(game, "../levels/level0.json");
-    game.startGame();
+    Game::playLevels({"../levels/level0.json", "../levels/level1.json"});
     return 0;
 }

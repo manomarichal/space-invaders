@@ -10,10 +10,7 @@
 #ifndef SPACE_INVADERS_LOADER_H
 #define SPACE_INVADERS_LOADER_H
 
-#include <fstream>
-
-#include "./Game.h"
-#include "../json/json.hpp"
+#include "World.h"
 
 #include "../entities/playership/PlayerShipController.h"
 #include "../entities/enemies/red_alien/RedAlienController.h"
@@ -25,7 +22,7 @@ class Loader
 private:
     Loader()=default;
 public:
-    static void loadLevel(Game &game, std::string filename);
+    static void loadLevel(World &world, std::string filename);
 };
 
 

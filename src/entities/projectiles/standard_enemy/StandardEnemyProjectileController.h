@@ -23,7 +23,7 @@ namespace entities::projectiles::standard_enemy
         std::shared_ptr<StandardEnemyProjectile> entity;
         std::shared_ptr<StandardEnemyProjectileView> view;
     public:
-        StandardEnemyProjectileController(std::shared_ptr<StandardEnemyProjectile> entity, std::shared_ptr<StandardEnemyProjectileView> view, Game &game): Controller(game), entity(std::move(entity)), view(std::move(view)) {};
+        StandardEnemyProjectileController(std::shared_ptr<StandardEnemyProjectile> entity, std::shared_ptr<StandardEnemyProjectileView> view, World &world): Controller(world), entity(std::move(entity)), view(std::move(view)) {};
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override;
         ~StandardEnemyProjectileController() override = default;
     };

@@ -11,8 +11,8 @@
 
 using namespace entities::enemies::green_alien;
 
-GreenAlienController::GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, Game &game)
-        :Controller(game), entity(std::move(entity)), view(std::move(view))
+GreenAlienController::GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, World &world)
+        :Controller(world), entity(std::move(entity)), view(std::move(view))
 {
     stopwatch = std::make_unique<Stopwatch>(2000);
 }
@@ -31,7 +31,7 @@ bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity
 
     if (stopwatch->isReady())
     {
-        projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::EnemyStandard, game);
+        projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::EnemyStandard, world);
     }
 
     return entity->hitpoints > 0;

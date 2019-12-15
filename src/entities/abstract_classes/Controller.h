@@ -14,16 +14,16 @@
 
 #include "../../util/Collision.h"
 
-class Game;
+class World;
 
 namespace entities
 {
     class Controller
         {
         protected:
-            Game &game;
+            World &world;
         public:
-            explicit Controller(Game &game): game(game) {};
+            explicit Controller(World &world): world(world) {};
 
             virtual bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)=0;
 

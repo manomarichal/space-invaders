@@ -9,15 +9,15 @@
 
 #include "PlayerShipController.h"
 using namespace entities::playership;
-PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game &game)
-                                            :Controller(game), entity(std::move(entity)), view(std::move(view))
+PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, World &world)
+                                            :Controller(world), entity(std::move(entity)), view(std::move(view))
 {
     stopwatch = std::make_unique<Stopwatch>(500);
 }
 
 void PlayerShipController::createProjectile()
 {
-    projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(),projectiles::Standard, game);
+    projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(),projectiles::Standard, world);
 }
 
 bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::shared_ptr<Entity>> &entities)

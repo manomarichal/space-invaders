@@ -28,7 +28,7 @@ namespace entities::playership
 
         void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, Game &game);
+        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, World &world);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PlayerShipController() override = default;
     };
