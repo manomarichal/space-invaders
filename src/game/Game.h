@@ -11,15 +11,18 @@
 #define SPACE_INVADERS_GAME_H
 
 #include "../world/World.h"
-#include "../world/Loader.h"
 
 class Game
 {
 private:
-    Game()=default;
+    std::shared_ptr<sf::RenderWindow> window;
+    std::vector<std::string> levels;
+    bool gameOver();
+    void newLevel();
+    void checkEvents();
 public:
-    static void playLevels(const std::vector<std::string> &levels);
-
+    Game(const std::string &settings, std::vector<std::string> levels);
+    void play();
 };
 
 

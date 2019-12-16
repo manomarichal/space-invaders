@@ -15,7 +15,9 @@
 #include <algorithm>
 
 #include "../entities/playership/PlayerShipController.h"
-#include "../entities/enemies/Enemy.h"
+#include "../entities/enemies/green_alien/GreenAlienController.h"
+#include "../entities/enemies/purple_alien/PurpleAlienController.h"
+#include "../entities/enemies/red_alien/RedAlienController.h"
 #include "../json/json.hpp"
 #include "../util/Object.h"
 #include "../util/Clock.h"
@@ -29,8 +31,9 @@ class World: public entities::Observer
 private:
     bool playerIsAlive = true;
     uint enemiesDefeated;
+    uint enemiesToDefeat;
 
-    std::unique_ptr<sf::RenderWindow> window;
+    std::shared_ptr<sf::RenderWindow> window;
     std::shared_ptr<entities::playership::PlayerShip> player;
 
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
@@ -43,14 +46,13 @@ private:
     void drawViews();
     void deleteObject(uint index);
     void addObject(entities::Object object);
+    void loadLevel(const std::string &filename);
 
 public:
-    World(const std::string &settings);
+    World(const std::string &file, std::shared_ptr<sf::RenderWindow> windowPtr);
     void notify() override;
-    bool start(uint enemies);
-    void reset();
+    bool play();
     friend class entities::projectiles::ProjectileFactory;
-    friend class Loader;
 
     ~World();
 };
