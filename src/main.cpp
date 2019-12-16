@@ -8,7 +8,6 @@
 // =====================================================================
 
 // FASE 1
-//TODO collision bug
 //TODO player hud
 //TODO main men etc
 //TODO coordinaten systeem omzetten

@@ -36,9 +36,9 @@ void PlayerShip::update()
 {
 }
 
-void PlayerShip::takeDamage(unsigned int damage)
+void PlayerShip::takeDamage([[maybe_unused]] unsigned int damage)
 {
-    hitpoints -= damage;
+    hitpoints -= 1;
     notifyObservers();
 }
 

@@ -45,11 +45,6 @@ void World::updateEntities()
         entity->update();
     }
 
-    if (objectsToDelete.size()==1)
-    {
-        std::cout << "sin";
-    }
-
     std::sort(objectsToDelete.begin(), objectsToDelete.end(), std::greater<>());
     for (auto i:objectsToDelete)
     {
@@ -96,14 +91,22 @@ void World::drawViews()
 
 void World::start()
 {
-    Stopwatch stopwatch(8);
+    const double MS_PER_UPDATE = 16;
     worldIsRunning = true;
+    double lag = 0;
+
     while (worldIsRunning)
     {
-        handleEvents();
-        updateEntities();
+        lag += Clock::update();
+
+        while (lag >= MS_PER_UPDATE)
+        {
+            handleEvents();
+            updateEntities();
+            lag -= MS_PER_UPDATE;
+        }
+
         drawViews();
-        while (!stopwatch.isReady()) {usleep(5000);};
     }
 }
 

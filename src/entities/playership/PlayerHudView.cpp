@@ -15,16 +15,36 @@ PlayerHudView::PlayerHudView(std::shared_ptr<PlayerShip> ship)
     this->entity = std::move(ship);
     dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
 
-    sf::Font font;
-    font.loadFromFile("../fonts/pixeled.ttf");
-    //string = std::make_unique<sf::String>("Lives left: ", font, 30);
+    font = std::make_unique<sf::Font>();
+    font->loadFromFile("../fonts/pixeled.ttf");
+    string = std::make_unique<sf::Text>("Lives left: ", *font, 32);
+    string->setPosition(10, 10);
+
+    texture = std::make_unique<sf::Texture>();
+    texture->loadFromFile("../textures/spaceship.png", sf::IntRect(0, 0, 64, 64));
+
+    for (int k=0; k < dynamic_cast<PlayerShip*>(entity.get())->hitpoints; k++)
+    {
+        lives.emplace_back(std::make_unique<sf::Sprite>());
+        lives[k]->setTexture(*texture);
+        lives[k]->setPosition(k*50 + string->getCharacterSize()*10 - 4 , 10);
+        lives[k]->setScale(0.6, 0.6);
+    }
 }
 
 void PlayerHudView::notify()
 {
+    if (dynamic_cast<PlayerShip*>(entity.get())->hitpoints < int(lives.size())  )
+    {
+        lives.erase(lives.end());
+    }
 }
 
 void PlayerHudView::draw(sf::RenderWindow &window) const
 {
-    //window.draw(string);
+    for (const auto &sprite:lives)
+    {
+        window.draw(*sprite);
+    }
+    window.draw(*string);
 }

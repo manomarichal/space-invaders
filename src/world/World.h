@@ -17,8 +17,8 @@
 #include "../entities/playership/PlayerShipController.h"
 #include "../json/json.hpp"
 #include "../util/Object.h"
-#include "../util/Stopwatch.h"
-#include "../util/Transformation.h"
+#include "../util/Clock.h"
+
 namespace entities::projectiles
 {
     class ProjectileFactory;

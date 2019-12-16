@@ -38,7 +38,7 @@ void Loader::loadLevel(World &world, std::string filename)
     {
         if (enemy["type"] == "PurpleAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], enemy["y"]);
+            auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::purple_alien::PurpleAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::purple_alien::PurpleAlienController>(projectile, view, world);
 
@@ -46,7 +46,7 @@ void Loader::loadLevel(World &world, std::string filename)
         }
         else if (enemy["type"] == "GreenAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], enemy["y"]);
+            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::green_alien::GreenAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::green_alien::GreenAlienController>(projectile, view, world);
 
@@ -54,7 +54,7 @@ void Loader::loadLevel(World &world, std::string filename)
         }
         else if (enemy["type"] == "RedAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], enemy["y"]);
+            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::red_alien::RedAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::red_alien::RedAlienController>(projectile, view, world);
 

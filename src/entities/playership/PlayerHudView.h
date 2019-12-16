@@ -18,7 +18,10 @@ namespace entities::playership
     class PlayerHudView: public View
     {
     private:
-        std::unique_ptr<sf::String> string;
+        std::unique_ptr<sf::Text> string;
+        std::unique_ptr<sf::Font> font;
+        std::unique_ptr<sf::Texture> ship;
+        std::vector<std::unique_ptr<sf::Sprite>> lives;
     public:
         explicit PlayerHudView(std::shared_ptr<PlayerShip> ship);
         void notify() override;
