@@ -68,31 +68,34 @@ void Game::checkEvents()
     }
 }
 
-void Game::play()
+void Game::runWorld(World &world)
 {
     const double MS_PER_UPDATE = 16;
 
+    double lag = 0;
+
+    while (world.isRunning())
+    {
+        lag += Clock::update();
+
+        while (lag >= MS_PER_UPDATE)
+        {
+            world.handleEvents();
+            world.updateEntities();
+            lag -= MS_PER_UPDATE;
+        }
+
+        world.drawViews();
+    }
+}
+void Game::play()
+{
     while (true)
     {
         for (const auto &level:levels)
         {
             World world(level, window);
-
-            double lag = 0;
-
-            while (world.isRunning())
-            {
-                lag += Clock::update();
-
-                while (lag >= MS_PER_UPDATE)
-                {
-                    world.handleEvents();
-                    world.updateEntities();
-                    lag -= MS_PER_UPDATE;
-                }
-
-                world.drawViews();
-            }
+            runWorld(world);
             if (world.levelCompleted) newLevel();
             else if (gameOver()) break;
             else return;

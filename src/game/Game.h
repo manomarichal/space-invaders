@@ -20,6 +20,8 @@ private:
     bool gameOver();
     void newLevel();
     void checkEvents();
+    void runWorld (World &world);
+
 public:
     Game(const std::string &settings, std::vector<std::string> levels);
     void play();
