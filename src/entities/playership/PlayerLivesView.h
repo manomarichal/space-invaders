@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: PlayerHudView.h
+// @name: PlayerLivesView.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 15.12.19
@@ -7,15 +7,15 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_PLAYERHUDVIEW_H
-#define SPACE_INVADERS_PLAYERHUDVIEW_H
+#ifndef SPACE_INVADERS_PLAYERLIVESVIEW_H
+#define SPACE_INVADERS_PLAYERLIVESVIEW_H
 
 #include "../abstract_classes/View.h"
 #include "PlayerShip.h"
 
 namespace entities::playership
 {
-    class PlayerHudView: public View
+    class PlayerLivesView: public View
     {
     private:
         std::unique_ptr<sf::Text> string;
@@ -23,11 +23,11 @@ namespace entities::playership
         std::unique_ptr<sf::Texture> ship;
         std::vector<std::unique_ptr<sf::Sprite>> lives;
     public:
-        explicit PlayerHudView(std::shared_ptr<PlayerShip> ship);
+        explicit PlayerLivesView(std::shared_ptr<PlayerShip> ship);
         void notify() override;
         void draw(sf::RenderWindow &window) const override;
-        ~PlayerHudView() override = default;
+        ~PlayerLivesView() override = default;
     };
 }
 
-#endif //SPACE_INVADERS_PLAYERHUDVIEW_H
+#endif //SPACE_INVADERS_PLAYERLIVESVIEW_H

@@ -14,7 +14,7 @@ using namespace entities::playership;
 PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
 :View("../textures/spaceship.png", ship)
 {
-    hud = std::make_unique<PlayerHudView>(std::move(ship));
+    hud = std::make_unique<PlayerLivesView>(std::move(ship));
     notify();
 }
 

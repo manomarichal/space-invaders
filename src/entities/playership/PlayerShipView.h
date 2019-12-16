@@ -10,14 +10,14 @@
 #ifndef SPACE_INVADERS_PLAYERSHIPVIEW_H
 #define SPACE_INVADERS_PLAYERSHIPVIEW_H
 
-#include "./PlayerHudView.h"
+#include "PlayerLivesView.h"
 
 namespace entities::playership
 {
     class PlayerShipView: public View
     {
     private:
-        std::unique_ptr<PlayerHudView> hud;
+        std::unique_ptr<PlayerLivesView> hud;
     public:
         explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
         void notify() override;

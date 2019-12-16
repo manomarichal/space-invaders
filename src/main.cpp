@@ -8,7 +8,8 @@
 // =====================================================================
 
 // FASE 1
-//TODO zigzag
+//TODO world classe reworken tot loadlevel functie
+//TODO score counter
 
 // FASE 2
 //TODO const correctness

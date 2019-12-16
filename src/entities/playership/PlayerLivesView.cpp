@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: PlayerHudView.cpp
+// @name: PlayerLivesView.cpp
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 15.12.19
@@ -7,10 +7,10 @@
 // @description: 
 // =====================================================================
 
-#include "PlayerHudView.h"
+#include "PlayerLivesView.h"
 using namespace entities::playership;
 
-PlayerHudView::PlayerHudView(std::shared_ptr<PlayerShip> ship)
+PlayerLivesView::PlayerLivesView(std::shared_ptr<PlayerShip> ship)
 {
     this->entity = std::move(ship);
     dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
@@ -32,7 +32,7 @@ PlayerHudView::PlayerHudView(std::shared_ptr<PlayerShip> ship)
     }
 }
 
-void PlayerHudView::notify()
+void PlayerLivesView::notify()
 {
     if (dynamic_cast<PlayerShip*>(entity.get())->hitpoints < int(lives.size())  )
     {
@@ -40,7 +40,7 @@ void PlayerHudView::notify()
     }
 }
 
-void PlayerHudView::draw(sf::RenderWindow &window) const
+void PlayerLivesView::draw(sf::RenderWindow &window) const
 {
     for (const auto &sprite:lives)
     {
