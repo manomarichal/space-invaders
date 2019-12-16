@@ -5,12 +5,6 @@
     "y": 800
   },
   "Enemies": [
-
-    {
-      "type": "RedAlien",
-      "x": 50,
-      "y": 250
-    },
     {
       "type": "RedAlien",
       "x": 150,
@@ -60,16 +54,6 @@
       "type": "RedAlien",
       "x": 1050,
       "y": 250
-    },
-    {
-      "type": "GreenAlien",
-      "x": 1150,
-      "y": 250
-    },
-    {
-      "type": "RedAlien",
-      "x": 50,
-      "y": 150
     },
     {
       "type": "GreenAlien",
@@ -123,16 +107,6 @@
     },
     {
       "type": "RedAlien",
-      "x": 1150,
-      "y": 150
-    },
-    {
-      "type": "GreenAlien",
-      "x": 50,
-      "y": 50
-    },
-    {
-      "type": "RedAlien",
       "x": 150,
       "y": 50
     },
@@ -179,11 +153,6 @@
     {
       "type": "RedAlien",
       "x": 1050,
-      "y": 50
-    },
-    {
-      "type": "RedAlien",
-      "x": 1150,
       "y": 50
     }
   ]

@@ -18,18 +18,6 @@ RedAlien::RedAlien(float x, float y): Enemy(x, y)
     hitpoints = 10;
 }
 
-void RedAlien::move()
-{
-    y += vspeed;
-    notifyObservers();
-}
-
-void RedAlien::takeDamage(unsigned int damage)
-{
-    hitpoints -= damage;
-    notifyObservers();
-}
-
 void RedAlien::update()
 {
     move();

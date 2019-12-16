@@ -17,13 +17,9 @@ namespace entities::enemies::green_alien
 {
     class GreenAlien: public Enemy
     {
-        const float vspeed = 0.3;
     public:
-        int maxHp;
         GreenAlien (float x, float y);
-        void move();
         void update() override;
-        void takeDamage(unsigned int damage) override;
         ~GreenAlien() override = default;
     };
 }

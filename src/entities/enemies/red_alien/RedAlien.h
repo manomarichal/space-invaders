@@ -17,12 +17,9 @@ namespace entities::enemies::red_alien
 {
     class RedAlien: public Enemy
     {
-        const float vspeed = 0.3;
     public:
         RedAlien (float x, float y);
-        void move();
         void update() override;
-        void takeDamage(unsigned int damage) override;
         ~RedAlien() override = default;
     };
 }

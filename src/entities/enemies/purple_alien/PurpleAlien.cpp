@@ -18,18 +18,6 @@ PurpleAlien::PurpleAlien(float x, float y): Enemy(x, y)
     maxHp = hitpoints;
 }
 
-void PurpleAlien::move()
-{
-    y += vspeed;
-    notifyObservers();
-}
-
-void PurpleAlien::takeDamage(unsigned int damage)
-{
-    hitpoints -= damage;
-    notifyObservers();
-}
-
 void PurpleAlien::update()
 {
     xSize = 64 * hitpoints/maxHp;

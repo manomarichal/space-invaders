@@ -8,9 +8,6 @@
 // =====================================================================
 
 // FASE 1
-//TODO player hud
-//TODO main men etc
-//TODO coordinaten systeem omzetten
 //TODO zigzag
 
 // FASE 2
@@ -20,6 +17,7 @@
 //TODO clion code inspection
 
 //FASE 3
+//TODO make it fancy
 //TODO rapport schrijven
 
 #include "game/Game.h"

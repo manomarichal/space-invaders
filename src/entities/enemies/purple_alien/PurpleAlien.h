@@ -17,13 +17,10 @@ namespace entities::enemies::purple_alien
 {
     class PurpleAlien: public Enemy
     {
-        const float vspeed = 0.3;
     public:
         int maxHp;
         PurpleAlien (float x, float y);
-        void move();
         void update() override;
-        void takeDamage(unsigned int damage) override;
         ~PurpleAlien() override = default;
     };
 }

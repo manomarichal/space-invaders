@@ -16,19 +16,6 @@ GreenAlien::GreenAlien(float x, float y): Enemy(x, y)
     xSize=64;
     ySize=64;
     hitpoints = 10;
-    maxHp = hitpoints;
-}
-
-void GreenAlien::move()
-{
-    y += vspeed;
-    notifyObservers();
-}
-
-void GreenAlien::takeDamage(unsigned int damage)
-{
-    hitpoints -= damage;
-    notifyObservers();
 }
 
 void GreenAlien::update()
