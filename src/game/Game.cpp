@@ -56,6 +56,30 @@ bool Game::gameOver()
 
 void Game::newLevel()
 {
+    sf::Font font;
+    font.loadFromFile("../fonts/pixeled.ttf");
+
+    sf::Text string("PRESS SPACE", font, 128);
+    string.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 - string.getGlobalBounds().height);
+    string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
+
+    sf::Text string1("TO START", font, 128);
+    string1.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 + string1.getGlobalBounds().height);
+    string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
+
+    window->draw(string);
+    window->draw(string1);
+    window->display();
+
+    while(true)
+    {
+        checkEvents();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+            return;
+        }
+        //else system("sleep 10");
+    }
 }
 
 
@@ -94,9 +118,10 @@ void Game::play()
     {
         for (const auto &level:levels)
         {
+            newLevel();
             World world(level, window);
-            runWorld(world);
-            if (world.levelCompleted) newLevel();
+            Game::runWorld(world);
+            if (world.levelCompleted) continue;
             else if (gameOver()) break;
             else return;
         }
