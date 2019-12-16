@@ -8,7 +8,7 @@
 // =====================================================================
 
 #include "Loader.h"
-void Loader::loadLevel(World &world, std::string filename)
+uint Loader::loadLevel(World &world, std::string filename)
 {
     world.activeEntities.reserve(50);
     world.activeViews.reserve(50);
@@ -34,8 +34,10 @@ void Loader::loadLevel(World &world, std::string filename)
 
 
     // ENEMIES
+    uint enemies=0;
     for (auto enemy:root["Enemies"])
     {
+        enemies++;
         if (enemy["type"] == "PurpleAlien")
         {
             auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], int(enemy["y"]) + 50);
@@ -65,4 +67,5 @@ void Loader::loadLevel(World &world, std::string filename)
             throw std::runtime_error("unknow enemy type: " + std::string(enemy["type"]) + " in file: " + filename);
         }
     }
+    return enemies;
 }

@@ -22,6 +22,8 @@ World::World(const std::string &settings)
     entities::Transformation::setScreenHeight(height);
 
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(width, height), "Space Invaders");
+
+    reset();
 }
 
 void World::addObject(entities::Object object)
@@ -33,6 +35,8 @@ void World::addObject(entities::Object object)
 
 void World::deleteObject(uint index)
 {
+    if (dynamic_cast<entities::enemies::Enemy*>(activeEntities[index].get()) != nullptr) enemiesDefeated++;
+
     activeEntities.erase(activeEntities.begin() + index);
     activeViews.erase(activeViews.begin() + index);
     activeControllers.erase(activeControllers.begin() + index);
@@ -89,14 +93,16 @@ void World::drawViews()
 
 }
 
-void World::start()
+bool World::start(uint enemies)
 {
     const double MS_PER_UPDATE = 16;
-    worldIsRunning = true;
+    playerIsAlive = true;
     double lag = 0;
 
-    while (worldIsRunning)
+    while (playerIsAlive)
     {
+        if (enemiesDefeated == enemies) return true;
+
         lag += Clock::update();
 
         while (lag >= MS_PER_UPDATE)
@@ -108,11 +114,12 @@ void World::start()
 
         drawViews();
     }
+    return false;
 }
 
 void World::notify()
 {
-    worldIsRunning = player->hitpoints > 0;
+    playerIsAlive = player->hitpoints > 0;
 }
 
 void World::reset()
@@ -121,8 +128,8 @@ void World::reset()
     activeViews.clear();
     activeEntities.clear();
     player.reset();
-
-    worldIsRunning = false;
+    enemiesDefeated = 0;
+    playerIsAlive = false;
 }
 
 World::~World()=default;

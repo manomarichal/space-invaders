@@ -12,10 +12,11 @@
 void Game::playLevels(const std::vector<std::string> &levels)
 {
     World world("../settings/standard_setting.json");
+
     for (const auto &level:levels)
     {
-        Loader::loadLevel(world, level);
-        world.start();
+        uint enemies = Loader::loadLevel(world, level);
+        world.start(enemies);
         world.reset();
     }
 }

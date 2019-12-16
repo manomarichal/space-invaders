@@ -24,6 +24,6 @@
 
 int main()
 {
-    Game::playLevels({"../levels/level0.json", "../levels/level1.json"});
+    Game::playLevels({"../levels/level_test.json","../levels/level0.json", "../levels/level1.json"});
     return 0;
 }

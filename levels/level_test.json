@@ -1,0 +1,14 @@
+{
+  "Playership":
+  {
+    "x": 600,
+    "y": 800
+  },
+  "Enemies": [
+    {
+      "type": "RedAlien",
+      "x": 150,
+      "y": 250
+    }
+  ]
+}

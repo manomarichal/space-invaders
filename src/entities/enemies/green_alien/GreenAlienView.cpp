@@ -12,10 +12,7 @@
 using namespace entities::enemies::green_alien;
 
 GreenAlienView::GreenAlienView(const std::shared_ptr<GreenAlien> &alien)
-:View("../textures/greenalien.png", alien)
-{
-    maxHP = alien->hitpoints;
-}
+:View("../textures/greenalien.png", alien) {}
 
 void GreenAlienView::notify()
 {

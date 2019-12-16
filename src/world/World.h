@@ -15,6 +15,7 @@
 #include <algorithm>
 
 #include "../entities/playership/PlayerShipController.h"
+#include "../entities/enemies/Enemy.h"
 #include "../json/json.hpp"
 #include "../util/Object.h"
 #include "../util/Clock.h"
@@ -26,7 +27,8 @@ namespace entities::projectiles
 class World: public entities::Observer
 {
 private:
-    bool worldIsRunning = true;
+    bool playerIsAlive = true;
+    uint enemiesDefeated;
 
     std::unique_ptr<sf::RenderWindow> window;
     std::shared_ptr<entities::playership::PlayerShip> player;
@@ -44,10 +46,11 @@ private:
 public:
     World(const std::string &settings);
     void notify() override;
-    void start();
+    bool start(uint enemies);
     void reset();
     friend class entities::projectiles::ProjectileFactory;
     friend class Loader;
+
     ~World();
 };
 

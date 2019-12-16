@@ -22,7 +22,7 @@ class Loader
 private:
     Loader()=default;
 public:
-    static void loadLevel(World &world, std::string filename);
+    static uint loadLevel(World &world, std::string filename);
 };
 
 
