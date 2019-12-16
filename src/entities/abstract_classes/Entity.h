@@ -25,8 +25,8 @@ namespace entities
     protected:
         float x;
         float y;
-        unsigned int xSize;
-        unsigned int ySize;
+        float xSize;
+        float ySize;
     public:
         Entity(float x, float y): x(x), y(y) {};
         virtual void update()=0;
@@ -42,12 +42,12 @@ namespace entities
             return y;
         }
 
-        [[nodiscard]] unsigned int getXSize() const
+        [[nodiscard]] float getXSize() const
         {
             return xSize;
         }
 
-        [[nodiscard]] unsigned int getYSize() const
+        [[nodiscard]] float getYSize() const
         {
             return ySize;
         }

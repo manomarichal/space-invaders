@@ -22,7 +22,7 @@ namespace entities
     {
     protected:
         View()=default;
-        View(std::string image, std::shared_ptr<Entity> sharedPtr);
+        View(const std::string& image, std::shared_ptr<Entity> sharedPtr);
         std::shared_ptr<Entity> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;

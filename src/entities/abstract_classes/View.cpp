@@ -10,7 +10,7 @@
 #include "./View.h"
 using namespace entities;
 
-View::View(std::string image, std::shared_ptr<Entity> sharedPtr)
+View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
 {
     this->entity = std::move(sharedPtr);
 

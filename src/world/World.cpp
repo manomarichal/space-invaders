@@ -44,6 +44,19 @@ void World::updateEntities()
     {
         entity->update();
     }
+
+    if (objectsToDelete.size()==1)
+    {
+        std::cout << "sin";
+    }
+
+    std::sort(objectsToDelete.begin(), objectsToDelete.end(), std::greater<>());
+    for (auto i:objectsToDelete)
+    {
+        deleteObject(i);
+    }
+
+    objectsToDelete.clear();
 }
 
 void World::handleEvents()
@@ -56,7 +69,6 @@ void World::handleEvents()
             case sf::Event::Closed:
                 window->close();
                 exit(0);
-                break;
             default:
                 break;
         }
@@ -69,12 +81,6 @@ void World::handleEvents()
         if (!activeControllers[index]->handleEvents(activeEntities)) objectsToDelete.emplace_back(index);
         index++;
     }
-
-    for (auto i:objectsToDelete)
-    {
-        deleteObject(i);
-    }
-    objectsToDelete.clear();
 }
 
 void World::drawViews()

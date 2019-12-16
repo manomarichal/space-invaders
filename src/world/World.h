@@ -12,6 +12,7 @@
 
 #include <unistd.h>
 #include <fstream>
+#include <algorithm>
 
 #include "../entities/playership/PlayerShipController.h"
 #include "../json/json.hpp"
