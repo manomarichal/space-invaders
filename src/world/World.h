@@ -32,6 +32,7 @@ private:
 
     std::unique_ptr<sf::RenderWindow> window;
     std::shared_ptr<entities::playership::PlayerShip> player;
+
     std::vector<std::shared_ptr<entities::Controller>> activeControllers;
     std::vector<std::shared_ptr<entities::View>> activeViews;
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
