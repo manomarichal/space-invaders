@@ -70,12 +70,30 @@ void Game::checkEvents()
 
 void Game::play()
 {
+    const double MS_PER_UPDATE = 16;
+
     while (true)
     {
         for (const auto &level:levels)
         {
             World world(level, window);
-            if (world.play()) continue;
+
+            double lag = 0;
+
+            while (world.isRunning())
+            {
+                lag += Clock::update();
+
+                while (lag >= MS_PER_UPDATE)
+                {
+                    world.handleEvents();
+                    world.updateEntities();
+                    lag -= MS_PER_UPDATE;
+                }
+
+                world.drawViews();
+            }
+            if (world.levelCompleted) newLevel();
             else if (gameOver()) break;
             else return;
         }

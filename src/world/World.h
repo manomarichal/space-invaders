@@ -29,9 +29,10 @@ namespace entities::projectiles
 class World: public entities::Observer
 {
 private:
-    bool playerIsAlive = true;
     uint enemiesDefeated;
     uint enemiesToDefeat;
+
+    bool running;
 
     std::shared_ptr<sf::RenderWindow> window;
     std::shared_ptr<entities::playership::PlayerShip> player;
@@ -41,17 +42,23 @@ private:
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
     std::vector<uint> objectsToDelete;
 
-    void handleEvents();
-    void updateEntities();
-    void drawViews();
+
     void deleteObject(uint index);
     void addObject(entities::Object object);
     void loadLevel(const std::string &filename);
 
 public:
     World(const std::string &file, std::shared_ptr<sf::RenderWindow> windowPtr);
+
+    bool levelCompleted;
+
+    bool isRunning() const;
+
     void notify() override;
-    bool play();
+    void handleEvents();
+    void updateEntities();
+    void drawViews();
+
     friend class entities::projectiles::ProjectileFactory;
 
     ~World();

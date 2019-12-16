@@ -12,6 +12,9 @@
 World::World(const std::string &file, std::shared_ptr<sf::RenderWindow> windowPtr)
 {
     enemiesDefeated = 0;
+    running = true;
+    levelCompleted = false;
+
     window = std::move(windowPtr);
     loadLevel(file);
 }
@@ -26,6 +29,12 @@ void World::addObject(entities::Object object)
 void World::deleteObject(uint index)
 {
     if (dynamic_cast<entities::enemies::Enemy*>(activeEntities[index].get()) != nullptr) enemiesDefeated++;
+
+    if (enemiesDefeated == enemiesToDefeat)
+    {
+        running = false;
+        levelCompleted = true;
+    }
 
     activeEntities.erase(activeEntities.begin() + index);
     activeViews.erase(activeViews.begin() + index);
@@ -75,33 +84,9 @@ void World::drawViews()
 
 }
 
-bool World::play()
-{
-    const double MS_PER_UPDATE = 16;
-    playerIsAlive = true;
-    double lag = 0;
-
-    while (playerIsAlive)
-    {
-        if (enemiesDefeated == enemiesToDefeat) return true;
-
-        lag += Clock::update();
-
-        while (lag >= MS_PER_UPDATE)
-        {
-            handleEvents();
-            updateEntities();
-            lag -= MS_PER_UPDATE;
-        }
-
-        drawViews();
-    }
-    return false;
-}
-
 void World::notify()
 {
-    playerIsAlive = player->hitpoints > 0;
+    running = player->hitpoints > 0;
 }
 
 void World::loadLevel(const std::string &filename)
@@ -164,5 +149,11 @@ void World::loadLevel(const std::string &filename)
         }
     }
 }
+
+bool World::isRunning() const
+{
+    return running;
+}
+
 World::~World()=default;
 
