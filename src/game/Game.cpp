@@ -26,7 +26,7 @@ Game::Game(const std::string &settings, std::vector<std::string> levels)
 
 }
 
-bool Game::gameOver()
+bool Game::gameOverScreen()
 {
     sf::Font font;
     font.loadFromFile("../fonts/pixeled.ttf");
@@ -54,7 +54,7 @@ bool Game::gameOver()
     }
 }
 
-void Game::newLevel()
+void Game::newLevelScreen()
 {
     sf::Font font;
     font.loadFromFile("../fonts/pixeled.ttf");
@@ -120,11 +120,11 @@ void Game::play()
 
         for (const auto &level:levels)
         {
-            newLevel();
+            newLevelScreen();
             world.loadLevel(level);
             Game::runWorld(world);
-            if (world.isLevelCompleted()) world.reset();
-            else if (gameOver()) break;
+            if (world.isLevelCompleted()) continue;
+            else if (gameOverScreen()) break;
             else return;
         }
     }

@@ -17,8 +17,8 @@ class Game
 private:
     std::shared_ptr<sf::RenderWindow> window;
     std::vector<std::string> levels;
-    bool gameOver();
-    void newLevel();
+    bool gameOverScreen();
+    void newLevelScreen();
     void checkEvents();
     static void runWorld (World &world);
 

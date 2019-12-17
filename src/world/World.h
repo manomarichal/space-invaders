@@ -43,7 +43,7 @@ private:
     std::vector<std::shared_ptr<entities::Entity>> activeEntities;
     std::vector<uint> objectsToDelete;
 
-
+    void reset();
     void deleteObject(uint index);
     void addObject(entities::Object object);
 
@@ -60,7 +60,6 @@ public:
     void handleEvents();
     void updateEntities();
     void drawViews();
-    void reset();
 
     friend class entities::projectiles::ProjectileFactory;
 

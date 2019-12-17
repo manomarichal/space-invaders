@@ -102,6 +102,8 @@ void World::reset()
 
 void World::loadLevel(const std::string &filename)
 {
+    reset();
+
     activeEntities.reserve(50);
     activeViews.reserve(50);
     activeControllers.reserve(50);
