@@ -123,6 +123,7 @@ void Game::play()
             newLevelScreen();
             world.loadLevel(level);
             Game::runWorld(world);
+            
             if (world.isLevelCompleted()) continue;
             else if (gameOverScreen()) break;
             else return;

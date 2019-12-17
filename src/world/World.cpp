@@ -11,10 +11,8 @@
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
-    enemiesDefeated = 0;
-    running = true;
-    levelCompleted = false;
-
+    reset();
+    score = 0;
     window = std::move(windowPtr);
 }
 
@@ -27,7 +25,12 @@ void World::addObject(entities::Object object)
 
 void World::deleteObject(uint index)
 {
-    if (dynamic_cast<entities::enemies::Enemy*>(activeEntities[index].get()) != nullptr) enemiesDefeated++;
+    if (dynamic_cast<entities::enemies::Enemy*>(activeEntities[index].get()) != nullptr)
+    {
+        enemiesDefeated++;
+        score += 100;
+
+    }
 
     if (enemiesDefeated == enemiesToDefeat)
     {
@@ -81,6 +84,7 @@ void World::drawViews()
     {
         view->draw(*window);
     }
+    drawScore();
     window->display();
 
 }
@@ -98,6 +102,16 @@ void World::reset()
     running = false;
     levelCompleted = false;
     enemiesDefeated = 0;
+}
+
+void World::drawScore()
+{
+    sf::Font font;
+    font.loadFromFile("../fonts/pixeled.ttf");
+
+    sf::Text string("Score: " + std::to_string(score), font, 32);
+    string.setPosition(float(entities::Transformation::getScreenWidth()) - string.getGlobalBounds().width - 10, 10);
+    window->draw(string);
 }
 
 void World::loadLevel(const std::string &filename)

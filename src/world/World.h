@@ -31,6 +31,7 @@ class World: public entities::Observer, public entities::Subject
 private:
     uint enemiesDefeated;
     uint enemiesToDefeat;
+    uint score;
     bool levelCompleted;
 
     bool running;
@@ -46,6 +47,7 @@ private:
     void reset();
     void deleteObject(uint index);
     void addObject(entities::Object object);
+    void drawScore();
 
 public:
     explicit World(std::shared_ptr<sf::RenderWindow> windowPtr);
