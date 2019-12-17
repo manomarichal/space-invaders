@@ -9,14 +9,13 @@
 
 #include "World.h"
 
-World::World(const std::string &file, std::shared_ptr<sf::RenderWindow> windowPtr)
+World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
     enemiesDefeated = 0;
     running = true;
     levelCompleted = false;
 
     window = std::move(windowPtr);
-    loadLevel(file);
 }
 
 void World::addObject(entities::Object object)
@@ -39,6 +38,8 @@ void World::deleteObject(uint index)
     activeEntities.erase(activeEntities.begin() + index);
     activeViews.erase(activeViews.begin() + index);
     activeControllers.erase(activeControllers.begin() + index);
+
+    notifyObservers();
 }
 
 void World::updateEntities()
@@ -89,8 +90,18 @@ void World::notify()
     running = player->hitpoints > 0;
 }
 
+void World::reset()
+{
+    activeEntities.clear();
+    activeControllers.clear();
+    activeViews.clear();
+    running = false;
+    levelCompleted = false;
+    enemiesDefeated = 0;
+}
+
 void World::loadLevel(const std::string &filename)
-{   
+{
     activeEntities.reserve(50);
     activeViews.reserve(50);
     activeControllers.reserve(50);
@@ -148,11 +159,27 @@ void World::loadLevel(const std::string &filename)
             throw std::runtime_error("unknow enemy type: " + std::string(enemy["type"]) + " in file: " + filename);
         }
     }
+    running = true;
 }
 
 bool World::isRunning() const
 {
     return running;
+}
+
+uint World::getEnemiesDefeated() const
+{
+    return enemiesDefeated;
+}
+
+uint World::getEnemiesToDefeat() const
+{
+    return enemiesToDefeat;
+}
+
+bool World::isLevelCompleted() const
+{
+    return levelCompleted;
 }
 
 World::~World()=default;

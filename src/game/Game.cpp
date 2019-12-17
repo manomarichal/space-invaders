@@ -116,12 +116,14 @@ void Game::play()
 {
     while (true)
     {
+        World world(window);
+
         for (const auto &level:levels)
         {
             newLevel();
-            World world(level, window);
+            world.loadLevel(level);
             Game::runWorld(world);
-            if (world.levelCompleted) continue;
+            if (world.isLevelCompleted()) world.reset();
             else if (gameOver()) break;
             else return;
         }

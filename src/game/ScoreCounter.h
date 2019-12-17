@@ -10,11 +10,24 @@
 #ifndef SPACE_INVADERS_SCORECOUNTER_H
 #define SPACE_INVADERS_SCORECOUNTER_H
 
-#include "../entities/abstract_classes/Observer.h"
+#include "../world/World.h"
 
 class ScoreCounter: public entities::Observer
 {
+private:
+    uint score;
+    uint enemiesDefeated;
+    std::shared_ptr<World> world;
 public:
+    explicit ScoreCounter(std::shared_ptr<World> world);
+
+    void notify() override;
+
+    [[nodiscard]] uint getScore() const;
+
+    void setWorld(const std::shared_ptr<World> &world);
+
+    ~ScoreCounter() override =default;
 };
 
 

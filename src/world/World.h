@@ -26,11 +26,12 @@ namespace entities::projectiles
 {
     class ProjectileFactory;
 }
-class World: public entities::Observer
+class World: public entities::Observer, public entities::Subject
 {
 private:
     uint enemiesDefeated;
     uint enemiesToDefeat;
+    bool levelCompleted;
 
     bool running;
 
@@ -45,19 +46,21 @@ private:
 
     void deleteObject(uint index);
     void addObject(entities::Object object);
-    void loadLevel(const std::string &filename);
 
 public:
-    World(const std::string &file, std::shared_ptr<sf::RenderWindow> windowPtr);
+    explicit World(std::shared_ptr<sf::RenderWindow> windowPtr);
 
-    bool levelCompleted;
-
+    uint getEnemiesDefeated() const;
+    uint getEnemiesToDefeat() const;
+    bool isLevelCompleted() const;
     bool isRunning() const;
 
+    void loadLevel(const std::string &filename);
     void notify() override;
     void handleEvents();
     void updateEntities();
     void drawViews();
+    void reset();
 
     friend class entities::projectiles::ProjectileFactory;
 
