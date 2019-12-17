@@ -29,7 +29,6 @@ void World::deleteObject(uint index)
     {
         enemiesDefeated++;
         score += 100;
-
     }
 
     if (enemiesDefeated == enemiesToDefeat)
