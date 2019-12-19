@@ -20,7 +20,7 @@ namespace entities::playership
         std::unique_ptr<PlayerLivesView> hud;
     public:
         explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
-        void notify() override;
+        void onNotify() override;
         void draw(sf::RenderWindow &window) const override;
         ~PlayerShipView() override = default;
     };

@@ -8,49 +8,50 @@
 // =====================================================================
 
 #include "./Transformation.h"
-using namespace entities;
+using namespace util;
 
-unsigned int Transformation::screenHeight = 0;
-unsigned int Transformation::screenWidth = 0;
+unsigned int util::Transformation::screenHeight = 0;
+unsigned int util::Transformation::screenWidth = 0;
 
-float Transformation::getXPixelValue(float x)
+float util::Transformation::getXPixelValue(float x)
 {
-    return (static_cast<float>(Transformation::screenWidth)/(screensize::x / x));
+    return (static_cast<float>(util::Transformation::screenWidth)/(screensize::x / x));
 }
 
-float Transformation::getYPixelValue(float y)
+float util::Transformation::getYPixelValue(float y)
 {
-    return (static_cast<float>(Transformation::screenHeight)/(screensize::y / y));
+    return (static_cast<float>(util::Transformation::screenHeight)/(screensize::y / y));
 }
 
-void Transformation::setScreenWidth(unsigned int screenWidth)
+void util::Transformation::setScreenWidth(unsigned int screenWidth)
 {
-    Transformation::screenWidth = screenWidth;
+    util::Transformation::screenWidth = screenWidth;
 }
 
-void Transformation::setScreenHeight(unsigned int screenHeight)
+void util::Transformation::setScreenHeight(unsigned int screenHeight)
 {
-    Transformation::screenHeight = screenHeight;
+    util::Transformation::screenHeight = screenHeight;
 }
 
-float Transformation::getXScale()
+float util::Transformation::getXScale()
 {
     return static_cast<float>(screenWidth) / static_cast<float>(screensize::x);
 
 }
 
-float Transformation::getYScale()
+float util::Transformation::getYScale()
 {
     return static_cast<float>(screenHeight) / static_cast<float>(screensize::y);
 
 }
 
-unsigned int Transformation::getScreenWidth()
+unsigned int util::Transformation::getScreenWidth()
 {
     return screenWidth;
 }
 
-unsigned int Transformation::getScreenHeight()
+unsigned int util::Transformation::getScreenHeight()
 {
     return screenHeight;
 }
+

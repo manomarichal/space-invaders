@@ -24,7 +24,7 @@ namespace entities::playership
         std::vector<std::unique_ptr<sf::Sprite>> lives;
     public:
         explicit PlayerLivesView(std::shared_ptr<PlayerShip> ship);
-        void notify() override;
+        void onNotify() override;
         void draw(sf::RenderWindow &window) const override;
         ~PlayerLivesView() override = default;
     };

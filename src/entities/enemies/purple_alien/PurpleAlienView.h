@@ -20,7 +20,7 @@ class PurpleAlienView: public View
         float maxHP;
     public:
         explicit PurpleAlienView(const std::shared_ptr<PurpleAlien> &alien);
-        void notify() override ;
+        void onNotify() override ;
         ~PurpleAlienView() override = default;
     };
 }

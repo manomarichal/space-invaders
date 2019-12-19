@@ -12,13 +12,13 @@
 using namespace entities::playership;
 
 PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
-:View("../textures/spaceship.png", ship)
+:View("../resources/textures/spaceship.png", ship)
 {
     hud = std::make_unique<PlayerLivesView>(std::move(ship));
-    notify();
+    onNotify();
 }
 
-void PlayerShipView::notify()
+void PlayerShipView::onNotify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
 }

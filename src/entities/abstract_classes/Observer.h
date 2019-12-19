@@ -15,7 +15,7 @@ namespace entities
     class Observer
     {
     public:
-        virtual void notify()=0;
+        virtual void onNotify()=0;
         virtual ~Observer()=0;
     };
     inline Observer::~Observer()=default;

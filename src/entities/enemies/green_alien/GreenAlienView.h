@@ -21,7 +21,7 @@ namespace entities::enemies::green_alien
         float maxHP;
     public:
         explicit GreenAlienView(const std::shared_ptr<GreenAlien> &alien);
-        void notify() override ;
+        void onNotify() override ;
         ~GreenAlienView() override = default;
     };
 }

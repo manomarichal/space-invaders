@@ -58,7 +58,7 @@ public:
     bool isRunning() const;
 
     void loadLevel(const std::string &filename);
-    void notify() override;
+    void onNotify() override;
     void handleEvents();
     void updateEntities();
     void drawViews();

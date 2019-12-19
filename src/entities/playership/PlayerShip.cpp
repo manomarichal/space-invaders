@@ -22,14 +22,14 @@ void PlayerShip::moveLeft()
 {
     x -= 10;
     if (x < xSize/2) x = xSize/2;
-    notifyObservers();
+    onNotifyObservers();
 }
 
 void PlayerShip::moveRight()
 {
     x += 10;
     if (x + xSize/2> screensize::x) x = screensize::x-xSize/2;
-    notifyObservers();
+    onNotifyObservers();
 }
 
 void PlayerShip::update()
@@ -39,6 +39,6 @@ void PlayerShip::update()
 void PlayerShip::takeDamage([[maybe_unused]] unsigned int damage)
 {
     hitpoints -= 1;
-    notifyObservers();
+    onNotifyObservers();
 }
 

@@ -21,8 +21,8 @@ namespace entities::projectiles::standard_enemy
     {
     public:
         explicit StandardEnemyProjectileView(std::shared_ptr<StandardEnemyProjectile> projectile)
-                : View("../textures/whitesquare.png", projectile) {};
-        void notify() override;
+                : View("../resources/textures/whitesquare.png", projectile) {};
+        void onNotify() override;
         ~StandardEnemyProjectileView() override = default;
     };
 }

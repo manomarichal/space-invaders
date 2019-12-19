@@ -26,10 +26,6 @@ View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
 
 void View::draw(sf::RenderWindow &window) const
 {
-    sf::Sprite temp = *sprite;
-    temp.setPosition(Transformation::getXPixelValue(temp.getPosition().x),
-                     Transformation::getYPixelValue(temp.getPosition().y));
-    temp.setScale(Transformation::getXScale() * sprite->getScale().x,
-                  Transformation::getYScale() * sprite->getScale().y);
-    window.draw(temp);
+    window.draw(util::Transformation::transform<sf::Sprite>(*sprite));
 }
+

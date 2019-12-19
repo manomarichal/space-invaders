@@ -13,7 +13,7 @@ using namespace entities::projectiles::standard;
 void StandardProjectile::move()
 {
     y -= vspeed;
-    notifyObservers();
+    onNotifyObservers();
 }
 
 void StandardProjectile::update()

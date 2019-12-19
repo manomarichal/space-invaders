@@ -20,7 +20,7 @@ namespace entities::enemies::red_alien
     {
     public:
         explicit RedAlienView(const std::shared_ptr<RedAlien> &enemy);
-        void notify() override ;
+        void onNotify() override ;
         ~RedAlienView() override = default;
     };
 }

@@ -19,7 +19,7 @@ namespace entities
     {
     protected:
         std::vector<Observer*> observers;
-        void notifyObservers() const { for (auto &observer:observers) observer->notify(); };
+        void onNotifyObservers() const { for (auto &observer:observers) observer->onNotify(); };
     public:
         void subscribe(Observer* observer) {observers.emplace_back(observer);};
         virtual ~Subject()=0;

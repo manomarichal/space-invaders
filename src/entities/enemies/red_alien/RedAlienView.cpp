@@ -11,12 +11,12 @@
 using namespace entities::enemies::red_alien;
 
 RedAlienView::RedAlienView(const std::shared_ptr<RedAlien> &enemy)
-:View(std::string("../textures/redalien.png"), enemy)
+:View(std::string("../resources/textures/redalien.png"), enemy)
 {
 
 }
 
-void RedAlienView::notify()
+void RedAlienView::onNotify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
 }

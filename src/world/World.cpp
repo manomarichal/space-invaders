@@ -41,7 +41,7 @@ void World::deleteObject(uint index)
     activeViews.erase(activeViews.begin() + index);
     activeControllers.erase(activeControllers.begin() + index);
 
-    notifyObservers();
+    onNotifyObservers();
 }
 
 void World::updateEntities()
@@ -88,7 +88,7 @@ void World::drawViews()
 
 }
 
-void World::notify()
+void World::onNotify()
 {
     running = player->hitpoints > 0;
 }
@@ -106,11 +106,11 @@ void World::reset()
 void World::drawScore()
 {
     sf::Font font;
-    font.loadFromFile("../fonts/pixeled.ttf");
+    font.loadFromFile("../resources/fonts/pixeled.ttf");
 
     sf::Text string("Score: " + std::to_string(score), font, 32);
-    string.setPosition(float(entities::Transformation::getScreenWidth()) - string.getGlobalBounds().width - 10, 10);
-    window->draw(string);
+    string.setPosition(float(util::Transformation::getScreenWidth()) - string.getGlobalBounds().width - 10, 10);
+    window->draw(util::Transformation::transform<sf::Text>(string));
 }
 
 void World::loadLevel(const std::string &filename)

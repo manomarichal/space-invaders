@@ -10,7 +10,7 @@
 #include "StandardEnemyProjectileView.h"
 using namespace entities::projectiles::standard_enemy;
 
-void StandardEnemyProjectileView::notify()
+void StandardEnemyProjectileView::onNotify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
 }

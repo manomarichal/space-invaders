@@ -13,7 +13,7 @@ using namespace entities::projectiles::standard_enemy;
 void StandardEnemyProjectile::move()
 {
     y += vspeed;
-    notifyObservers();
+    onNotifyObservers();
 }
 
 void StandardEnemyProjectile::update()

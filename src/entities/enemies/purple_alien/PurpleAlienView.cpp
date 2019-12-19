@@ -12,12 +12,12 @@
 using namespace entities::enemies::purple_alien;
 
 PurpleAlienView::PurpleAlienView(const std::shared_ptr<PurpleAlien> &alien)
-: View(std::string("../textures/purplealien.png"), alien)
+: View(std::string("../resources/textures/purplealien.png"), alien)
 {
     maxHP = alien->hitpoints;
 }
 
-void PurpleAlienView::notify()
+void PurpleAlienView::onNotify()
 {
     sprite->setScale(static_cast<float>(dynamic_cast<PurpleAlien*>(entity.get())->hitpoints) / maxHP, static_cast<float >(dynamic_cast<PurpleAlien*>(entity.get())->hitpoints) / maxHP);
     sprite->setPosition(entity->getX(), entity->getY());

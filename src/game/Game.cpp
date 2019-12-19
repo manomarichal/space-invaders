@@ -19,8 +19,8 @@ Game::Game(const std::string &settings, std::vector<std::string> levels)
 
     uint width = root["Screen"]["width"];
     uint height = root["Screen"]["height"];
-    entities::Transformation::setScreenWidth(width);
-    entities::Transformation::setScreenHeight(height);
+    util::Transformation::setScreenWidth(width);
+    util::Transformation::setScreenHeight(height);
 
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(width, height), "Space Invaders");
 
@@ -29,18 +29,18 @@ Game::Game(const std::string &settings, std::vector<std::string> levels)
 bool Game::gameOverScreen()
 {
     sf::Font font;
-    font.loadFromFile("../fonts/pixeled.ttf");
+    font.loadFromFile("../resources/fonts/pixeled.ttf");
 
-    sf::Text string("GAME OVER", font, 128);
-    string.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 - string.getGlobalBounds().height - 10);
+    sf::Text string("GAME OVER", font, 64);
+    string.setPosition(float(screensize::x)/2, float(screensize::y)/2 - string.getGlobalBounds().height - 10);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
     
-    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 64);
-    string1.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 + string1.getGlobalBounds().height + 10);
+    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 32);
+    string1.setPosition(float(screensize::x)/2, float(screensize::y)/2 + string1.getGlobalBounds().height + 10);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
 
-    window->draw(string);
-    window->draw(string1);
+    window->draw(util::Transformation::transform<sf::Text>(string));
+    window->draw(util::Transformation::transform<sf::Text>(string1));
     window->display();
 
     while(true)
@@ -57,18 +57,18 @@ bool Game::gameOverScreen()
 void Game::newLevelScreen()
 {
     sf::Font font;
-    font.loadFromFile("../fonts/pixeled.ttf");
+    font.loadFromFile("../resources/fonts/pixeled.ttf");
 
-    sf::Text string("PRESS SPACE", font, 128);
-    string.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 - string.getGlobalBounds().height);
+    sf::Text string("PRESS SPACE", font, 64);
+    string.setPosition(float(screensize::x)/2, float(screensize::y)/2 - string.getGlobalBounds().height);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
 
-    sf::Text string1("TO START", font, 128);
-    string1.setPosition(float(entities::Transformation::getScreenWidth())/2, float(entities::Transformation::getScreenHeight())/2 + string1.getGlobalBounds().height);
+    sf::Text string1("TO START", font, 64);
+    string1.setPosition(float(screensize::x)/2, float(screensize::y)/2 + string1.getGlobalBounds().height);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
 
-    window->draw(string);
-    window->draw(string1);
+    window->draw(util::Transformation::transform<sf::Text>(string));
+    window->draw(util::Transformation::transform<sf::Text>(string1));
     window->display();
 
     while(true)

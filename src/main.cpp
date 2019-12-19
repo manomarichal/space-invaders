@@ -23,7 +23,7 @@
 
 int main()
 {
-    Game("../settings/standard_setting.json",
-         {"../levels/level_test.json", "../levels/level0.json", "../levels/level1.json"}).play();
+    Game("../resources/settings/standard_setting.json",
+         {"../resources/levels/level_test.json", "../resources/levels/level0.json", "../resources/levels/level1.json"}).play();
     return 0;
 }

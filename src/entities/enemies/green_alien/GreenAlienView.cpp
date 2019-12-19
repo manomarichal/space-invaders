@@ -12,9 +12,9 @@
 using namespace entities::enemies::green_alien;
 
 GreenAlienView::GreenAlienView(const std::shared_ptr<GreenAlien> &alien)
-:View("../textures/greenalien.png", alien) {}
+:View("../resources/textures/greenalien.png", alien) {}
 
-void GreenAlienView::notify()
+void GreenAlienView::onNotify()
 {
     sprite->setPosition(entity->getX(), entity->getY());
 }
