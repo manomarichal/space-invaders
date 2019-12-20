@@ -21,7 +21,7 @@ View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
     sprite->setTexture(*texture);
     sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
 
-    dynamic_cast<Subject*>(entity.get())->subscribe(dynamic_cast<Observer *>(this));
+    std::dynamic_pointer_cast<Subject>(entity)->subscribe(dynamic_cast<Observer*>(this));
 }
 
 void View::draw(sf::RenderWindow &window) const

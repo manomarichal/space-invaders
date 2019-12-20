@@ -14,9 +14,9 @@ bool StandardEnemyProjectileController::handleEvents(const std::vector<std::shar
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::playership::PlayerShip*>(e.get()) != nullptr)
+        if (std::dynamic_pointer_cast<entities::playership::PlayerShip>(e) != nullptr)
         {
-            if (entities::Collision::checkCollision(*entity, *e))
+            if (util::Collision::checkCollision(*entity, *e))
             {
                 return false;
             }

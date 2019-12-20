@@ -13,6 +13,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "../../util/Collision.h"
+#include "./View.h"
 
 class World;
 
@@ -22,8 +23,12 @@ namespace entities
         {
         protected:
             World &world;
+            std::shared_ptr<Entity> entity;
+            std::shared_ptr<View> view;
+
         public:
-            explicit Controller(World &world): world(world) {};
+            explicit Controller(World &world, std::shared_ptr<Entity> entity, std::shared_ptr<View> view):
+            world(world), entity(std::move(entity)), view(std::move(view)) {};
 
             virtual bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)=0;
 

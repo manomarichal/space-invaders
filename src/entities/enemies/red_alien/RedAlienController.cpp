@@ -14,14 +14,14 @@ bool RedAlienController::handleEvents(const std::vector<std::shared_ptr<Entity>>
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::projectiles::standard::StandardProjectile*>(e.get()) != nullptr)
+        if (std::dynamic_pointer_cast<entities::projectiles::standard::StandardProjectile>(e) != nullptr)
         {
-            if (entities::Collision::checkCollision(*entity, *e))
+            if (util::Collision::checkCollision(*entity, *e))
             {
-                entity->takeDamage(10);
+                std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
             }
         }
     }
 
-    return entity->hitpoints > 0;
+    return std::dynamic_pointer_cast<Enemy>(entity)->hitpoints > 0;
 }

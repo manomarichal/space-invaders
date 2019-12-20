@@ -100,7 +100,7 @@ void Game::runWorld(World &world)
 
     while (world.isRunning())
     {
-        lag += Clock::update();
+        lag += util::Clock::update();
 
         while (lag >= MS_PER_UPDATE)
         {
@@ -116,15 +116,15 @@ void Game::play()
 {
     while (true)
     {
-        World world(window);
+        auto world = std::make_shared<World>(window);
 
         for (const auto &level:levels)
         {
             newLevelScreen();
-            world.loadLevel(level);
-            Game::runWorld(world);
+            world->loadLevel(level);
+            Game::runWorld(*world);
             
-            if (world.isLevelCompleted()) continue;
+            if (world->isLevelCompleted()) continue;
             else if (gameOverScreen()) break;
             else return;
         }

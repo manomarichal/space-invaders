@@ -12,14 +12,19 @@
 
 #include <chrono>
 
-class Clock
+namespace util
 {
-private:
-    static std::chrono::time_point<std::chrono::high_resolution_clock> previous;
-    static std::chrono::time_point<std::chrono::high_resolution_clock> current;
-    Clock()=default;
-public:
-    static double update();
+    class Clock
+    {
+    private:
+        static std::chrono::time_point<std::chrono::high_resolution_clock> previous;
+        static std::chrono::time_point<std::chrono::high_resolution_clock> current;
 
-};
+        Clock() = default;
+
+    public:
+        static double update();
+
+    };
+}
 #endif //SPACE_INVADERS_CLOCK_H

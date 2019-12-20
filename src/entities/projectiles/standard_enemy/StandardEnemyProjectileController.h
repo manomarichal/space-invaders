@@ -20,10 +20,9 @@ namespace entities::projectiles::standard_enemy
 {
     class StandardEnemyProjectileController: public Controller
     {
-        std::shared_ptr<StandardEnemyProjectile> entity;
-        std::shared_ptr<StandardEnemyProjectileView> view;
     public:
-        StandardEnemyProjectileController(std::shared_ptr<StandardEnemyProjectile> entity, std::shared_ptr<StandardEnemyProjectileView> view, World &world): Controller(world), entity(std::move(entity)), view(std::move(view)) {};
+        StandardEnemyProjectileController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world)
+                :Controller(world, entity, view) {};
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override;
         ~StandardEnemyProjectileController() override = default;
     };

@@ -18,7 +18,7 @@
 
 namespace entities
 {
-    class View: public Observer
+class View: public Observer
     {
     protected:
         View()=default;

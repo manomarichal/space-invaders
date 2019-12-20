@@ -11,8 +11,8 @@
 
 using namespace entities::enemies::green_alien;
 
-GreenAlienController::GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, World &world)
-        :Controller(world), entity(std::move(entity)), view(std::move(view))
+GreenAlienController::GreenAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world)
+        :Controller(world, entity, view)
 {
     stopwatch = std::make_unique<Stopwatch>(2000);
 }
@@ -20,11 +20,11 @@ bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::projectiles::standard::StandardProjectile*>(e.get()) != nullptr)
+        if (std::dynamic_pointer_cast<entities::projectiles::standard::StandardProjectile>(e) != nullptr)
         {
-            if (entities::Collision::checkCollision(*entity, *e))
+            if (util::Collision::checkCollision(*entity, *e))
             {
-                entity->takeDamage(10);
+                std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
             }
         }
     }
@@ -34,5 +34,5 @@ bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity
         projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::EnemyStandard, world);
     }
 
-    return entity->hitpoints > 0;
+    return std::dynamic_pointer_cast<Enemy>(entity)->hitpoints > 0;
 }

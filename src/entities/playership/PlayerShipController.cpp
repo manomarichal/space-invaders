@@ -9,26 +9,27 @@
 
 #include "PlayerShipController.h"
 using namespace entities::playership;
-PlayerShipController::PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, World &world)
-                                            :Controller(world), entity(std::move(entity)), view(std::move(view))
+
+PlayerShipController::PlayerShipController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view,
+                                           World &world) :Controller(world, entity, view)
 {
     stopwatch = std::make_unique<Stopwatch>(500);
 }
 
 void PlayerShipController::createProjectile()
 {
-    projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(),projectiles::Standard, world);
+    projectiles::ProjectileFactory::createProjectile(std::dynamic_pointer_cast<PlayerShip>(entity)->getX(), std::dynamic_pointer_cast<PlayerShip>(entity)->getY(),projectiles::Standard, world);
 }
 
 bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::shared_ptr<Entity>> &entities)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
-        entity ->moveLeft();
+        std::dynamic_pointer_cast<PlayerShip>(entity)->moveLeft();
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
-        entity ->moveRight();
+        std::dynamic_pointer_cast<PlayerShip>(entity)->moveRight();
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) and stopwatch->isReady())
     {
@@ -37,13 +38,13 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
 
     for (auto e:entities)
     {
-        if (dynamic_cast<projectiles::standard_enemy::StandardEnemyProjectile*>(e.get()) != nullptr)
+        if (std::dynamic_pointer_cast<projectiles::standard_enemy::StandardEnemyProjectile>(e) != nullptr)
         {
-            if (entities::Collision::checkCollision(*entity, *e))
+            if (util::Collision::checkCollision(*entity, *e))
             {
-                entity->takeDamage(10);
+                std::dynamic_pointer_cast<PlayerShip>(entity)->takeDamage(10);
             }
         }
     }
-    return entity->hitpoints >= 0;
+    return std::dynamic_pointer_cast<PlayerShip>(entity)->hitpoints >= 0;
 }

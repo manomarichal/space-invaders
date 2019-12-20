@@ -12,14 +12,12 @@
 
 namespace entities
 {
-    class Observer
+    class Observer: public std::enable_shared_from_this<Observer>
     {
     public:
         virtual void onNotify()=0;
-        virtual ~Observer()=0;
+        virtual ~Observer()=default;
     };
-    inline Observer::~Observer()=default;
-
 }
 
 #endif //SPACE_INVADERS_OBSERVER_H

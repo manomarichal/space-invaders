@@ -8,6 +8,7 @@
 // =====================================================================
 
 // FASE 1
+//TODO observer raw pointers fixen
 
 // FASE 2
 //TODO const correctness

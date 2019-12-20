@@ -55,3 +55,15 @@ unsigned int util::Transformation::getScreenHeight()
     return screenHeight;
 }
 
+template <class T>
+T Transformation::transform(T sprite)
+{
+    sprite.setPosition(util::Transformation::getXPixelValue(sprite.getPosition().x),
+                       util::Transformation::getYPixelValue(sprite.getPosition().y));
+    sprite.setScale(util::Transformation::getXScale() * sprite.getScale().x,
+                    util::Transformation::getYScale() * sprite.getScale().y);
+    return sprite;
+}
+
+template sf::Sprite Transformation::transform(sf::Sprite sprite);
+template sf::Text Transformation::transform(sf::Text sprite);

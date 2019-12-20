@@ -23,10 +23,8 @@ namespace entities::enemies::green_alien
     {
     private:
         std::unique_ptr<Stopwatch> stopwatch;
-        std::shared_ptr<GreenAlien> entity;
-        std::shared_ptr<GreenAlienView> view;
     public:
-        GreenAlienController(std::shared_ptr<GreenAlien> entity, std::shared_ptr<GreenAlienView> view, World &world);
+        GreenAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~GreenAlienController() override = default;
     };

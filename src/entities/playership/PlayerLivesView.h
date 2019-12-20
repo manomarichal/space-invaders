@@ -15,7 +15,7 @@
 
 namespace entities::playership
 {
-    class PlayerLivesView: public View
+class PlayerLivesView: public View
     {
     private:
         std::unique_ptr<sf::Text> string;

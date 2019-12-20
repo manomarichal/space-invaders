@@ -18,10 +18,10 @@ namespace entities
     class Subject
     {
     protected:
-        std::vector<Observer*> observers;
+        std::vector<Observer *> observers;
         void onNotifyObservers() const { for (auto &observer:observers) observer->onNotify(); };
     public:
-        void subscribe(Observer* observer) {observers.emplace_back(observer);};
+        void subscribe(Observer* observer) {observers.emplace_back(std::move(observer));};
         virtual ~Subject()=0;
     };
     inline Subject::~Subject()=default;

@@ -52,8 +52,6 @@ private:
 public:
     explicit World(std::shared_ptr<sf::RenderWindow> windowPtr);
 
-    uint getEnemiesDefeated() const;
-    uint getEnemiesToDefeat() const;
     bool isLevelCompleted() const;
     bool isRunning() const;
 
@@ -65,7 +63,7 @@ public:
 
     friend class entities::projectiles::ProjectileFactory;
 
-    ~World();
+    ~World() override;
 };
 
 

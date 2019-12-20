@@ -16,9 +16,9 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
 {
     for (auto e:entities)
     {
-        if (dynamic_cast<entities::enemies::Enemy*>(e.get()) != nullptr)
+        if (std::dynamic_pointer_cast<entities::enemies::Enemy>(e) != nullptr)
         {
-            if (entities::Collision::checkCollision(*entity, *e))
+            if (util::Collision::checkCollision(*entity, *e))
             {
                 return false;
             }

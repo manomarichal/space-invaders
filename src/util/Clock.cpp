@@ -9,10 +9,12 @@
 
 #include "./Clock.h"
 
+using namespace util;
+
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::previous = std::chrono::high_resolution_clock::now();
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::current = std::chrono::high_resolution_clock::now();
 
-double Clock::update()
+double util::Clock::update()
 {
     current = std::chrono::high_resolution_clock::now();
     double elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(current - previous).count();

@@ -22,13 +22,10 @@ namespace entities::playership
 {
     class PlayerShipController: public entities::Controller
     {
-        std::shared_ptr<PlayerShip> entity;
-        std::shared_ptr<PlayerShipView> view;
         std::unique_ptr<Stopwatch> stopwatch;
-
         void createProjectile();
     public:
-        PlayerShipController(std::shared_ptr<PlayerShip> entity, std::shared_ptr<PlayerShipView> view, World &world);
+        PlayerShipController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PlayerShipController() override = default;
     };

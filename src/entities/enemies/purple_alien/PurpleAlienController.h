@@ -18,11 +18,8 @@ namespace entities::enemies::purple_alien
 {
     class PurpleAlienController: public Controller
     {
-    private:
-        std::shared_ptr<PurpleAlien> entity;
-        std::shared_ptr<PurpleAlienView> view;
     public:
-        PurpleAlienController(std::shared_ptr<PurpleAlien> entity, std::shared_ptr<PurpleAlienView> view, World &world): Controller(world), entity(std::move(entity)), view(std::move(view)) {};
+        PurpleAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~PurpleAlienController() override = default;
     };

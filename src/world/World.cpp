@@ -11,7 +11,10 @@
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
-    reset();
+    enemiesDefeated = 0;
+    enemiesToDefeat = 0;
+    levelCompleted = false;
+    running = false;
     score = 0;
     window = std::move(windowPtr);
 }
@@ -25,7 +28,7 @@ void World::addObject(entities::Object object)
 
 void World::deleteObject(uint index)
 {
-    if (dynamic_cast<entities::enemies::Enemy*>(activeEntities[index].get()) != nullptr)
+    if (std::dynamic_pointer_cast<entities::enemies::Enemy>(activeEntities[index]) != nullptr)
     {
         enemiesDefeated++;
         score += 100;
@@ -134,7 +137,9 @@ void World::loadLevel(const std::string &filename)
     if (y < 0 or y > 878) throw std::runtime_error("invalid y value for Playership in file: " + filename + "\nx value for playerShip must be bigger than 0 and smaller than 878");
     auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
     player = playership;
-    playership->subscribe(dynamic_cast<entities::Observer*>(this));
+
+    playership->subscribe(dynamic_cast<Observer*>(this));
+
     auto playershipView = std::make_shared<entities::playership::PlayerShipView>(playership);
     auto playershipController = std::make_shared<entities::playership::PlayerShipController>(playership, playershipView, (*this));
     addObject(std::make_tuple(std::move(playership), std::move(playershipView), std::move(playershipController)));
@@ -180,16 +185,6 @@ void World::loadLevel(const std::string &filename)
 bool World::isRunning() const
 {
     return running;
-}
-
-uint World::getEnemiesDefeated() const
-{
-    return enemiesDefeated;
-}
-
-uint World::getEnemiesToDefeat() const
-{
-    return enemiesToDefeat;
 }
 
 bool World::isLevelCompleted() const

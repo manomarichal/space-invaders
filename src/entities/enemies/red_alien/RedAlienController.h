@@ -18,11 +18,9 @@ namespace entities::enemies::red_alien
 {
     class RedAlienController: public Controller
     {
-    private:
-        std::shared_ptr<RedAlien> entity;
-        std::shared_ptr<RedAlienView> view;
     public:
-        RedAlienController(std::shared_ptr<RedAlien> entity, std::shared_ptr<RedAlienView> view, World &world): Controller(world), entity(std::move(entity)), view(std::move(view)) {};
+        RedAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world)
+                :Controller(world, entity, view) {};
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;
         ~RedAlienController() override = default;
     };
