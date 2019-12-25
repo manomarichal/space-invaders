@@ -113,7 +113,7 @@ void World::drawScore()
 
     sf::Text string("Score: " + std::to_string(score), font, 32);
     string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-    string.setPosition(float(util::Transformation::getScreenWidth()) - string.getGlobalBounds().width - 10, 10);
+    string.setPosition(util::Transformation::getScreenWidth() - string.getGlobalBounds().width - 10, 10);
 
     window->draw(string);
 }

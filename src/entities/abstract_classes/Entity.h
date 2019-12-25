@@ -25,12 +25,12 @@ namespace entities
     protected:
         float x;
         float y;
-        float xSize;
-        float ySize;
+        float xSize{};
+        float ySize{};
     public:
         Entity(float x, float y): x(x), y(y) {};
         virtual void update()=0;
-        virtual ~Entity()= default;
+        ~Entity() override = default;
 
         [[nodiscard]] float getX() const
         {

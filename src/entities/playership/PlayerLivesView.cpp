@@ -28,7 +28,8 @@ PlayerLivesView::PlayerLivesView(std::shared_ptr<PlayerShip> ship)
     {
         lives.emplace_back(std::make_unique<sf::Sprite>());
         lives[k]->setTexture(*texture);
-        lives[k]->setPosition((float(k)*50*(util::Transformation::getScreenWidth()/1600) + float(string->getGlobalBounds().width)) , 10);
+        lives[k]->setPosition((float(k)*50*(util::Transformation::getScreenWidth()/1600) +
+                               string->getGlobalBounds().width) , 10);
         lives[k]->setScale((32.f / texture->getSize().x)*util::Transformation::getScreenWidth()/1600,
                 string->getGlobalBounds().height/(lives[k]->getGlobalBounds().height * float(1.1 )));
     }

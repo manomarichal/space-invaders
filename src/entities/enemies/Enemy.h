@@ -28,7 +28,7 @@ namespace entities::enemies
         Enemy(float x, float y);
         virtual void move();
         virtual void takeDamage(float damage);
-        virtual ~Enemy()= default;
+        ~Enemy() override = default;
     };
 }
 #endif //SPACE_INVADERS_ENEMY_H

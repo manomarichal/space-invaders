@@ -6,7 +6,7 @@
   },
   "Levels": [
     "../resources/levels/level_4_3.json",
-    "../resources/levels/level_8_8.json",
+    "../resources/levels/level_8_6.json",
     "../resources/levels/level_8_12.json"
   ]
 }

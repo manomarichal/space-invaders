@@ -36,7 +36,7 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
         createProjectile();
     }
 
-    for (auto e:entities)
+    for (const auto& e:entities)
     {
         if (std::dynamic_pointer_cast<projectiles::standard_enemy::StandardEnemyProjectile>(e) != nullptr)
         {

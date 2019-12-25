@@ -19,7 +19,7 @@ namespace entities::projectiles::standard
     class StandardProjectileView: public View
     {
     public:
-        explicit StandardProjectileView(std::shared_ptr<StandardProjectile> projectile)
+        explicit StandardProjectileView(const std::shared_ptr<StandardProjectile>& projectile)
         :View("../resources/textures/whitesquare.png", projectile){};
 
         void onNotify() override;

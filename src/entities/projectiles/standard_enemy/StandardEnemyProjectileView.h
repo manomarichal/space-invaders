@@ -20,7 +20,7 @@ namespace entities::projectiles::standard_enemy
     class StandardEnemyProjectileView: public View
     {
     public:
-        explicit StandardEnemyProjectileView(std::shared_ptr<StandardEnemyProjectile> projectile)
+        explicit StandardEnemyProjectileView(const std::shared_ptr<StandardEnemyProjectile>& projectile)
                 : View("../resources/textures/whitesquare.png", projectile) {};
         void onNotify() override;
         ~StandardEnemyProjectileView() override = default;

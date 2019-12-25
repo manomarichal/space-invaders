@@ -20,7 +20,7 @@ PurpleAlien::PurpleAlien(float x, float y): Enemy(x, y)
 
 void PurpleAlien::update()
 {
-    xSize = screensize::width/20 * (float(hitpoints)/float(maxHp));
-    ySize = screensize::height/15 *  (float(hitpoints)/float(maxHp));
+    xSize = screensize::width/20 * (hitpoints / maxHp);
+    ySize = screensize::height/15 *  (hitpoints / maxHp);
     move();
 }

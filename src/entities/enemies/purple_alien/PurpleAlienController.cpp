@@ -16,7 +16,7 @@ PurpleAlienController::PurpleAlienController(const std::shared_ptr<Entity> &enti
 
 bool PurpleAlienController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
-    for (auto e:entities)
+    for (const auto& e:entities)
     {
         if (std::dynamic_pointer_cast<entities::projectiles::standard::StandardProjectile>(e) != nullptr)
         {

@@ -15,19 +15,19 @@ float Transformation::screenWidth = 0;
 
 float Transformation::getXScale()
 {
-    return static_cast<float>(screenWidth) / static_cast<float>(screensize::width);
+    return screenWidth / screensize::width;
 
 }
 
 float Transformation::getYScale()
 {
-    return static_cast<float>(screenHeight) / static_cast<float>(screensize::height);
+    return screenHeight / screensize::height;
 
 }
 
 float Transformation::getXPixelValue(float x)
 {
-    return (x * Transformation::getXScale()) + static_cast<float>(Transformation::screenWidth)/2;
+    return (x * Transformation::getXScale()) + Transformation::screenWidth / 2;
 }
 
 float Transformation::getYPixelValue(float y)

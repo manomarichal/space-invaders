@@ -14,7 +14,7 @@ using namespace entities::projectiles::standard;
 //TODO delete projectiles
 bool StandardProjectileController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
-    for (auto e:entities)
+    for (const auto& e:entities)
     {
         if (std::dynamic_pointer_cast<entities::enemies::Enemy>(e) != nullptr)
         {

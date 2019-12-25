@@ -18,7 +18,7 @@ namespace entities::enemies::green_alien
 {
     class GreenAlienView: public View
     {
-        float maxHP;
+        float maxHP{};
     public:
         explicit GreenAlienView(const std::shared_ptr<GreenAlien> &alien);
         void onNotify() override ;

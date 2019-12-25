@@ -26,7 +26,8 @@ Game::Game(const std::string &settings)
     util::Transformation::setScreenWidth(width);
     util::Transformation::setScreenHeight(height);
 
-    window = std::make_unique<sf::RenderWindow>(sf::VideoMode(width, height), "Space Invaders");
+    window = std::make_unique<sf::RenderWindow>(sf::VideoMode(static_cast<unsigned int>(width),
+                                                              static_cast<unsigned int>(height)), "Space Invaders");
 
 }
 
@@ -37,12 +38,12 @@ bool Game::gameOverScreen()
 
     const float SCALE = util::Transformation::getScreenWidth()/1600;
 
-    sf::Text string("GAME OVER", font, 64*SCALE);
+    sf::Text string("GAME OVER", font, static_cast<unsigned int>(64 * SCALE));
     string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height - 10);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
     string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
-    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 32*SCALE);
+    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, static_cast<unsigned int>(32 * SCALE));
     string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height + 10);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
     string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
@@ -69,12 +70,12 @@ void Game::newLevelScreen()
 
     const float SCALE = util::Transformation::getScreenWidth()/1600;
 
-    sf::Text string("PRESS SPACE", font, 64*SCALE);
+    sf::Text string("PRESS SPACE", font, static_cast<unsigned int>(64 * SCALE));
     string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
     string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
-    sf::Text string1("TO START", font, 64*SCALE);
+    sf::Text string1("TO START", font, static_cast<unsigned int>(64 * SCALE));
     string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
     string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
