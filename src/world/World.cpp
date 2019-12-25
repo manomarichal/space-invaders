@@ -82,6 +82,10 @@ void World::handleEvents()
 void World::drawViews()
 {
     window->clear(sf::Color::Black);
+    if (activeViews.size() > 5)
+    {
+        auto a = 1;
+    }
     for (auto &view:activeViews)
     {
         view->draw(*window);
@@ -133,8 +137,6 @@ void World::loadLevel(const std::string &filename)
     // PLAYERSHIP
     float x  = root["Playership"]["x"];
     float y = root["Playership"]["y"];
-    if (x < 0 or x > 1178) throw std::runtime_error("invalid x value for Playership in file: " + filename + "\nx value for playerShip must be bigger than 0 and smaller than 1178");
-    if (y < 0 or y > 878) throw std::runtime_error("invalid y value for Playership in file: " + filename + "\nx value for playerShip must be bigger than 0 and smaller than 878");
     auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
     player = playership;
 
@@ -161,7 +163,7 @@ void World::loadLevel(const std::string &filename)
         }
         else if (enemy["type"] == "GreenAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], int(enemy["y"]) + 50);
+            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], int(enemy["y"]));
             auto view = std::make_shared<entities::enemies::green_alien::GreenAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::green_alien::GreenAlienController>(projectile, view, (*this));
             view->init();
@@ -169,7 +171,7 @@ void World::loadLevel(const std::string &filename)
         }
         else if (enemy["type"] == "RedAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], int(enemy["y"]) + 50);
+            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], int(enemy["y"]));
             auto view = std::make_shared<entities::enemies::red_alien::RedAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::red_alien::RedAlienController>(projectile, view, (*this));
             view->init();

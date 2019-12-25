@@ -18,9 +18,9 @@ namespace entities::projectiles::standard
     class StandardProjectile: public Entity
     {
     private:
-        float vspeed = 10;
+        float vspeed;
     public:
-        StandardProjectile(int x, int y): Entity(x, y) {xSize = 8; ySize = 24;};
+        StandardProjectile(float x, float y);
         void move();
         void update() override;
         ~StandardProjectile() override = default;

@@ -15,11 +15,12 @@ View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
     this->entity = std::move(sharedPtr);
 
     texture = std::make_unique<sf::Texture>();
-    texture->loadFromFile(image, sf::IntRect(0, 0, entity->getXSize(), entity->getYSize()));
+    texture->loadFromFile(image);
 
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
-    sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
+    sprite->setScale(entity->getXSize()/texture->getSize().x, entity->getYSize()/texture->getSize().y);
+    sprite->setOrigin(float(texture->getSize().x)/2, (float(texture->getSize().x)));
 }
 
 void View::init()

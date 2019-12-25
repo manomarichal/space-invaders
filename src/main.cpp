@@ -7,9 +7,12 @@
 // @description: 
 // =====================================================================
 
-// FASE 1
-//TODO oplossing voor observer raw pointers
-//TODO eventueel shared_pointers in views naar entities naar const raw pointers
+//TODO transformation
+//TODO exceptions
+//TODO singletons
+//TODO clock
+//TODO observer
+//TODO damage systeem projectiles
 
 // FASE 2
 //TODO const correctness
@@ -26,6 +29,6 @@
 int main()
 {
     Game("../resources/settings/standard_setting.json",
-         {"../resources/levels/level_test.json", "../resources/levels/level0.json", "../resources/levels/level1.json"}).play();
+         {"../resources/levels/level_test.json", "../resources/levels/level0.json"}).play();
     return 0;
 }

@@ -23,5 +23,5 @@ bool StandardEnemyProjectileController::handleEvents(const std::vector<std::shar
         }
     }
 
-    return true;
+    return entity->getY() > screensize::yMin;
 }

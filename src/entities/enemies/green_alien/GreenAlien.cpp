@@ -13,8 +13,8 @@ using namespace entities::enemies::green_alien;
 
 GreenAlien::GreenAlien(float x, float y): Enemy(x, y)
 {
-    xSize=64;
-    ySize=64;
+    xSize = screensize::width/20;
+    ySize = screensize::height/15;
     hitpoints = 10;
 }
 

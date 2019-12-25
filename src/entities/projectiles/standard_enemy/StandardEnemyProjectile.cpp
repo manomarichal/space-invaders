@@ -10,9 +10,17 @@
 #include "StandardEnemyProjectile.h"
 using namespace entities::projectiles::standard_enemy;
 
+StandardEnemyProjectile::StandardEnemyProjectile(float x, float y)
+:Entity(x, y)
+{
+    xSize = screensize::width/120;
+    ySize = screensize::height/90;
+    vspeed = screensize::height/100;
+}
+
 void StandardEnemyProjectile::move()
 {
-    y += vspeed;
+    y -= vspeed;
     onNotifyObservers();
 }
 

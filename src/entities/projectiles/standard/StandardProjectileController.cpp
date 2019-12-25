@@ -24,5 +24,5 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
             }
         }
     }
-    return entity->getY() > 0;
+    return entity->getY() < screensize::yMax;
 }

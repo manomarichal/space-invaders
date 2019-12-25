@@ -11,7 +11,7 @@
 
 using namespace entities::projectiles;
 
-entities::Object ProjectileFactory::createStandardProjectile(int x, int y, World &world)
+entities::Object ProjectileFactory::createStandardProjectile(float x, float y, World &world)
 {
     auto projectile = std::make_shared<standard::StandardProjectile>(x, y);
     auto view = std::make_shared<standard::StandardProjectileView>(projectile);
@@ -21,7 +21,7 @@ entities::Object ProjectileFactory::createStandardProjectile(int x, int y, World
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
 }
 
-entities::Object ProjectileFactory::createStandardEnemyProjectile(int x, int y, World &world)
+entities::Object ProjectileFactory::createStandardEnemyProjectile(float x, float y, World &world)
 {
     auto projectile = std::make_shared<standard_enemy::StandardEnemyProjectile>(x, y);
     auto view = std::make_shared<standard_enemy::StandardEnemyProjectileView>(projectile);
@@ -31,7 +31,7 @@ entities::Object ProjectileFactory::createStandardEnemyProjectile(int x, int y, 
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
 }
 
-void ProjectileFactory::createProjectile(int x, int y, entities::projectiles::Type type, World &world)
+void ProjectileFactory::createProjectile(float x, float y, entities::projectiles::Type type, World &world)
 {
     Object object;
 

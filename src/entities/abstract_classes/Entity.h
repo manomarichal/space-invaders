@@ -15,8 +15,8 @@
 #include <iostream>
 
 #include "../../util/screensize.h"
-#include "./Subject.h"
-#include "Subject.h"
+#include "../../util/Subject.h"
+#include "../../util/Subject.h"
 
 namespace entities
 {
@@ -52,12 +52,12 @@ namespace entities
             return ySize;
         }
 
-        void setXSize(unsigned int xSize)
+        void setXSize(float xSize)
         {
             Entity::xSize = xSize;
         }
 
-        void setYSize(unsigned int ySize)
+        void setYSize(float ySize)
         {
             Entity::ySize = ySize;
         }

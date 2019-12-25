@@ -12,16 +12,13 @@
 
 #include "screensize.h"
 #include "../entities/abstract_classes/Entity.h"
+
 #include <SFML/Graphics.hpp>
 
 namespace util
 {
     class Transformation
     {
-    private:
-        static unsigned int screenWidth;
-        static unsigned int screenHeight;
-        Transformation()= default;
     public:
         static float getXPixelValue(float x);
 
@@ -31,16 +28,26 @@ namespace util
 
         static float getYScale();
 
-        static void setScreenWidth(unsigned int screenWidth);
+        static void setScreenWidth(float screenWidth);
 
-        static void setScreenHeight(unsigned int screenHeight);
+        static void setScreenHeight(float screenHeight);
 
-        static unsigned int getScreenWidth();
+        static float getScreenWidth();
 
-        static unsigned int getScreenHeight();
+        static float getScreenHeight();
 
         template <class T>
         static T transform(T sprite);
+
+    private:
+        static float screenWidth;
+        static float screenHeight;
+        Transformation()= default;
+
+    public:
+        // We do not want copies of our singleton
+        Transformation(const Transformation &copy) = delete;
+        Transformation& operator=(Transformation) = delete;
 
     };
 }

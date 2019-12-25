@@ -10,10 +10,16 @@
 #ifndef SPACE_INVADERS_SCREENSIZE_H
 #define SPACE_INVADERS_SCREENSIZE_H
 
+#include <cstdlib>
+
 namespace screensize
 {
-    const int x = 1200;
-    const int y = 900;
+    const float xMax = 4;
+    const float xMin = -4;
+    const float yMax = 3;
+    const float yMin = -3;
+    const float width = std::abs(xMin) + std::abs(xMax);
+    const float height = std::abs(yMin) + std::abs(yMax);
 }
 
 #endif //SPACE_INVADERS_SCREENSIZE_H

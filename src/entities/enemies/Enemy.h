@@ -17,16 +17,16 @@ namespace entities::enemies
     class Enemy: public Entity
     {
     protected:
-        const float speed = 1;
-        int dir = 1;
-        int count = 100;
-        bool vertical=false;
+        const float speed;
+        int dir;
+        int count;
+        bool vertical;
     public:
         int hitpoints;
 
         Enemy(float x, float y);
         virtual void move();
-        virtual void takeDamage(unsigned int damage);
+        virtual void takeDamage(float damage);
         virtual ~Enemy()= default;
     };
 }

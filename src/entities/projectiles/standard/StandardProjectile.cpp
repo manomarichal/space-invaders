@@ -10,9 +10,17 @@
 #include "StandardProjectile.h"
 using namespace entities::projectiles::standard;
 
+StandardProjectile::StandardProjectile(float x, float y)
+:Entity(x, y)
+{
+    xSize = screensize::width/120;
+    ySize = screensize::height/90;
+    vspeed = screensize::height/50;
+}
+
 void StandardProjectile::move()
 {
-    y -= vspeed;
+    y += vspeed;
     onNotifyObservers();
 }
 

@@ -10,47 +10,48 @@
 #include "./Transformation.h"
 using namespace util;
 
-unsigned int util::Transformation::screenHeight = 0;
-unsigned int util::Transformation::screenWidth = 0;
+float Transformation::screenHeight = 0;
+float Transformation::screenWidth = 0;
 
-float util::Transformation::getXPixelValue(float x)
+float Transformation::getXScale()
 {
-    return (static_cast<float>(util::Transformation::screenWidth)/(screensize::x / x));
-}
-
-float util::Transformation::getYPixelValue(float y)
-{
-    return (static_cast<float>(util::Transformation::screenHeight)/(screensize::y / y));
-}
-
-void util::Transformation::setScreenWidth(unsigned int screenWidth)
-{
-    util::Transformation::screenWidth = screenWidth;
-}
-
-void util::Transformation::setScreenHeight(unsigned int screenHeight)
-{
-    util::Transformation::screenHeight = screenHeight;
-}
-
-float util::Transformation::getXScale()
-{
-    return static_cast<float>(screenWidth) / static_cast<float>(screensize::x);
+    return static_cast<float>(screenWidth) / static_cast<float>(screensize::width);
 
 }
 
-float util::Transformation::getYScale()
+float Transformation::getYScale()
 {
-    return static_cast<float>(screenHeight) / static_cast<float>(screensize::y);
+    return static_cast<float>(screenHeight) / static_cast<float>(screensize::height);
 
 }
 
-unsigned int util::Transformation::getScreenWidth()
+float Transformation::getXPixelValue(float x)
+{
+    return (x * Transformation::getXScale()) + static_cast<float>(Transformation::screenWidth)/2;
+}
+
+float Transformation::getYPixelValue(float y)
+{
+    return (screensize::yMax - y) * Transformation::getYScale();
+}
+
+void Transformation::setScreenWidth(float screenWidth)
+{
+    Transformation::screenWidth = screenWidth;
+}
+
+void Transformation::setScreenHeight(float screenHeight)
+{
+    Transformation::screenHeight = screenHeight;
+}
+
+
+float Transformation::getScreenWidth()
 {
     return screenWidth;
 }
 
-unsigned int util::Transformation::getScreenHeight()
+float Transformation::getScreenHeight()
 {
     return screenHeight;
 }
@@ -58,10 +59,9 @@ unsigned int util::Transformation::getScreenHeight()
 template <class T>
 T Transformation::transform(T sprite)
 {
-    sprite.setPosition(util::Transformation::getXPixelValue(sprite.getPosition().x),
-                       util::Transformation::getYPixelValue(sprite.getPosition().y));
-    sprite.setScale(util::Transformation::getXScale() * sprite.getScale().x,
-                    util::Transformation::getYScale() * sprite.getScale().y);
+    sprite.setScale(getXScale() * sprite.getScale().x, getYScale() * sprite.getScale().y);
+    sprite.setPosition(Transformation::getXPixelValue(sprite.getPosition().x),
+                       Transformation::getYPixelValue(sprite.getPosition().y));
     return sprite;
 }
 

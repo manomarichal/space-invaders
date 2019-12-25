@@ -10,16 +10,17 @@
 #include "Enemy.h"
 
 using namespace entities::enemies;
-Enemy::Enemy(float x, float y): Entity(x, y) {}
+Enemy::Enemy(float x, float y):
+Entity(x, y), speed(screensize::height/1000), dir(1), count(100), vertical(false), hitpoints(10) {}
 
-void Enemy::takeDamage(unsigned int damage) {hitpoints -= damage;}
+void Enemy::takeDamage(float damage) {hitpoints -= damage;}
 
 void Enemy::move()
 {
     count++;
     if (vertical)
     {
-        y += speed;
+        y -= speed;
         count++;
         if (count == 50)
         {

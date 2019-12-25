@@ -17,8 +17,8 @@ Game::Game(const std::string &settings, std::vector<std::string> levels)
     nlohmann::json root;
     file >> root;
 
-    uint width = root["Screen"]["width"];
-    uint height = root["Screen"]["height"];
+    float width = root["Screen"]["width"];
+    float height = root["Screen"]["height"];
     util::Transformation::setScreenWidth(width);
     util::Transformation::setScreenHeight(height);
 
@@ -32,15 +32,15 @@ bool Game::gameOverScreen()
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 
     sf::Text string("GAME OVER", font, 64);
-    string.setPosition(float(screensize::x)/2, float(screensize::y)/2 - string.getGlobalBounds().height - 10);
+    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height - 10);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
     
     sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 32);
-    string1.setPosition(float(screensize::x)/2, float(screensize::y)/2 + string1.getGlobalBounds().height + 10);
+    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height + 10);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
 
-    window->draw(util::Transformation::transform<sf::Text>(string));
-    window->draw(util::Transformation::transform<sf::Text>(string1));
+    window->draw(string);
+    window->draw(string1);
     window->display();
 
     while(true)
@@ -60,15 +60,15 @@ void Game::newLevelScreen()
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 
     sf::Text string("PRESS SPACE", font, 64);
-    string.setPosition(float(screensize::x)/2, float(screensize::y)/2 - string.getGlobalBounds().height);
+    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
 
     sf::Text string1("TO START", font, 64);
-    string1.setPosition(float(screensize::x)/2, float(screensize::y)/2 + string1.getGlobalBounds().height);
+    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
 
-    window->draw(util::Transformation::transform<sf::Text>(string));
-    window->draw(util::Transformation::transform<sf::Text>(string1));
+    window->draw(string);
+    window->draw(string1);
     window->display();
 
     while(true)

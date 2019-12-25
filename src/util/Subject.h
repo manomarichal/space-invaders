@@ -11,7 +11,7 @@
 #define SPACE_INVADERS_SUBJECT_H
 
 #include <vector>
-#include "Observer.h"
+#include "../entities/abstract_classes/Observer.h"
 
 namespace entities
 {

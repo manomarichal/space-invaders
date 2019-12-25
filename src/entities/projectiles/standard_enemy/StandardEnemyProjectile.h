@@ -20,7 +20,7 @@ namespace entities::projectiles::standard_enemy
     private:
         float vspeed = 5;
     public:
-        StandardEnemyProjectile(int x, int y): Entity(x, y) {xSize = 8; ySize = 8;};
+        StandardEnemyProjectile(float x, float y);
         void move();
         void update() override;
         ~StandardEnemyProjectile() override = default;
