@@ -11,7 +11,7 @@
 
 using namespace entities::enemies;
 Enemy::Enemy(float x, float y):
-Entity(x, y), speed(screensize::height/1000), dir(1), count(100), vertical(false), hitpoints(10) {}
+Entity(x, y), vspeed(screensize::height/1000), hspeed(screensize::width/1000), dir(1), count(100), vertical(false), hitpoints(10) {}
 
 void Enemy::takeDamage(float damage) {hitpoints -= damage;}
 
@@ -20,7 +20,7 @@ void Enemy::move()
     count++;
     if (vertical)
     {
-        y -= speed;
+        y -= vspeed;
         count++;
         if (count == 50)
         {
@@ -34,6 +34,6 @@ void Enemy::move()
         count = 0;
         vertical = true;
     }
-    if (!vertical) x += speed * dir;
+    if (!vertical) x += hspeed * dir;
     onNotifyObservers();
 }

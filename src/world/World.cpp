@@ -132,6 +132,14 @@ void World::loadLevel(const std::string &filename)
     nlohmann::json root;
     file >> root;
 
+    // COORDINATES
+    screensize::xMax = root["Space"]["xmax"];
+    screensize::xMin = root["Space"]["xmin"];
+    screensize::yMax = root["Space"]["ymax"];
+    screensize::yMin = root["Space"]["ymin"];
+    screensize::width = std::abs(screensize::xMax) + std::abs(screensize::xMin);
+    screensize::height = std::abs(screensize::yMax) + std::abs(screensize::yMin);
+
     // PLAYERSHIP
     float x  = root["Playership"]["x"];
     float y = root["Playership"]["y"];

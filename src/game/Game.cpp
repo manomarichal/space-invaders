@@ -9,9 +9,8 @@
 
 #include "Game.h"
 
-Game::Game(const std::string &settings, std::vector<std::string> levels)
+Game::Game(const std::string &settings)
 {
-    this->levels = std::move(levels);
     std::ifstream file(settings);
     if (!file.is_open()) throw std::runtime_error("could not open file: " + settings);
     nlohmann::json root;
@@ -19,6 +18,11 @@ Game::Game(const std::string &settings, std::vector<std::string> levels)
 
     float width = root["Screen"]["width"];
     float height = root["Screen"]["height"];
+    for (const auto &level: root["Levels"])
+    {
+        levels.emplace_back(level);
+    }
+
     util::Transformation::setScreenWidth(width);
     util::Transformation::setScreenHeight(height);
 

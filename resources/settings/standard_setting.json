@@ -3,5 +3,10 @@
   {
     "width": 1600,
     "height":1200
-  }
+  },
+  "Levels": [
+    "../resources/levels/level_4_3.json",
+    "../resources/levels/level_8_8.json",
+    "../resources/levels/level_8_12.json"
+  ]
 }

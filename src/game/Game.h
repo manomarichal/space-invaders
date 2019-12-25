@@ -23,7 +23,7 @@ private:
     static void runWorld (World &world);
 
 public:
-    Game(const std::string &settings, std::vector<std::string> levels);
+    Game(const std::string &settings);
     void play();
 };
 

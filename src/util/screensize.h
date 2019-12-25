@@ -12,14 +12,14 @@
 
 #include <cstdlib>
 
-namespace screensize
+struct screensize
 {
-    const float xMax = 8;
-    const float xMin = -8;
-    const float yMax = 6;
-    const float yMin = -6;
-    const float width = std::abs(xMin) + std::abs(xMax);
-    const float height = std::abs(yMin) + std::abs(yMax);
-}
+    static float xMax;
+    static float xMin;
+    static float yMax;
+    static float yMin;
+    static float width;
+    static float height;
+};
 
 #endif //SPACE_INVADERS_SCREENSIZE_H

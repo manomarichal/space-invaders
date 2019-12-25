@@ -17,9 +17,10 @@ namespace entities::enemies
     class Enemy: public Entity
     {
     protected:
-        const float speed;
+        const float vspeed;
+        const float hspeed;
         float dir;
-        float count;
+        int count;
         bool vertical;
     public:
         float hitpoints;

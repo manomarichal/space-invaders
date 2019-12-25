@@ -1,4 +1,10 @@
 {
+  "Space": {
+    "xmax": 4,
+    "xmin": -4,
+    "ymax": 3,
+    "ymin": -3
+  },
   "Playership": {
     "x": 0,
     "y": -2.5
