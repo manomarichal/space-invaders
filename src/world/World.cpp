@@ -138,9 +138,10 @@ void World::loadLevel(const std::string &filename)
     auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
     player = playership;
 
-    playership->subscribe(dynamic_cast<Observer*>(this));
+    playership->attach(shared_from_this());
 
     auto playershipView = std::make_shared<entities::playership::PlayerShipView>(playership);
+    playershipView->init();
     auto playershipController = std::make_shared<entities::playership::PlayerShipController>(playership, playershipView, (*this));
     addObject(std::make_tuple(std::move(playership), std::move(playershipView), std::move(playershipController)));
 
@@ -155,7 +156,7 @@ void World::loadLevel(const std::string &filename)
             auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::purple_alien::PurpleAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::purple_alien::PurpleAlienController>(projectile, view, (*this));
-
+            view->init();
             addObject(std::make_tuple(std::move(projectile), std::move(view), std::move(controller)));
         }
         else if (enemy["type"] == "GreenAlien")
@@ -163,7 +164,7 @@ void World::loadLevel(const std::string &filename)
             auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::green_alien::GreenAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::green_alien::GreenAlienController>(projectile, view, (*this));
-
+            view->init();
             addObject(std::make_tuple(std::move(projectile), std::move(view), std::move(controller)));
         }
         else if (enemy["type"] == "RedAlien")
@@ -171,7 +172,7 @@ void World::loadLevel(const std::string &filename)
             auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], int(enemy["y"]) + 50);
             auto view = std::make_shared<entities::enemies::red_alien::RedAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::red_alien::RedAlienController>(projectile, view, (*this));
-
+            view->init();
             addObject(std::make_tuple(std::move(projectile), std::move(view), std::move(controller)));
         }
         else

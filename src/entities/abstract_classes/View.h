@@ -26,8 +26,10 @@ class View: public Observer
         std::shared_ptr<Entity> entity;
         std::unique_ptr<sf::Sprite> sprite;
         std::unique_ptr<sf::Texture> texture;
+        bool initialized = false;
     public:
         virtual void draw(sf::RenderWindow &window) const;
+        void init();
         ~View() override= default ;
     };
 }

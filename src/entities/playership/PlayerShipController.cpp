@@ -25,7 +25,7 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
-        std::dynamic_pointer_cast<PlayerShip>(entity)->moveLeft();
+        std::dynamic_pointer_cast<PlayerShip>(entity)-> moveLeft();
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {

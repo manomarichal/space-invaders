@@ -15,6 +15,7 @@ entities::Object ProjectileFactory::createStandardProjectile(int x, int y, World
 {
     auto projectile = std::make_shared<standard::StandardProjectile>(x, y);
     auto view = std::make_shared<standard::StandardProjectileView>(projectile);
+    view->init();
     auto controller = std::make_shared<standard::StandardProjectileController>(projectile, view, world);
 
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
@@ -24,6 +25,7 @@ entities::Object ProjectileFactory::createStandardEnemyProjectile(int x, int y, 
 {
     auto projectile = std::make_shared<standard_enemy::StandardEnemyProjectile>(x, y);
     auto view = std::make_shared<standard_enemy::StandardEnemyProjectileView>(projectile);
+    view->init();
     auto controller = std::make_shared<standard_enemy::StandardEnemyProjectileController>(projectile, view, world);
 
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));

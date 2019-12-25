@@ -13,7 +13,6 @@ using namespace entities::playership;
 PlayerLivesView::PlayerLivesView(std::shared_ptr<PlayerShip> ship)
 {
     this->entity = std::move(ship);
-    std::dynamic_pointer_cast<Subject>(entity)->subscribe(dynamic_cast<Observer*>(this));
 
     font = std::make_unique<sf::Font>();
     font->loadFromFile("../resources/fonts/pixeled.ttf");

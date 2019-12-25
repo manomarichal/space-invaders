@@ -20,12 +20,16 @@ View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
     sprite->setOrigin(entity->getXSize()/2, entity->getYSize()/2);
-
-    std::dynamic_pointer_cast<Subject>(entity)->subscribe(dynamic_cast<Observer*>(this));
 }
 
+void View::init()
+{
+    initialized = true;
+    std::dynamic_pointer_cast<Subject>(entity)->attach(shared_from_this());
+}
 void View::draw(sf::RenderWindow &window) const
 {
+    if (!initialized) throw std::runtime_error("View object must be attached to an entity before calling draw");
     window.draw(util::Transformation::transform<sf::Sprite>(*sprite));
 }
 

@@ -8,7 +8,8 @@
 // =====================================================================
 
 // FASE 1
-//TODO observer raw pointers fixen
+//TODO oplossing voor observer raw pointers
+//TODO eventueel shared_pointers in views naar entities naar const raw pointers
 
 // FASE 2
 //TODO const correctness

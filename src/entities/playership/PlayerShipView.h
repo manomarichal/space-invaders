@@ -17,7 +17,7 @@ namespace entities::playership
     class PlayerShipView: public View
     {
     private:
-        std::unique_ptr<PlayerLivesView> hud;
+        std::shared_ptr<PlayerLivesView> hud;
     public:
         explicit PlayerShipView(std::shared_ptr<PlayerShip> ship);
         void onNotify() override;
