@@ -18,7 +18,7 @@ namespace entities::enemies::purple_alien
     class PurpleAlien: public Enemy
     {
     public:
-        int maxHp;
+        float maxHp;
         PurpleAlien (float x, float y);
         void update() override;
         ~PurpleAlien() override = default;

@@ -29,6 +29,6 @@
 int main()
 {
     Game("../resources/settings/standard_setting.json",
-         {"../resources/levels/level_test.json", "../resources/levels/level0.json"}).play();
+         { "../resources/levels/level0.json"}).play();
     return 0;
 }

@@ -31,13 +31,17 @@ bool Game::gameOverScreen()
     sf::Font font;
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 
-    sf::Text string("GAME OVER", font, 64);
+    const float SCALE = util::Transformation::getScreenWidth()/1600;
+
+    sf::Text string("GAME OVER", font, 64*SCALE);
     string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height - 10);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
-    
-    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 32);
+    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
+
+    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, 32*SCALE);
     string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height + 10);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
+    string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
     window->draw(string);
     window->draw(string1);
@@ -59,13 +63,17 @@ void Game::newLevelScreen()
     sf::Font font;
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 
-    sf::Text string("PRESS SPACE", font, 64);
+    const float SCALE = util::Transformation::getScreenWidth()/1600;
+
+    sf::Text string("PRESS SPACE", font, 64*SCALE);
     string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
+    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
-    sf::Text string1("TO START", font, 64);
+    sf::Text string1("TO START", font, 64*SCALE);
     string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
+    string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
     window->draw(string);
     window->draw(string1);

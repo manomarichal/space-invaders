@@ -18,11 +18,11 @@ namespace entities::enemies
     {
     protected:
         const float speed;
-        int dir;
-        int count;
+        float dir;
+        float count;
         bool vertical;
     public:
-        int hitpoints;
+        float hitpoints;
 
         Enemy(float x, float y);
         virtual void move();

@@ -19,6 +19,6 @@ PurpleAlienView::PurpleAlienView(const std::shared_ptr<PurpleAlien> &alien)
 
 void PurpleAlienView::onNotify()
 {
-    sprite->setScale(static_cast<float>(std::dynamic_pointer_cast<PurpleAlien>(entity)->hitpoints) / maxHP, static_cast<float >(std::dynamic_pointer_cast<PurpleAlien>(entity)->hitpoints) / maxHP);
+    sprite->setScale(entity->getXSize()/texture->getSize().x, entity->getYSize()/texture->getSize().x);
     sprite->setPosition(entity->getX(), entity->getY());
 }

@@ -82,10 +82,6 @@ void World::handleEvents()
 void World::drawViews()
 {
     window->clear(sf::Color::Black);
-    if (activeViews.size() > 5)
-    {
-        auto a = 1;
-    }
     for (auto &view:activeViews)
     {
         view->draw(*window);
@@ -116,8 +112,10 @@ void World::drawScore()
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 
     sf::Text string("Score: " + std::to_string(score), font, 32);
+    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
     string.setPosition(float(util::Transformation::getScreenWidth()) - string.getGlobalBounds().width - 10, 10);
-    window->draw(util::Transformation::transform<sf::Text>(string));
+
+    window->draw(string);
 }
 
 void World::loadLevel(const std::string &filename)
@@ -155,7 +153,7 @@ void World::loadLevel(const std::string &filename)
         enemiesToDefeat++;
         if (enemy["type"] == "PurpleAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], int(enemy["y"]) + 50);
+            auto projectile = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], enemy["y"]);
             auto view = std::make_shared<entities::enemies::purple_alien::PurpleAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::purple_alien::PurpleAlienController>(projectile, view, (*this));
             view->init();
@@ -163,7 +161,7 @@ void World::loadLevel(const std::string &filename)
         }
         else if (enemy["type"] == "GreenAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], int(enemy["y"]));
+            auto projectile = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], enemy["y"]);
             auto view = std::make_shared<entities::enemies::green_alien::GreenAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::green_alien::GreenAlienController>(projectile, view, (*this));
             view->init();
@@ -171,7 +169,7 @@ void World::loadLevel(const std::string &filename)
         }
         else if (enemy["type"] == "RedAlien")
         {
-            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], int(enemy["y"]));
+            auto projectile = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], enemy["y"]);
             auto view = std::make_shared<entities::enemies::red_alien::RedAlienView>(projectile);
             auto controller = std::make_shared<entities::enemies::red_alien::RedAlienController>(projectile, view, (*this));
             view->init();

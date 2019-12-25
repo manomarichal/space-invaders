@@ -20,7 +20,7 @@ View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)
     sprite = std::make_unique<sf::Sprite>();
     sprite->setTexture(*texture);
     sprite->setScale(entity->getXSize()/texture->getSize().x, entity->getYSize()/texture->getSize().y);
-    sprite->setOrigin(float(texture->getSize().x)/2, (float(texture->getSize().x)));
+    sprite->setOrigin(float(texture->getSize().x)/2, (float(texture->getSize().x))/2);
 }
 
 void View::init()

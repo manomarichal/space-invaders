@@ -19,7 +19,7 @@ namespace entities::playership
     public:
         PlayerShip(float x, float y);
 
-        int hitpoints;
+        float hitpoints;
         void moveLeft();
         void moveRight();
         void takeDamage(float damage);
