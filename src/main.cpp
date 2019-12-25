@@ -28,7 +28,14 @@
 
 int main()
 {
+    // [-8, 8]/[-6, 6]
+    Game("../resources/settings/standard_setting.json",
+         { "../resources/levels/level_8_6.json"}).play();
+
+    //STANDARD
+    /*
     Game("../resources/settings/standard_setting.json",
          { "../resources/levels/level0.json"}).play();
+    */
     return 0;
 }

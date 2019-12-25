@@ -1,0 +1,173 @@
+{
+  "Playership": {
+    "x": 0,
+    "y": -5
+  },
+  "Enemies": [
+    {
+      "type": "RedAlien",
+      "x": -6,
+      "y": 5
+    },
+    {
+      "type": "GreenAlien",
+      "x": -4.8,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": -3.6,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": -2.4,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": -1.2,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": 0,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": 1.2,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": 2.4,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": 3.6,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": 4.8,
+      "y": 5
+    },
+    {
+      "type": "PurpleAlien",
+      "x": 6,
+      "y": 5
+    },
+    {
+      "type": "RedAlien",
+      "x": -6,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": -4.8,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": -3.6,
+      "y": 3.8
+    },
+    {
+      "type": "GreenAlien",
+      "x": -2.4,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": -1.2,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": 0,
+      "y": 3.8
+    },
+    {
+      "type": "PurpleAlien",
+      "x": 1.2,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": 2.4,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": 3.6,
+      "y": 3.8
+    },
+    {
+      "type": "GreenAlien",
+      "x": 4.8,
+      "y": 3.8
+    },
+    {
+      "type": "RedAlien",
+      "x": 6,
+      "y": 3.8
+    },
+    {
+      "type": "PurpleAlien",
+      "x": -6,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": -4.8,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": -3.6,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": -2.4,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": -1.2,
+      "y": 2.6
+    },
+    {
+      "type": "GreenAlien",
+      "x": 0,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": 1.2,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": 2.4,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": 3.6,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": 4.8,
+      "y": 2.6
+    },
+    {
+      "type": "RedAlien",
+      "x": 6.0,
+      "y": 2.6
+    }
+  ]
+}

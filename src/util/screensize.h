@@ -14,10 +14,10 @@
 
 namespace screensize
 {
-    const float xMax = 4;
-    const float xMin = -4;
-    const float yMax = 3;
-    const float yMin = -3;
+    const float xMax = 8;
+    const float xMin = -8;
+    const float yMax = 6;
+    const float yMin = -6;
     const float width = std::abs(xMin) + std::abs(xMax);
     const float height = std::abs(yMin) + std::abs(yMax);
 }
