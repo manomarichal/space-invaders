@@ -11,8 +11,7 @@
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
-    enemiesDefeated = 0;
-    enemiesToDefeat = 0;
+    enemiesToDefeat = -1;
     levelCompleted = false;
     running = false;
     score = 0;
@@ -30,11 +29,11 @@ void World::deleteObject(uint index)
 {
     if (std::dynamic_pointer_cast<entities::enemies::Enemy>(activeEntities[index]) != nullptr)
     {
-        enemiesDefeated++;
+        enemiesToDefeat--;
         score += 100;
     }
 
-    if (enemiesDefeated == enemiesToDefeat)
+    if (enemiesToDefeat == 0)
     {
         running = false;
         levelCompleted = true;
@@ -79,18 +78,6 @@ void World::handleEvents()
     }
 }
 
-void World::drawViews()
-{
-    window->clear(sf::Color::Black);
-    for (auto &view:activeViews)
-    {
-        view->draw(*window);
-    }
-    drawScore();
-    window->display();
-
-}
-
 void World::onNotify()
 {
     running = player->hitpoints > 0;
@@ -101,21 +88,10 @@ void World::reset()
     activeEntities.clear();
     activeControllers.clear();
     activeViews.clear();
+
     running = false;
     levelCompleted = false;
-    enemiesDefeated = 0;
-}
-
-void World::drawScore()
-{
-    sf::Font font;
-    font.loadFromFile("../resources/fonts/pixeled.ttf");
-
-    sf::Text string("Score: " + std::to_string(score), font, 32);
-    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-    string.setPosition(util::Transformation::getScreenWidth() - string.getGlobalBounds().width - 10, 10);
-
-    window->draw(string);
+    enemiesToDefeat = -1;
 }
 
 bool World::isRunning() const
