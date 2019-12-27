@@ -14,6 +14,6 @@ using namespace entities::shield;
 Shield::Shield(float x, float y)
         :Entity(x, y)
 {
-    xSize = screensize::width/15;
-    ySize = screensize::height/70;
+    xSize = SpaceSettings::width / 15;
+    ySize = SpaceSettings::height / 70;
 }

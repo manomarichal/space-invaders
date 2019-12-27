@@ -13,8 +13,8 @@ using namespace entities::enemies::red_alien;
 
 RedAlien::RedAlien(float x, float y): Enemy(x, y)
 {
-    xSize = screensize::width/20;
-    ySize = screensize::height/15;
+    xSize = SpaceSettings::width / 20;
+    ySize = SpaceSettings::height / 15;
     hitpoints = 10;
 }
 

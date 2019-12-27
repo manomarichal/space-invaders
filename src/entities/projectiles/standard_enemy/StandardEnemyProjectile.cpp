@@ -13,9 +13,9 @@ using namespace entities::projectiles::standard_enemy;
 StandardEnemyProjectile::StandardEnemyProjectile(float x, float y)
 :Entity(x, y)
 {
-    xSize = screensize::width/120;
-    ySize = screensize::height/90;
-    vspeed = screensize::height/50;
+    xSize = SpaceSettings::width / 120;
+    ySize = SpaceSettings::height / 90;
+    vspeed = SpaceSettings::height / 50;
 }
 
 void StandardEnemyProjectile::move()

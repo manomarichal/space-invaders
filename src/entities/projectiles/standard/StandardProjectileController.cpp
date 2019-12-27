@@ -20,5 +20,5 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
         if (util::Collision::enemy(*entity, e)) return false;
         if (util::Collision::shield(*entity, e)) return false;
     }
-    return entity->getY() < screensize::yMax;
+    return entity->getY() < SpaceSettings::yMax;
 }

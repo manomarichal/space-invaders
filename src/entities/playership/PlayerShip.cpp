@@ -14,22 +14,22 @@ using namespace entities::playership;
 PlayerShip::PlayerShip(float x, float y)
 : Entity(x, y)
 {
-    xSize = screensize::width/20;
-    ySize = screensize::height/15;
+    xSize = SpaceSettings::width / 20;
+    ySize = SpaceSettings::height / 15;
     hitpoints = 3;
 }
 
 void PlayerShip::moveLeft()
 {
-    x -= screensize::width/120;
-    if (x - xSize/2 < screensize::xMin) x = screensize::xMin+xSize/2;
+    x -= SpaceSettings::width / 120;
+    if (x - xSize/2 < SpaceSettings::xMin) x = SpaceSettings::xMin + xSize / 2;
     onNotifyObservers();
 }
 
 void PlayerShip::moveRight()
 {
-    x += screensize::width/120;
-    if (x + xSize/2> screensize::xMax) x = screensize::xMax-xSize/2;
+    x += SpaceSettings::width / 120;
+    if (x + xSize/2 > SpaceSettings::xMax) x = SpaceSettings::xMax - xSize / 2;
     onNotifyObservers();
 }
 

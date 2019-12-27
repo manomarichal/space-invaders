@@ -14,7 +14,7 @@
 #include <utility>
 #include <iostream>
 
-#include "../../util/screensize.h"
+#include "../../util/SpaceSettings.h"
 #include "../../util/Subject.h"
 #include "../../util/Subject.h"
 

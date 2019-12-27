@@ -1,5 +1,5 @@
 // =====================================================================
-// @name: screensize.h
+// @name: SpaceSettings.h
 // @project: space_invaders
 // @author: Mano Marichal
 // @date: 02.12.19
@@ -7,12 +7,12 @@
 // @description: 
 // =====================================================================
 
-#ifndef SPACE_INVADERS_SCREENSIZE_H
-#define SPACE_INVADERS_SCREENSIZE_H
+#ifndef SPACE_INVADERS_SPACESETTINGS_H
+#define SPACE_INVADERS_SPACESETTINGS_H
 
 #include <cstdlib>
 
-struct screensize
+struct SpaceSettings
 {
     static float xMax;
     static float xMin;
@@ -22,4 +22,4 @@ struct screensize
     static float height;
 };
 
-#endif //SPACE_INVADERS_SCREENSIZE_H
+#endif //SPACE_INVADERS_SPACESETTINGS_H

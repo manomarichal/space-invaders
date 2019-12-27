@@ -11,7 +11,7 @@
 
 using namespace entities::enemies;
 Enemy::Enemy(float x, float y):
-Entity(x, y), vspeed(screensize::height/1000), hspeed(screensize::width/1000), dir(1), count(100), vertical(false), hitpoints(10) {}
+        Entity(x, y), vspeed(SpaceSettings::height / 1000), hspeed(SpaceSettings::width / 1000), dir(1), count(100), vertical(false), hitpoints(10) {}
 
 void Enemy::takeDamage(float damage) {hitpoints -= damage;}
 

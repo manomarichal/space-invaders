@@ -31,12 +31,12 @@ void World::loadLevel(const std::string &filename)
     file >> root;
 
     // COORDINATES
-    screensize::xMax = root["Space"]["xmax"];
-    screensize::xMin = root["Space"]["xmin"];
-    screensize::yMax = root["Space"]["ymax"];
-    screensize::yMin = root["Space"]["ymin"];
-    screensize::width = std::abs(screensize::xMax) + std::abs(screensize::xMin);
-    screensize::height = std::abs(screensize::yMax) + std::abs(screensize::yMin);
+    SpaceSettings::xMax = root["Space"]["xmax"];
+    SpaceSettings::xMin = root["Space"]["xmin"];
+    SpaceSettings::yMax = root["Space"]["ymax"];
+    SpaceSettings::yMin = root["Space"]["ymin"];
+    SpaceSettings::width = std::abs(SpaceSettings::xMax) + std::abs(SpaceSettings::xMin);
+    SpaceSettings::height = std::abs(SpaceSettings::yMax) + std::abs(SpaceSettings::yMin);
 
     // PLAYERSHIP
     float x  = root["Playership"]["x"];

@@ -12,15 +12,15 @@ using namespace entities::enemies::purple_alien;
 
 PurpleAlien::PurpleAlien(float x, float y): Enemy(x, y)
 {
-    xSize = screensize::width/20;
-    ySize = screensize::height/15;
+    xSize = SpaceSettings::width / 20;
+    ySize = SpaceSettings::height / 15;
     hitpoints = 30;
     maxHp = hitpoints;
 }
 
 void PurpleAlien::update()
 {
-    xSize = screensize::width/20 * (hitpoints / maxHp);
-    ySize = screensize::height/15 *  (hitpoints / maxHp);
+    xSize = SpaceSettings::width / 20 * (hitpoints / maxHp);
+    ySize = SpaceSettings::height / 15 * (hitpoints / maxHp);
     move();
 }

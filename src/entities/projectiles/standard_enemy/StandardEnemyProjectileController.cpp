@@ -20,5 +20,5 @@ bool StandardEnemyProjectileController::handleEvents(const std::vector<std::shar
         if (util::Collision::shield(*entity, e)) return false;
     }
 
-    return entity->getY() > screensize::yMin;
+    return entity->getY() > SpaceSettings::yMin;
 }

@@ -10,7 +10,7 @@
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H
 
-#include "screensize.h"
+#include "SpaceSettings.h"
 #include "../entities/abstract_classes/Entity.h"
 
 #include <SFML/Graphics.hpp>
