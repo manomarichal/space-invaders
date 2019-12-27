@@ -38,13 +38,8 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
 
     for (const auto& e:entities)
     {
-        if (std::dynamic_pointer_cast<projectiles::standard_enemy::StandardEnemyProjectile>(e) != nullptr)
-        {
-            if (util::Collision::checkCollision(*entity, *e))
-            {
-                std::dynamic_pointer_cast<PlayerShip>(entity)->takeDamage(10);
-            }
-        }
+        if (util::Collision::standardEnemyProjectile(*entity, e))
+            std::dynamic_pointer_cast<PlayerShip>(entity)->takeDamage(1);
     }
     return std::dynamic_pointer_cast<PlayerShip>(entity)->hitpoints >= 0;
 }

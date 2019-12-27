@@ -15,10 +15,6 @@
 #include <algorithm>
 
 #include "../entities/playership/PlayerShipController.h"
-#include "../entities/enemies/green_alien/GreenAlienController.h"
-#include "../entities/enemies/purple_alien/PurpleAlienController.h"
-#include "../entities/enemies/red_alien/RedAlienController.h"
-#include "../json/json.hpp"
 #include "../util/Object.h"
 #include "../util/Clock.h"
 

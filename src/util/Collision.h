@@ -19,23 +19,12 @@ namespace util
     private:
         Collision()= default;
     public:
-        static bool checkHorizontalCollision(const entities::Entity &e1, const entities::Entity &e2)
-        {
-            return e1.getX() + e1.getXSize()/2 >= e2.getX() - e2.getXSize()/2 &&
-                   e1.getX() - e1.getXSize()/2 <= e2.getX() + e2.getXSize()/2;
-        }
-        static bool checkVerticalCollision(const entities::Entity &e1, const entities::Entity &e2)
-        {
-            return e1.getY() + e1.getYSize()/2 >= e2.getY() - e2.getYSize()/2 &&
-                   e1.getY() - e1.getYSize()/2 <= e2.getY() + e2.getYSize()/2;
-        }
-        static bool checkCollision(const entities::Entity &e1, const entities::Entity &e2)
-        {
-            return e1.getX() - e1.getXSize()/2 < e2.getX() + e2.getXSize()/2 &&
-                   e1.getX() + e1.getXSize()/2 > e2.getX() - e2.getXSize()/2 &&
-                   e1.getY() + e1.getYSize()/2 > e2.getY() - e2.getYSize()/2 &&
-                   e1.getY() - e1.getYSize()/2 < e2.getY() + e2.getYSize()/2;
-        }
+        static bool checkCollision(const entities::Entity &e1, const entities::Entity &e2);
+        static bool shield(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool enemy(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool playership(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool standardProjectile(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool standardEnemyProjectile(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
     };
 }
 #endif //SPACE_INVADERS_COLLISION_H

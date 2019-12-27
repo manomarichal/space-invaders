@@ -14,19 +14,15 @@ using namespace entities::enemies::green_alien;
 GreenAlienController::GreenAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world)
         :Controller(world, entity, view)
 {
-    stopwatch = std::make_unique<Stopwatch>(2000);
+    stopwatch = std::make_unique<Stopwatch>(1000);
 }
 bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (const auto& e:entities)
     {
-        if (std::dynamic_pointer_cast<entities::projectiles::standard::StandardProjectile>(e) != nullptr)
-        {
-            if (util::Collision::checkCollision(*entity, *e))
-            {
-                std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
-            }
-        }
+        if (util::Collision::standardProjectile(*entity, e))
+            std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
+        if (util::Collision::shield(*entity, e)) return false;
     }
 
     if (stopwatch->isReady())

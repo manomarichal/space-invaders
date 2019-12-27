@@ -18,13 +18,9 @@ bool PurpleAlienController::handleEvents(const std::vector<std::shared_ptr<Entit
 {
     for (const auto& e:entities)
     {
-        if (std::dynamic_pointer_cast<entities::projectiles::standard::StandardProjectile>(e) != nullptr)
-        {
-            if (util::Collision::checkCollision(*entity, *e))
-            {
-                std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
-            }
-        }
+        if (util::Collision::standardProjectile(*entity, e))
+            std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
+        if (util::Collision::shield(*entity, e)) return false;
     }
 
     return std::dynamic_pointer_cast<Enemy>(entity)->hitpoints > 0;

@@ -8,19 +8,16 @@
 // =====================================================================
 
 #include "StandardEnemyProjectileController.h"
+#include "../../shield/Shield.h"
+
 using namespace entities::projectiles::standard_enemy;
 
 bool StandardEnemyProjectileController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {
     for (const auto& e:entities)
     {
-        if (std::dynamic_pointer_cast<entities::playership::PlayerShip>(e) != nullptr)
-        {
-            if (util::Collision::checkCollision(*entity, *e))
-            {
-                return false;
-            }
-        }
+        if (util::Collision::playership(*entity, e)) return false;
+        if (util::Collision::shield(*entity, e)) return false;
     }
 
     return entity->getY() > screensize::yMin;

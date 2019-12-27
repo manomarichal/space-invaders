@@ -8,6 +8,7 @@
 // =====================================================================
 
 #include "Game.h"
+#include "../json/json.hpp"
 
 Game::Game(const std::string &settings)
 {

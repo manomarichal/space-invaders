@@ -18,7 +18,7 @@ namespace entities::projectiles::standard_enemy
     class StandardEnemyProjectile: public Entity
     {
     private:
-        float vspeed = 5;
+        float vspeed;
     public:
         StandardEnemyProjectile(float x, float y);
         void move();

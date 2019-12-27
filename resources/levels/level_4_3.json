@@ -9,6 +9,12 @@
     "x": 0,
     "y": -2.5
   },
+  "Shields": [
+    {
+      "x":-2 ,
+      "y":-1.5
+    }
+  ],
   "Enemies": [
     {
       "type": "RedAlien",

@@ -15,7 +15,7 @@ StandardEnemyProjectile::StandardEnemyProjectile(float x, float y)
 {
     xSize = screensize::width/120;
     ySize = screensize::height/90;
-    vspeed = screensize::height/100;
+    vspeed = screensize::height/50;
 }
 
 void StandardEnemyProjectile::move()

@@ -8,6 +8,7 @@
 // =====================================================================
 
 #include "StandardProjectileController.h"
+#include "../../shield/Shield.h"
 
 using namespace entities::projectiles::standard;
 
@@ -16,13 +17,8 @@ bool StandardProjectileController::handleEvents(const std::vector<std::shared_pt
 {
     for (const auto& e:entities)
     {
-        if (std::dynamic_pointer_cast<entities::enemies::Enemy>(e) != nullptr)
-        {
-            if (util::Collision::checkCollision(*entity, *e))
-            {
-                return false;
-            }
-        }
+        if (util::Collision::enemy(*entity, e)) return false;
+        if (util::Collision::shield(*entity, e)) return false;
     }
     return entity->getY() < screensize::yMax;
 }
