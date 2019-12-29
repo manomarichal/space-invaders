@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: Transformation.cpp
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 14.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
-// =====================================================================
+
+/** \file Transformation.cpp
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 14.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description:
+
 
 #include "./Transformation.h"
 using namespace util;

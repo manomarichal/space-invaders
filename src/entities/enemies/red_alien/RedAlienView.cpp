@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: RedAlienView.cpp
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 12.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
-// =====================================================================
+
+/** \file RedAlienView.cpp
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 12.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description:
+
 
 #include "RedAlienView.h"
 using namespace entities::enemies::red_alien;

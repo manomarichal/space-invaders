@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: StandardProjectileView.h
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 06.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
-// =====================================================================
+
+/** \file StandardProjectileView.h
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 06.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description:
+
 
 #ifndef SPACE_INVADERS_STANDARDPROJECTILEVIEW_H
 #define SPACE_INVADERS_STANDARDPROJECTILEVIEW_H

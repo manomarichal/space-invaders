@@ -1,0 +1,6 @@
+<map id="entities::enemies::purple_alien::PurpleAlienController" name="entities::enemies::purple_alien::PurpleAlienController">
+<area shape="rect" id="node2" href="$classentities_1_1Controller.html" title="entities::Controller" alt="" coords="93,261,221,288"/>
+<area shape="rect" id="node3" href="$classWorld.html" title="World" alt="" coords="129,172,185,199"/>
+<area shape="rect" id="node4" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="23,96,148,123"/>
+<area shape="rect" id="node6" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="173,96,289,123"/>
+</map>

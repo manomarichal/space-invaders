@@ -1,0 +1,4 @@
+<map id="entities::enemies::green_alien::GreenAlienView" name="entities::enemies::green_alien::GreenAlienView">
+<area shape="rect" id="node2" href="$classentities_1_1View.html" title="entities::View" alt="" coords="49,169,151,196"/>
+<area shape="rect" id="node3" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="37,95,163,121"/>
+</map>

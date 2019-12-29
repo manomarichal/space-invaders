@@ -1,0 +1,7 @@
+<map id="entities::enemies::Enemy" name="entities::enemies::Enemy">
+<area shape="rect" id="node4" href="$classentities_1_1enemies_1_1green__alien_1_1GreenAlien.html" title="entities::enemies::\lgreen_alien::GreenAlien" alt="" coords="504,5,664,47"/>
+<area shape="rect" id="node5" href="$classentities_1_1enemies_1_1purple__alien_1_1PurpleAlien.html" title="entities::enemies::\lpurple_alien::PurpleAlien" alt="" coords="501,71,667,112"/>
+<area shape="rect" id="node6" href="$classentities_1_1enemies_1_1red__alien_1_1RedAlien.html" title="entities::enemies::\lred_alien::RedAlien" alt="" coords="517,136,651,177"/>
+<area shape="rect" id="node2" href="$classentities_1_1Entity.html" title="entities::Entity" alt="" coords="169,78,276,105"/>
+<area shape="rect" id="node3" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="5,78,121,105"/>
+</map>

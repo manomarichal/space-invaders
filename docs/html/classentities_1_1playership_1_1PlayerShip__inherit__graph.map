@@ -1,0 +1,4 @@
+<map id="entities::playership::PlayerShip" name="entities::playership::PlayerShip">
+<area shape="rect" id="node2" href="$classentities_1_1Entity.html" title="entities::Entity" alt="" coords="17,80,124,107"/>
+<area shape="rect" id="node3" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="13,5,129,32"/>
+</map>

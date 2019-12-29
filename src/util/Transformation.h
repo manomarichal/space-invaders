@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: Transformation.h
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 14.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: Used to calculate the transformations between the game coördinate system and the screen size
-// =====================================================================
+
+/** \file Transformation.h
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 14.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description: Used to calculate the transformations between the game coördinate system and the screen size
+
 
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H

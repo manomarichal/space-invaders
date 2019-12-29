@@ -1,0 +1,4 @@
+<map id="entities::projectiles::standard_enemy::StandardEnemyProjectileView" name="entities::projectiles::standard_enemy::StandardEnemyProjectileView">
+<area shape="rect" id="node2" href="$classentities_1_1View.html" title="entities::View" alt="" coords="68,169,169,196"/>
+<area shape="rect" id="node3" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="56,95,181,121"/>
+</map>

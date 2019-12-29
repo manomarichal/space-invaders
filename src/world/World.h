@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: World.h
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 01.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
-// =====================================================================
+
+/** \file World.h
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 01.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description:
+
 
 #ifndef SPACE_INVADERS_WORLD_H
 #define SPACE_INVADERS_WORLD_H
@@ -25,19 +25,19 @@ namespace entities::projectiles
 class World: public entities::Observer, public entities::Subject
 {
 private:
-    uint enemiesToDefeat;   // the # of enemies we need to defeat to clear the currently loaded level
-    uint score;     // our current score
+    uint enemiesToDefeat;   /// the # of enemies we need to defeat to clear the currently loaded level
+    uint score;     /// our current score
 
-    bool levelCompleted;    // true = we cleared the level
-    bool running;   // if the world is currently running a level
+    bool levelCompleted;    /// true = we cleared the level
+    bool running;   /// if the world is currently running a level
 
-    std::shared_ptr<sf::RenderWindow> window;   // the window the world needs to draw on
-    std::shared_ptr<entities::playership::PlayerShip> player;   // the playership object
+    std::shared_ptr<sf::RenderWindow> window;   /// the window the world needs to draw on
+    std::shared_ptr<entities::playership::PlayerShip> player;   /// the playership object
 
-    std::vector<std::shared_ptr<entities::Controller>> activeControllers;   // all active controllers
-    std::vector<std::shared_ptr<entities::View>> activeViews;   // all active views
-    std::vector<std::shared_ptr<entities::Entity>> activeEntities;  // all active entities
-    std::vector<uint> objectsToDelete;  // buffer where we save all entities that need to be deleted after the current tick
+    std::vector<std::shared_ptr<entities::Controller>> activeControllers;   /// all active controllers
+    std::vector<std::shared_ptr<entities::View>> activeViews;   /// all active views
+    std::vector<std::shared_ptr<entities::Entity>> activeEntities;  /// all active entities
+    std::vector<uint> objectsToDelete;  /// buffer where we save all entities that need to be deleted after the current tick
 
     /**
      * resets the currently loaded leven
@@ -86,7 +86,7 @@ public:
      */
     void drawViews();
 
-    // GETTERS & SETTERS
+    /// GETTERS & SETTERS
     bool isLevelCompleted() const;
     bool isRunning() const;
     friend class entities::projectiles::ProjectileFactory;

@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: Stopwatch.h
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 10.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: Class used to calculate intervals, which take the same time on all machines
-// =====================================================================
+
+/** \file Stopwatch.h
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 10.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description: Class used to calculate intervals, which take the same time on all machines
+
 
 #ifndef SPACE_INVADERS_STOPWATCH_H
 #define SPACE_INVADERS_STOPWATCH_H

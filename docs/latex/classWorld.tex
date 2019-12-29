@@ -1,0 +1,138 @@
+\hypertarget{classWorld}{}\section{World Class Reference}
+\label{classWorld}\index{World@{World}}
+
+
+Inheritance diagram for World\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classWorld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for World\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classWorld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWorld_a96ca734b18df2cf85e666fc6d358e12c}{World} (std\+::shared\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ window\+Ptr)
+\begin{DoxyCompactList}\small\item\em description\+: Definition of the game logic functions of the \hyperlink{classWorld}{World} class \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a6a08c827c3a0def12b7700211353735f}{load\+Level} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em description\+: source files for \hyperlink{classWorld}{World} functions involving loading levels \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a91c2d7b127190f17a6cd85743245fb5b}{on\+Notify} () override
+\item 
+void \hyperlink{classWorld_ad37fe32cce284282361b9e7397b27a23}{handle\+Events} ()
+\item 
+void \hyperlink{classWorld_a5cc73b1aa54db5da01e4004acd4fd8bb}{update\+Entities} ()
+\item 
+void \hyperlink{classWorld_a8e8ad60668f8fe975f03bcb612264bc4}{draw\+Views} ()
+\begin{DoxyCompactList}\small\item\em description\+: Definition of the Graphical functions for the \hyperlink{classWorld}{World} class \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWorld_a89826be651c0ea4c8965403cd0b8138c}\label{classWorld_a89826be651c0ea4c8965403cd0b8138c}} 
+bool \hyperlink{classWorld_a89826be651c0ea4c8965403cd0b8138c}{is\+Level\+Completed} () const
+\begin{DoxyCompactList}\small\item\em G\+E\+T\+T\+E\+RS \& S\+E\+T\+T\+E\+RS. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWorld_a6ec812e86ad7813ff1a2c92ea6d85824}\label{classWorld_a6ec812e86ad7813ff1a2c92ea6d85824}} 
+bool {\bfseries is\+Running} () const
+\item 
+\hyperlink{classWorld_adf5e8724afb4d083e566ee4e48905bf2}{$\sim$\+World} () override
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWorld_a59d0171925be26338b8e5665e281cc97}\label{classWorld_a59d0171925be26338b8e5665e281cc97}} 
+class {\bfseries entities\+::projectiles\+::\+Projectile\+Factory}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWorld_a96ca734b18df2cf85e666fc6d358e12c}\label{classWorld_a96ca734b18df2cf85e666fc6d358e12c}} 
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily World\+::\+World (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Render\+Window $>$}]{window\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+description\+: Definition of the game logic functions of the \hyperlink{classWorld}{World} class 
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em window\+Ptr} & the window where our world draws \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWorld_adf5e8724afb4d083e566ee4e48905bf2}\label{classWorld_adf5e8724afb4d083e566ee4e48905bf2}} 
+\index{World@{World}!````~World@{$\sim$\+World}}
+\index{````~World@{$\sim$\+World}!World@{World}}
+\subsubsection{\texorpdfstring{$\sim$\+World()}{~World()}}
+{\footnotesize\ttfamily World\+::$\sim$\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWorld_a8e8ad60668f8fe975f03bcb612264bc4}\label{classWorld_a8e8ad60668f8fe975f03bcb612264bc4}} 
+\index{World@{World}!draw\+Views@{draw\+Views}}
+\index{draw\+Views@{draw\+Views}!World@{World}}
+\subsubsection{\texorpdfstring{draw\+Views()}{drawViews()}}
+{\footnotesize\ttfamily void World\+::draw\+Views (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+description\+: Definition of the Graphical functions for the \hyperlink{classWorld}{World} class 
+
+lets all views in active\+Views draw their object \mbox{\Hypertarget{classWorld_ad37fe32cce284282361b9e7397b27a23}\label{classWorld_ad37fe32cce284282361b9e7397b27a23}} 
+\index{World@{World}!handle\+Events@{handle\+Events}}
+\index{handle\+Events@{handle\+Events}!World@{World}}
+\subsubsection{\texorpdfstring{handle\+Events()}{handleEvents()}}
+{\footnotesize\ttfamily void World\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+let all controllers in active\+Controllers handle events, also handles other sfml events \mbox{\Hypertarget{classWorld_a6a08c827c3a0def12b7700211353735f}\label{classWorld_a6a08c827c3a0def12b7700211353735f}} 
+\index{World@{World}!load\+Level@{load\+Level}}
+\index{load\+Level@{load\+Level}!World@{World}}
+\subsubsection{\texorpdfstring{load\+Level()}{loadLevel()}}
+{\footnotesize\ttfamily void World\+::load\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+description\+: source files for \hyperlink{classWorld}{World} functions involving loading levels 
+
+loads a level from a json file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & the level to be loaded \\
+\hline
+\end{DoxyParams}
+R\+E\+AD IN S\+P\+A\+CE C\+O\+O\+R\+D\+I\+N\+A\+T\+ES
+
+R\+E\+AD IN P\+L\+A\+Y\+E\+R\+S\+H\+IP
+
+world observes our playership to see when the game ends
+
+R\+E\+AD IN E\+N\+E\+M\+I\+ES E\+N\+E\+M\+I\+ES \mbox{\Hypertarget{classWorld_a91c2d7b127190f17a6cd85743245fb5b}\label{classWorld_a91c2d7b127190f17a6cd85743245fb5b}} 
+\index{World@{World}!on\+Notify@{on\+Notify}}
+\index{on\+Notify@{on\+Notify}!World@{World}}
+\subsubsection{\texorpdfstring{on\+Notify()}{onNotify()}}
+{\footnotesize\ttfamily void World\+::on\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Observer notify functie 
+
+Implements \hyperlink{classentities_1_1Observer}{entities\+::\+Observer}.
+
+\mbox{\Hypertarget{classWorld_a5cc73b1aa54db5da01e4004acd4fd8bb}\label{classWorld_a5cc73b1aa54db5da01e4004acd4fd8bb}} 
+\index{World@{World}!update\+Entities@{update\+Entities}}
+\index{update\+Entities@{update\+Entities}!World@{World}}
+\subsubsection{\texorpdfstring{update\+Entities()}{updateEntities()}}
+{\footnotesize\ttfamily void World\+::update\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+updates all entities in active\+Entities 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{World_8h}{World.\+h}\item 
+/home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{World_8cpp}{World.\+cpp}\item 
+/home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{WorldGraphics_8cpp}{World\+Graphics.\+cpp}\item 
+/home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{WorldLoader_8cpp}{World\+Loader.\+cpp}\end{DoxyCompactItemize}

@@ -1,11 +1,11 @@
-// =====================================================================
-// @name: World.cpp
-// @project: space_invaders
-// @author: Mano Marichal
-// @date: 01.12.19
-// @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: Definition of the game logic functions of the World class
-// =====================================================================
+
+/** \file World.cpp
+/// project: space_invaders
+/// author: Mano Marichal
+/// date: 01.12.19
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+/// description: Definition of the game logic functions of the World class
+
 
 #include "World.h"
 
