@@ -15,8 +15,8 @@
 #include <iostream>
 
 #include "../../util/SpaceSettings.h"
-#include "../../util/Subject.h"
-#include "../../util/Subject.h"
+#include "Subject.h"
+#include "Subject.h"
 
 namespace entities
 {

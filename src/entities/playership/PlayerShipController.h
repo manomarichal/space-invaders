@@ -22,7 +22,7 @@ namespace entities::playership
 {
     class PlayerShipController: public entities::Controller
     {
-        std::unique_ptr<Stopwatch> stopwatch;
+        std::unique_ptr<util::Stopwatch> stopwatch;
         void createProjectile();
     public:
         PlayerShipController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world);

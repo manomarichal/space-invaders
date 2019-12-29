@@ -13,7 +13,7 @@ using namespace entities::playership;
 PlayerShipController::PlayerShipController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view,
                                            World &world) :Controller(world, entity, view)
 {
-    stopwatch = std::make_unique<Stopwatch>(500);
+    stopwatch = std::make_unique<util::Stopwatch>(500);
 }
 
 void PlayerShipController::createProjectile()

@@ -22,7 +22,7 @@ namespace entities::enemies::green_alien
     class GreenAlienController: public Controller
     {
     private:
-        std::unique_ptr<Stopwatch> stopwatch;
+        std::unique_ptr<util::Stopwatch> stopwatch;
     public:
         GreenAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world);
         bool handleEvents(const std::vector<std::shared_ptr<Entity>> &entities) override ;

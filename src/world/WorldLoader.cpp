@@ -4,7 +4,7 @@
 // @author: Mano Marichal
 // @date: 27.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
+// @description: source files for World functions involving loading levels
 // =====================================================================
 
 #include "World.h"
@@ -30,7 +30,7 @@ void World::loadLevel(const std::string &filename)
     nlohmann::json root;
     file >> root;
 
-    // COORDINATES
+    // READ IN SPACE COORDINATES
     SpaceSettings::xMax = root["Space"]["xmax"];
     SpaceSettings::xMin = root["Space"]["xmin"];
     SpaceSettings::yMax = root["Space"]["ymax"];
@@ -38,13 +38,13 @@ void World::loadLevel(const std::string &filename)
     SpaceSettings::width = std::abs(SpaceSettings::xMax) + std::abs(SpaceSettings::xMin);
     SpaceSettings::height = std::abs(SpaceSettings::yMax) + std::abs(SpaceSettings::yMin);
 
-    // PLAYERSHIP
+    // READ IN PLAYERSHIP
     float x  = root["Playership"]["x"];
     float y = root["Playership"]["y"];
     auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
     player = playership;
 
-    playership->attach(shared_from_this());
+    playership->attach(shared_from_this()); // world observes our playership to see when the game ends
 
     auto playershipView = std::make_shared<entities::playership::PlayerShipView>(playership);
     playershipView->init();
@@ -52,7 +52,7 @@ void World::loadLevel(const std::string &filename)
     addObject(std::make_tuple(std::move(playership), std::move(playershipView), std::move(playershipController)));
 
 
-    // ENEMIES
+    // READ IN ENEMIES ENEMIES
     enemiesToDefeat = 0;
     for (auto enemy:root["Enemies"])
     {

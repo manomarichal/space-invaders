@@ -14,7 +14,7 @@ using namespace entities::enemies::green_alien;
 GreenAlienController::GreenAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view, World &world)
         :Controller(world, entity, view)
 {
-    stopwatch = std::make_unique<Stopwatch>(1000);
+    stopwatch = std::make_unique<util::Stopwatch>(1000);
 }
 bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity>> &entities)
 {

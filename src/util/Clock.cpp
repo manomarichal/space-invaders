@@ -11,6 +11,7 @@
 
 using namespace util;
 
+// define static members
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::previous = std::chrono::high_resolution_clock::now();
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::current = std::chrono::high_resolution_clock::now();
 

@@ -4,7 +4,7 @@
 // @author: Mano Marichal
 // @date: 02.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
+// @description: these contain the coordinates our game logic uses to calculate stuff
 // =====================================================================
 
 #ifndef SPACE_INVADERS_SPACESETTINGS_H

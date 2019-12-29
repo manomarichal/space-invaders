@@ -25,40 +25,75 @@ namespace entities::projectiles
 class World: public entities::Observer, public entities::Subject
 {
 private:
-    uint enemiesDefeated;
-    uint enemiesToDefeat;
-    uint score;
-    bool levelCompleted;
+    uint enemiesToDefeat;   // the # of enemies we need to defeat to clear the currently loaded level
+    uint score;     // our current score
 
-    bool running;
+    bool levelCompleted;    // true = we cleared the level
+    bool running;   // if the world is currently running a level
 
-    std::shared_ptr<sf::RenderWindow> window;
-    std::shared_ptr<entities::playership::PlayerShip> player;
+    std::shared_ptr<sf::RenderWindow> window;   // the window the world needs to draw on
+    std::shared_ptr<entities::playership::PlayerShip> player;   // the playership object
 
-    std::vector<std::shared_ptr<entities::Controller>> activeControllers;
-    std::vector<std::shared_ptr<entities::View>> activeViews;
-    std::vector<std::shared_ptr<entities::Entity>> activeEntities;
-    std::vector<uint> objectsToDelete;
+    std::vector<std::shared_ptr<entities::Controller>> activeControllers;   // all active controllers
+    std::vector<std::shared_ptr<entities::View>> activeViews;   // all active views
+    std::vector<std::shared_ptr<entities::Entity>> activeEntities;  // all active entities
+    std::vector<uint> objectsToDelete;  // buffer where we save all entities that need to be deleted after the current tick
 
+    /**
+     * resets the currently loaded leven
+     */
     void reset();
+    /**
+     * deletes an object
+     * @param index: the index of the object in activeEntities, activeViews and activeControllers
+     */
     void deleteObject(uint index);
+    /**
+     * adds an object
+     * @param object: the object to be added
+     */
     void addObject(entities::Object object);
+    /**
+     * draws the current score on the screen
+     */
     void drawScore();
 
 public:
+    /**
+     * Constructor
+     * @param windowPtr: the window where our world draws
+     */
     explicit World(std::shared_ptr<sf::RenderWindow> windowPtr);
-
-    bool isLevelCompleted() const;
-    bool isRunning() const;
-
+    /**
+     * loads a level from a json file
+     * @param filename: the level to be loaded
+     */
     void loadLevel(const std::string &filename);
+    /**
+     * Observer notify functie
+     */
     void onNotify() override;
+    /**
+     * let all controllers in activeControllers handle events, also handles other sfml events
+     */
     void handleEvents();
+    /**
+     * updates all entities in activeEntities
+     */
     void updateEntities();
+    /**
+     * lets all views in activeViews draw their object
+     */
     void drawViews();
 
+    // GETTERS & SETTERS
+    bool isLevelCompleted() const;
+    bool isRunning() const;
     friend class entities::projectiles::ProjectileFactory;
 
+    /**
+     * Destructor
+     */
     ~World() override;
 };
 

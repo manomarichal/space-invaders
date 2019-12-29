@@ -4,7 +4,7 @@
 // @author: Mano Marichal
 // @date: 25.12.19
 // @copyright: BA2 Informatica - Mano Marichal - University of Antwerp
-// @description: 
+// @description: initializing the static variables of SpaceSettings
 // =====================================================================
 #include "SpaceSettings.h"
 float SpaceSettings::xMax = 0;

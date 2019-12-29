@@ -7,20 +7,13 @@
 // @description: 
 // =====================================================================
 
-//TODO exceptions
-//TODO singletons
-//TODO observer
-//TODO damage systeem projectiles
 
-// FASE 2
-//TODO const correctness
+//TODO exception handling
 //TODO code documenteren
-//TODO prog2 code standards
-//TODO clion code inspection
-
-//FASE 3
+//TODO levels
+//TODO code laaste keer nakijken & inspection
+//TODO rapport
 //TODO make it fancy
-//TODO rapport schrijven
 
 #include "game/Game.h"
 

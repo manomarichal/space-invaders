@@ -16,13 +16,11 @@ float Transformation::screenWidth = 0;
 float Transformation::getXScale()
 {
     return screenWidth / SpaceSettings::width;
-
 }
 
 float Transformation::getYScale()
 {
     return screenHeight / SpaceSettings::height;
-
 }
 
 float Transformation::getXPixelValue(float x)
@@ -44,7 +42,6 @@ void Transformation::setScreenHeight(float screenHeight)
 {
     Transformation::screenHeight = screenHeight;
 }
-
 
 float Transformation::getScreenWidth()
 {
