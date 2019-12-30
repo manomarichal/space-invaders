@@ -1,13 +1,8 @@
-
 /** \file PlayerLivesView.cpp
 * project: space_invaders
 * author: Mano Marichal
 * date: 15.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
-
-#include "PlayerLivesView.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "PlayerLivesView.h"
 using namespace entities::playership;
 
 PlayerLivesView::PlayerLivesView(std::shared_ptr<PlayerShip> ship)

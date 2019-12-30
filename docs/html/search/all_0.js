@@ -8,5 +8,6 @@ var searchData=
   ['collision_2ecpp',['Collision.cpp',['../Collision_8cpp.html',1,'']]],
   ['collision_2eh',['Collision.h',['../Collision_8h.html',1,'']]],
   ['controller',['Controller',['../classentities_1_1Controller.html',1,'entities']]],
-  ['controller_2eh',['Controller.h',['../Controller_8h.html',1,'']]]
+  ['controller_2eh',['Controller.h',['../Controller_8h.html',1,'']]],
+  ['createprojectile',['createProjectile',['../classentities_1_1projectiles_1_1ProjectileFactory.html#ae2fdae24114f0a54e474e1cf14eb34d5',1,'entities::projectiles::ProjectileFactory']]]
 ];

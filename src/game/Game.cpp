@@ -18,19 +18,19 @@ Game::Game(const std::string &settings)
     nlohmann::json root;
     file >> root;
 
-    /// READ IN THE SCREENSIZE
+    // READ IN THE SCREENSIZE
     float width = root["Screen"]["width"];
     float height = root["Screen"]["height"];
     util::Transformation::setScreenWidth(width);
     util::Transformation::setScreenHeight(height);
 
-    /// READ IN ALL LEVELS
+    // READ IN ALL LEVELS
     for (const auto &level: root["Levels"])
     {
         levels.emplace_back(level);
     }
 
-    /// CREATE THE WINDOW WE ARE GOING TO PLAY IN
+    // CREATE THE WINDOW WE ARE GOING TO PLAY IN
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(static_cast<unsigned int>(width),
                                                               static_cast<unsigned int>(height)), "Space Invaders");
 
@@ -90,7 +90,7 @@ void Game::newLevelScreen()
     window->draw(string1);
     window->display();
 
-    /// we pause the game until the player presses space
+    // we pause the game until the player presses space
     while(true)
     {
         checkEvents();
@@ -114,37 +114,37 @@ void Game::checkEvents()
 
 void Game::runWorld(World &world)
 {
-    /// the amount of milliseconds we want a frame to last
+    // the amount of milliseconds we want a frame to last
     const double MS_PER_UPDATE = 16;
-    /// the amount of lag we are having
+    // the amount of lag we are having
     double lag = 0;
     while (world.isRunning())
     {
         lag += util::Clock::update();
-        /// whenever we have lag, we want to update our gamelogic multiple times before we update the graphical part
+        // whenever we have lag, we want to update our gamelogic multiple times before we update the graphical part
         while (lag >= MS_PER_UPDATE)
         {
-            /// update game logic and descrease lag
+            // update game logic and descrease lag
             world.handleEvents();
             world.updateEntities();
             lag -= MS_PER_UPDATE;
         }
-        /// update graphical part of the world
+        // update graphical part of the world
         world.drawViews();
     }
 }
 void Game::play()
 {
+    // we create a world object to load our levels in
+    auto world = std::make_shared<World>(window);
+
     while (true)
     {
-        /// we create a world object to load our levels in
-        auto world = std::make_shared<World>(window);
-
         for (const auto &level:levels)
         {
-            newLevelScreen();           /// make new level screen
-            world->loadLevel(level);    /// load the level in our world
-            Game::runWorld(*world);  /// run the world
+            newLevelScreen();           // make new level screen
+            world->loadLevel(level);    // load the level in our world
+            Game::runWorld(*world);  // run the world
             
             if (world->isLevelCompleted()) continue;
             else if (gameOverScreen()) break;

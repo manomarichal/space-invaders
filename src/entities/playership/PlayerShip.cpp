@@ -1,13 +1,8 @@
-
 /** \file PlayerShip.cpp
 * project: space_invaders
 * author: Mano Marichal
 * date: 01.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
-
-#include "PlayerShip.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "PlayerShip.h"
 
 using namespace entities::playership;
 

@@ -1,13 +1,8 @@
-
 /** \file Observer.h
 * project: space_invaders
 * author: Mano Marichal
 * date: 05.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
-
-#ifndef SPACE_INVADERS_OBSERVER_H
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#ifndef SPACE_INVADERS_OBSERVER_H
 #define SPACE_INVADERS_OBSERVER_H
 
 namespace entities

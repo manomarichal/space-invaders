@@ -13,7 +13,7 @@ var searchData=
   ['playershipview',['PlayerShipView',['../classentities_1_1playership_1_1PlayerShipView.html',1,'entities::playership']]],
   ['playershipview_2ecpp',['PlayerShipView.cpp',['../PlayerShipView_8cpp.html',1,'']]],
   ['playershipview_2eh',['PlayerShipView.h',['../PlayerShipView_8h.html',1,'']]],
-  ['projectilefactory',['ProjectileFactory',['../classentities_1_1projectiles_1_1ProjectileFactory.html',1,'entities::projectiles::ProjectileFactory'],['../classentities_1_1projectiles_1_1ProjectileFactory.html#ad198f3f077022468b6bdd2d114c3a969',1,'entities::projectiles::ProjectileFactory::ProjectileFactory()']]],
+  ['projectilefactory',['ProjectileFactory',['../classentities_1_1projectiles_1_1ProjectileFactory.html',1,'entities::projectiles']]],
   ['projectilefactory_2ecpp',['ProjectileFactory.cpp',['../ProjectileFactory_8cpp.html',1,'']]],
   ['projectilefactory_2eh',['ProjectileFactory.h',['../ProjectileFactory_8h.html',1,'']]],
   ['purplealien',['PurpleAlien',['../classentities_1_1enemies_1_1purple__alien_1_1PurpleAlien.html',1,'entities::enemies::purple_alien']]],

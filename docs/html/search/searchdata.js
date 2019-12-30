@@ -2,29 +2,29 @@ var indexSectionsWithContent =
 {
   0: "cdeghiloprstuvwxy~",
   1: "cegoprstvw",
-  2: "eu",
-  3: "cegoprstvw",
-  4: "cdeghilopstuw~",
-  5: "hwxy"
+  2: "cegoprstvw",
+  3: "cdeghilopstuw~",
+  4: "hwxy",
+  5: "t"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "namespaces",
-  3: "files",
-  4: "functions",
-  5: "variables"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "enums"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Namespaces",
-  3: "Files",
-  4: "Functions",
-  5: "Variables"
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Enumerations"
 };
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['error_5fhandler_5ft',['error_handler_t',['../namespacenlohmann_1_1detail.html#a5a76b60b26dc8c47256a996d18d967df',1,'nlohmann::detail']]]
+  ['type',['Type',['../classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698',1,'entities::projectiles::ProjectileFactory']]]
 ];

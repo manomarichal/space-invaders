@@ -1,10 +1,8 @@
-
 /** \file Transformation.h
 * project: space_invaders
 * author: Mano Marichal
 * date: 14.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-
 
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H

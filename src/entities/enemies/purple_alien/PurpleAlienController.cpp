@@ -1,13 +1,8 @@
-
 /** \file PurpleAlienController.cpp
 * project: space_invaders
 * author: Mano Marichal
 * date: 08.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
-
-#include "PurpleAlienController.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "PurpleAlienController.h"
 using namespace entities::enemies::purple_alien;
 
 PurpleAlienController::PurpleAlienController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view,

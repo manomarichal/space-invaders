@@ -1,11 +1,7 @@
-
 /** \file GreenAlienController.cpp
 * project: space_invaders
 * author: Mano Marichal
-* date: 11.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
+* date: 11.12.19 */
 
 #include "GreenAlienController.h"
 
@@ -27,7 +23,7 @@ bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity
 
     if (stopwatch->isReady())
     {
-        projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::EnemyStandard, world);
+        projectiles::ProjectileFactory::createProjectile(entity->getX(), entity->getY(), projectiles::ProjectileFactory::EnemyStandard, world);
     }
 
     return std::dynamic_pointer_cast<Enemy>(entity)->hitpoints > 0;

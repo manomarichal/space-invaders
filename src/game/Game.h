@@ -1,11 +1,8 @@
-
 /** \file Game.h
 * project: space_invaders
 * author: Mano Marichal
 * date: 15.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
 
 #ifndef SPACE_INVADERS_GAME_H
 #define SPACE_INVADERS_GAME_H
@@ -38,9 +35,13 @@ private:
     static void runWorld (World &world);
 
 public:
+    /**
+     *
+     * @param settings a json file containing the game settings
+     */
     explicit Game(const std::string &settings);
     /**
-     * starts playing all the levels loaded in this->levels
+     * starts playing all the levels described in the settings file
      */
     void play();
 };

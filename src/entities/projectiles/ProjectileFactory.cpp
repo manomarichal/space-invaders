@@ -1,13 +1,12 @@
-
 /** \file ProjectileFactory.cpp
 * project: space_invaders
 * author: Mano Marichal
 * date: 06.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
-
 
 #include "ProjectileFactory.h"
+#include "./standard/StandardProjectileController.h"
+#include "./standard_enemy/StandardEnemyProjectileController.h"
 
 using namespace entities::projectiles;
 
@@ -31,7 +30,7 @@ util::Object ProjectileFactory::createStandardEnemyProjectile(float x, float y, 
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
 }
 
-void ProjectileFactory::createProjectile(float x, float y, entities::projectiles::Type type, World &world)
+void ProjectileFactory::createProjectile(float x, float y, Type type, World &world)
 {
     util::Object object;
 

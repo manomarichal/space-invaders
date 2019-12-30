@@ -59,11 +59,12 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceentities.html">entities</a></li><li class="navelem"><a class="el" href="namespaceentities_1_1projectiles.html">projectiles</a></li><li class="navelem"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a></li>  </ul>
+<li class="navelem"><b>entities</b></li><li class="navelem"><b>projectiles</b></li><li class="navelem"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classentities_1_1projectiles_1_1ProjectileFactory-members.html">List of all members</a>  </div>
@@ -72,11 +73,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:abc75eceeed2dbadc736fb93fd6046698"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698">Type</a> { <b>Standard</b>, 
+<b>Fast</b>, 
+<b>EnemyStandard</b>
+ }</td></tr>
+<tr class="separator:abc75eceeed2dbadc736fb93fd6046698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad198f3f077022468b6bdd2d114c3a969"><td class="memItemLeft" align="right" valign="top"><a id="ad198f3f077022468b6bdd2d114c3a969"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#ad198f3f077022468b6bdd2d114c3a969">ProjectileFactory</a> (const <a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a> &amp;copy)=delete</td></tr>
-<tr class="memdesc:ad198f3f077022468b6bdd2d114c3a969"><td class="mdescLeft">&#160;</td><td class="mdescRight">We do not want copies of our singleton. <br /></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ProjectileFactory</b> (const <a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a> &amp;copy)=delete</td></tr>
 <tr class="separator:ad198f3f077022468b6bdd2d114c3a969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23c5feb5df880e4cf133f7e9739deda7"><td class="memItemLeft" align="right" valign="top"><a id="a23c5feb5df880e4cf133f7e9739deda7"></a>
 <a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html">ProjectileFactory</a>)=delete</td></tr>
@@ -84,10 +92,83 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae2fdae24114f0a54e474e1cf14eb34d5"><td class="memItemLeft" align="right" valign="top"><a id="ae2fdae24114f0a54e474e1cf14eb34d5"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>createProjectile</b> (float x, float y, Type type, <a class="el" href="classWorld.html">World</a> &amp;world)</td></tr>
+<tr class="memitem:ae2fdae24114f0a54e474e1cf14eb34d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#ae2fdae24114f0a54e474e1cf14eb34d5">createProjectile</a> (float x, float y, <a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698">Type</a> type, <a class="el" href="classWorld.html">World</a> &amp;world)</td></tr>
 <tr class="separator:ae2fdae24114f0a54e474e1cf14eb34d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="abc75eceeed2dbadc736fb93fd6046698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc75eceeed2dbadc736fb93fd6046698">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698">entities::projectiles::ProjectileFactory::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>we use this to indicate which type of projectile we want to be created </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae2fdae24114f0a54e474e1cf14eb34d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2fdae24114f0a54e474e1cf14eb34d5">&#9670;&nbsp;</a></span>createProjectile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProjectileFactory::createProjectile </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698">Type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classWorld.html">World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>creates a projectile </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the x coordinate where it should be created </td></tr>
+    <tr><td class="paramname">y</td><td>the y coordinate where it should be created </td></tr>
+    <tr><td class="paramname">type</td><td>the type of the projectile that should be created </td></tr>
+    <tr><td class="paramname">world</td><td>the world in which it should be created </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/mano/Documents/univ/space_invaders/src/entities/projectiles/<a class="el" href="ProjectileFactory_8h_source.html">ProjectileFactory.h</a></li>
 <li>/home/mano/Documents/univ/space_invaders/src/entities/projectiles/<a class="el" href="ProjectileFactory_8cpp.html">ProjectileFactory.cpp</a></li>
