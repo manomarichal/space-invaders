@@ -5,7 +5,7 @@
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 
 #include "World.h"
-#include "../entities/enemies/Enemy.h"
+#include "../objects/enemies/Enemy.h"
 #include <fstream>
 #include <algorithm>
 
@@ -18,16 +18,16 @@ World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
     window = std::move(windowPtr);
 }
 
-void World::addObject(util::Object object)
+void World::addObject(util::Object objects)
 {
-    activeEntities.emplace_back(std::move(std::get<0>(object)));
-    activeViews.emplace_back(std::move(std::get<1>(object)));
-    activeControllers.emplace_back(std::move(std::get<2>(object)));
+    activeEntities.emplace_back(std::move(std::get<0>(objects)));
+    activeViews.emplace_back(std::move(std::get<1>(objects)));
+    activeControllers.emplace_back(std::move(std::get<2>(objects)));
 }
 
 void World::deleteObject(uint index)
 {
-    if (std::dynamic_pointer_cast<entities::enemies::Enemy>(activeEntities[index]) != nullptr)
+    if (std::dynamic_pointer_cast<objects::enemies::Enemy>(activeEntities[index]) != nullptr)
     {
         enemiesToDefeat--;
         score += 100;
@@ -53,13 +53,13 @@ void World::updateEntities()
         entity->update();
     }
 
-    std::sort(objectsToDelete.begin(), objectsToDelete.end(), std::greater<>());
-    for (auto i:objectsToDelete)
+    std::sort(objectssToDelete.begin(), objectssToDelete.end(), std::greater<>());
+    for (auto i:objectssToDelete)
     {
         deleteObject(i);
     }
 
-    objectsToDelete.clear();
+    objectssToDelete.clear();
 }
 
 void World::handleEvents()
@@ -73,7 +73,7 @@ void World::handleEvents()
     uint index = 0;
     while (index < activeControllers.size())
     {
-        if (!activeControllers[index]->handleEvents(activeEntities)) objectsToDelete.emplace_back(index);
+        if (!activeControllers[index]->handleEvents(activeEntities)) objectssToDelete.emplace_back(index);
         index++;
     }
 }

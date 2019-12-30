@@ -7,7 +7,7 @@
 #ifndef SPACE_INVADERS_COLLISION_H
 #define SPACE_INVADERS_COLLISION_H
 
-#include "../entities/abstract_classes/Entity.h"
+#include "../objects/abstract_classes/Entity.h"
 
 namespace util
 {
@@ -17,47 +17,47 @@ namespace util
         Collision()= default;
     public:
         /**
-         * checks collision between 2 entities
+         * checks collision between 2 objects
          * @param e1
          * @param e2
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool checkCollision(const entities::Entity &e1, const entities::Entity &e2);
+        static bool checkCollision(const objects::Entity &e1, const objects::Entity &e2);
         /**
          * checks collision between e1 and a shield entity
-         * @param e1 the object checking if it collides with a shield
+         * @param e1 the objects checking if it collides with a shield
          * @param e2 the shield entity
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool shield(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool shield(const objects::Entity &e1, const std::shared_ptr<objects::Entity> &e2);
         /**
          * checks collision between e1 and an enemy entity
-         * @param e1 the object checking if it collides with an enemy
+         * @param e1 the objects checking if it collides with an enemy
          * @param e2 the enemy entity
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool enemy(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool enemy(const objects::Entity &e1, const std::shared_ptr<objects::Entity> &e2);
         /**
          * checks collision between e1 and a playership entity
-         * @param e1 the object checking if it collides with a playership
+         * @param e1 the objects checking if it collides with a playership
          * @param e2 the playership entity
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool playership(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool playership(const objects::Entity &e1, const std::shared_ptr<objects::Entity> &e2);
         /**
          * checks collision between e1 and a standardProjectile entity
-         * @param e1 the object checking if it collides with a standardProjectile
+         * @param e1 the objects checking if it collides with a standardProjectile
          * @param e2 the standardProjectile entity
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool standardProjectile(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool standardProjectile(const objects::Entity &e1, const std::shared_ptr<objects::Entity> &e2);
         /**
          * checks collision between e1 and a standardEnemyProjectile entity
-         * @param e1 the object checking if it collides with a standardEnemyProjectile
+         * @param e1 the objects checking if it collides with a standardEnemyProjectile
          * @param e2 the standardEnemyProjectile entity
-         * @return true means the 2 entities collide, false means they do not
+         * @return true means the 2 objects collide, false means they do not
          */
-        static bool standardEnemyProjectile(const entities::Entity &e1, const std::shared_ptr<entities::Entity> &e2);
+        static bool standardEnemyProjectile(const objects::Entity &e1, const std::shared_ptr<objects::Entity> &e2);
     };
 }
 #endif //SPACE_INVADERS_COLLISION_H

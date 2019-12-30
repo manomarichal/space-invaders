@@ -135,7 +135,7 @@ void Game::runWorld(World &world)
 }
 void Game::play()
 {
-    // we create a world object to load our levels in
+    // we create a world objects to load our levels in
     auto world = std::make_shared<World>(window);
 
     while (true)

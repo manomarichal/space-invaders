@@ -7,15 +7,15 @@
 #ifndef SPACE_INVADERS_WORLD_H
 #define SPACE_INVADERS_WORLD_H
 
-#include "../entities/playership/PlayerShipController.h"
+#include "../objects/playership/PlayerShipController.h"
 #include "../util/Object.h"
 #include "../util/Clock.h"
 
-namespace entities::projectiles
+namespace objects::projectiles
 {
     class ProjectileFactory;
 }
-class World: public entities::Observer, public entities::Subject
+class World: public objects::Observer, public objects::Subject
 {
 private:
     uint enemiesToDefeat;   /*!< the # of enemies we need to defeat to clear the currently loaded level */
@@ -25,27 +25,27 @@ private:
     bool running;   /*!< if the world is currently running a level */
 
     std::shared_ptr<sf::RenderWindow> window;   /*!< the window the world needs to draw on */
-    std::shared_ptr<entities::playership::PlayerShip> player;   /*!< the playership object */
+    std::shared_ptr<objects::playership::PlayerShip> player;   /*!< the playership objects */
 
-    std::vector<std::shared_ptr<entities::Controller>> activeControllers;   /*!< all active controllers */
-    std::vector<std::shared_ptr<entities::View>> activeViews;   /*!< all active views */
-    std::vector<std::shared_ptr<entities::Entity>> activeEntities;  /*!< all active entities */
-    std::vector<uint> objectsToDelete;  /*!< buffer where we save all entities that need to be deleted after the current tick */
+    std::vector<std::shared_ptr<objects::Controller>> activeControllers;   /*!< all active controllers */
+    std::vector<std::shared_ptr<objects::View>> activeViews;   /*!< all active views */
+    std::vector<std::shared_ptr<objects::Entity>> activeEntities;  /*!< all active objects */
+    std::vector<uint> objectssToDelete;  /*!< buffer where we save all objects that need to be deleted after the current tick */
 
     /**
      * resets the currently loaded level
      */
     void reset();
     /**
-     * deletes an object
-     * @param index: the index of the object in activeEntities, activeViews and activeControllers
+     * deletes an objects
+     * @param index: the index of the objects in activeEntities, activeViews and activeControllers
      */
     void deleteObject(uint index);
     /**
-     * adds an object
-     * @param object: the object to be added
+     * adds an objects
+     * @param objects: the objects to be added
      */
-    void addObject(util::Object object);
+    void addObject(util::Object objects);
     /**
      * draws the current score on the screen
      */
@@ -71,17 +71,17 @@ public:
      */
     void handleEvents();
     /**
-     * updates all entities in activeEntities
+     * updates all objects in activeEntities
      */
     void updateEntities();
     /**
-     * lets all views in activeViews draw their object
+     * lets all views in activeViews draw their objects
      */
     void drawViews();
 
     bool isLevelCompleted() const;
     bool isRunning() const;
-    friend class entities::projectiles::ProjectileFactory;
+    friend class objects::projectiles::ProjectileFactory;
 
     /**
      * Destructor

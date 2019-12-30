@@ -8,15 +8,15 @@
 #define SPACE_INVADERS_OBJECT_H
 
 #include <tuple>
-#include "../entities/abstract_classes/Entity.h"
-#include "../entities/abstract_classes/View.h"
-#include "../entities/abstract_classes/Controller.h"
+#include "../objects/abstract_classes/Entity.h"
+#include "../objects/abstract_classes/View.h"
+#include "../objects/abstract_classes/Controller.h"
 
 namespace util
 {
     using Object = std::tuple<
-    std::shared_ptr<entities::Entity>,
-    std::shared_ptr<entities::View>,
-    std::shared_ptr<entities::Controller>>;
+    std::shared_ptr<objects::Entity>,
+    std::shared_ptr<objects::View>,
+    std::shared_ptr<objects::Controller>>;
 }
 #endif //SPACE_INVADERS_OBJECT_H

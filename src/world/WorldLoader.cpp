@@ -5,12 +5,12 @@
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 
 #include "World.h"
-#include "../entities/enemies/green_alien/GreenAlienController.h"
-#include "../entities/enemies/purple_alien/PurpleAlienController.h"
-#include "../entities/enemies/red_alien/RedAlienController.h"
-#include "../entities/shield/ShieldController.h"
-#include "../entities/shield/ShieldView.h"
-#include "../entities/shield/Shield.h"
+#include "../objects/enemies/green_alien/GreenAlienController.h"
+#include "../objects/enemies/purple_alien/PurpleAlienController.h"
+#include "../objects/enemies/red_alien/RedAlienController.h"
+#include "../objects/shield/ShieldController.h"
+#include "../objects/shield/ShieldView.h"
+#include "../objects/shield/Shield.h"
 #include "../json/json.hpp"
 
 #include <fstream>
@@ -22,7 +22,7 @@ void World::loadLevel(const std::string &filename)
     activeEntities.reserve(50);
     activeViews.reserve(50);
     activeControllers.reserve(50);
-    objectsToDelete.reserve(50);
+    objectssToDelete.reserve(50);
 
     std::ifstream file(filename);
     if (!file.is_open()) throw std::runtime_error("could not open file: " + filename);
@@ -38,15 +38,15 @@ void World::loadLevel(const std::string &filename)
 
     float x  = root["Playership"]["x"];
     float y = root["Playership"]["y"];
-    auto playership = std::make_shared<entities::playership::PlayerShip>(x,y);
+    auto playership = std::make_shared<objects::playership::PlayerShip>(x,y);
     player = playership;
 
     playership->attach(shared_from_this());
 
-    auto playershipView = std::make_shared<entities::playership::PlayerShipView>
+    auto playershipView = std::make_shared<objects::playership::PlayerShipView>
 (playership);
     playershipView->init();
-    auto playershipController = std::make_shared<entities::playership::PlayerShipController>(playership, playershipView, (*this));
+    auto playershipController = std::make_shared<objects::playership::PlayerShipController>(playership, playershipView, (*this));
     addObject(std::make_tuple(std::move(playership), std::move(playershipView), std::move(playershipController)));
 
 
@@ -56,25 +56,25 @@ void World::loadLevel(const std::string &filename)
         enemiesToDefeat++;
         if (enemy["type"] == "PurpleAlien")
         {
-            auto entity = std::make_shared<entities::enemies::purple_alien::PurpleAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<entities::enemies::purple_alien::PurpleAlienView>(entity);
-            auto controller = std::make_shared<entities::enemies::purple_alien::PurpleAlienController>(entity, view, (*this));
+            auto entity = std::make_shared<objects::enemies::purple_alien::PurpleAlien>(enemy["x"], enemy["y"]);
+            auto view = std::make_shared<objects::enemies::purple_alien::PurpleAlienView>(entity);
+            auto controller = std::make_shared<objects::enemies::purple_alien::PurpleAlienController>(entity, view, (*this));
             view->init();
             addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
         }
         else if (enemy["type"] == "GreenAlien")
         {
-            auto entity = std::make_shared<entities::enemies::green_alien::GreenAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<entities::enemies::green_alien::GreenAlienView>(entity);
-            auto controller = std::make_shared<entities::enemies::green_alien::GreenAlienController>(entity, view, (*this));
+            auto entity = std::make_shared<objects::enemies::green_alien::GreenAlien>(enemy["x"], enemy["y"]);
+            auto view = std::make_shared<objects::enemies::green_alien::GreenAlienView>(entity);
+            auto controller = std::make_shared<objects::enemies::green_alien::GreenAlienController>(entity, view, (*this));
             view->init();
             addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
         }
         else if (enemy["type"] == "RedAlien")
         {
-            auto entity = std::make_shared<entities::enemies::red_alien::RedAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<entities::enemies::red_alien::RedAlienView>(entity);
-            auto controller = std::make_shared<entities::enemies::red_alien::RedAlienController>(entity, view, (*this));
+            auto entity = std::make_shared<objects::enemies::red_alien::RedAlien>(enemy["x"], enemy["y"]);
+            auto view = std::make_shared<objects::enemies::red_alien::RedAlienView>(entity);
+            auto controller = std::make_shared<objects::enemies::red_alien::RedAlienController>(entity, view, (*this));
             view->init();
             addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
         }
@@ -86,9 +86,9 @@ void World::loadLevel(const std::string &filename)
 
     for (auto shield:root["Shields"])
     {
-        auto entity = std::make_shared<entities::shield::Shield>(shield["x"], shield["y"]);
-        auto view = std::make_shared<entities::shield::ShieldView>(entity);
-        auto controller = std::make_shared<entities::shield::ShieldController>(entity, view, (*this));
+        auto entity = std::make_shared<objects::shield::Shield>(shield["x"], shield["y"]);
+        auto view = std::make_shared<objects::shield::ShieldView>(entity);
+        auto controller = std::make_shared<objects::shield::ShieldController>(entity, view, (*this));
         view->init();
         addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
     }

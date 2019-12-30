@@ -7,7 +7,7 @@
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H
 
-#include "../entities/abstract_classes/Entity.h"
+#include "../objects/abstract_classes/Entity.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -51,8 +51,8 @@ namespace util
          * sprites have coordinates corresponding to their entity, but when they need to be drawn their
          * coordinates need to get transformed to the screensize of our window, that is what this function does
          * @tparam T can be an sf::Sprite or sf::Text
-         * @param sprite the object that needs their coordinates transformed
-         * @return a copy of the initial object but with transformed coordinates
+         * @param sprite the objects that needs their coordinates transformed
+         * @return a copy of the initial objects but with transformed coordinates
          */
         template <class T>
         static T transform(T sprite);
