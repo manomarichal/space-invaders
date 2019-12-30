@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onnotify',['onNotify',['../classWorld.html#a91c2d7b127190f17a6cd85743245fb5b',1,'World']]]
+  ['loadlevel',['loadLevel',['../classWorld.html#a6a08c827c3a0def12b7700211353735f',1,'World']]]
 ];

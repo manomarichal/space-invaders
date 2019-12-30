@@ -1,4 +1,4 @@
-<map id="entities::enemies::red_alien::RedAlienView" name="entities::enemies::red_alien::RedAlienView">
-<area shape="rect" id="node2" href="$classentities_1_1View.html" title="entities::View" alt="" coords="37,169,138,196"/>
-<area shape="rect" id="node3" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="25,95,150,121"/>
+<map id="objects::enemies::red_alien::RedAlienView" name="objects::enemies::red_alien::RedAlienView">
+<area shape="rect" id="node2" href="$classobjects_1_1View.html" title="objects::View" alt="" coords="37,169,138,196"/>
+<area shape="rect" id="node3" href="$classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="25,95,150,121"/>
 </map>

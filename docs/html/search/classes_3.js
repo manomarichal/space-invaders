@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['observer',['Observer',['../classentities_1_1Observer.html',1,'entities']]]
+  ['observer',['Observer',['../classobjects_1_1Observer.html',1,'objects']]]
 ];

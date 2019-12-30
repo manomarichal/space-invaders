@@ -2,7 +2,10 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 05.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "PlayerShipController.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#include "PlayerShipController.h"
+
 using namespace objects::playership;
 
 PlayerShipController::PlayerShipController(const std::shared_ptr<Entity> &entity, const std::shared_ptr<View> &view,
@@ -18,6 +21,7 @@ void PlayerShipController::createProjectile()
 
 bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::shared_ptr<Entity>> &objects)
 {
+    // check for keyboard input
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
         std::dynamic_pointer_cast<PlayerShip>(entity)-> moveLeft();
@@ -31,10 +35,12 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
         createProjectile();
     }
 
+    // check for collision
     for (const auto& e:objects)
     {
         if (util::Collision::standardEnemyProjectile(*entity, e))
             std::dynamic_pointer_cast<PlayerShip>(entity)->takeDamage(1);
     }
+
     return std::dynamic_pointer_cast<PlayerShip>(entity)->hitpoints >= 0;
 }

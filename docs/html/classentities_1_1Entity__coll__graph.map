@@ -1,3 +1,3 @@
-<map id="entities::Entity" name="entities::Entity">
-<area shape="rect" id="node2" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="5,5,121,32"/>
+<map id="objects::Entity" name="objects::Entity">
+<area shape="rect" id="node2" href="$classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="5,5,121,32"/>
 </map>

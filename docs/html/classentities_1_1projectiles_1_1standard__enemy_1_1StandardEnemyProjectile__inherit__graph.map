@@ -1,4 +1,4 @@
-<map id="entities::projectiles::standard_enemy::StandardEnemyProjectile" name="entities::projectiles::standard_enemy::StandardEnemyProjectile">
-<area shape="rect" id="node2" href="$classentities_1_1Entity.html" title="entities::Entity" alt="" coords="65,80,172,107"/>
-<area shape="rect" id="node3" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="61,5,177,32"/>
+<map id="objects::projectiles::standard_enemy::StandardEnemyProjectile" name="objects::projectiles::standard_enemy::StandardEnemyProjectile">
+<area shape="rect" id="node2" href="$classobjects_1_1Entity.html" title="objects::Entity" alt="" coords="65,80,172,107"/>
+<area shape="rect" id="node3" href="$classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="61,5,177,32"/>
 </map>

@@ -2,7 +2,9 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 01.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "PlayerShip.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#include "PlayerShip.h"
 
 using namespace objects::playership;
 
@@ -18,14 +20,14 @@ void PlayerShip::moveLeft()
 {
     x -= util::SpaceSettings::width / 120;
     if (x - xSize/2 < util::SpaceSettings::xMin) x = util::SpaceSettings::xMin + xSize / 2;
-    onNotifyObservers();
+    notify();
 }
 
 void PlayerShip::moveRight()
 {
     x += util::SpaceSettings::width / 120;
     if (x + xSize/2 > util::SpaceSettings::xMax) x = util::SpaceSettings::xMax - xSize / 2;
-    onNotifyObservers();
+    notify();
 }
 
 void PlayerShip::update()
@@ -35,6 +37,6 @@ void PlayerShip::update()
 void PlayerShip::takeDamage([[maybe_unused]] float damage)
 {
     hitpoints -= 1;
-    onNotifyObservers();
+    notify();
 }
 

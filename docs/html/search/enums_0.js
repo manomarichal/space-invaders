@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['Type',['../classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698',1,'entities::projectiles::ProjectileFactory']]]
+  ['type',['Type',['../classobjects_1_1projectiles_1_1ProjectileFactory.html#a234b90c2be7fab6f546931c9babe71b6',1,'objects::projectiles::ProjectileFactory']]]
 ];

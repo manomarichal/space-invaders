@@ -1,12 +1,12 @@
-<map id="entities::Observer" name="entities::Observer">
-<area shape="rect" id="node3" href="$classentities_1_1View.html" title="entities::View" alt="" coords="387,242,488,269"/>
+<map id="objects::Observer" name="objects::Observer">
+<area shape="rect" id="node3" href="$classobjects_1_1View.html" title="objects::View" alt="" coords="387,242,488,269"/>
 <area shape="rect" id="node12" href="$classWorld.html" title="World" alt="" coords="409,293,465,319"/>
-<area shape="rect" id="node4" href="$classentities_1_1enemies_1_1green__alien_1_1GreenAlienView.html" title="entities::enemies::\lgreen_alien::GreenAlienView" alt="" coords="555,5,744,47"/>
-<area shape="rect" id="node5" href="$classentities_1_1enemies_1_1purple__alien_1_1PurpleAlienView.html" title="entities::enemies::\lpurple_alien::PurpleAlienView" alt="" coords="552,71,747,112"/>
-<area shape="rect" id="node6" href="$classentities_1_1enemies_1_1red__alien_1_1RedAlienView.html" title="entities::enemies::\lred_alien::RedAlienView" alt="" coords="567,136,731,177"/>
-<area shape="rect" id="node7" href="$classentities_1_1playership_1_1PlayerLivesView.html" title="entities::playership\l::PlayerLivesView" alt="" coords="584,201,715,243"/>
-<area shape="rect" id="node8" href="$classentities_1_1playership_1_1PlayerShipView.html" title="entities::playership\l::PlayerShipView" alt="" coords="584,267,715,308"/>
-<area shape="rect" id="node9" href="$classentities_1_1projectiles_1_1standard_1_1StandardProjectileView.html" title="entities::projectiles\l::standard::StandardProjectileView" alt="" coords="538,332,761,373"/>
-<area shape="rect" id="node10" href="$classentities_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectileView.html" title="entities::projectiles\l::standard_enemy::StandardEnemy\lProjectileView" alt="" coords="536,398,763,454"/>
-<area shape="rect" id="node11" href="$classentities_1_1shield_1_1ShieldView.html" title="entities::shield::ShieldView" alt="" coords="560,478,739,505"/>
+<area shape="rect" id="node4" href="$classobjects_1_1enemies_1_1green__alien_1_1GreenAlienView.html" title="objects::enemies::\lgreen_alien::GreenAlienView" alt="" coords="555,5,744,47"/>
+<area shape="rect" id="node5" href="$classobjects_1_1enemies_1_1purple__alien_1_1PurpleAlienView.html" title="objects::enemies::\lpurple_alien::PurpleAlienView" alt="" coords="552,71,747,112"/>
+<area shape="rect" id="node6" href="$classobjects_1_1enemies_1_1red__alien_1_1RedAlienView.html" title="objects::enemies::\lred_alien::RedAlienView" alt="" coords="567,136,731,177"/>
+<area shape="rect" id="node7" href="$classobjects_1_1playership_1_1PlayerLivesView.html" title="objects::playership\l::PlayerLivesView" alt="" coords="584,201,715,243"/>
+<area shape="rect" id="node8" href="$classobjects_1_1playership_1_1PlayerShipView.html" title="objects::playership\l::PlayerShipView" alt="" coords="584,267,715,308"/>
+<area shape="rect" id="node9" href="$classobjects_1_1projectiles_1_1standard_1_1StandardProjectileView.html" title="objects::projectiles\l::standard::StandardProjectileView" alt="" coords="538,332,761,373"/>
+<area shape="rect" id="node10" href="$classobjects_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectileView.html" title="objects::projectiles\l::standard_enemy::StandardEnemy\lProjectileView" alt="" coords="536,398,763,454"/>
+<area shape="rect" id="node11" href="$classobjects_1_1shield_1_1ShieldView.html" title="objects::shield::ShieldView" alt="" coords="560,478,739,505"/>
 </map>

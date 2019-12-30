@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['transform',['transform',['../classutil_1_1Transformation.html#a64952e8f5031158bbe656b457e79111e',1,'util::Transformation']]],
-  ['transformation',['Transformation',['../classutil_1_1Transformation.html',1,'util']]],
-  ['transformation_2ecpp',['Transformation.cpp',['../Transformation_8cpp.html',1,'']]],
-  ['transformation_2eh',['Transformation.h',['../Transformation_8h.html',1,'']]],
-  ['type',['Type',['../classentities_1_1projectiles_1_1ProjectileFactory.html#abc75eceeed2dbadc736fb93fd6046698',1,'entities::projectiles::ProjectileFactory']]]
+  ['redalien',['RedAlien',['../classobjects_1_1enemies_1_1red__alien_1_1RedAlien.html',1,'objects::enemies::red_alien']]],
+  ['redalien_2ecpp',['RedAlien.cpp',['../RedAlien_8cpp.html',1,'']]],
+  ['redalien_2eh',['RedAlien.h',['../RedAlien_8h.html',1,'']]],
+  ['redaliencontroller',['RedAlienController',['../classobjects_1_1enemies_1_1red__alien_1_1RedAlienController.html',1,'objects::enemies::red_alien']]],
+  ['redaliencontroller_2ecpp',['RedAlienController.cpp',['../RedAlienController_8cpp.html',1,'']]],
+  ['redaliencontroller_2eh',['RedAlienController.h',['../RedAlienController_8h.html',1,'']]],
+  ['redalienview',['RedAlienView',['../classobjects_1_1enemies_1_1red__alien_1_1RedAlienView.html',1,'objects::enemies::red_alien']]],
+  ['redalienview_2ecpp',['RedAlienView.cpp',['../RedAlienView_8cpp.html',1,'']]],
+  ['redalienview_2eh',['RedAlienView.h',['../RedAlienView_8h.html',1,'']]]
 ];

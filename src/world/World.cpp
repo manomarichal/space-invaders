@@ -42,8 +42,6 @@ void World::deleteObject(uint index)
     activeEntities.erase(activeEntities.begin() + index);
     activeViews.erase(activeViews.begin() + index);
     activeControllers.erase(activeControllers.begin() + index);
-
-    onNotifyObservers();
 }
 
 void World::updateEntities()

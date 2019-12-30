@@ -1,4 +1,4 @@
-<map id="entities::playership::PlayerShipView" name="entities::playership::PlayerShipView">
-<area shape="rect" id="node2" href="$classentities_1_1View.html" title="entities::View" alt="" coords="35,169,136,196"/>
-<area shape="rect" id="node3" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="23,95,148,121"/>
+<map id="objects::playership::PlayerShipView" name="objects::playership::PlayerShipView">
+<area shape="rect" id="node2" href="$classobjects_1_1View.html" title="objects::View" alt="" coords="35,169,136,196"/>
+<area shape="rect" id="node3" href="$classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="23,95,148,121"/>
 </map>

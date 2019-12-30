@@ -5,6 +5,7 @@
 */
 
 #include "./View.h"
+
 using namespace objects;
 
 View::View(const std::string& image, std::shared_ptr<Entity> sharedPtr)

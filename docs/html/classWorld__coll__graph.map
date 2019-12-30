@@ -1,4 +1,4 @@
 <map id="World" name="World">
-<area shape="rect" id="node2" href="$classentities_1_1Observer.html" title="entities::Observer" alt="" coords="23,95,148,121"/>
-<area shape="rect" id="node4" href="$classentities_1_1Subject.html" title="entities::Subject" alt="" coords="173,95,289,121"/>
+<area shape="rect" id="node2" href="$classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="23,95,148,121"/>
+<area shape="rect" id="node4" href="$classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="173,95,289,121"/>
 </map>

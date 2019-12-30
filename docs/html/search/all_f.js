@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['xmax',['xMax',['../classutil_1_1SpaceSettings.html#a36d4e1552cb5ffe634ea0c28c6c5c726',1,'util::SpaceSettings']]],
-  ['xmin',['xMin',['../classutil_1_1SpaceSettings.html#aaa20c63cafd95a3e276ed55e666144ba',1,'util::SpaceSettings']]]
+  ['view',['View',['../classobjects_1_1View.html',1,'objects']]],
+  ['view_2ecpp',['View.cpp',['../View_8cpp.html',1,'']]],
+  ['view_2eh',['View.h',['../View_8h.html',1,'']]]
 ];

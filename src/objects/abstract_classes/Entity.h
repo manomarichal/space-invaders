@@ -2,7 +2,9 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 17.11.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#ifndef SPACE_INVADERS_ENTITY_H
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#ifndef SPACE_INVADERS_ENTITY_H
 #define SPACE_INVADERS_ENTITY_H
 
 #include <memory>
@@ -10,7 +12,6 @@
 #include <iostream>
 
 #include "../../util/SpaceSettings.h"
-#include "Subject.h"
 #include "Subject.h"
 
 namespace objects
@@ -24,6 +25,10 @@ namespace objects
         float ySize{};
     public:
         Entity(float x, float y): x(x), y(y) {};
+        /**
+         * in this function, we can specify actions entities should undertake regarding of what controller is controlling it
+         * the function is called each interval
+         */
         virtual void update()=0;
         ~Entity() override = default;
 
@@ -45,16 +50,6 @@ namespace objects
         [[nodiscard]] float getYSize() const
         {
             return ySize;
-        }
-
-        void setXSize(float xSize)
-        {
-            Entity::xSize = xSize;
-        }
-
-        void setYSize(float ySize)
-        {
-            Entity::ySize = ySize;
         }
     };
 }

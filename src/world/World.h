@@ -15,7 +15,7 @@ namespace objects::projectiles
 {
     class ProjectileFactory;
 }
-class World: public objects::Observer, public objects::Subject
+class World: public objects::Observer
 {
 private:
     uint enemiesToDefeat;   /*!< the # of enemies we need to defeat to clear the currently loaded level */

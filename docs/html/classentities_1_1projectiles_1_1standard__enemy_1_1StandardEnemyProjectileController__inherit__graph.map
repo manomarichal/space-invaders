@@ -1,3 +1,3 @@
-<map id="entities::projectiles::standard_enemy::StandardEnemyProjectileController" name="entities::projectiles::standard_enemy::StandardEnemyProjectileController">
-<area shape="rect" id="node2" href="$classentities_1_1Controller.html" title="entities::Controller" alt="" coords="55,5,183,32"/>
+<map id="objects::projectiles::standard_enemy::StandardEnemyProjectileController" name="objects::projectiles::standard_enemy::StandardEnemyProjectileController">
+<area shape="rect" id="node2" href="$classobjects_1_1Controller.html" title="objects::Controller" alt="" coords="55,5,183,32"/>
 </map>

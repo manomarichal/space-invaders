@@ -19,7 +19,7 @@ StandardEnemyProjectile::StandardEnemyProjectile(float x, float y)
 void StandardEnemyProjectile::move()
 {
     y -= vspeed;
-    onNotifyObservers();
+    notify();
 }
 
 void StandardEnemyProjectile::update()

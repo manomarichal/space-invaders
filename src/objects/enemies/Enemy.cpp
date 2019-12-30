@@ -32,5 +32,5 @@ void Enemy::move()
         vertical = true;
     }
     if (!vertical) x += hspeed * dir;
-    onNotifyObservers();
+    notify();
 }
