@@ -8,19 +8,17 @@
 // =====================================================================
 
 //TODO exception handling
-//TODO code documenteren
 //TODO levels
-
-// laatste fix
-//TODO code laaste keer nakijken & inspection
 //TODO rapport
-//TODO make it fancy
+//TODO readme
 
-// smoll fixes
+
+// extra
 /*
+ * make it fancy
+ * extra // comments overal
+ * main page doxygen
  * sleep(1) in gameover
- * includes meer in cpp files zetten
- * include spaghetti verminderen
  * file descriptions
  */
 
