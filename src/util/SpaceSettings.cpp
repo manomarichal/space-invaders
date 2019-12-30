@@ -1,15 +1,14 @@
 
 /** \file SpaceSettings.cpp
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 25.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 25.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description: initializing the static variables of SpaceSettings
-
 #include "SpaceSettings.h"
-float SpaceSettings::xMax = 0;
-float SpaceSettings::xMin = 0;
-float SpaceSettings::yMax = 0;
-float SpaceSettings::yMin = 0;
-float SpaceSettings::width = 0;
-float SpaceSettings::height = 0;
+
+float util::SpaceSettings::xMax = 0;
+float util::SpaceSettings::xMin = 0;
+float util::SpaceSettings::yMax = 0;
+float util::SpaceSettings::yMin = 0;
+float util::SpaceSettings::width = 0;
+float util::SpaceSettings::height = 0;

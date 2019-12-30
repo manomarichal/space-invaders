@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['setscreenwidth',['setScreenWidth',['../classutil_1_1Transformation.html#a0d76252bbbf4bb3847468df78906889b',1,'util::Transformation']]],
   ['shield',['Shield',['../classentities_1_1shield_1_1Shield.html',1,'entities::shield::Shield'],['../classutil_1_1Collision.html#a03000f91baaf3012d81a1e859d12b2b6',1,'util::Collision::shield()']]],
   ['shield_2ecpp',['Shield.cpp',['../Shield_8cpp.html',1,'']]],
   ['shield_2eh',['Shield.h',['../Shield_8h.html',1,'']]],
@@ -10,7 +9,7 @@ var searchData=
   ['shieldview',['ShieldView',['../classentities_1_1shield_1_1ShieldView.html',1,'entities::shield']]],
   ['shieldview_2ecpp',['ShieldView.cpp',['../ShieldView_8cpp.html',1,'']]],
   ['shieldview_2eh',['ShieldView.h',['../ShieldView_8h.html',1,'']]],
-  ['spacesettings',['SpaceSettings',['../structSpaceSettings.html',1,'']]],
+  ['spacesettings',['SpaceSettings',['../classutil_1_1SpaceSettings.html',1,'util']]],
   ['spacesettings_2ecpp',['SpaceSettings.cpp',['../SpaceSettings_8cpp.html',1,'']]],
   ['spacesettings_2eh',['SpaceSettings.h',['../SpaceSettings_8h.html',1,'']]],
   ['standardenemyprojectile',['StandardEnemyProjectile',['../classentities_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectile.html',1,'entities::projectiles::standard_enemy::StandardEnemyProjectile'],['../classutil_1_1Collision.html#a34b01f5dbf204baefb9b747b9fa09d92',1,'util::Collision::standardEnemyProjectile()']]],

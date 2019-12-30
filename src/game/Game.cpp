@@ -9,6 +9,7 @@
 
 #include "Game.h"
 #include "../json/json.hpp"
+#include <fstream>
 
 Game::Game(const std::string &settings)
 {

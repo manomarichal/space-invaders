@@ -1,16 +1,14 @@
 
 /** \file Transformation.h
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 14.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 14.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description: Used to calculate the transformations between the game coördinate system and the screen size
 
 
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H
 
-#include "SpaceSettings.h"
 #include "../entities/abstract_classes/Entity.h"
 
 #include <SFML/Graphics.hpp>
@@ -43,7 +41,6 @@ namespace util
          */
         static float getYScale();
 
-        /// GETTERS AND SETTERS
         static void setScreenWidth(float screenWidth);
 
         static void setScreenHeight(float screenHeight);
@@ -53,11 +50,11 @@ namespace util
         static float getScreenHeight();
 
         /**
-         * sprites have coördinates corresponding to their entity, but when they need to be drawn their
-         * coördinates need to get transformed to the screensize of our window, that is what this function does
+         * sprites have coordinates corresponding to their entity, but when they need to be drawn their
+         * coordinates need to get transformed to the screensize of our window, that is what this function does
          * @tparam T can be an sf::Sprite or sf::Text
-         * @param sprite the object that needs their coördinates transformed
-         * @return a copy of the initial object but with transformed coördinates
+         * @param sprite the object that needs their coordinates transformed
+         * @return a copy of the initial object but with transformed coordinates
          */
         template <class T>
         static T transform(T sprite);
@@ -68,7 +65,6 @@ namespace util
         Transformation()= default;
 
     public:
-        /// We do not want copies of our singleton
         Transformation(const Transformation &copy) = delete;
         Transformation& operator=(Transformation) = delete;
     };

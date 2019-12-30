@@ -1,13 +1,15 @@
 
 /** \file World.cpp
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 01.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 01.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description: Definition of the game logic functions of the World class
 
 
 #include "World.h"
+
+#include <fstream>
+#include <algorithm>
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
@@ -18,7 +20,7 @@ World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
     window = std::move(windowPtr);
 }
 
-void World::addObject(entities::Object object)
+void World::addObject(util::Object object)
 {
     activeEntities.emplace_back(std::move(std::get<0>(object)));
     activeViews.emplace_back(std::move(std::get<1>(object)));

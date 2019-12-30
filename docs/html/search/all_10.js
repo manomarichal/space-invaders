@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eworld',['~World',['../classWorld.html#adf5e8724afb4d083e566ee4e48905bf2',1,'World']]]
+  ['ymax',['yMax',['../classutil_1_1SpaceSettings.html#a034a97c41db92b532514e263c469ea2e',1,'util::SpaceSettings']]],
+  ['ymin',['yMin',['../classutil_1_1SpaceSettings.html#a78195b6bb6d452c442a9d1fd18bfae3f',1,'util::SpaceSettings']]]
 ];

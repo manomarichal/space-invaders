@@ -1,10 +1,9 @@
 
 /** \file Collision.h
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 09.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 09.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description: Class used to detetect collision between entities
 
 
 #ifndef SPACE_INVADERS_COLLISION_H

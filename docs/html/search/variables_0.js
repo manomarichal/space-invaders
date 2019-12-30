@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xmax',['xMax',['../structSpaceSettings.html#a8301f942fa4b1ca22e6dc61f5b960e95',1,'SpaceSettings']]]
+  ['height',['height',['../classutil_1_1SpaceSettings.html#a93cf39c51c8e12110d0fefac02a0c61e',1,'util::SpaceSettings']]]
 ];

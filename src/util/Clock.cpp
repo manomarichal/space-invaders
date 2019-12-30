@@ -1,17 +1,15 @@
 
 /** \file Clock.cpp
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 16.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 16.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
 
 
 #include "./Clock.h"
 
 using namespace util;
 
-/// define static members
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::previous = std::chrono::high_resolution_clock::now();
 std::chrono::time_point<std::chrono::high_resolution_clock> Clock::current = std::chrono::high_resolution_clock::now();
 

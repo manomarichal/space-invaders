@@ -89,10 +89,8 @@ Collaboration diagram for World:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a96ca734b18df2cf85e666fc6d358e12c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a96ca734b18df2cf85e666fc6d358e12c">World</a> (std::shared_ptr&lt; sf::RenderWindow &gt; windowPtr)</td></tr>
-<tr class="memdesc:a96ca734b18df2cf85e666fc6d358e12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">description: Definition of the game logic functions of the <a class="el" href="classWorld.html">World</a> class  <a href="#a96ca734b18df2cf85e666fc6d358e12c">More...</a><br /></td></tr>
 <tr class="separator:a96ca734b18df2cf85e666fc6d358e12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a08c827c3a0def12b7700211353735f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a6a08c827c3a0def12b7700211353735f">loadLevel</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:a6a08c827c3a0def12b7700211353735f"><td class="mdescLeft">&#160;</td><td class="mdescRight">description: source files for <a class="el" href="classWorld.html">World</a> functions involving loading levels  <a href="#a6a08c827c3a0def12b7700211353735f">More...</a><br /></td></tr>
 <tr class="separator:a6a08c827c3a0def12b7700211353735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91c2d7b127190f17a6cd85743245fb5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a91c2d7b127190f17a6cd85743245fb5b">onNotify</a> () override</td></tr>
 <tr class="separator:a91c2d7b127190f17a6cd85743245fb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,11 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5cc73b1aa54db5da01e4004acd4fd8bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a5cc73b1aa54db5da01e4004acd4fd8bb">updateEntities</a> ()</td></tr>
 <tr class="separator:a5cc73b1aa54db5da01e4004acd4fd8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8ad60668f8fe975f03bcb612264bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a8e8ad60668f8fe975f03bcb612264bc4">drawViews</a> ()</td></tr>
-<tr class="memdesc:a8e8ad60668f8fe975f03bcb612264bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">description: Definition of the Graphical functions for the <a class="el" href="classWorld.html">World</a> class  <a href="#a8e8ad60668f8fe975f03bcb612264bc4">More...</a><br /></td></tr>
 <tr class="separator:a8e8ad60668f8fe975f03bcb612264bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89826be651c0ea4c8965403cd0b8138c"><td class="memItemLeft" align="right" valign="top"><a id="a89826be651c0ea4c8965403cd0b8138c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a89826be651c0ea4c8965403cd0b8138c">isLevelCompleted</a> () const</td></tr>
-<tr class="memdesc:a89826be651c0ea4c8965403cd0b8138c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETTERS &amp; SETTERS. <br /></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isLevelCompleted</b> () const</td></tr>
 <tr class="separator:a89826be651c0ea4c8965403cd0b8138c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ec812e86ad7813ff1a2c92ea6d85824"><td class="memItemLeft" align="right" valign="top"><a id="a6ec812e86ad7813ff1a2c92ea6d85824"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRunning</b> () const</td></tr>
@@ -158,8 +154,6 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classentities_1_1Observer.
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>description: Definition of the game logic functions of the <a class="el" href="classWorld.html">World</a> class </p>
 <p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">windowPtr</td><td>the window where our world draws </td></tr>
@@ -210,8 +204,6 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classentities_1_1Observer.
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>description: Definition of the Graphical functions for the <a class="el" href="classWorld.html">World</a> class </p>
 <p>lets all views in activeViews draw their object </p>
 
 </div>
@@ -230,7 +222,7 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classentities_1_1Observer.
         </tr>
       </table>
 </div><div class="memdoc">
-<p>let all controllers in activeControllers handle events, also handles other sfml events </p>
+<p>lets all controllers in activeControllers handle events, also handles other sfml events </p>
 
 </div>
 </div>
@@ -249,18 +241,12 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classentities_1_1Observer.
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>description: source files for <a class="el" href="classWorld.html">World</a> functions involving loading levels </p>
 <p>loads a level from a json file </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the level to be loaded </td></tr>
   </table>
   </dd>
 </dl>
-<p>READ IN SPACE COORDINATES</p>
-<p>READ IN PLAYERSHIP</p>
-<p>world observes our playership to see when the game ends</p>
-<p>READ IN ENEMIES ENEMIES </p>
 
 </div>
 </div>

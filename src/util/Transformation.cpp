@@ -1,10 +1,9 @@
 
 /** \file Transformation.cpp
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 14.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 14.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
-/// description:
 
 
 #include "./Transformation.h"
@@ -15,12 +14,12 @@ float Transformation::screenWidth = 0;
 
 float Transformation::getXScale()
 {
-    return screenWidth / SpaceSettings::width;
+    return screenWidth / util::SpaceSettings::width;
 }
 
 float Transformation::getYScale()
 {
-    return screenHeight / SpaceSettings::height;
+    return screenHeight / util::SpaceSettings::height;
 }
 
 float Transformation::getXPixelValue(float x)
@@ -30,7 +29,7 @@ float Transformation::getXPixelValue(float x)
 
 float Transformation::getYPixelValue(float y)
 {
-    return (SpaceSettings::yMax - y) * Transformation::getYScale();
+    return (util::SpaceSettings::yMax - y) * Transformation::getYScale();
 }
 
 void Transformation::setScreenWidth(float screenWidth)

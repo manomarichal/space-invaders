@@ -1,8 +1,8 @@
 
 /** \file ProjectileFactory.h
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 06.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 06.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 /// description: Factory class used to create projectiles
 
@@ -11,6 +11,7 @@
 #define SPACE_INVADERS_PROJECTILEFACTORY_H
 
 #include "../../world/World.h"
+#include "../../util/Object.h"
 #include "./standard/StandardProjectileController.h"
 #include "./standard_enemy/StandardEnemyProjectileController.h"
 
@@ -31,7 +32,8 @@ namespace entities::projectiles
          * @param world the world in which it should be created
          * @return the object
          */
-        static entities::Object createStandardProjectile(float x, float y, World &world);
+        util::Object k;
+        static util::Object createStandardProjectile(float x, float y, World &world);
         /**
          * create a standard enemy projectile
          * @param x the x coordinate where it should be created
@@ -39,7 +41,7 @@ namespace entities::projectiles
          * @param world the world in which it should be created
          * @return the object
          */
-        static entities::Object createStandardEnemyProjectile(float x, float y, World &world);
+        static util::Object createStandardEnemyProjectile(float x, float y, World &world);
     public:
         /// We do not want copies of our singleton
         ProjectileFactory(const ProjectileFactory &copy) = delete;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['f',['f',['../structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aea90459e340a231ca31d46946803ef51',1,'nlohmann::detail::dtoa_impl::diyfp']]]
+  ['width',['width',['../classutil_1_1SpaceSettings.html#a1faa29683692313b4da652d9d6402518',1,'util::SpaceSettings']]]
 ];

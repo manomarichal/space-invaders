@@ -1,8 +1,8 @@
 
 /** \file ProjectileFactory.cpp
-/// project: space_invaders
-/// author: Mano Marichal
-/// date: 06.12.19
+* project: space_invaders
+* author: Mano Marichal
+* date: 06.12.19
 * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 /// description:
 
@@ -11,7 +11,7 @@
 
 using namespace entities::projectiles;
 
-entities::Object ProjectileFactory::createStandardProjectile(float x, float y, World &world)
+util::Object ProjectileFactory::createStandardProjectile(float x, float y, World &world)
 {
     auto projectile = std::make_shared<standard::StandardProjectile>(x, y);
     auto view = std::make_shared<standard::StandardProjectileView>(projectile);
@@ -21,7 +21,7 @@ entities::Object ProjectileFactory::createStandardProjectile(float x, float y, W
     return std::make_tuple(std::move(projectile), std::move(view), std::move(controller));
 }
 
-entities::Object ProjectileFactory::createStandardEnemyProjectile(float x, float y, World &world)
+util::Object ProjectileFactory::createStandardEnemyProjectile(float x, float y, World &world)
 {
     auto projectile = std::make_shared<standard_enemy::StandardEnemyProjectile>(x, y);
     auto view = std::make_shared<standard_enemy::StandardEnemyProjectileView>(projectile);
@@ -33,7 +33,7 @@ entities::Object ProjectileFactory::createStandardEnemyProjectile(float x, float
 
 void ProjectileFactory::createProjectile(float x, float y, entities::projectiles::Type type, World &world)
 {
-    Object object;
+    util::Object object;
 
     switch(type)
     {

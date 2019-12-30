@@ -3,7 +3,7 @@ var searchData=
   ['shield',['Shield',['../classentities_1_1shield_1_1Shield.html',1,'entities::shield']]],
   ['shieldcontroller',['ShieldController',['../classentities_1_1shield_1_1ShieldController.html',1,'entities::shield']]],
   ['shieldview',['ShieldView',['../classentities_1_1shield_1_1ShieldView.html',1,'entities::shield']]],
-  ['spacesettings',['SpaceSettings',['../structSpaceSettings.html',1,'']]],
+  ['spacesettings',['SpaceSettings',['../classutil_1_1SpaceSettings.html',1,'util']]],
   ['standardenemyprojectile',['StandardEnemyProjectile',['../classentities_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectile.html',1,'entities::projectiles::standard_enemy']]],
   ['standardenemyprojectilecontroller',['StandardEnemyProjectileController',['../classentities_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectileController.html',1,'entities::projectiles::standard_enemy']]],
   ['standardenemyprojectileview',['StandardEnemyProjectileView',['../classentities_1_1projectiles_1_1standard__enemy_1_1StandardEnemyProjectileView.html',1,'entities::projectiles::standard_enemy']]],
