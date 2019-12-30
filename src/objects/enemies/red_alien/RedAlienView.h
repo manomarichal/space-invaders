@@ -2,11 +2,12 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 12.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#ifndef SPACE_INVADERS_REDALIENVIEW_H
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#ifndef SPACE_INVADERS_REDALIENVIEW_H
 #define SPACE_INVADERS_REDALIENVIEW_H
 
 #include "../../abstract_classes/View.h"
-#include "../../abstract_classes/Observer.h"
 #include "RedAlien.h"
 
 namespace objects::enemies::red_alien

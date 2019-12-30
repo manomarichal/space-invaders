@@ -2,12 +2,13 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 08.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#ifndef SPACE_INVADERS_PURPLEALIENCONTROLLER_H
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#ifndef SPACE_INVADERS_PURPLEALIENCONTROLLER_H
 #define SPACE_INVADERS_PURPLEALIENCONTROLLER_H
 
 #include "PurpleAlienView.h"
 #include "../../abstract_classes/Controller.h"
-#include "../../projectiles/standard/StandardProjectile.h"
 
 namespace objects::enemies::purple_alien
 {

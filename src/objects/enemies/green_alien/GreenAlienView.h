@@ -8,14 +8,12 @@
 #define SPACE_INVADERS_GREENALIENVIEW_H
 
 #include "../../abstract_classes/View.h"
-#include "../../abstract_classes/Observer.h"
 #include "GreenAlien.h"
 
 namespace objects::enemies::green_alien
 {
     class GreenAlienView: public View
     {
-        float maxHP{};
     public:
         explicit GreenAlienView(const std::shared_ptr<GreenAlien> &alien);
         void onNotify() override ;

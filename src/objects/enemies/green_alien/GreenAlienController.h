@@ -2,15 +2,14 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 11.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#ifndef SPACE_INVADERS_GREENALIENCONTROLLER_H
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#ifndef SPACE_INVADERS_GREENALIENCONTROLLER_H
 #define SPACE_INVADERS_GREENALIENCONTROLLER_H
 
 #include "GreenAlienView.h"
 #include "../../abstract_classes/Controller.h"
-#include "../../projectiles/standard/StandardProjectile.h"
-#include "../../projectiles/ProjectileFactory.h"
 #include "../../../util/Stopwatch.h"
-
 
 namespace objects::enemies::green_alien
 {

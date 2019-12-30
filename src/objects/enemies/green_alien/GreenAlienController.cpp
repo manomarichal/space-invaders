@@ -4,6 +4,7 @@
 * date: 11.12.19 */
 
 #include "GreenAlienController.h"
+#include "../../projectiles/ProjectileFactory.h"
 
 using namespace objects::enemies::green_alien;
 

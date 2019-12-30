@@ -2,7 +2,9 @@
 * project: space_invaders
 * author: Mano Marichal
 * date: 11.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */#include "GreenAlienView.h"
+* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+
+#include "GreenAlienView.h"
 
 using namespace objects::enemies::green_alien;
 
