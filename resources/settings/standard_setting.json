@@ -5,8 +5,12 @@
     "height":1200
   },
   "Levels": [
-    "../resources/levels/level_4_3.json",
-    "../resources/levels/level_8_6.json",
-    "../resources/levels/level_8_12.json"
+    "../resources/levels/level_0.json",
+    "../resources/levels/level_1.json",
+    "../resources/levels/level_2.json",
+    "../resources/levels/level_3.json",
+    "../resources/levels/level_4.json",
+    "../resources/levels/level_5.json",
+    "../resources/levels/level_6.json"
   ]
 }

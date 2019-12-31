@@ -78,6 +78,10 @@ public:
      * lets all views in activeViews draw their objects
      */
     void drawViews();
+    /**
+     * aborts the current level and starts spawning enemies randomly
+     */
+    void enterEndless();
 
     bool isLevelCompleted() const;
     bool isRunning() const;

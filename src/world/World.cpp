@@ -92,6 +92,12 @@ void World::reset()
     enemiesToDefeat = -1;
 }
 
+void World::enterEndless()
+{
+    reset();
+    int k =
+    running = true;
+}
 bool World::isRunning() const
 {
     return running;

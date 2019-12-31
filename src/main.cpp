@@ -8,7 +8,6 @@
 // =====================================================================
 
 //TODO exception handling
-//TODO levels
 //TODO rapport
 //TODO readme
 
@@ -20,12 +19,14 @@
  * main page doxygen
  * sleep(1) in gameover
  * file descriptions
+ * shields size kunnen customizen
  */
 
 #include "game/Game.h"
 
 int main()
 {
+    //Game("../resources/settings/different_coordinates.json").play();
     Game("../resources/settings/standard_setting.json").play();
     return 0;
 }

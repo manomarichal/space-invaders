@@ -13,7 +13,7 @@ StandardEnemyProjectile::StandardEnemyProjectile(float x, float y)
 {
     xSize = util::SpaceSettings::width / 120;
     ySize = util::SpaceSettings::height / 90;
-    vspeed = util::SpaceSettings::height / 50;
+    vspeed = util::SpaceSettings::height / 60;
 }
 
 void StandardEnemyProjectile::move()
