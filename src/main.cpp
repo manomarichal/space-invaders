@@ -14,6 +14,8 @@
 
 // extra
 /*
+ * endless + factory class voor enemies
+ * game static maken
  * make it fancy
  * extra // comments overal
  * main page doxygen

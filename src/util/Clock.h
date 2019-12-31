@@ -15,7 +15,7 @@ namespace util
     {
     public:
         /**
-         * updates the clock to the current time
+         * updates the clock to the current time and returns the time elapsed between now and the previous time this function was called
          * @return
          */
         static double update();

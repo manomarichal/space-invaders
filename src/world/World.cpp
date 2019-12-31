@@ -8,9 +8,12 @@
 #include "../objects/enemies/Enemy.h"
 #include <fstream>
 #include <algorithm>
+#include <random>
+#include <time.h>
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
+    srand(time(nullptr));
     enemiesToDefeat = -1;
     levelCompleted = false;
     running = false;
@@ -92,12 +95,6 @@ void World::reset()
     enemiesToDefeat = -1;
 }
 
-void World::enterEndless()
-{
-    reset();
-    int k =
-    running = true;
-}
 bool World::isRunning() const
 {
     return running;

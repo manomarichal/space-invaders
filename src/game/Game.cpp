@@ -146,8 +146,8 @@ void Game::play()
             world->loadLevel(level);    // load the level in our world
             Game::runWorld(*world);  // run the world
             
-            if (world->isLevelCompleted()) continue;
-            else if (gameOverScreen()) break;
+            if (world->isLevelCompleted()) continue;    // if the level is completed go to the next level
+            else if (gameOverScreen()) break;           // else display the game over screen
             else return;
         }
     }

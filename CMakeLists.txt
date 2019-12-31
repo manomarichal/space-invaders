@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB_RECURSE HDRS ${SIZE--_SOURCE_DIR} ./src/*.h  )
 file(GLOB_RECURSE SRCS ${SIZE--_SOURCE_DIR} ./src/*.cpp)
 
-add_executable(space_invaders ${HDRS} ${SRCS} src/util/Stopwatch.cpp)
+add_executable(space_invaders ${HDRS} ${SRCS} src/util/Stopwatch.cpp src/world/WorldEndless.cpp)
 
 set(CMAKE_CXX_FLAGS " -march=native -Wall -Wextra -Wnon-virtual-dtor -Wold-style-cast -Wunused -Woverloaded-virtual -Wpedantic -Wnull-dereference -Wdouble-promotion -Wformat=2")
 
