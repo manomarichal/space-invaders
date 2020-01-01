@@ -77,6 +77,8 @@ void World::handleEvents()
         if (!activeControllers[index]->handleEvents(activeEntities)) objectssToDelete.emplace_back(index);
         index++;
     }
+
+    if (endless and endlessStopwatch->isReady()) createRandomEnemy();
 }
 
 void World::onNotify()
@@ -92,6 +94,8 @@ void World::reset()
 
     running = false;
     levelCompleted = false;
+    endless = false;
+
     enemiesToDefeat = -1;
 }
 

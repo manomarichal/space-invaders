@@ -1,0 +1,10 @@
+{
+  "Screen":
+  {
+    "width": 1600,
+    "height":1200
+  },
+  "Levels": [
+    "../resources/levels/single_enemy.json"
+  ]
+}

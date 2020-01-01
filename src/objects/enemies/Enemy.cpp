@@ -18,8 +18,7 @@ void Enemy::move()
     if (vertical)
     {
         y -= vspeed;
-        count++;
-        if (count == 50)
+        if (count == 75)
         {
             count = 0;
             vertical = false;

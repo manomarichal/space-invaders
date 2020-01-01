@@ -18,3 +18,13 @@ bool util::Stopwatch::isReady()
 
     return false;
 }
+
+long util::Stopwatch::getDuration() const
+{
+    return duration;
+}
+
+void util::Stopwatch::setDuration(long duration)
+{
+    Stopwatch::duration = duration;
+}

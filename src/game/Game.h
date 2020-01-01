@@ -25,6 +25,10 @@ private:
      */
     void newLevelScreen();
     /**
+     * displays the endless screen
+     */
+    void endlessScreen();
+    /**
      * handle SFML events
      */
     void checkEvents();
@@ -43,7 +47,10 @@ public:
     /**
      * starts playing all the levels described in the settings file
      */
-    void play();
+    void playLevels(bool endless);
+    /**
+     * starts playing endless mode
+     */
 };
 
 

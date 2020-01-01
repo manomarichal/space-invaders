@@ -29,79 +29,13 @@ Game::Game(const std::string &settings)
     {
         levels.emplace_back(level);
     }
+    if (levels.empty()) throw std::runtime_error("Please speciy levels the settings file");
 
     // CREATE THE WINDOW WE ARE GOING TO PLAY IN
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(static_cast<unsigned int>(width),
                                                               static_cast<unsigned int>(height)), "Space Invaders");
 
 }
-
-bool Game::gameOverScreen()
-{
-    sf::Font font;
-    font.loadFromFile("../resources/fonts/pixeled.ttf");
-
-    const float SCALE = util::Transformation::getScreenWidth()/1600;
-
-    sf::Text string("GAME OVER", font, static_cast<unsigned int>(64 * SCALE));
-    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height - 10);
-    string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
-    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-
-    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, static_cast<unsigned int>(32 * SCALE));
-    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height + 10);
-    string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
-    string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-
-    window->draw(string);
-    window->draw(string1);
-    window->display();
-
-    /// we pause the game as long as the player does not press pause
-    while(true)
-    {
-        checkEvents();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        {
-            return true;
-        }
-        //else system("sleep 1");
-    }
-}
-
-void Game::newLevelScreen()
-{
-    sf::Font font;
-    font.loadFromFile("../resources/fonts/pixeled.ttf");
-
-    const float SCALE = util::Transformation::getScreenWidth()/1600;
-
-    sf::Text string("PRESS SPACE", font, static_cast<unsigned int>(64 * SCALE));
-    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height);
-    string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
-    string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-
-    sf::Text string1("TO START", font, static_cast<unsigned int>(64 * SCALE));
-    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height);
-    string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
-    string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
-
-    window->draw(string);
-    window->draw(string1);
-    window->display();
-
-    // we pause the game until the player presses space
-    while(true)
-    {
-        checkEvents();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        {
-            return;
-        }
-        //else system("sleep 10");
-    }
-}
-
 
 void Game::checkEvents()
 {
@@ -133,22 +67,30 @@ void Game::runWorld(World &world)
         world.drawViews();
     }
 }
-void Game::play()
+void Game::playLevels(bool endless)
 {
     // we create a world objects to load our levels in
     auto world = std::make_shared<World>(window);
+    unsigned int levelsCompleted = 0;
 
-    while (true)
+    while (levelsCompleted < levels.size())
     {
         for (const auto &level:levels)
         {
             newLevelScreen();           // make new level screen
             world->loadLevel(level);    // load the level in our world
             Game::runWorld(*world);  // run the world
-            
-            if (world->isLevelCompleted()) continue;    // if the level is completed go to the next level
-            else if (gameOverScreen()) break;           // else display the game over screen
+
+            if (world->isLevelCompleted()) levelsCompleted++;    // if the level is completed go to the next level
+            else if (gameOverScreen())
+            {
+                levelsCompleted = 0;
+                break;           // else display the game over screen
+            }
             else return;
         }
     }
+    endlessScreen();
+    world->enterEndless();
+    runWorld(*world);
 }

@@ -9,6 +9,7 @@
 
 #include "../objects/playership/PlayerShipController.h"
 #include "../util/Object.h"
+#include "../util/Stopwatch.h"
 #include "../util/Clock.h"
 
 namespace objects::projectiles
@@ -28,6 +29,9 @@ private:
 
     bool levelCompleted;    /*!< true = we cleared the level */
     bool running;   /*!< if the world is currently running a level */
+    bool endless; /*!< if the world is in endless mode or not */
+
+    std::unique_ptr<util::Stopwatch> endlessStopwatch;
 
     std::shared_ptr<sf::RenderWindow> window;   /*!< the window the world needs to draw on */
     std::shared_ptr<objects::playership::PlayerShip> player;   /*!< the playership objects */
@@ -55,6 +59,10 @@ private:
      * draws the current score on the screen
      */
     void drawScore();
+    /**
+     * creates a random enemy
+     */
+    void createRandomEnemy();
 
 public:
     /**

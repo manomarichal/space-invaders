@@ -28,6 +28,10 @@ namespace util
          * @return if the stopwatch is ready, or not
          */
         bool isReady();
+
+        long getDuration() const;
+
+        void setDuration(long duration);
     };
 }
 

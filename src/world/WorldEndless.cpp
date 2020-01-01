@@ -8,27 +8,40 @@
 // =====================================================================
 
 #include "./World.h"
-#include "../objects/enemies/green_alien/GreenAlienController.h"
-#include "../objects/enemies/purple_alien/PurpleAlienController.h"
-#include "../objects/enemies/red_alien/RedAlienController.h"
-#include "../objects/shield/ShieldController.h"
-#include "../objects/shield/ShieldView.h"
-#include "../objects/shield/Shield.h"
+#include "../objects/enemies/EnemyFactory.h"
+
 
 void World::enterEndless()
 {
-    reset();
-    float x = util::SpaceSettings::width/float(rand()%15);
-    int type = rand()%3;
-    std::string eType;
+    loadLevel("../resources/levels/level_endless_base.json");
+    running = true;
+    endless = true;
+    enemiesToDefeat = 1;
+    endlessStopwatch = std::make_unique<util::Stopwatch>(2000);
+}
+
+void World::createRandomEnemy()
+{
+    if (!endless) throw std::runtime_error("world may not create enemies if it is not in endless mode");
+
+    enemiesToDefeat++;
+    float x = util::SpaceSettings::width/float(rand()%10);
+
+    int type = rand()%5;
+    objects::enemies::EnemyFactory::Type eType;
+
     switch (type)
     {
         case 0:
+            eType = objects::enemies::EnemyFactory::GreenAlien;
             break;
         case 1:
+            eType = objects::enemies::EnemyFactory::PurpleAlien;
             break;
-        case 2:
-            break;
+        default:
+            eType = objects::enemies::EnemyFactory::RedAlien;
     }
-    running = true;
+    objects::enemies::EnemyFactory::createEnemy(util::SpaceSettings::xMin + util::SpaceSettings::width/x, util::SpaceSettings::yMax-(util::SpaceSettings::height/8), eType, *this);
+    long duration = endlessStopwatch->getDuration()-25;
+    if (duration < 300) endlessStopwatch->setDuration(300);
 }

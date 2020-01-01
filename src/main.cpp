@@ -31,6 +31,6 @@
 int main()
 {
     //Game("../resources/settings/different_coordinates.json").play();
-    Game("../resources/settings/standard_setting.json").play();
+    Game("../resources/settings/endless_test.json").playLevels(true);
     return 0;
 }
