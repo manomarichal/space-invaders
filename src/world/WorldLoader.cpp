@@ -12,7 +12,7 @@
 #include "../objects/shield/ShieldView.h"
 #include "../objects/shield/Shield.h"
 #include "../json/json.hpp"
-
+#include "../objects/enemies/EnemyFactory.h"
 #include <fstream>
 
 void World::loadLevel(const std::string &filename)
@@ -56,27 +56,15 @@ void World::loadLevel(const std::string &filename)
         enemiesToDefeat++;
         if (enemy["type"] == "PurpleAlien")
         {
-            auto entity = std::make_shared<objects::enemies::purple_alien::PurpleAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<objects::enemies::purple_alien::PurpleAlienView>(entity);
-            auto controller = std::make_shared<objects::enemies::purple_alien::PurpleAlienController>(entity, view, (*this));
-            view->init();
-            addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
+            objects::enemies::EnemyFactory::createEnemy(enemy["x"], enemy["y"], objects::enemies::EnemyFactory::PurpleAlien, *this);
         }
         else if (enemy["type"] == "GreenAlien")
         {
-            auto entity = std::make_shared<objects::enemies::green_alien::GreenAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<objects::enemies::green_alien::GreenAlienView>(entity);
-            auto controller = std::make_shared<objects::enemies::green_alien::GreenAlienController>(entity, view, (*this));
-            view->init();
-            addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
+            objects::enemies::EnemyFactory::createEnemy(enemy["x"], enemy["y"], objects::enemies::EnemyFactory::GreenAlien, *this);
         }
         else if (enemy["type"] == "RedAlien")
         {
-            auto entity = std::make_shared<objects::enemies::red_alien::RedAlien>(enemy["x"], enemy["y"]);
-            auto view = std::make_shared<objects::enemies::red_alien::RedAlienView>(entity);
-            auto controller = std::make_shared<objects::enemies::red_alien::RedAlienController>(entity, view, (*this));
-            view->init();
-            addObject(std::make_tuple(std::move(entity), std::move(view), std::move(controller)));
+            objects::enemies::EnemyFactory::createEnemy(enemy["x"], enemy["y"], objects::enemies::EnemyFactory::RedAlien, *this);
         }
         else
         {

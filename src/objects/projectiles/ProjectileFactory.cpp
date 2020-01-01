@@ -50,3 +50,4 @@ void ProjectileFactory::createProjectile(float x, float y, Type type, World &wor
 
     world.addObject(std::move(objects));
 }
+

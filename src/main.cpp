@@ -14,8 +14,10 @@
 
 // extra
 /*
+ * singletons deftig doen
  * endless + factory class voor enemies
  * game static maken
+ * muziek
  * make it fancy
  * extra // comments overal
  * main page doxygen

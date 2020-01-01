@@ -15,6 +15,11 @@ namespace objects::projectiles
 {
     class ProjectileFactory;
 }
+namespace objects::enemies
+{
+    class EnemyFactory;
+}
+
 class World: public objects::Observer
 {
 private:
@@ -86,6 +91,7 @@ public:
     bool isLevelCompleted() const;
     bool isRunning() const;
     friend class objects::projectiles::ProjectileFactory;
+    friend class objects::enemies::EnemyFactory;
 
     /**
      * Destructor

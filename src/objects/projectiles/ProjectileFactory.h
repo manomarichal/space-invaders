@@ -37,7 +37,6 @@ namespace objects::projectiles
          * @param world the world in which it should be created
          * @return the objects
          */
-        util::Object k;
         static util::Object createStandardProjectile(float x, float y, World &world);
         /**
          * create a standard enemy projectile

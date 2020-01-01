@@ -21,5 +21,14 @@ void World::enterEndless()
     float x = util::SpaceSettings::width/float(rand()%15);
     int type = rand()%3;
     std::string eType;
+    switch (type)
+    {
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+    }
     running = true;
 }
