@@ -12,7 +12,7 @@
   },
   "Shields": [
     {
-      "x": -3,
+      "x": -6,
       "y": -6
     },
     {
@@ -23,168 +23,18 @@
   "Enemies": [
     {
       "type": "RedAlien",
-      "x": -6,
+      "x": -3,
       "y": 10
     },
     {
       "type": "GreenAlien",
-      "x": -4.8,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": -3.6,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": -2.4,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": -1.2,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
       "x": 0,
       "y": 10
     },
     {
-      "type": "RedAlien",
-      "x": 1.2,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": 2.4,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": 3.6,
-      "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": 4.8,
-      "y": 10
-    },
-    {
       "type": "PurpleAlien",
-      "x": 6,
+      "x": 3,
       "y": 10
-    },
-    {
-      "type": "RedAlien",
-      "x": -6,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": -4.8,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": -3.6,
-      "y": 7.6
-    },
-    {
-      "type": "GreenAlien",
-      "x": -2.4,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": -1.2,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": 0,
-      "y": 7.6
-    },
-    {
-      "type": "PurpleAlien",
-      "x": 1.2,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": 2.4,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": 3.6,
-      "y": 7.6
-    },
-    {
-      "type": "GreenAlien",
-      "x": 4.8,
-      "y": 7.6
-    },
-    {
-      "type": "RedAlien",
-      "x": 6,
-      "y": 7.6
-    },
-    {
-      "type": "PurpleAlien",
-      "x": -6,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": -4.8,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": -3.6,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": -2.4,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": -1.2,
-      "y": 5.2
-    },
-    {
-      "type": "GreenAlien",
-      "x": 0,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": 1.2,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": 2.4,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": 3.6,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": 4.8,
-      "y": 5.2
-    },
-    {
-      "type": "RedAlien",
-      "x": 6.0,
-      "y": 5.2
     }
   ]
 }
