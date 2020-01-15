@@ -29,7 +29,7 @@ namespace util
          */
         bool isReady();
 
-        long getDuration() const;
+        [[nodiscard]] long getDuration() const;
 
         void setDuration(long duration);
     };
