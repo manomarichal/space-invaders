@@ -73,6 +73,7 @@ void Game::playLevels()
     auto world = std::make_shared<World>(window);
     unsigned int levelsCompleted = 0;
 
+    // play all the levels
     while (levelsCompleted < levels.size())
     {
         for (const auto &level:levels)
@@ -90,6 +91,7 @@ void Game::playLevels()
             else return;
         }
     }
+    // enter endless mode
     endlessScreen();
     world->enterEndless();
     runWorld(*world);

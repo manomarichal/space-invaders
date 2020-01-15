@@ -28,7 +28,8 @@ void World::createRandomEnemy()
     uint x = 0;
     while (x < 2 or x > 8 or std::find(spawnLocations.begin(), spawnLocations.end(), x) != spawnLocations.end()) x = rand()%10;
     spawnLocations.emplace_back(x);
-    int type = rand()%5;
+
+    int type = rand()%10;
     objects::enemies::EnemyFactory::Type eType;
 
     switch (type)
@@ -37,6 +38,12 @@ void World::createRandomEnemy()
             eType = objects::enemies::EnemyFactory::GreenAlien;
             break;
         case 1:
+            eType = objects::enemies::EnemyFactory::GreenAlien;
+            break;
+        case 2:
+            eType = objects::enemies::EnemyFactory::GreenAlien;
+            break;
+        case 3:
             eType = objects::enemies::EnemyFactory::PurpleAlien;
             break;
         default:

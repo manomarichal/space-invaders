@@ -19,7 +19,7 @@ bool GreenAlienController::handleEvents(const std::vector<std::shared_ptr<Entity
     {
         if (util::Collision::standardProjectile(*entity, e))
             std::dynamic_pointer_cast<Enemy>(entity)->takeDamage(10);
-        if (util::Collision::shield(*entity, e)) return false;
+        if (util::Collision::shield(*entity, e) or util::Collision::playership(*entity, e)) return false;
     }
 
     if (stopwatch->isReady())

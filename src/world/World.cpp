@@ -9,13 +9,14 @@
 #include <fstream>
 #include <algorithm>
 #include <random>
-#include <time.h>
+#include <ctime>
 
 World::World(std::shared_ptr<sf::RenderWindow> windowPtr)
 {
     srand(time(nullptr));
     enemiesToDefeat = -1;
     levelCompleted = false;
+    endless = false;
     running = false;
     score = 0;
     window = std::move(windowPtr);
@@ -52,6 +53,8 @@ void World::updateEntities()
     for (auto &entity:activeEntities)
     {
         entity->update();
+        if (std::dynamic_pointer_cast<objects::enemies::Enemy>(entity) != nullptr)
+            if (entity->getY() < util::SpaceSettings::yMin + (entity->getYSize()/2.f)) running = false;
     }
 
     std::sort(objectssToDelete.begin(), objectssToDelete.end(), std::greater<>());

@@ -44,6 +44,7 @@ bool Game::gameOverScreen()
 
 void Game::newLevelScreen()
 {
+    window->clear(sf::Color::Black);
     sf::Font font;
     font.loadFromFile("../resources/fonts/pixeled.ttf");
 

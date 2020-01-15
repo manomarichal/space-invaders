@@ -38,7 +38,7 @@ bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::
     // check for collision
     for (const auto& e:objects)
     {
-        if (util::Collision::standardEnemyProjectile(*entity, e))
+        if (util::Collision::standardEnemyProjectile(*entity, e) or util::Collision::enemy(*entity, e))
             std::dynamic_pointer_cast<PlayerShip>(entity)->takeDamage(1);
     }
 

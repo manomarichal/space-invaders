@@ -53,5 +53,9 @@ Controls:
 - moving right: D
 - shooting: space
 
-You have 3 lives for every level, after completing all levels, the game will swap to random mode
-where enemies keep spawning at random until you either die or leave the game.
+Extra rules:
+- you have 3 lives for every level
+- you lose 1 life upon hitting an enemy projectile
+- you lose 1 life upon colliding with an enemy (which destroys the enemy)
+- you lose the game if an enemy touches the bottom corner of the screen
+- shields are destroyed when they collide with an enemy (which also destroys the enemy)
