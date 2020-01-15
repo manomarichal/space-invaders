@@ -47,7 +47,7 @@ public:
     /**
      * starts playing all the levels described in the settings file
      */
-    void playLevels(bool endless);
+    void playLevels();
     /**
      * starts playing endless mode
      */

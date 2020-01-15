@@ -23,10 +23,11 @@ void World::enterEndless()
 void World::createRandomEnemy()
 {
     if (!endless) throw std::runtime_error("world may not create enemies if it is not in endless mode");
-
+    if (spawnLocations.size() == 6) spawnLocations.clear(); // all spawn locations are used
     enemiesToDefeat++;
-    float x = util::SpaceSettings::width/float(rand()%10);
-
+    uint x = 0;
+    while (x < 2 or x > 8 or std::find(spawnLocations.begin(), spawnLocations.end(), x) != spawnLocations.end()) x = rand()%10;
+    spawnLocations.emplace_back(x);
     int type = rand()%5;
     objects::enemies::EnemyFactory::Type eType;
 
@@ -41,7 +42,10 @@ void World::createRandomEnemy()
         default:
             eType = objects::enemies::EnemyFactory::RedAlien;
     }
-    objects::enemies::EnemyFactory::createEnemy(util::SpaceSettings::xMin + util::SpaceSettings::width/x, util::SpaceSettings::yMax-(util::SpaceSettings::height/8), eType, *this);
-    long duration = endlessStopwatch->getDuration()-25;
-    if (duration < 300) endlessStopwatch->setDuration(300);
+    objects::enemies::EnemyFactory::createEnemy(util::SpaceSettings::xMin + (util::SpaceSettings::width * (float(x)/10)) , util::SpaceSettings::yMax-(util::SpaceSettings::height/8), eType, *this);
+    if (endlessStopwatch->getDuration() > 300)
+    {
+        endlessStopwatch->setDuration(endlessStopwatch->getDuration()-50);
+
+    }
 }

@@ -15,22 +15,16 @@
 // extra
 /*
  * singletons deftig doen
- * endless + factory class voor enemies
- * game static maken
  * muziek
- * make it fancy
- * extra // comments overal
  * main page doxygen
  * sleep(1) in gameover
- * file descriptions
- * shields size kunnen customizen
  */
 
 #include "game/Game.h"
 
-int main()
+int main([[maybe_unused]] int argc, char *argv[])
 {
-    //Game("../resources/settings/different_coordinates.json").play();
-    Game("../resources/settings/endless_test.json").playLevels(true);
+    if (argc == 1) throw std::runtime_error("No file path passed, exiting");
+    Game(std::string(argv[1])).playLevels();
     return 0;
 }

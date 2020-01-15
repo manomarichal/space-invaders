@@ -40,7 +40,7 @@ private:
     std::vector<std::shared_ptr<objects::View>> activeViews;   /*!< all active views */
     std::vector<std::shared_ptr<objects::Entity>> activeEntities;  /*!< all active objects */
     std::vector<uint> objectssToDelete;  /*!< buffer where we save all objects that need to be deleted after the current tick */
-
+    std::vector<uint> spawnLocations; /*!< used spawn locations */
     /**
      * resets the currently loaded level
      */

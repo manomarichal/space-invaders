@@ -29,7 +29,7 @@ Game::Game(const std::string &settings)
     {
         levels.emplace_back(level);
     }
-    if (levels.empty()) throw std::runtime_error("Please speciy levels the settings file");
+    if (levels.empty()) throw std::runtime_error("Please specify the levels you want to play in the settings file");
 
     // CREATE THE WINDOW WE ARE GOING TO PLAY IN
     window = std::make_unique<sf::RenderWindow>(sf::VideoMode(static_cast<unsigned int>(width),
@@ -67,7 +67,7 @@ void Game::runWorld(World &world)
         world.drawViews();
     }
 }
-void Game::playLevels(bool endless)
+void Game::playLevels()
 {
     // we create a world objects to load our levels in
     auto world = std::make_shared<World>(window);
