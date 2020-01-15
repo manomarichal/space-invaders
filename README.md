@@ -47,6 +47,7 @@ enemy example:
       "y": 1.3
     }
   ]
+You can leave both of these empty if you dont want any shields or enemies.
 
 Controls:
 - moving left: Q
