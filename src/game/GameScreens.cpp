@@ -17,12 +17,12 @@ bool Game::gameOverScreen()
     const float SCALE = util::Transformation::getScreenWidth()/1600;
 
     sf::Text string("GAME OVER", font, static_cast<unsigned int>(64 * SCALE));
-    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height - 10);
+    string.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 - string.getGlobalBounds().height);
     string.setOrigin(string.getGlobalBounds().width/2, string.getGlobalBounds().height/2);
     string.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
-    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, static_cast<unsigned int>(32 * SCALE));
-    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height + 10);
+    sf::Text string1("PRESS SPACE TO TRY AGAIN", font, static_cast<unsigned int>(64 * SCALE));
+    string1.setPosition(float(window->getSize().x)/2, float(window->getSize().y)/2 + string1.getGlobalBounds().height);
     string1.setOrigin(string1.getGlobalBounds().width/2, string1.getGlobalBounds().height/2);
     string1.setScale(util::Transformation::getScreenWidth()/1600, util::Transformation::getScreenHeight()/1200);
 
@@ -31,16 +31,20 @@ bool Game::gameOverScreen()
     window->display();
 
     /// we pause the game as long as the player does not press pause
+    bool pressed = true;
+    // we pause the game until the player presses space
     while(true)
     {
         checkEvents();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        if (not sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) pressed = false;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) and not pressed)
         {
             return true;
         }
-        //else system("sleep 1");
+        //else system("sleep 10");
     }
 }
+
 
 void Game::newLevelScreen()
 {
