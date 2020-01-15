@@ -9,12 +9,11 @@
 
 //TODO exception handling
 //TODO rapport
-//TODO readme
 
 
 // extra
 /*
- * singletons deftig doen
+ * text die ni goed scaled
  * muziek
  * main page doxygen
  * sleep(1) in gameover
