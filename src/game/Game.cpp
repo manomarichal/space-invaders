@@ -49,6 +49,7 @@ void Game::checkEvents()
 
 void Game::runWorld(World& world)
 {
+        util::Clock::update();
         // the amount of milliseconds we want a frame to last
         const double MS_PER_UPDATE = 16;
         // the amount of lag we are having
