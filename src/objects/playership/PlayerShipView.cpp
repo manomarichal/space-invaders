@@ -1,28 +1,24 @@
 /** \file PlayerShipView.cpp
-* project: space_invaders
-* author: Mano Marichal
-* date: 05.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+ * project: space_invaders
+ * author: Mano Marichal
+ * date: 05.12.19
+ * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 
 #include "PlayerShipView.h"
 
 using namespace objects::playership;
 
-PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship)
-:View("../resources/textures/spaceship.png", ship)
+PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship) : View("../resources/textures/spaceship.png", ship)
 {
-    hud = std::make_shared<PlayerLivesView>(std::move(ship));
-    hud->init();
-    onNotify();
+        hud = std::make_shared<PlayerLivesView>(std::move(ship));
+        hud->init();
+        onNotify();
 }
 
-void PlayerShipView::onNotify()
-{
-    sprite->setPosition(entity->getX(), entity->getY());
-}
+void PlayerShipView::onNotify() { sprite->setPosition(entity->getX(), entity->getY()); }
 
-void PlayerShipView::draw(sf::RenderWindow &window) const
+void PlayerShipView::draw(sf::RenderWindow& window) const
 {
-    View::draw(window);
-    hud->draw(window);
+        View::draw(window);
+        hud->draw(window);
 }

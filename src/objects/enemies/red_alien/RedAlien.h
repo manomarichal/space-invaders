@@ -1,23 +1,22 @@
 /** \file RedAlien.h
-* project: space_invaders
-* author: Mano Marichal
-* date: 12.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+ * project: space_invaders
+ * author: Mano Marichal
+ * date: 12.12.19
+ * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 
 #ifndef SPACE_INVADERS_REDALIEN_H
 #define SPACE_INVADERS_REDALIEN_H
 
 #include "../Enemy.h"
 
-namespace objects::enemies::red_alien
+namespace objects::enemies::red_alien {
+class RedAlien : public Enemy
 {
-    class RedAlien: public Enemy
-    {
-    public:
-        RedAlien (float x, float y);
+public:
+        RedAlien(float x, float y);
         void update() override;
         ~RedAlien() override = default;
-    };
-}
+};
+} // namespace objects::enemies::red_alien
 
-#endif //SPACE_INVADERS_REDALIEN_H
+#endif // SPACE_INVADERS_REDALIEN_H

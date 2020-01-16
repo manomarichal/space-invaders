@@ -7,23 +7,12 @@
 // description:
 // =====================================================================
 
-//TODO exception handling
-//TODO rapport
-
-
-// extra
-/*
- * text die ni goed scaled
- * muziek
- * main page doxygen
- * sleep(1) in gameover
- */
-
 #include "game/Game.h"
 
-int main([[maybe_unused]] int argc, char *argv[])
+int main([[maybe_unused]] int argc, char* argv[])
 {
-    if (argc == 1) throw std::runtime_error("No file path passed, exiting");
-    Game(std::string(argv[1])).playLevels();
-    return 0;
+        if (argc == 1)
+                throw std::runtime_error("No file path passed, exiting");
+        Game(std::string(argv[1])).playLevels();
+        return 0;
 }
