@@ -101,4 +101,5 @@ void Game::playLevels()
         endlessScreen();
         world->enterEndless();
         runWorld(*world);
+        gameOverScreen();
 }
