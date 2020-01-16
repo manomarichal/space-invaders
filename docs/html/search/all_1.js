@@ -9,5 +9,6 @@ var searchData=
   ['collision_2eh',['Collision.h',['../Collision_8h.html',1,'']]],
   ['controller',['Controller',['../classobjects_1_1Controller.html',1,'objects::Controller'],['../classobjects_1_1Controller.html#a3924ff33e31e1a9c0990873df7d52ae4',1,'objects::Controller::Controller()']]],
   ['controller_2eh',['Controller.h',['../Controller_8h.html',1,'']]],
+  ['createenemy',['createEnemy',['../classobjects_1_1enemies_1_1EnemyFactory.html#a5b11445ed84d228aa9168b044cb10bdb',1,'objects::enemies::EnemyFactory']]],
   ['createprojectile',['createProjectile',['../classobjects_1_1projectiles_1_1ProjectileFactory.html#ae2fdae24114f0a54e474e1cf14eb34d5',1,'objects::projectiles::ProjectileFactory']]]
 ];

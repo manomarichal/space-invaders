@@ -2,20 +2,22 @@
 \label{classWorld}\index{World@{World}}
 
 
-Inheritance diagram for World\+:\nopagebreak
+Inheritance diagram for World\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=293pt]{classWorld__inherit__graph}
+\includegraphics[width=200pt]{classWorld__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for World\+:\nopagebreak
+Collaboration diagram for World\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=293pt]{classWorld__coll__graph}
+\includegraphics[width=200pt]{classWorld__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -33,6 +35,8 @@ void \hyperlink{classWorld_a5cc73b1aa54db5da01e4004acd4fd8bb}{update\+Entities} 
 \item 
 void \hyperlink{classWorld_a8e8ad60668f8fe975f03bcb612264bc4}{draw\+Views} ()
 \item 
+void \hyperlink{classWorld_a04f39f13be0b568122bc8a539c15f014}{enter\+Endless} ()
+\item 
 \mbox{\Hypertarget{classWorld_a89826be651c0ea4c8965403cd0b8138c}\label{classWorld_a89826be651c0ea4c8965403cd0b8138c}} 
 bool {\bfseries is\+Level\+Completed} () const
 \item 
@@ -46,8 +50,10 @@ bool {\bfseries is\+Running} () const
 \item 
 \mbox{\Hypertarget{classWorld_aae9c9276ab438e27ef024f7abcc0aae1}\label{classWorld_aae9c9276ab438e27ef024f7abcc0aae1}} 
 class {\bfseries objects\+::projectiles\+::\+Projectile\+Factory}
+\item 
+\mbox{\Hypertarget{classWorld_adaaabeba89709afe432b11382c698e23}\label{classWorld_adaaabeba89709afe432b11382c698e23}} 
+class {\bfseries objects\+::enemies\+::\+Enemy\+Factory}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -77,7 +83,13 @@ Destructor
 \subsubsection{\texorpdfstring{draw\+Views()}{drawViews()}}
 {\footnotesize\ttfamily void World\+::draw\+Views (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-lets all views in active\+Views draw their objects \mbox{\Hypertarget{classWorld_ad37fe32cce284282361b9e7397b27a23}\label{classWorld_ad37fe32cce284282361b9e7397b27a23}} 
+lets all views in active\+Views draw their objects \mbox{\Hypertarget{classWorld_a04f39f13be0b568122bc8a539c15f014}\label{classWorld_a04f39f13be0b568122bc8a539c15f014}} 
+\index{World@{World}!enter\+Endless@{enter\+Endless}}
+\index{enter\+Endless@{enter\+Endless}!World@{World}}
+\subsubsection{\texorpdfstring{enter\+Endless()}{enterEndless()}}
+{\footnotesize\ttfamily void World\+::enter\+Endless (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+aborts the current level and starts spawning enemies randomly \mbox{\Hypertarget{classWorld_ad37fe32cce284282361b9e7397b27a23}\label{classWorld_ad37fe32cce284282361b9e7397b27a23}} 
 \index{World@{World}!handle\+Events@{handle\+Events}}
 \index{handle\+Events@{handle\+Events}!World@{World}}
 \subsubsection{\texorpdfstring{handle\+Events()}{handleEvents()}}
@@ -116,5 +128,6 @@ The documentation for this class was generated from the following files\+:\begin
 \item 
 /home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{World_8h}{World.\+h}\item 
 /home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{World_8cpp}{World.\+cpp}\item 
+/home/mano/\+Documents/univ/space\+\_\+invaders/src/world/World\+Endless.\+cpp\item 
 /home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{WorldGraphics_8cpp}{World\+Graphics.\+cpp}\item 
 /home/mano/\+Documents/univ/space\+\_\+invaders/src/world/\hyperlink{WorldLoader_8cpp}{World\+Loader.\+cpp}\end{DoxyCompactItemize}

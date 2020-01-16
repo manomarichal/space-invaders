@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['play',['play',['../classGame.html#aa333825d0bca80e91e53c7e23f053405',1,'Game']]],
   ['playerlivesview',['PlayerLivesView',['../classobjects_1_1playership_1_1PlayerLivesView.html',1,'objects::playership']]],
   ['playerlivesview_2ecpp',['PlayerLivesView.cpp',['../PlayerLivesView_8cpp.html',1,'']]],
   ['playerlivesview_2eh',['PlayerLivesView.h',['../PlayerLivesView_8h.html',1,'']]],
@@ -13,6 +12,7 @@ var searchData=
   ['playershipview',['PlayerShipView',['../classobjects_1_1playership_1_1PlayerShipView.html',1,'objects::playership']]],
   ['playershipview_2ecpp',['PlayerShipView.cpp',['../PlayerShipView_8cpp.html',1,'']]],
   ['playershipview_2eh',['PlayerShipView.h',['../PlayerShipView_8h.html',1,'']]],
+  ['playlevels',['playLevels',['../classGame.html#a36587df95a3343658a2d02674050abd7',1,'Game']]],
   ['projectilefactory',['ProjectileFactory',['../classobjects_1_1projectiles_1_1ProjectileFactory.html',1,'objects::projectiles']]],
   ['projectilefactory_2ecpp',['ProjectileFactory.cpp',['../ProjectileFactory_8cpp.html',1,'']]],
   ['projectilefactory_2eh',['ProjectileFactory.h',['../ProjectileFactory_8h.html',1,'']]],

@@ -73,7 +73,6 @@ Inheritance diagram for World:</div>
 <div class="center"><img src="classWorld__inherit__graph.png" border="0" usemap="#World_inherit__map" alt="Inheritance graph"/></div>
 <map name="World_inherit__map" id="World_inherit__map">
 <area shape="rect" id="node2" href="classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="23,95,148,121"/>
-<area shape="rect" id="node4" href="classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="173,95,289,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -82,7 +81,6 @@ Collaboration diagram for World:</div>
 <div class="center"><img src="classWorld__coll__graph.png" border="0" usemap="#World_coll__map" alt="Collaboration graph"/></div>
 <map name="World_coll__map" id="World_coll__map">
 <area shape="rect" id="node2" href="classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="23,95,148,121"/>
-<area shape="rect" id="node4" href="classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="173,95,289,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -100,6 +98,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5cc73b1aa54db5da01e4004acd4fd8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8ad60668f8fe975f03bcb612264bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a8e8ad60668f8fe975f03bcb612264bc4">drawViews</a> ()</td></tr>
 <tr class="separator:a8e8ad60668f8fe975f03bcb612264bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f39f13be0b568122bc8a539c15f014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a04f39f13be0b568122bc8a539c15f014">enterEndless</a> ()</td></tr>
+<tr class="separator:a04f39f13be0b568122bc8a539c15f014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89826be651c0ea4c8965403cd0b8138c"><td class="memItemLeft" align="right" valign="top"><a id="a89826be651c0ea4c8965403cd0b8138c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isLevelCompleted</b> () const</td></tr>
 <tr class="separator:a89826be651c0ea4c8965403cd0b8138c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,26 +108,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRunning</b> () cons
 <tr class="separator:a6ec812e86ad7813ff1a2c92ea6d85824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5e8724afb4d083e566ee4e48905bf2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#adf5e8724afb4d083e566ee4e48905bf2">~World</a> () override</td></tr>
 <tr class="separator:adf5e8724afb4d083e566ee4e48905bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classobjects_1_1Subject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classobjects_1_1Subject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classobjects_1_1Subject.html">objects::Subject</a></td></tr>
-<tr class="memitem:aff4d867723f0b05a05b09005b18522f3 inherit pub_methods_classobjects_1_1Subject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjects_1_1Subject.html#aff4d867723f0b05a05b09005b18522f3">attach</a> (std::weak_ptr&lt; <a class="el" href="classobjects_1_1Observer.html">Observer</a> &gt; observer)</td></tr>
-<tr class="separator:aff4d867723f0b05a05b09005b18522f3 inherit pub_methods_classobjects_1_1Subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:aae9c9276ab438e27ef024f7abcc0aae1"><td class="memItemLeft" align="right" valign="top"><a id="aae9c9276ab438e27ef024f7abcc0aae1"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>objects::projectiles::ProjectileFactory</b></td></tr>
 <tr class="separator:aae9c9276ab438e27ef024f7abcc0aae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classobjects_1_1Subject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classobjects_1_1Subject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classobjects_1_1Subject.html">objects::Subject</a></td></tr>
-<tr class="memitem:a3cd42d10d9f52ab32249518bbeaf6147 inherit pro_methods_classobjects_1_1Subject"><td class="memItemLeft" align="right" valign="top"><a id="a3cd42d10d9f52ab32249518bbeaf6147"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> () const</td></tr>
-<tr class="separator:a3cd42d10d9f52ab32249518bbeaf6147 inherit pro_methods_classobjects_1_1Subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classobjects_1_1Subject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classobjects_1_1Subject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classobjects_1_1Subject.html">objects::Subject</a></td></tr>
-<tr class="memitem:a6526bd3a88fc4efd995ed1d47668940a inherit pro_attribs_classobjects_1_1Subject"><td class="memItemLeft" align="right" valign="top"><a id="a6526bd3a88fc4efd995ed1d47668940a"></a>
-std::vector&lt; std::weak_ptr&lt; <a class="el" href="classobjects_1_1Observer.html">Observer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
-<tr class="separator:a6526bd3a88fc4efd995ed1d47668940a inherit pro_attribs_classobjects_1_1Subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaaabeba89709afe432b11382c698e23"><td class="memItemLeft" align="right" valign="top"><a id="adaaabeba89709afe432b11382c698e23"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>objects::enemies::EnemyFactory</b></td></tr>
+<tr class="separator:adaaabeba89709afe432b11382c698e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a96ca734b18df2cf85e666fc6d358e12c"></a>
@@ -204,6 +193,24 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classobjects_1_1Observer.h
       </table>
 </div><div class="memdoc">
 <p>lets all views in activeViews draw their objects </p>
+
+</div>
+</div>
+<a id="a04f39f13be0b568122bc8a539c15f014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f39f13be0b568122bc8a539c15f014">&#9670;&nbsp;</a></span>enterEndless()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void World::enterEndless </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>aborts the current level and starts spawning enemies randomly </p>
 
 </div>
 </div>
@@ -298,6 +305,7 @@ std::vector&lt; std::weak_ptr&lt; <a class="el" href="classobjects_1_1Observer.h
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/mano/Documents/univ/space_invaders/src/world/<a class="el" href="World_8h_source.html">World.h</a></li>
 <li>/home/mano/Documents/univ/space_invaders/src/world/<a class="el" href="World_8cpp.html">World.cpp</a></li>
+<li>/home/mano/Documents/univ/space_invaders/src/world/WorldEndless.cpp</li>
 <li>/home/mano/Documents/univ/space_invaders/src/world/<a class="el" href="WorldGraphics_8cpp.html">WorldGraphics.cpp</a></li>
 <li>/home/mano/Documents/univ/space_invaders/src/world/<a class="el" href="WorldLoader_8cpp.html">WorldLoader.cpp</a></li>
 </ul>
