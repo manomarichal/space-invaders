@@ -8,7 +8,7 @@
 
 using namespace objects::playership;
 
-PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship) : View("../resources/textures/spaceship.png", ship)
+PlayerShipView::PlayerShipView(std::shared_ptr<PlayerShip> ship) : View("./resources/textures/spaceship.png", ship)
 {
         hud = std::make_shared<PlayerLivesView>(std::move(ship));
         hud->init();

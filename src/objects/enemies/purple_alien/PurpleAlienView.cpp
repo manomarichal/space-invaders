@@ -9,7 +9,7 @@
 using namespace objects::enemies::purple_alien;
 
 PurpleAlienView::PurpleAlienView(const std::shared_ptr<PurpleAlien>& alien)
-    : View(std::string("../resources/textures/purplealien.png"), alien)
+    : View(std::string("./resources/textures/purplealien.png"), alien)
 {
         maxHP = alien->hitpoints;
 }

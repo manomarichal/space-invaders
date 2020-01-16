@@ -8,7 +8,7 @@
 
 using namespace objects::shield;
 
-ShieldView::ShieldView(const std::shared_ptr<Entity>& entity) : View("../resources/textures/whitesquare.png", entity)
+ShieldView::ShieldView(const std::shared_ptr<Entity>& entity) : View("./resources/textures/whitesquare.png", entity)
 {
         sprite->setPosition(entity->getX(), entity->getY());
 }

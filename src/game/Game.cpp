@@ -10,6 +10,7 @@
 #include "Game.h"
 #include "../json/json.hpp"
 #include <fstream>
+#include <SFML/Audio.hpp>
 
 Game::Game(const std::string& settings)
 {
@@ -68,6 +69,14 @@ void Game::runWorld(World& world)
 }
 void Game::playLevels()
 {
+        // load the music
+        sf::SoundBuffer buffer;
+        if (!buffer.loadFromFile("./resources/music/theme.wav"))
+            throw std::runtime_error("could not open file: ./resources/mucis/theme.wav");
+        sf::Sound theme;
+        theme.setBuffer(buffer);
+        theme.play();
+
         // we create a world objects to load our levels in
         auto world = std::make_shared<World>(window);
         unsigned int levelsCompleted = 0;

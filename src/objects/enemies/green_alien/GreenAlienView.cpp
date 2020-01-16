@@ -9,7 +9,7 @@
 using namespace objects::enemies::green_alien;
 
 GreenAlienView::GreenAlienView(const std::shared_ptr<GreenAlien>& alien)
-    : View("../resources/textures/greenalien.png", alien)
+    : View("./resources/textures/greenalien.png", alien)
 {
 }
 

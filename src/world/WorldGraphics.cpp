@@ -19,7 +19,7 @@ void World::drawViews()
 void World::drawScore()
 {
         sf::Font font;
-        font.loadFromFile("../resources/fonts/pixeled.ttf");
+        font.loadFromFile("./resources/fonts/pixeled.ttf");
 
         sf::Text string("Score: " + std::to_string(score), font, 32);
         string.setScale(util::Transformation::getScreenWidth() / 1600, util::Transformation::getScreenHeight() / 1200);

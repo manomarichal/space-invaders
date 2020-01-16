@@ -12,7 +12,7 @@
 bool Game::gameOverScreen()
 {
         sf::Font font;
-        font.loadFromFile("../resources/fonts/pixeled.ttf");
+        font.loadFromFile("./resources/fonts/pixeled.ttf");
 
         const float SCALE = util::Transformation::getScreenWidth() / 1600;
 
@@ -50,7 +50,7 @@ void Game::newLevelScreen()
 {
         window->clear(sf::Color::Black);
         sf::Font font;
-        font.loadFromFile("../resources/fonts/pixeled.ttf");
+        font.loadFromFile("./resources/fonts/pixeled.ttf");
 
         const float SCALE = util::Transformation::getScreenWidth() / 1600;
 
@@ -86,7 +86,7 @@ void Game::newLevelScreen()
 void Game::endlessScreen()
 {
         sf::Font font;
-        font.loadFromFile("../resources/fonts/pixeled.ttf");
+        font.loadFromFile("./resources/fonts/pixeled.ttf");
 
         const float SCALE = util::Transformation::getScreenWidth() / 1600;
 

@@ -9,7 +9,7 @@
 using namespace objects::enemies::red_alien;
 
 RedAlienView::RedAlienView(const std::shared_ptr<RedAlien>& enemy)
-    : View(std::string("../resources/textures/redalien.png"), enemy)
+    : View(std::string("./resources/textures/redalien.png"), enemy)
 {
 }
 

@@ -1,16 +1,16 @@
 {
   "Screen":
   {
-    "width": 800,
-    "height":600
+    "width": 1200,
+    "height":900
   },
   "Levels": [
-    "../resources/levels/level_0.json",
-    "../resources/levels/level_1.json",
-    "../resources/levels/level_2.json",
-    "../resources/levels/level_3.json",
-    "../resources/levels/level_4.json",
-    "../resources/levels/level_5.json",
-    "../resources/levels/level_6.json"
+    "./resources/levels/level_0.json",
+    "./resources/levels/level_1.json",
+    "./resources/levels/level_2.json",
+    "./resources/levels/level_3.json",
+    "./resources/levels/level_4.json",
+    "./resources/levels/level_5.json",
+    "./resources/levels/level_6.json"
   ]
 }

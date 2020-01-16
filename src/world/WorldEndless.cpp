@@ -12,7 +12,7 @@
 
 void World::enterEndless()
 {
-        loadLevel("../resources/levels/level_endless_base.json");
+        loadLevel("./resources/levels/level_endless_base.json");
         running = true;
         endless = true;
         enemiesToDefeat = 1;

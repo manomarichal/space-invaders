@@ -15,7 +15,7 @@ class StandardProjectileView : public View
 {
 public:
         explicit StandardProjectileView(const std::shared_ptr<StandardProjectile>& projectile)
-            : View("../resources/textures/whitesquare.png", projectile){};
+            : View("./resources/textures/whitesquare.png", projectile){};
 
         void onNotify() override;
         ~StandardProjectileView() override = default;
