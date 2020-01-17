@@ -9,8 +9,8 @@ Build Status: [![Build Status](https://travis-ci.com/shano19/space-invaders.svg?
 ## How to set up:
 First time installing run
 ``` bash
-chmod +x run.sh
-./run.sh
+$ chmod +x run.sh
+$ ./run.sh
 ```
 This will compile and run the game with the basic settings file.
 To play other sets of levels,  you will need to make a settings.json file, or use one of the examples.
