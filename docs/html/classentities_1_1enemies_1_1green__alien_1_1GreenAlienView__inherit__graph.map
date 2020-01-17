@@ -1,4 +1,0 @@
-<map id="objects::enemies::green_alien::GreenAlienView" name="objects::enemies::green_alien::GreenAlienView">
-<area shape="rect" id="node2" href="$classobjects_1_1View.html" title="objects::View" alt="" coords="49,169,151,196"/>
-<area shape="rect" id="node3" href="$classobjects_1_1Observer.html" title="objects::Observer" alt="" coords="37,95,163,121"/>
-</map>

@@ -1,9 +1,17 @@
+Practical information:
+- the rapport is in the /docs file
+- there is a doxygen, the doxyfile is located in /docs
+
+Build Status: [![Build Status](https://travis-ci.com/shano19/space-invaders.svg?token=M5KHdSHUrgZ1sjKYe9px&branch=master)](https://travis-ci.com/shano19/space-invaders)
+
 SPACE INVADERS
 
 How to set up:
 You will need to make a settings.json file to play the game, or use one of the examples.
 This file contains how big the screen should be, and what levels you want to play.
-For example: ./space_invaders ./resources/settings/standard_setting.json
+
+Run the game with a settings file:
+./space_invaders path_to_settings_file
 
 Level files:
 The first thing a level file has to have is a coordinate system, this is the coordinate system you can use to place objects

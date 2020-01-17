@@ -1,5 +1,0 @@
-<map id="objects::enemies::red_alien::RedAlien" name="objects::enemies::red_alien::RedAlien">
-<area shape="rect" id="node2" href="$classobjects_1_1enemies_1_1Enemy.html" title="objects::enemies::\lEnemy" alt="" coords="8,155,137,196"/>
-<area shape="rect" id="node3" href="$classobjects_1_1Entity.html" title="objects::Entity" alt="" coords="19,80,126,107"/>
-<area shape="rect" id="node4" href="$classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="15,5,131,32"/>
-</map>

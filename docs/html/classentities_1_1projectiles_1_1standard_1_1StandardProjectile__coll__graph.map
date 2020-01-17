@@ -1,4 +1,0 @@
-<map id="objects::projectiles::standard::StandardProjectile" name="objects::projectiles::standard::StandardProjectile">
-<area shape="rect" id="node2" href="$classobjects_1_1Entity.html" title="objects::Entity" alt="" coords="49,80,156,107"/>
-<area shape="rect" id="node3" href="$classobjects_1_1Subject.html" title="objects::Subject" alt="" coords="45,5,161,32"/>
-</map>
