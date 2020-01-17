@@ -77,6 +77,7 @@ void Game::playLevels()
         sf::Sound theme;
         theme.setBuffer(buffer);
         theme.play();
+        theme.setLoop(true);
 
         // we create a world objects to load our levels in
         auto world = std::make_shared<World>(window);
