@@ -3,8 +3,7 @@ SPACE INVADERS
 How to set up:
 You will need to make a settings.json file to play the game, or use one of the examples.
 This file contains how big the screen should be, and what levels you want to play.
-The executable space_invaders is located in ./build, run this with as argument the path to
-your settings file relative to the build directory.
+For example: ./space_invaders ./resources/settings/standard_setting.json
 
 Level files:
 The first thing a level file has to have is a coordinate system, this is the coordinate system you can use to place objects
