@@ -1,8 +1,8 @@
 /** \file Transformation.h
-* project: space_invaders
-* author: Mano Marichal
-* date: 14.12.19
-* copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
+ * project: space_invaders
+ * author: Mano Marichal
+ * date: 14.12.19
+ * copyright: BA2 Informatica - Mano Marichal - University of Antwerp */
 
 #ifndef SPACE_INVADERS_TRANSFORMATION_H
 #define SPACE_INVADERS_TRANSFORMATION_H
@@ -11,11 +11,10 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace util
+namespace util {
+class Transformation
 {
-    class Transformation
-    {
-    public:
+public:
         /**
          * transforms an x coördinate from game logic to the actual screen size
          * @param x the x to be transformed
@@ -57,15 +56,15 @@ namespace util
         template <class T>
         static T transform(T sprite);
 
-    private:
+private:
         static float screenWidth;
         static float screenHeight;
-        Transformation()= default;
+        Transformation() = default;
 
-    public:
-        Transformation(const Transformation &copy) = delete;
+public:
+        Transformation(const Transformation& copy) = delete;
         Transformation& operator=(Transformation) = delete;
-    };
-}
+};
+} // namespace util
 
-#endif //SPACE_INVADERS_TRANSFORMATION_H
+#endif // SPACE_INVADERS_TRANSFORMATION_H

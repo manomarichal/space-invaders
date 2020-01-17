@@ -9,8 +9,8 @@
 
 #include "Game.h"
 #include "../json/json.hpp"
-#include <fstream>
 #include <SFML/Audio.hpp>
+#include <fstream>
 
 Game::Game(const std::string& settings)
 {
@@ -73,7 +73,7 @@ void Game::playLevels()
         // load the music
         sf::SoundBuffer buffer;
         if (!buffer.loadFromFile("./resources/music/theme.wav"))
-            throw std::runtime_error("could not open file: ./resources/mucis/theme.wav");
+                throw std::runtime_error("could not open file: ./resources/mucis/theme.wav");
         sf::Sound theme;
         theme.setBuffer(buffer);
         theme.play();
