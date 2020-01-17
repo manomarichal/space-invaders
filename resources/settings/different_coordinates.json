@@ -1,8 +1,8 @@
 {
   "Screen":
   {
-    "width": 800,
-    "height":600
+    "width": 1200,
+    "height":900
   },
   "Levels": [
     "./resources/levels/level_4_3.json",
