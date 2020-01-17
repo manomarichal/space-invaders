@@ -1,8 +1,8 @@
 # SPACE INVADERS
 
 ## Practical information:
-- the rapport is in the /docs file
-- there is a doxygen, the doxyfile is located in /docs
+- The rapport is in the /docs file
+- There is a doxygen, the doxyfile is located in /docs
 
 Build Status: [![Build Status](https://travis-ci.com/shano19/space-invaders.svg?token=M5KHdSHUrgZ1sjKYe9px&branch=master)](https://travis-ci.com/shano19/space-invaders)
 
@@ -25,7 +25,7 @@ and that the game logic will use, example:
     "ymin": -3
   }
 ```
-after that you need to specify where the playership's starting location is, example:
+After that you need to specify where the playership's starting location is, example:
 
 ``` json
 "Playership": {
