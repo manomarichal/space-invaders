@@ -86,8 +86,8 @@ You can leave both of these empty if you dont want any shields or enemies.
 - shooting: space
 
 ## Extra rules:
-- you have 3 lives for every level
-- you lose 1 life upon hitting an enemy projectile
-- you lose 1 life upon colliding with an enemy (which destroys the enemy)
-- you lose the game if an enemy touches the bottom corner of the screen
-- shields are destroyed when they collide with an enemy (which also destroys the enemy)
+- You have 3 lives for every level.
+- You lose 1 life upon hitting an enemy projectile.
+- You lose 1 life upon colliding with an enemy (which destroys the enemy).
+- You lose the game if an enemy touches the bottom corner of the screen.
+- Shields are destroyed when they collide with an enemy (which also destroys the enemy).
