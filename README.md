@@ -7,8 +7,26 @@
 Build Status: [![Build Status](https://travis-ci.com/shano19/space-invaders.svg?token=M5KHdSHUrgZ1sjKYe9px&branch=master)](https://travis-ci.com/shano19/space-invaders)
 
 ## How to set up:
-You will need to make a settings.json file to play the game, or use one of the examples.
+First time installing run
+``` bash
+chmod +x run.sh
+./run.sh
+```
+This will compile and run the game with the basic settings file.
+To play other sets of levels,  you will need to make a settings.json file, or use one of the examples.
 This file contains how big the screen should be, and what levels you want to play.
+``` json
+{
+  "Screen":
+  {
+    "width": 1200,
+    "height":900
+  },
+  "Levels": [
+    "./resources/levels/single_enemy.json"
+  ]
+}
+```
 
 ## Run the game with a settings file:
 ./space_invaders path_to_settings_file
