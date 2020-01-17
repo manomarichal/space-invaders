@@ -15,7 +15,7 @@ This file contains how big the screen should be, and what levels you want to pla
 
 ## Level files:
 The first thing a level file has to have is a coordinate system, this is the coordinate system you can use to place objects
-and that the game logic will use, for example:
+and that the game logic will use, example:
 
 ``` json
 "Space": {
@@ -34,8 +34,7 @@ after that you need to specify where the playership's starting location is, exam
   }
 ```
 
-Finally, you need to add objects to your level, you can add shields an different type of enemies:
-shield example:
+Finally, you need to add objects to your level, you can add shields an different type of enemies, example:
 
 ```json
 "Shields": [
@@ -52,6 +51,7 @@ For enemies you have the choice between either red, green or purple aliens
 - purple aliens take 3 hits to kill and shrink in size everytime they get hit
 enemy example:
 
+```json
 "Enemies": [
     {
       "type": "RedAlien",
@@ -59,6 +59,7 @@ enemy example:
       "y": 1.3
     }
   ]
+ ```
 You can leave both of these empty if you dont want any shields or enemies.
 
 ## Controls:
