@@ -1,8 +1,8 @@
 ./CMakeCache.txt
-./cmake-build-debug
+./cmake-build-debug/
 ./space_invaders.cbp
 ./Makefile
 ./cmake_install.cmake
 ./CMakeFiles
-./docs/html
-./docs/latex
+./docs/html/
+./docs/latex/

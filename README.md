@@ -1,45 +1,50 @@
-Practical information:
+##SPACE INVADERS
+
+#Practical information:
 - the rapport is in the /docs file
 - there is a doxygen, the doxyfile is located in /docs
 
 Build Status: [![Build Status](https://travis-ci.com/shano19/space-invaders.svg?token=M5KHdSHUrgZ1sjKYe9px&branch=master)](https://travis-ci.com/shano19/space-invaders)
 
-SPACE INVADERS
-
-How to set up:
+#How to set up:
 You will need to make a settings.json file to play the game, or use one of the examples.
 This file contains how big the screen should be, and what levels you want to play.
 
-Run the game with a settings file:
+#Run the game with a settings file:
 ./space_invaders path_to_settings_file
 
-Level files:
+#Level files:
 The first thing a level file has to have is a coordinate system, this is the coordinate system you can use to place objects
 and that the game logic will use, for example:
 
+``` json
 "Space": {
     "xmax": 4,
     "xmin": -4,
     "ymax": 3,
     "ymin": -3
   }
-
+```
 after that you need to specify where the playership's starting location is, example:
 
+``` json
 "Playership": {
     "x": 0,
     "y": -2.5
-  },
+  }
+```
 
 Finally, you need to add objects to your level, you can add shields an different type of enemies:
 shield example:
 
+```json
 "Shields": [
     {
       "x":-2 ,
       "y":-1.5
-    },
+    }
   ]
+```
 
 For enemies you have the choice between either red, green or purple aliens
 - red aliens are standard enemies that take 1 hit to kill
@@ -56,12 +61,12 @@ enemy example:
   ]
 You can leave both of these empty if you dont want any shields or enemies.
 
-Controls:
+#Controls:
 - moving left: Q
 - moving right: D
 - shooting: space
 
-Extra rules:
+#Extra rules:
 - you have 3 lives for every level
 - you lose 1 life upon hitting an enemy projectile
 - you lose 1 life upon colliding with an enemy (which destroys the enemy)
