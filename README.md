@@ -1,4 +1,4 @@
-##SPACE INVADERS
+## SPACE INVADERS
 
 # Practical information:
 - the rapport is in the /docs file
