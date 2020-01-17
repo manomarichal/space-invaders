@@ -25,7 +25,7 @@ void PlayerShipController::createProjectile()
 bool PlayerShipController::handleEvents([[maybe_unused]] const std::vector<std::shared_ptr<Entity>>& objects)
 {
         // check for keyboard input
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) or sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
                 std::dynamic_pointer_cast<PlayerShip>(entity)->moveLeft();
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 std::dynamic_pointer_cast<PlayerShip>(entity)->moveRight();
